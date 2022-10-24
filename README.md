@@ -1,8 +1,7 @@
 # codingclass
 
 ### 메인 페이지   
-https://eu-ny.github.io/codingclasss/index.html      
-https://eu-ny.github.io/codingclasss/index.html      
+https://eu-ny.github.io/codingclasss/index.html            
 
 ## 자바스크립트   
 https://eu-ny.github.io/codingclass/javascript/index.html   
