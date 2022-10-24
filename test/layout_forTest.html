@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃06</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 30px;
+        }
+        #warp {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #222;
+        }
+        #header .loge {
+            width: 300px;
+            height: 100px;
+            background-color: #222;
+            color: #fff;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+        }
+        #header .menu {
+            width: 900px;
+            height: 100px;
+            background-color: #333;
+            color: #fff;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+        #banner {
+            width: 1200px;
+            height: 400px;
+            background-color: #333;
+        }
+        #banner .banner1 {
+            width: 800px;
+            height: 400px;
+            background-color: #444;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 400px
+        }
+        #banner .banner2 {
+            width: 400px;
+            height: 400px;
+            background-color: #555;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 400px
+        }
+        #section {
+            width: 1200px;
+            height: 300px;
+            background-color: #222;
+        }
+        #section .section1{
+            width: 400px;
+            height: 300px;
+            background-color: #666;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 300px
+        }
+        #section .section2{
+            width: 400px;
+            height: 300px;
+            background-color: #777;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 300px
+        }
+        #section .section3{
+            width: 400px;
+            height: 300px;
+            background-color: #888;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 300px
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #999;
+        }
+        #footer .footer1 {
+            width: 200px;
+            height: 100px;
+            background-color: #555;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px
+        }
+        #footer .footer2 {
+            width: 800px;
+            height: 100px;
+            background-color: #444;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px
+        }
+        #footer .footer3 {
+            width: 200px;
+            height: 100px;
+            background-color: #555;
+            float: left;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="header">
+            <div class="loge">로고</div>
+            <div class="menu">
+                <script>
+                    for( let i=1; i<=13; i++){
+                        document.write(i);
+                    }
+                </script>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="banner1">
+                <script>
+                    for( let i=1; i<=10; i++){
+                        if (i % 2 == 1){ /*i를 2로 나누었을 때 1이 나오면 홀수*/
+                            document.write(i);
+                        }
+                    }
+                </script>
+            </div>
+            <div class="banner2">광고</div>
+        </div>
+        <div id="section">
+            <div class="section1">공지사항</div>
+            <div class="section2">갤러리</div>
+            <div class="section3">팝업</div>
+        </div>
+        <div id="footer">
+            <div class="footer1">푸터</div>
+            <div class="footer2">카피라이트</div>
+            <div class="footer3">소셜</div>
+        </div>
+    </div>
+</body>
+</html>

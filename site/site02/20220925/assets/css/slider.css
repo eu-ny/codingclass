@@ -1,0 +1,87 @@
+/* sliderType */
+.slider__wrap {
+    box-sizing: border-box;
+}
+.slider__inner {
+    padding-top: 121px;
+}
+.slider__img1 {
+    height: 550px;
+    background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+}
+.slider__img2 {
+    background: url(../img/slider_bg02.jpg) no-repeat center / cover;
+}
+.slider__img3 {
+    background: url(../img/slider_bg03.jpg) no-repeat center / cover;
+}
+.slider__img4 {
+    background: url(../img/slider_bg04.jpg) no-repeat center / cover;
+}
+.slider__img5 {
+    background: url(../img/slider_bg05.jpg) no-repeat center / cover;
+}
+.desc {
+    text-align: left;
+}
+.desc h3 {
+    font-size: 90px;
+    font-weight: 700;
+    padding-top: 90px;
+    margin-bottom: 20px;
+    color: #fff;
+    /* background: linear-gradient(70deg, salmon 0%, blueviolet 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+.desc p {
+    font-size: 22px;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: #dadada;
+}
+.desc .btn a {
+    font-size: 18px;
+    background-color: rgb(21, 9, 53);
+    color: #fff;
+    padding: 11px 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.desc .btn a.blue {
+    background-color: rgb(80, 47, 171);
+}
+.desc .btn a:hover {
+    transition: all 0.2s linear;
+    /* background-color: rgb(61, 43, 226); */
+    background-color: rgb(25, 0, 255);
+}
+
+/* 이동 버튼 */
+/* .swiper-button-next,
+.swiper-button-prev {
+    width: 30px !important;
+    height: 56px !important;
+    background-image: url(../img/slider_icon01.svg);
+}
+.swiper-button-next {
+    background-position: -30px 0px;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    opacity: 0;
+} */
+/* .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    background-image: url(../img/slider_icon02.svg) !important;
+    background-position: -20px -48px !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+    border: 1px solid #fff;
+    background-position: -20px -48px !important;
+} */

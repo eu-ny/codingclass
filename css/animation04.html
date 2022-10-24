@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="animation01.html">animation</a></li>
+                <li><a href="animation02.html">animation02</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 애니메니션 만들기 : 물결 웨~이부~~~ 🌊 🌊 </h2>
+                <p class="t_desc">
+                    이번 시간에는 CSS 실습으로 원들이 훌랄라 하는 듯한 애니메이션을 만들어보겠습니다. 😄 <br>
+                    오늘 실습의 포인트는 퍼그와 SCSS 그리고 반복문입니다~! 
+                </p>
+
+                <img src="https://user-images.githubusercontent.com/106949433/191004405-10e7d23b-d874-49fa-b6d6-a357c00866cd.png" alt="">
+
+                <hr>
+
+                <div id="sample01" class="sample">
+                  <h3 class="t_tit2">#1. PUG </h3>
+                  <p class="t_desc">
+                    다음은 PUG 코드와 컴파일한 HTML 코드 입니다!
+                  </p>
+                  <h3 class="t_tit2"> 🐶 PUG </h3>
+                  <div class="t_code">
+<pre><code class="language-HTML">div.circle-wrap
+  - for (var x =1; x &lt;= 12; x++)
+    div.row
+      - for (var y = 1; y &lt;= 12; y++)
+        div.circle
+</code></pre>
+                  </div>
+                  <details>
+                    <summary> 💿 HTML 컴파일 ver </summary>
+                    <div class="t_code">
+<pre><code class="language-HTML">&lt;div class="circle-wrap"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;div class="circle"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                  </details>
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                <div id="sample02" class="sample">
+                  <h3 class="t_tit2">#2. SCSS </h3>
+                  <p class="t_desc">
+                    다음은 SCSS 코드와 컴파일한 CSS 코드 입니다!<br>
+                    오늘의 포인트는 mixin입니다. SCSS를 사용할 때 주로 사용하는 패턴으로 코드를 재사용하기 위해서 만들어진 패턴입니다.
+                  </p>
+                  <h3 class="t_tit2"> 🧸 SCSS </h3>
+                  <div class="t_code">
+<pre><code class="language-HTML">@mixin center {
+  display : flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  @include center;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+}
+.row {
+  display: flex;
+  .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px 10px;
+    background: #fff;
+    transform-origin : top center;
+    animation : spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% {transform : scale(1.1) rotate(0deg);}
+    50% {transform : scale(0.2) rotate(180deg);}
+    100% {transform : scale(1.1) rotate(360deg);}
+  }
+}
+@for $i from 1 through 12 {
+    .row:nth-child(#{$i}) .circle {animation-delay : 100ms * $i;}
+}
+</code></pre>
+                  </div>
+                  <details>
+                    <summary> 🎀 CSS 컴파일 ver </summary>
+                    <div class="t_code">
+<pre><code class="language-HTML">body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+}
+
+.row {
+  display: flex;
+}
+.row .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px 10px;
+  background: #fff;
+  transform-origin: top center;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(360deg);
+  }
+}
+
+.row:nth-child(1) .circle {
+  animation-delay: 100ms;
+}
+
+.row:nth-child(2) .circle {
+  animation-delay: 200ms;
+}
+
+.row:nth-child(3) .circle {
+  animation-delay: 300ms;
+}
+
+.row:nth-child(4) .circle {
+  animation-delay: 400ms;
+}
+
+.row:nth-child(5) .circle {
+  animation-delay: 500ms;
+}
+
+.row:nth-child(6) .circle {
+  animation-delay: 600ms;
+}
+
+.row:nth-child(7) .circle {
+  animation-delay: 700ms;
+}
+
+.row:nth-child(8) .circle {
+  animation-delay: 800ms;
+}
+
+.row:nth-child(9) .circle {
+  animation-delay: 900ms;
+}
+
+.row:nth-child(10) .circle {
+  animation-delay: 1000ms;
+}
+
+.row:nth-child(11) .circle {
+  animation-delay: 1100ms;
+}
+
+.row:nth-child(12) .circle {
+  animation-delay: 1200ms;
+}
+</code></pre>
+                    </div>
+                  </details>
+                </div>
+                <!-- //sample02 -->
+
+                <hr>
+
+                <iframe height="500" style="width: 100%;" scrolling="no" title="animation04" src="https://codepen.io/eu-ny/embed/JjvNOBo?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/eu-ny/pen/JjvNOBo">
+                  animation04</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script>
+      // $(".start1").click(function(){
+      //     $(".timing.bg1 > div").addClass("show");
+      //     setTimeout(function(){
+      //         $(".timing.bg1 > div").removeClass("show");
+      //     },2000);
+      // });
+
+      // $(".start2").click(function(){
+      //     $(".timing.bg2 > div").addClass("show");
+      //     setTimeout(function(){
+      //         $(".timing.bg2 > div").removeClass("show");
+      //     },4000);
+      // });
+
+      $(".stepBtnStart").click(function(e){
+          e.preventDefault();
+          $(".stepbox").removeClass("stop").addClass("start");
+      });
+      $(".stepBtnStop").click(function(e){
+          e.preventDefault();
+          $(".stepbox").removeClass("start").addClass("stop");
+      });
+
+      // $(".start3").click(function(){
+      //     $(".timing.bg3 > div").addClass("show");
+      //     setTimeout(function(){
+      //         $(".timing.bg3 > div").removeClass("show");
+      //     },3000);
+      // });
+
+      // $(".start4").click(function(){
+      //     $(".timing.bg4 > div").addClass("show");
+      //     setTimeout(function(){
+      //         $(".timing.bg4 > div").removeClass("show");
+      //     },3000);
+      // });
+
+      // $(".start5").click(function(){
+      //     $(".timing.bg5 > div").addClass("show");
+      // });
+
+      // $("#intro6 > button").click(function(){
+      //     let txt = $(this).text();
+      //     $(".timing25").removeClass("normal reverse alternate alternate-reverse").addClass(txt);
+      // });
+
+      // $(".start7").click(function(){
+      //     $(".timing.bg7 > div").addClass("show");
+      // });
+
+      // $("#intro8 > button").click(function(){
+      //     let txt = $(this).text();
+      //     $(".timing30").removeClass("running paused").addClass(txt);
+      // });
+
+      // $("#intro9 > button").click(function(){
+      //     let txt = $(this).text();
+      //     $(".timing.bg9 > div").removeClass("ani1 ani2 ani3 ani4 ani5 ani6 ani7").addClass(txt);
+      // });
+  </script>
+
+
+</body>
+
+</html>

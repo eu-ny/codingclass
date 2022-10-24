@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+                <li class="active"><a href="image01.html">이미지01</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">Image Type01</h2>
+            <p class="t_desc">
+               웹페이지 실습을 위한 이미지 유형 페이지 제작해보기!<br />
+               이번 이미지 유형에서는 background에 image를 넣어서 작업해보겠습니다!
+            </p>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    이미지 유형의 가장 기초적인 레이아웃으로 이미지 박스 안에 텍스트와 링크 박스가 들어가 있는 구조입니다.
+                </p>
+                <div class="t_desc2">
+                    <strong>TIP !</strong>
+                    여백은 10단위로 해주어서 좀 더 효율적으로 작업할 수 있게 합니다:)
+                </div>
+                <h3 class="t_tit3">🎨 그리드와 레이아웃</h3>
+                <img src="https://user-images.githubusercontent.com/106949433/185093848-0446a811-c003-429a-a7c2-f43dd825add3.jpg" alt="site__layout">
+                <h3 class="t_tit3">🎨 완성본</h3>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D559%253A50" allowfullscreen></iframe>   
+                </div>
+            </div>
+            <!-- figma -->
+
+            <hr>
+
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
+                <p class="t_desc">
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! TIP !</strong>
+                    섹션 태그에 섹션 선택자를 따로 준 이유는 앞으로 만들게 될 유형들 모두 공통적으로 섹션 안에 제목, contents 구조로 들어가기 때문입니다. <br/>즉 css 속성을 재활용 하기 위한 선택자라고 보면 됩니다🤣
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-html">&lt;section id="imageType01" class="image__wrap Nexon section"&gt; 
+    &lt;h2&gt;귀여운 동물들&lt;/h2&gt;
+    &lt;p&gt;🐶 동물을 좋아하는 사람들을 위한 동물 리스트 입니다. 🐱&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;h3 class="image__title"&gt;귀여운 동물 강아지&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는 기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다. 그냥 귀엽습니다. &lt;/p&gt;
+            &lt;a href="#" title="자세히 보기" class="image__btn"&gt;자세히 보기&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;h3 class="image__title"&gt;귀여운 동물 고양이&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는 은근하게 다가오는 것이 매력적입니다. &lt;/p&gt;
+            &lt;a href="#" title="자세히 보기" class="image__btn yellow"&gt;자세히 보기&lt;/a&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</pre></code>
+                </div>
+
+                <div class="t_box">
+                    <strong>! html 주의사항 !</strong><br />
+                    • img태그의 속성 중 <i>alt안에 이미지에 대한 설명</i>을 넣어줘야 시각 및 청각 장애인들도 스크린리더기를 통해 이해 가능<br />
+                    • 섹션과 아티클 태그에는 꼭 제목 태그를 자식 요소로 넣어 주어서 웹표준과 웹 접근성, 호환성을 놓치지 않도록 하자!
+                </div>
+
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 : 스타일 적용하기 &gt;</h3>
+                <p class="t_desc">
+                    구조 짜임의 순서대로 css 스타일을 적용시켜 봅시다. 이 때 디자인 시안을 참고하면서 html와 번갈아가며 <i>큰 덩어리 부터 스타일을 적용</i>시켜 나가는 것이 중요합니다.<br />
+                    속성에 대한 내용은 코드와 주석을 보면서 이해해봅시다!
+                </p>
+                <p class="t_desc2">
+                    <strong>TIP !</strong><br />
+                    1. 먼저 전체 초기화(Reset)와 기본 폰트값을 설정해주는 것이 좋다. <br />
+                    2. 공통적으로 들어가는 섹션 부분의 속성은 다른 유형에도 재활용 할 수 있도록 클래스 명을 잘 지어줍니다.<br />
+                    3. article 자체를 이미지로 만들어서 작업합니다.<br />
+                    4. 각 영역 별 공통적으로 들어가는 속성은 공통 선택자를 부여하여 한 번에 입력해줍니다. 
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+/* font */
+.Nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* common : 공통 요소(재활용) */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    /* background: rgba(204, 204, 204, 0.363); */
+}
+.section {
+    padding: 120px 0;
+}
+.section > h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #666;
+}
+
+/* imageType */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 49%;
+    height: 370px;
+    color: #fff;
+    padding: 200px 30px 30px 30px;
+}
+.image.img1 {
+    background: url(img/img_bg01_01.jpg) no-repeat center;
+}
+.image.img2 {
+    background: url(img/img_bg01_02.jpg) no-repeat center;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-bottom: 10px;
+}
+.image__btn {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    background: #a7844f;
+}
+.image__btn.yellow {
+    background: #687553;
+}
+</pre></code>
+                </div>
+                <p class="t_box">
+                    <strong>! Css 속성 알아가기 !</strong><br />
+                    세줄 효과 : 텍스트가 두 줄을 넘어가면 자동으로 ...처리를 해준다.<br />
+                    overflow: hidden;<br />
+                    text-overflow: ellipsis;<br />
+                    display: -webkit-box;<br />
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;<br />
+                </p>
+                <p class="t_box">
+                    <strong>! Css 속성 알아가기 !</strong><br />
+                    백그라운드: url() : 이미지를 백그라운드에 삽입한다.<br />
+                    background: url(img/img_bg01_01.jpg) no-repeat center; <br />
+                    no-repeat center : 배경 이미지를 반복하지 않고 가운데로 오게 하는 백그라운드 속성이다.
+            </div>
+            <!-- //css -->
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/imageType/imageType01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/imageType/imageType01.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/imageType/imageType01.html">원본 페이지 보기</a>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

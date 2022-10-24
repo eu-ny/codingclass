@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'S-CoreDream';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset */
+* {
+    margin: 0;
+    font-family: 'S-CoreDream';
+}
+
+/* link 초기화 */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 제목 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+#header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 80px;
+}
+
+/* contents */
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1160px;
+    box-sizing: border-box;
+}
+
+section h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+section {
+    width: 50%;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 60px;
+    width: 1px;
+    height: 85%;
+    background: rgb(174, 174, 174);
+}
+
+section:first-child::before {
+    display: none;
+}
+
+section ol li {
+    padding: 10px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+section ol li a {
+    cursor: pointer;
+}

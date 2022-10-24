@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 검색 이펙트</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔍 검색 효과 : find()를 이용하여 속성을 검색하기 </h2>
+            <p class="t_desc">
+                이번 시간에는 find를 통해 속성을 검색할 경우 해당 속성 설명이 나타나는 효과를 실습해보겠습니다 <br>
+                + 추가로 속성 버튼을 클릭한 경우에도 해당 속성의 설명이 나타나도록 작업해보겠습니다! 🥲
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    input의 텍스트 타입은 텍스트를 입력할 수 있는 요소가 생성됩니다. 또한 input의 placeholder 속성은 요소안에 사용자에게 입력 전 문구를 보이도록 해줍니다.<br>
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;find()를 이용하여 속성을 검색하면 설명 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+        &lt;div class="search__box"&gt;
+            &lt;label for="search"&gt;검색하기&lt;/label&gt;
+            &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
+        &lt;/div&gt;
+        &lt;div class="search__desc"&gt;
+            &lt;div class="desc"&gt;속성을 검색하시면 설명이 나타납니다.&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;CSS 전체 속성 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+  
+        &lt;div class="search__list"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    이전 검색 이펙트와 스타일이 동일하며 html 구조에 추가된 search__desc 요소의 스타일을 추가해주시면 됩니다.<br>
+                    background-image: url()을 통해 요소 안에 아이콘을 넣어 줍니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">.search__desc {
+    border: 2px solid var(--htmlColor);
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트  </h3>
+                <p class="t_desc">
+                    이번 스크립트에서는 map() 메서드와 find() 메서드, 그리고 매개변수를 통해 스크립트를 작업해보겠습니다.<br>
+                    자세한 내용은 아래의 스크립트 주석과 함께 살펴보겠습니다!
+                </p>
+                <p class="t_desc2">
+                    <strong>! JAVASCRIPT TIP !</strong><br>
+                    1. 변수명.map((element, index) =&gt; {}) : 변수의 인덱스 값(자릿값)을 불러옵니다. 보통 변수가 배열로 저장되어 있을 때 사용합니다.<br>
+                    2. 변수명.find((element) =&gt; element 조건식) : 변수에서 해당 조건에 해당하는 요소를 가져옵니다.<br>
+                    2. return : 결과값 출력 뿐만 아니라 종료의 의미로도 쓰입니다.<br>
+                </p>
+                <!-- <details style="margin-bottom: 10px;"> -->
+                    <!-- <summary> 💡 전체 스크립트 보기</summary> -->
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//01 데이터 객체화 시키기
+const cssProperty = [
+    { name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    { name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+    { name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+    { name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
+    { name: "all", desc: "요소의 속성을 초기화 또는 상속을 설정합니다." },
+    { name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 설정합니다." },
+    { name: "animation-delay", desc: "애니메이션 지연 시간을 설정합니다." },
+    { name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다." },
+    .
+    .
+    .
+    { name: "z-index", desc: "요소들의 수직 위치를 설정합니다." },
+];
+const searchList = document.querySelector(".search__list");
+const searchNum = document.querySelector(".search__info .num");
+const searchBox = document.querySelector(".search__box input");
+const searchDesc = document.querySelector(".search__desc");
+
+//02 출력하기 : 배열 map()메서드
+//map을 통해 선택자에게 데이터 값을 저장하여 불러옵니다.
+//element는 cssProperty의 객체, index는 배열에서의 자릿값!
+cssProperty.map((element, index) =&gt; {
+    // searchNum.innerText = index + 1;
+    searchNum.innerText = cssProperty.length + "개";
+    // searchList.innerHTML += `&lt;span&gt;${element.name} : ${element.desc}&lt;/span&gt;`;
+    //name이라는 key의 값을 searchList에 불러온다.
+    searchList.innerHTML += `&lt;span&gt;${element.name}&lt;/span&gt;`;
+});
+
+//03 입력하기
+//searchWord(변수)에 사용자 입력값을 저장한 뒤 매개변수를 이용하여 findProperty함수에 값을 전달합니다.
+searchBox.addEventListener("keyup", () =&gt; {
+    const searchWord = searchBox.value;
+    // console.log(searchWord);
+    findProperty(searchWord);
+});
+//함수 밖에 위치했으므로 지역 변수이기 때문에 매개변수 사용하여 전달시키거나 전역변수로 바꿔주기. 현재는 매개변수사용!
+
+//04 속성찾기
+//위의 매개변수 searchWord를 함수의 searchWord2 변수에 저장합니다.
+function findProperty(searchWord2){
+    //find메서드를 통해 데이터의 네임값과 searchWord(사용자 입력 값)이 같은 경우 tagetData에 저장한 뒤 해당 데이터의 desc값을 찾아서 불러옵니다.
+    //(data = element(cssProperty의 데이터값))
+    const tagetData = cssProperty.find((data) =&gt; data.name === searchWord2); 
+
+    //만약 입력값이 없을 경우(null)에는 textContent를 통해 지정문구가 뜨도록합니다.
+    if(tagetData == null){
+        searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
+        //아래의 textcontent가 무조건 실행되므로 값이 없는데도 계속 찾으려고 하기 때문에 오류가 나는 것! 때문에 리턴을 써서 종료를 시켜주면 버그를 고칠 수 있다.
+        return; //리턴은 결과값 출력 뿐만 아니라 종료의 의미로도 쓰인다.
+    }
+    searchDesc.textContent = tagetData.desc;
+};
+
+//05 클릭했을 때 속성 보이기(반복문은 서치 03번 참고)
+//먼저 버튼을 모두 선택해준 뒤 forEach문을 통해 요소를 클릭했을 시 클릭한 요소를 searchBtn에 저장.
+//매개변수를 사용하여 함수에게 searchBtn값 전달
+const search = document.querySelectorAll(".search__list span");
+search.forEach((el) => {
+    el.addEventListener("click", ()=> {
+        const searchBtn = el.innerText;
+
+        findProperty(searchBtn);
+    });
+});
+</code></pre>
+                    </div>
+                <!-- </details> -->
+
+                <hr>
+                
+           
+                <h3 class="t_tit2">#3. 결과 </h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect04" frameborder="0"></iframe>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect04.html">원본 소스 보기</a>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect04.html">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- //sample02 -->
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

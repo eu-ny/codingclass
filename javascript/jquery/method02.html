@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 : 속성 메서드</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/gsap.html">gsap</a></li>
+                <li><a href="jquery.html">jquery</a></li>
+                <li><a href="basic.html">jquery 기본선택자</a></li>
+                <li><a href="property.html">jquery 속성선택자</a></li>
+                <li><a href="method01.html">jquery 클래스 메서드</a></li>
+                <li><a href="method02.html">jquery 속성 메서드</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Jquery : 속성 관련 메서드</h2>
+            <p class="t_desc">
+                이번 시간에는 자바스크립트의 jquery 속성 관련 메서드에 대해 알아보겠습니다.😆
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. jquery : attr() 메서드</h3>
+                <p class="t_desc">
+                    attr()메서드는 선택한 요소의 attribute(속성)를 선택, 생성, 변경할 수 있습니다.
+                </p>
+                <table class="t_table">
+                    <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 70%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">취득</td>
+                            <td>$("a").attr("href");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">생성 / 변경</td>
+                            <td>$("a").attr("href", "http://icoxpublish.com").attr("target", "_blank");</td>
+                        </tr>
+                        <tr>
+                            <td>$("a").attr({"href": "http://icoxpublish.com", target:"_blank"});</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">콜백 함수</td>
+                            <td>$("a").attr("href", function(index, h){<br>
+                                &nbsp;&nbsp;&nbsp;//index는 각 div 요소의 index 0,1,2 <br>
+                                &nbsp;&nbsp;&nbsp;//h는 각 a 요소 href 속성 <br>
+                                &nbsp;&nbsp;&nbsp;return attribute(속성) // 각 a 요소의 속성을 생성 및 변경한다. <br>
+                                });<br>
+                                ……<br>
+                                &lt;a href="http://www.daum.net" target="_blank" title="새창"&gt;다음&lt;/a&gt;<br>
+                                &lt;a href="http://www.daum.net" target="_blank" title="새창"&gt;네이버&lt;/a&gt;<br>
+                                &lt;a href="http://www.daum.net" target="_blank" title="새창"&gt;네이트&lt;/a&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ attr() 메서드 예제</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/OJZPbdb?default-tab=js%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/OJZPbdb">
+                    Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. jQuery : prop() 메서드</h3>
+                <p class="t_desc">
+                    attr()가 html attribute(속성)에 관련된 메서드라면 prop()는 자바스크립트 <i>property(프로퍼티)</i>에 관련된 메서드입니다.<br>
+                    prop() 메서드는 요소의 속성을 true, false로 제어할 수 있습니다.
+                </p>
+                
+                <h3 class="t_tit2">✏️ prop() 메서드 예제</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jquery" src="https://codepen.io/eu-ny/embed/LYmERmQ?default-tab=js%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/LYmERmQ">
+                    jquery</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+            </div>
+            <!-- //sample02 -->
+
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

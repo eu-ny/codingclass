@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML <em>레퍼런스 북</em></title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<!-- 휴지통 -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+
+<body>
+    <header id="header">
+        <h1><a href='#'>라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 이해은</span>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li class="active"><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+
+        </nav>
+        <div class="main_rafer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃03</h2>
+                <p class="t_desc">
+                    메인에 사이드와 아티클 3개가 들어간 구조
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCRivhLLSq7nlNlC0LEAhe5%2FUntitled%3Fnode-id%3D1%253A27" allowfullscreen></iframe>
+                </div>
+                <h3 class="t_tit2">float을 이용한 레이아웃 + 반응형</h3>
+                <p class="t_desc2">
+                    float은 본래 레이아웃의 용도가 아니었으나 마땅한 속성이 없어 사용하게되었다. 둥둥 뜨는 형태로 float 속성이 적용이 안된 blockbox는 float된 box 밑으로 들어가게 된다.<br>
+                    때문에 배치이동이 필요한 요소에 float을 이용하면 세로로만 배치되던 요소를 가로로 나란히 배치해줄 수 있다.
+                </p>
+                <p class="t_box">
+                    <strong>주 사용 속성</strong><br>
+                    float: left; - 요소를 위로 뜨게 하여 왼쪽으로 배치해주는 속성으로 자신이 갈 수 있는 가장 첫번째 왼쪽에 배치가 된다.<br>
+                    clear: both; - float을 한 요소아래로 다른 요소가 숨어버리는 버그를 잡아주는 역할의 속성 보통 footer와 같은 하단 요소에 스타일을 적용한다.
+                    clearfix : float으로 인한 영역 깨짐을 방지하기 위해 생긴 속성으로 깨진 영역에 대한 부모요소에게 clearfix 선택자를 선언해준다.
+                </p>
+                <p class="t_desc2">
+                    <strong>clearfix를 이용한 영역깨짐 방지</strong><br>
+                    1. 깨지는 영역에 clear:both를 설정한다.<br>
+                    2. 부모 박스 영역에 overflowf: hidden을 설정한다. - 애니메이션 효과가 적용되지 않는다.<br>
+                    3. clearfix를 설정한다. - 망가진 레이아웃 부모박스에 클래스로 이름을 설정해준다.<br>
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto; 
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    width: 100%;
+        }
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+    float: left;
+}
+#section {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+    float: left;
+
+}
+#article01 {
+    width: 70%;
+    height: 260px;
+    background-color: #03A9F4;
+    float: left;
+
+}
+#article02 {
+    width: 70%;
+    height: 260px;
+    background-color: #039BE5;
+    float: left;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #0288D1;
+}
+
+/* clearfix */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* mediaqurey */
+@media (max-width: 1220px){
+    #wrap {
+        width: 96%;
+    }
+    #article01 {
+        width: 35%;
+        height: 520px;
+    }
+    #article02 {
+        width: 35%;
+        height: 520px;
+    }
+}
+@media (max-width: 768px){
+    #wrap {
+        width: 100%;
+    }
+    #section {
+        width: 70%;
+        height: 390px;
+    }
+    #article01 {
+        width: 70%;
+        height: 390px;
+    }
+    #article02 {
+       display: none;
+    }
+    /* 레이아웃이 사라져야 할 땐 display: none을 사용해주어야 한다. */
+}
+@media (max-width: 480px){
+    #aside {
+        width: 100%;
+        height: 200px;
+    }
+    #section {
+        width: 100%;
+        height: 430px;
+    }
+    #article01 {
+        width: 100%;
+        height: 150px;
+    }
+}
+</pre></code>
+</div>
+
+                <h3 class="t_tit2">flex을 이용한 레이아웃 + 반응형</h3>
+                <p class="t_desc2">
+                    레이아웃의 배치를 위해 나오게 된 속성으로 배치하는 데 있어 간편하다.<br>
+                    float과 달리 배치가 필요한 각 요소에 적용하는 것이 아니라 그 요소들을 품고 있는 부모 요소에게 스타일을 선언해주어야 한다.<br>
+                    때문에 각 섹션과 구조를 잘 파악하여 부모 자식 관계에 대한 마크업을 잘 해주는 것이 중요하다. 
+                </p>
+                <p class="t_box">
+                    <strong>주 사용 속성</strong><br>
+                    display: flex; - display는 웹페이지에서 레이아웃 및 요소가 어떻게 보이는가를 선언해주는 속성으로 즉 해당 요소를 flex 스타일로 보이게 하는 속성<br>
+                    flex-wrap: wrap; - flex속성을 통해 배치한 요소가 잘 적용되도록 해주는 속성으로 적용하지 않을 경우 배치 적용이 되지 않는다.
+                </p>
+<div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto; 
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 780px;
+}
+#aside {
+    width: 30%;
+    height: 780px;
+    background-color: #4FC3F7;
+}
+#section {
+    width: 70%;
+    height: 260px;
+    background-color: #29B6F6;
+}
+#article1_01 {
+    width: 100%;
+    height: 260px;
+    background-color: #03A9F4;
+}
+#article1_02 {
+    width: 100%;
+    height: 260px;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}
+
+/* mediaqurey */
+@media (max-width: 1220px){
+    #wrap {
+        width: 96%;
+    }
+    #article1 {
+        display: flex;
+    }
+    #article1_01 {
+        width: 50%;
+        height: 520px;
+    }
+    #article1_02 {
+        width: 50%;
+        height: 520px;
+    }
+    /* 사이즈 별 레이아웃이 다르기 때문에 한번 더 세분화 시켜주는 것 */
+}
+@media (max-width: 768px){ 
+    #wrap {
+        width: 100%;
+    }
+    #section {
+        height: 390px;
+    }
+    #article1 {
+        display: flex;
+    }
+    #article1_01 {
+        width: 100%;
+        height: 390px;
+    }
+    #article1_02 {
+        display: none;
+    }
+}
+@media (max-width: 480px){
+    #aside {
+        width: 100%;
+        height: 200px;
+    }
+    #section {
+        width: 100%;
+        height: 430px;
+    }
+    #article1_01 {
+        height: 150px;
+    }
+}
+</pre></code>
+</div>
+
+                <h3 class="t_tit2">grid을 이용한 레이아웃 + 반응형</h3>
+                <p class="t_desc2">
+                    flex와 마찬가지로 부모 컨테이너에게 속성을 부여해준다.<br>
+                    하지만 grid는 flex와 다르게 2개 축을 모두 활용하여 격자(#) 위에 아이템을 배치하는 레이아웃 방식이다.<br>
+                    복잡한 구조의 웹을 구성하려면 grid 레이아웃 방법을 사용하는 것이 효율적이다.
+                </p>
+                <p class="t_box">
+                    주 사용 속성<br>
+                    display: gird; - 레이아웃 및 요소를 grid 스타일로 보이게 하는 속성<br>
+                    grid-template-areas - 레이아웃을 #과 같은 격자로 나누어서 구조를 나누어 주는 역할<br>
+                    grid-template-columns: ; - 격자로 나눈 요소의 가로 값을 정해주는 속성<br>
+                    grid-template-rows: ; - 격자로 나눈 요소의 세로 값을 정해주는 속성<br>
+                    grid-area: ; - 자식 컨테이너에게 부모에게 넣은 스타일이 적용될 수 있도록 이름을 부여해주는 속성
+                </p>
+<div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #E1F5FE;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto; 
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #B3E5FC;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #81D4FA;
+}
+#main {
+    display: grid;
+    grid-template-areas: 
+        "aside section"
+        "aside article01"
+        "aside article02"
+    ;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 260px 260px 260px;
+}
+#aside {
+    background-color: #4FC3F7;
+    grid-area: aside;
+}
+#section {
+    grid-area: section;
+
+    background-color: #29B6F6;
+}
+#article01 {
+    grid-area: article01;
+    background-color: #03A9F4;
+}
+#article02 {
+    grid-area: article02;
+    background-color: #039BE5;
+}
+#footer {
+    height: 100px;
+    background-color: #0288D1;
+}
+
+/* mediaqurey */
+@media (max-width: 1220px){
+    #wrap {
+        width: 96%;
+    }
+    #main {
+        grid-template-areas: 
+            "aside section section"
+            "aside article01 article02"
+            "aside article01 article02"
+        ;
+        grid-template-columns: 30% 35% 35%;
+        grid-template-rows: 260px 520px;
+    }
+}
+@media (max-width: 768px){ 
+    #wrap {
+        width: 100%;
+    }
+    #main {
+        grid-template-areas: 
+            "aside section"
+            "aside article01"
+        ;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 390px 390px;
+    }
+    #article02 {
+        display: none;
+    }
+}
+@media (max-width: 480px){
+    #main {
+        grid-template-areas: 
+        "aside"
+        "section"
+        "article01"
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: 200px 430px 150px; 
+    }
+}
+</pre></code>
+</div>
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="레이아웃03_6" src="https://codepen.io/eu-ny/embed/QWmMvoz?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+    See the Pen <a href="https://codepen.io/eu-ny/pen/QWmMvoz">
+    레이아웃03_6</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- /main -->
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

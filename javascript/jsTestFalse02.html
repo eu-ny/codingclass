@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+        }
+
+        hr {
+            margin: 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 16px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0;
+            ;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript Test05</h1>
+
+    <div id="sample1" class="sample">
+        <h2>01. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [1,1,3,3,0,0,1,1];
+
+    function solution(arr) {
+        return arr.filter((item, idx) => item !== arr[idx+1]);       // item 순서와 arr+1에서의 순서를 서로 나열했을 때 중복되는 값을 제거!
+    }                                                              
+    
+    console.log(solution(arr))      // 1,3,0,1
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample2" class="sample">
+        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = "webstoryboy";
+        
+    function solution(s) {
+        const answer = '';
+        return s.length % 2 == 1 ? s[s.length/2 | 0] : s.slice(s.length/2 - 1, s.length/2 + 1);    
+        // 삼항 연산자 문제로 문자열에서 가운데 값을 찾는 알고리즘!
+        // 문자열의 length값은 자릿수로 계산. 즉 s.length의 갯수는 11개이므로 11%2==1 이면 11 / 2 | 0(|은 또는 이라는 의미지만 배열에서 사용할 경우 두 수의 합을 구한다. 또한 값을 정수로 인식하기 때문에 5가 나오게 된다.)
+        //즉 5 | 5 번째 자리의 문자열을 출력
+    }
+    
+    console.log(solution(arr));    // o
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample3" class="sample">
+        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    function solution(numbers){
+        var answer = 0;
+        for(let i =0; i&lt;numbers.length; i++){
+            answer = answer + numbers[i]
+        }
+        answer = answer/numbers.length;
+        return answer;
+    }
+
+    console.log(solution(arr));
+    //평균을 구하는 문제로 for문을 통해 배열의 총합을 구하여 answer에 대입한 뒤 그 값을 배열의 자릿수로 나누는 식 입니다... 실수로 틀려버렸네요 ㅠㅠ
+    // 5.5  
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample4" class="sample">
+        <h2>06. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const num = "webstoryboy";
+
+    function solution(s) {
+        let answer;
+        let arr = [...s]        //펼침연산자로 새로운 배열을 만듭니다. [w,e,b,s,t,o,r,y,b,o,y]
+        if(arr.length % 2 == 0) {
+            answer = arr.splice(arr.length/2-1, 2);
+        } else {
+            answer = arr.splice(Math.floor(arr.length/2), 1); //answer에 splice로 삭제한 값을 저장한다. 
+        }
+        return answer.join(""); // 리턴값출력 "o"
+        //주의할 점.. 배열이기 때문에 0부터 시작하므로 5번째 자리는 t가 아닌 o이다...ㅜㅜ
+    }
+
+    console.log(solution(num)); //매개변수
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample5" class="sample">
+        <h2>08. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const num = [5, 9 ,7, 10];
+
+    function solution(arr) {
+        let sm = arr[0], index = 0;
+
+        for(i=0; i&lt;arr.length; i++){
+            if(arr[i] &lt; sm) {
+                sm = arr[i]; // if문에서 false가 나오므로 if문 식은 무시한다! 즉 index값은 그대로 0!
+                index = i;
+            }
+        }
+        arr.splice(index, 1); //splice(0, 1)이므로 0번째에서 1번째 자리를 제거. 이때 06번 문제와 달리 새로운 변수에 삭제한 값을 저장하지 않았으므로 리턴값은 해당 값을 제와한 나머지가 출력된다....ㅜㅜ
+        return arr; // [9,7,0]
+    }
+    console.log(solution(num))
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div class="document">
+        <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+            <iframe src="https://eu-ny.github.io/coding/javascript/jsTestFalse02.html" frameborder="0"></iframe>
+        </div>
+    </div>
+
+
+    <hr>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+
+    <!-- <script>
+        //03
+        {
+            function func(){
+                let a = [1,2,3,4,5,6,7,8,9];    //a의 값 중 2의 배수(짝수)일 때 cnt의 값이 1씩 증가된다.
+                cnt = 0;                        //만약 a[1]일 때 2%2==0이 성립되므로 cnt = 0+1 즉 1이 된다. 
+                for( i=0; i<a.length; i++){     //다시 a[3]일 때 4%2==0이 성립되므로 cnt = 1+1 즉 2가 된다. 
+                    if(a[i]%2 == 0){            //이렇게 반복하게 되면 값은 4가 나오게 된다.     
+                        cnt += 1;
+                    }
+                }
+                document.write(cnt)//정답 : 4
+            }
+            func();
+        }
+        document.write("<br>");
+        //06
+        {   
+            function func(){
+                let i = 0;  //for문에서는 초기값은 무조건 실행하고 그 뒤 조건에 맞을 때 마다 실행된다.
+                let j = 0;  //때문에 j값이 출력이 되면 i도 반복을 멈추게 된다. 여기서 j는 i가 8일 때 최종값이 나오므로 값은 36이 된다.
+
+                for(i=0; i<=8; i++){
+                    j += i;     //이 때 i는 j= 36 + 9 에서 반복이 멈추기 때문에 더이상 j값을 구하지 않고 종료된다. 때문에 i값은 9가 된다.
+                }
+                document.write(j + i) //정답은 36 + 9가 되므로 값은 45가 나오게 된다.
+            }
+            func();
+        }
+        document.write("<br>");
+        //09
+        {
+            //while문의 조건에서 a값이 10보다 작을 경우 a를 1씩 증가시키고 조건식에 들어간다. 
+            //즉 0123456789까지 while의 조건에 충족하므로 1씩 증가시켜 12345678910을 불러온다.
+            //이 값을 조건식에 대입한 뒤 홀수값을 제외(continue : 해당 조건의 값을 출력하지 않고 건너 뜀)한 나머지 값을 모두 합한다. (2+4+6+8+10)
+            //최종값 a가 10일 때 sum = 20 + 10이 되므로 정답은 30이 된다.
+            function func(){
+                let a=0;
+                let sum=0;
+                while(a<10){
+                    a++;
+                    if(a%2==1) continue;
+                    sum+=a
+                }
+                document.write(sum); //정답 : 30
+            }
+            func();
+        }
+        document.write("<br>");
+        //10
+        {
+            //while문에서 (0)은 false이기 때문에 조건식이 실행되지 않는다. 즉 초기값인 0이 정답이 된다.
+            function func(){
+                let a=0;
+                let sum=0;
+                while(0){
+                    a++;
+                    if(a%2==1) continue;
+                    sum+=a; 
+                }
+                document.write(sum); //정답 : 0
+            }
+            func();
+        }
+        document.write("<br>");
+        //11
+        {
+            //arrData에 arrSubject값을 저장한 뒤 그 길이만큼 반복시킨다.(4번반복)
+            // 1번 반복할 때 Number메서드를 통해 arrSubject의 문자열을 숫자로 변환시킨다.(arrSubject[0]==100)
+            // 즉 result의 값은 340
+            function test(arrData){
+                let result = 0;
+                for( let i=0; i<arrSubject.length; i++){
+                    result+=Number(arrSubject[i]);
+                }
+                let num = result;
+                return num;
+            }
+            let arrSubject = ["100","90","80","70"];
+            let result = test(arrSubject);
+
+            document.write(result); //정답 : 340
+        }
+        document.write("<br>");
+        //14
+        {
+            //매개변수를 통해 s에 str값 저장 후 함수 실행
+            //for of를 통해 x에 s값 저장 
+            //조건식 : 만약 x에서 문자열 w가 아닐 경우 #으로 변환 후 answer에 저장한다. (!= 아닌 경우 / == 맞을 경우)
+            //w가 맞다면 그대로 저장한다. 즉 정답은 w##########
+            function func(s){
+                let answer = "";
+                for(let x of s){
+                    if(x!='w') answer +='#';
+                    else answer += x;
+                }
+                return answer;
+            }
+            let str = "webstoryboy";
+            document.write(func(str)); // 정답 : w##########
+        }
+        document.write("<br>");
+        //15
+        {
+            //위와 마찬가지로 각각 매개변수를 저장
+            //만약 x에서 t가 아닐 경우 answer의 값이 1씩 증가.
+            //즉 t를 제외한 값의 갯수를 구하면 된다. websoryboy == 10
+            function func(s, t){
+                let answer = 0;
+                for(let x of s){
+                    if(x !== t) answer++;
+                }
+                return answer; //정답 : 10;
+            }
+            let str = "webstoryboy";
+            document.write(func(str, 't'));
+        }
+        document.write("<br>");
+        //16
+        {
+            //매개변수 사용
+            //만약 x가 대문자라면 소문자로 변환하여 answer에 저장
+            //대문자가 아닌경우 대문자로 변환하여 answer에 저장
+            //return을 사용하여 종료후 answer값 출력.
+            function func(s){
+                let answer = "";
+                for(let x of s){
+                    if( x === x.toUpperCase()){
+                        answer += x.toLowerCase();
+                    }else{
+                        answer += x.toUpperCase();
+                    }
+                }
+                return answer; //정답 : WEBsTORboy10
+            }
+            document.write(func("webStorBOY10"));
+        }
+        document.write("<br>");
+        //18
+        {
+            //매개변수 사용
+            //필터를 사용하여 요소 중 짝수인 경우 (divisor == 2) 새로운 배열로 반환한다.
+            //즉 div = [2, 4]가 되며 이때 div의 길이값이 0보다 클 때 참인 경우 배열을 오름차순으로 정렬 거짓인 경우 각 값에 -1을 해준다.
+            //2>0으로 참이기 때문에 오름차순으로 정렬. 즉 2, 4가 answer에 저장된다.
+            function solution(arr, divisor){
+                var answer = [];
+
+                const div = arr.filter(el => el % divisor == 0);
+                answer = div.length > 0 ? div.sort((a,b) => a-b) : [-1];
+                return answer; //정답 : 2, 4
+            }
+            document.write(solution([1,2,3,4,5], 2));
+        }
+        document.write("<br>");
+        //19
+        {
+            //매개변수 사용. 즉 n = 10이 된다. 
+            //i가 1일 때 i가 10보다 작은 경우 조건식 실행을 반복한다.
+            //이때 조건식이 10 % i ===1인 경우 리턴 즉 종료하기 때문에 나머지 값이 1이 나오는 i=3에서 종료하게 된다.
+            //i값을 호출했으므로 정답은 3이 된다.
+            function solution(n){
+                for( let i=1; i<n; i++){
+                    if(n%i===1) return i; //정답 : 3
+                }
+            }
+            document.write(solution(10));
+        }
+
+    </script>
+
+     -->
+
+    <script>
+        {
+            function func(e,i){
+                let answer;
+                n = 10
+
+                if(i>e) answer = e+i;
+                else answer = i-n*e;
+
+                return answer;
+            }
+            document.write(func(3,2));
+        }
+        document.write("<br>");
+        {
+            function func(s){
+                let answer = 0;
+                
+                for(x of s){
+                    if(x % 2==0) continue;
+                    answer++
+                }
+                return answer;
+
+            }
+            let num = [1,2,3,4,5,6,7]
+            document.write(func(num));
+        }
+        document.write("<br>");
+        {
+            let a = [1,2,3,4,5,6]
+            answer = 0;
+
+            for( x of a ){
+                if(x % 2 == 0){
+                    answer+=x;
+                }
+            }
+            document.write(answer);
+        }
+        document.write("<br>");
+        {
+            function func(){
+                let i = 0;
+                let j = 1;
+
+                for(i=3; i<=4; i++){
+                    j+=i;
+                }
+                document.write(j);
+            }
+            func();
+        }
+        document.write("<br>");
+        {
+            for(let i=0; i<3; i++){
+                for(let j=0; j<4; j++){
+                    document.write("*");
+                }
+                document.write(i,"<br>")
+            }
+        }
+        document.write("<br>");
+        {
+           let text = "Good Tomato";
+
+           let text2 = text.split(' ').join("#").slice(4);
+           document.write(text2);
+        }
+        document.write("<br>");
+        {
+            function num(a,b,c){
+                return ((a % b == 0) ? c-b : a-c) * 2
+            }
+            document.write(num(5,10,2));
+        }
+        document.write("<br>")
+        {
+            function func(){
+                let num = [1,2,2,4,5,6,8,2,10]
+                let count = 0;
+
+                for( i=0; i<num.length; i++){
+                    if(num[i] == 2){
+                        count+=1
+                    }
+                }
+                document.write(count);
+            }
+            func();
+        }
+        document.write("<br>")
+        {
+            function func(){
+                let num = [];
+
+                for(i=1; i<=12; i+=4){
+                    num+=i * 1;
+                }
+                document.write(num);
+            }
+            func();
+        }
+
+    </script>
+
+    </body>
+
+</html>

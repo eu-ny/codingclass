@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이미지 트렌지션 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="slider02.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">이미지 슬라이드 : 좌측으로 움직이기 </h2>
+            <p class="t_desc">
+               이번 시간에는 2초 지날 때마다 좌측으로 이미지가 바뀌는 슬라이드 형식의 페이지를 작업해보겠습니다.😀 
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    각 이미지마다 css설정을 주기 위해 따로 부모를 2번 감싸서 묶어줍니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;section id="sliderType02"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider"&gt;
+                    &lt;img src="../assets/img/Mountian_bg01.jpg" alt="이미지6"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider"&gt;
+                    &lt;img src="../assets/img/Mountian_bg02.jpg" alt="이미지7"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider"&gt;
+                    &lt;img src="../assets/img/Mountian_bg03.jpg" alt="이미지8"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider"&gt;
+                    &lt;img src="../assets/img/Mountian_bg04.jpg" alt="이미지9"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider"&gt;
+                    &lt;img src="../assets/img/Mountian_bg05.jpg" alt="이미지10"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    이미지를 가로로 연결하기 위해 포지션을 relative로 설정하고 영역에서 벗어나는 이미지를 안보이게 처리하기 위해 overflow: hidden을 설정해줍니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {  /* 이미지가 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+.slider__inner {/* 전체 이미지를 감싸고 있는 부모 : 움직이는 부분 속성주기 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 4000px;
+}
+.slider {   /* 개별적인 이미지 (각각의 이미지 설정) */
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+.slider:nth-child(1)::before {content: '이미지6';}
+.slider:nth-child(2)::before {content: '이미지7';}
+.slider:nth-child(3)::before {content: '이미지8';}
+.slider:nth-child(4)::before {content: '이미지9';}
+.slider:nth-child(5)::before {content: '이미지10';}
+/* 슬라이더가 포지션으로 고정되어 있기 때문에 위치 바꿔주기 */
+.slider:nth-child(1) {z-index: 5;}
+.slider:nth-child(2) {z-index: 4;}
+.slider:nth-child(3) {z-index: 3;}
+.slider:nth-child(4) {z-index: 2;}
+.slider:nth-child(5) {z-index: 1;}
+
+@media(max-width : 800px){
+    .slider__img {
+        width: 400px;
+        height: 250px;
+    }
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    <i>setInterval()</i>을 통해 스크립트를 완성해보자! <br>
+                    아래의 코드 속 주석과 함께 스크립트를 이해해보도록 합시다:)
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> 💡 전체 스크립트 보기</summary>
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">{
+    //선택자
+    const sliderWrap = document.querySelector(".slider__wrap"); 
+    const sliderImg = sliderWrap.querySelector(".slider__img");            //보여지는 영역
+    const sliderInner = sliderWrap.querySelector(".slider__inner");      //움직이는 영역
+    const slider = sliderWrap.querySelectorAll(".slider");                 //이미지
+
+    let currentIndex = 0;             //현재 이미지
+    let sliderCount = slider.length; //이미지 갯수
+
+    sliderInner.style.transition = "all 0.6s";  //이미지 슬라이드 애니메이션 효과
+
+    //sliderInner.style.transform += "translateX(0px)";         -800 * 0
+    //sliderInner.style.transform += "translateX(-800px)";      -800 * 1
+    //sliderInner.style.transform += "translateX(-1600px)";     -800 * 2
+    //sliderInner.style.transform += "translateX(-2400px)";     -800 * 3
+    //sliderInner.style.transform += "translateX(-3200px)";     -800 * 4 : 800은 이미지의 width값이다.        
+
+    // //이미지 움직이기 조건문 ver.
+    setInterval(()=> {
+        if(currentIndex &lt; slider.length -1){ //움직이는 영역인 sliderInner는 영역이 한개이기 때문에 각각의 이미지가 움직이도록 슬라이드의 총 길이를 식에 써주어야 한다.
+            //슬라이드의 길이가 4이고 currentIndex가 4보다 작을 때 하나씩 올리기 (인덱스라 0부터 세기 때문에 0~4 = 5개의 이미지가 되기 때문.)
+            currentIndex ++;
+            //아닌 경우 다시 0으로 돌아오도록 한다.
+        } else { 
+            currentIndex = 0;
+        }
+        //조건문을 통해 currentIndex가 마지막 이미지에서 처음 이미지로 다시 돌아오도록 설정해준 뒤 css속성을 사용하여 계속 반복되도록 설정한다.
+            sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
+    },2000);
+}
+
+{
+    //이미지 움직이기 나눗셈 ver. : 제일 효율적인 방법
+    const sliderInner = document.querySelector(".slider__inner");
+    const slider = document.querySelectorAll(".slider");
+    let currentIndex = 0;
+
+    sliderInner.style.transition = "all 0.6s";
+
+    setInterval(()=&gt; {
+        currentIndex = (currentIndex +1) % slider.length;
+
+        sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+    },2000);
+}
+
+{
+    //GASP : 웹 소스를 이용한 작업 : 간단 방법
+
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" //라이브러리
+
+    const slider = document.querySelectorAll(".slider");     
+    let currentIndex = 0;
+
+    setInterval(() =&gt; {
+        currentIndex = (currentIndex + 1) % slider.length;
+
+        gsap.to(".slider__inner", {
+                x : -800 * currentIndex
+        });
+    },2000);
+}
+
+{
+    //JQuery : 대부분의 퍼블리셔가 사용하는 방법이지만 비추. 제이쿼리의 사용성이 떨어지는 추세.
+
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" //라이브러리
+
+    let currentIndex = 0;
+
+        setInterval(() =&gt; {
+            currentIndex = (currentIndex + 1) % $(".slider").length;
+
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner").animate({ left : -800 * currentIndex }, 600);
+        },2000);
+}
+</code></pre>
+                    </div>
+                </details>
+                <h3 class="t_tit3">✏️ 스크립트 보기 : 자바스크립트</h3>
+                <p class="t_desc2">
+                    자바스크립트를 통해 작성한 스크립트 입니다.<br>
+                    1. 먼저 지금까지 했던 방식과 똑같이 스크립트에 필요한 선택자를 설정해주고 현재 보여야할 이미지에게 0을 부여하여 첫 순서가 되게 합니다.<br>
+                    2. 이미지를 부드럽게 넘어가게 하기 위해 스크립트로 css 속성인 transition = "all 0.6s"을 설정해줍니다. <br>
+                    3. setInterval()를 통해 slider.length(총 이미지 갯수)만큼 만 보이게 하고 4까지 갔을 때 다시 되돌아가도록 설정합니다. <br>
+                    4. 스크립트로 css의 transform 속성을 사용하여 2초마다 X축(translateX) 방향으로 -800px씩 이미지가 이동하게 해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">const sliderInner = document.querySelector(".slider__inner");
+const slider = document.querySelectorAll(".slider");
+
+let currentIndex = 0;
+
+        sliderInner.style.transition = "all 0.6s";
+
+        setInterval(()=> {
+            currentIndex = (currentIndex +1) % slider.length;
+
+            sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+        },2000);
+</code></pre>
+                </div>
+
+                <hr>
+
+                <h3 class="t_tit3">✏️ 스크립트 보기 : GSAP</h3>
+                <p class="t_desc2">
+                    GSAP 라이브러리를 사용한 스크립트로 자바스크립트보다 가독성이 좋고 간편합니다. 라이브러리 링크를 붙인 후 스타일 및 애니메이션을 쉽게 적용할 수 있습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js" //라이브러리
+
+const slider = document.querySelectorAll(".slider");     
+let currentIndex = 0;
+
+setInterval(() =&gt; {
+    currentIndex = (currentIndex + 1) % slider.length;
+
+    gsap.to(".slider__inner", {
+            x : -800 * currentIndex
+    });
+},2000);
+</code></pre>
+                </div>
+
+                <hr>
+
+                <h3 class="t_tit3">✏️ 스크립트 보기 : JQuery</h3>
+                <p class="t_desc2">
+                    제이쿼리 라이브러리를 사용하여 작성해줍니다. 자바스크립트보다 가독성은 좋지만 현재 사용성이 떨어지는 추세 입니다. <br>
+                    $()로 선택자 및 css 속성을 설정할 수 있습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" //라이브러리
+
+let currentIndex = 0;
+
+setInterval(() =&gt; {
+    currentIndex = (currentIndex + 1) % $(".slider").length;
+
+    $(".slider__inner").css("position", "relative");
+    $(".slider__inner").animate({ left : -800 * currentIndex }, 600);
+},2000);
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample04 -->
+
+            <hr />
+
+
+            <h3 class="t_tit2">#4. 결과 보기 </h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/sliderEffect02.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/javascript/effect/sliderEffect02.html">원본 페이지 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

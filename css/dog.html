@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS : 실습_01</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">SCSS 실습01 : 🐶 움직이는 강아지 🐶</h2>
+                <p class="t_desc2">
+                    이번 시간에는 css 종류 중 하나인 지난 시간에 배웠던 SCSS언어를 이용하여 간단한 실습을 해봅시다!<br />
+                </p>
+
+                <figure>
+                    <img src="https://user-images.githubusercontent.com/106949433/185771977-2a5dd184-b3ad-4d56-b662-00c03e617357.png" alt="dog" width="100%;">
+                </figure>
+
+                <hr>
+
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">🐶 HTML 🐶</h3>
+                    <p class="t_box">
+                        <strong>! point! </strong><br />
+                        부모자식형제 요소에 맞게 코드를 정렬해주는 것이 중요합니다! 코드를 짤 땐 항상 코드 정렬을 잊지 마세요!
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;div class="dog"&gt;
+    &lt;div class="dog-body"&gt;
+      &lt;div class="dog-tail"&gt;
+        &lt;div class="dog-tail"&gt;
+          &lt;div class="dog-tail"&gt;
+            &lt;div class="dog-tail"&gt;
+              &lt;div class="dog-tail"&gt;
+                &lt;div class="dog-tail"&gt;
+                  &lt;div class="dog-tail"&gt;
+                    &lt;div class="dog-tail"&gt;&lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dog-torso"&gt;&lt;/div&gt;
+    &lt;div class="dog-head"&gt;
+      &lt;div class="dog-ears"&gt;
+        &lt;div class="dog-ear"&gt;&lt;/div&gt;
+        &lt;div class="dog-ear"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="dog-eyes"&gt;
+        &lt;div class="dog-eye"&gt;&lt;/div&gt;
+        &lt;div class="dog-eye"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="dog-muzzle"&gt;
+        &lt;div class="dogtongue"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                 <div id="sample02" class="sample">
+                    <h3 class="t_tit2">🐶 SCSS 🐶</h3>
+                    <p class="t_desc">
+                        SCSS를 이용하여 스타일 속성을 정해줍니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-Scss">$dog-width: 100px;
+$interval: 200ms;
+$color-gray: #eaebec;
+$easing: ease-in-out;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body {
+    background: orange;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    position: relative;
+}
+
+// dog
+.dog {
+    width: $dog-width;
+    height: $dog-width;
+    z-index: 1;
+    
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: rgba(black, 0.03);
+        transform: translatey(-30%) scale(1.5);
+    }
+    
+    * {
+        position: absolute;
+    }
+}
+
+.dog-body, .dog-head, .dog-torso {
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+// dog-body
+.dog-body {
+    top: -50%;
+    box-shadow: inset 0 -15px 0 0 $color-gray;
+    animation: dog-body $interval $easing infinite alternate;
+    
+    &:before {
+        content:'';
+        position: absolute;
+        bottom: 90%;
+        right: 50%;
+        width: 90%;
+        height: 90%;
+        background: rgba(white, 0.4);
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 10%;
+    border-top-right-radius: 10%;
+    transform-origin: right bottom;
+    animation: dog-tail-blur $interval $interval / 6 $easing infinite alternate both; //숫자를 두번 적으면 딜레이
+    
+    @keyframes dog-tail-blur {
+        0% {
+        transform: rotate(0);
+        opacity: 0;
+        }
+        50% {
+        opacity: 1;
+        }
+        100% {
+        opacity: 0;
+        transform: rotate(90deg);
+        }
+    }
+    }
+    
+    @keyframes dog-body {
+    from {transform: translatex(-10%);} // 0%와 똑같이 시작을 의미한다.
+    to {transform: translatex(10%);}  //100%와 똑같이 마지막을 의미한다.
+    }
+}
+
+// dog-head
+.dog-head {
+    animation: dog-head $interval * 9 cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
+    
+    @keyframes dog-head {
+    0% {transform: rotate(45deg);}
+    33% {transform: rotate(-45deg);}
+    66% {transform: rotate(0deg);}
+    100% {transform: rotate(45deg);}
+    }
+}
+
+// dog-torso
+.dog-torso {
+    top: -20%;
+    background: white;
+    box-shadow: inset 0 -15px 0 0 $color-gray;
+    animation: dog-torso $interval $easing infinite alternate-reverse;
+    
+    @keyframes dog-torso {
+    0% {transform: translatex(-5%);}
+    100% {transform: translatex(5%);}
+    }
+}
+
+// dog-eyes
+.dog-eyes {
+    width: 60%;
+    top: 55%;
+    left: 20%;
+    z-index: 1;
+    
+    &:before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: orange;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: 0;
+    border: 4px solid white;
+    border-left-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    transform: rotate(-45deg);
+    }
+}
+.dog-eye {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+    z-index: 1;
+    
+    &:first-child {
+    left: 0;
+    }
+    &:last-child {
+    right: 0;
+    }
+}
+
+// dog-muzzle
+.dog-muzzle {
+    width: 60%;
+    left: 20%;
+    height: 50%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    bottom: -15%;
+    background: white;
+    
+    &:before, &:after {
+    content:'';
+    display: block;
+    position: absolute
+    }
+    
+    &:before {
+    width: 6px;
+    height: 20px;
+    bottom: 0;
+    background: $color-gray;
+    left: calc(50% - 3px);
+    }
+    
+    &:after {
+    background: black;
+    width: 20px;
+    height: 15px;
+    bottom: 12px;
+    left: calc(50% - 10px);
+    border-bottom-left-radius: 60% 60%;
+    border-bottom-right-radius: 60% 60%;
+    border-top-left-radius: 50% 40%;
+    border-top-right-radius: 50% 40%;
+    }
+}
+
+// dog-ears
+.dog-ears {
+    width: 40%;
+    top: 25%;
+    left: 30%;
+    
+}
+.dog-ear {
+    bottom: -10px;
+    height: 50px;
+    width: 50px;
+    background: pink;
+    
+    &:first-child {
+    right: 100%;
+    border-bottom-left-radius: 80%;
+    border-top-right-radius: 80%;
+    box-shadow: inset -15px 15px 0 1px white;
+    transform: rotate(10deg);
+    }
+    &:last-child {
+    left: 100%;
+    border-bottom-right-radius: 80%;
+    border-top-left-radius: 80%;
+    box-shadow: inset 15px 15px 0 0 white;
+    transform: rotate(-10deg);
+    }
+}
+
+// dogtongue
+.dogtongue {
+    width: 40%;
+    height: 100%;
+    left: calc(50% - 20px);
+    z-index: -1;
+    transform-origin: center top;
+    
+    &:before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background: #fd3163;
+    animation: dog-tongue-inner $interval / 2 $easing infinite alternate;
+    
+    @keyframes dog-tongue-inner {
+        from {transform: translatey(5%);}
+        to {transform: translatey(22%);}
+    }
+    }
+}
+
+// dog-tail
+.dog-tail {
+    $tail-width: 22px;
+    width: $tail-width;
+    height: $tail-width * 1.1;
+    background: white;
+    bottom: 40%;
+    border-radius: $tail-width / 2; //bdrs
+    left: calc(50% - #{$tail-width / 2});
+    transform-origin: center bottom;
+    
+    .dog-tail {
+        animation: dog-tail-segment $interval $easing infinite alternate;
+
+        @keyframes dog-tail-segment {
+        0% {transform: rotate(-10deg);}
+        100% {transform: rotate(10deg);}
+        }
+    }
+}
+
+.dog-body > .dog-tail {
+    bottom: 90%;
+}
+</code></pre>
+                    </div>
+                    <details>
+                        <summary>✏️ CSS 문법으로 보기</summary>
+                            <div class="t_code">
+<pre><code class="language-css">body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+html, body {
+  background: orange;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.dog {
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+.dog:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.03);
+  transform: translatey(-30%) scale(1.5);
+}
+.dog * {
+  position: absolute;
+}
+
+.dog-body, .dog-head, .dog-torso {
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.dog-body {
+  top: -50%;
+  box-shadow: inset 0 -15px 0 0 #eaebec;
+  animation: dog-body 200ms ease-in-out infinite alternate;
+}
+.dog-body:before {
+  content: "";
+  position: absolute;
+  bottom: 90%;
+  right: 50%;
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.4);
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 10%;
+  border-top-right-radius: 10%;
+  transform-origin: right bottom;
+  animation: dog-tail-blur 200ms 33.3333333333ms ease-in-out infinite alternate both;
+}
+@keyframes dog-tail-blur {
+  0% {
+    transform: rotate(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+@keyframes dog-body {
+  from {
+    transform: translatex(-10%);
+  }
+  to {
+    transform: translatex(10%);
+  }
+}
+
+.dog-head {
+  animation: dog-head 1800ms cubic-bezier(0.11, 0.79, 0, 0.99) infinite;
+}
+@keyframes dog-head {
+  0% {
+    transform: rotate(45deg);
+  }
+  33% {
+    transform: rotate(-45deg);
+  }
+  66% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+.dog-torso {
+  top: -20%;
+  background: white;
+  box-shadow: inset 0 -15px 0 0 #eaebec;
+  animation: dog-torso 200ms ease-in-out infinite alternate-reverse;
+}
+@keyframes dog-torso {
+  0% {
+    transform: translatex(-5%);
+  }
+  100% {
+    transform: translatex(5%);
+  }
+}
+
+.dog-eyes {
+  width: 60%;
+  top: 55%;
+  left: 20%;
+  z-index: 1;
+}
+.dog-eyes:before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: orange;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 0;
+  border: 4px solid white;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  border-top-width: 0;
+  transform: rotate(-45deg);
+}
+
+.dog-eye {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  z-index: 1;
+}
+.dog-eye:first-child {
+  left: 0;
+}
+.dog-eye:last-child {
+  right: 0;
+}
+
+.dog-muzzle {
+  width: 60%;
+  left: 20%;
+  height: 50%;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  bottom: -15%;
+  background: white;
+}
+.dog-muzzle:before, .dog-muzzle:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.dog-muzzle:before {
+  width: 6px;
+  height: 20px;
+  bottom: 0;
+  background: #eaebec;
+  left: calc(50% - 3px);
+}
+.dog-muzzle:after {
+  background: black;
+  width: 20px;
+  height: 15px;
+  bottom: 12px;
+  left: calc(50% - 10px);
+  border-bottom-left-radius: 60% 60%;
+  border-bottom-right-radius: 60% 60%;
+  border-top-left-radius: 50% 40%;
+  border-top-right-radius: 50% 40%;
+}
+
+.dog-ears {
+  width: 40%;
+  top: 25%;
+  left: 30%;
+}
+
+.dog-ear {
+  bottom: -10px;
+  height: 50px;
+  width: 50px;
+  background: pink;
+}
+.dog-ear:first-child {
+  right: 100%;
+  border-bottom-left-radius: 80%;
+  border-top-right-radius: 80%;
+  box-shadow: inset -15px 15px 0 1px white;
+  transform: rotate(10deg);
+}
+.dog-ear:last-child {
+  left: 100%;
+  border-bottom-right-radius: 80%;
+  border-top-left-radius: 80%;
+  box-shadow: inset 15px 15px 0 0 white;
+  transform: rotate(-10deg);
+}
+
+.dogtongue {
+  width: 40%;
+  height: 100%;
+  left: calc(50% - 20px);
+  z-index: -1;
+  transform-origin: center top;
+}
+.dogtongue:before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background: #fd3163;
+  animation: dog-tongue-inner 100ms ease-in-out infinite alternate;
+}
+@keyframes dog-tongue-inner {
+  from {
+    transform: translatey(5%);
+  }
+  to {
+    transform: translatey(22%);
+  }
+}
+
+.dog-tail {
+  width: 22px;
+  height: 24.2px;
+  background: white;
+  bottom: 40%;
+  border-radius: 11px;
+  left: calc(50% - 11px);
+  transform-origin: center bottom;
+}
+.dog-tail .dog-tail {
+  animation: dog-tail-segment 200ms ease-in-out infinite alternate;
+}
+@keyframes dog-tail-segment {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.dog-body > .dog-tail {
+  bottom: 90%;
+}
+</code></pre>
+                            </div>
+                    </details>
+                    <p class="t_box">
+                        <strong>! point! </strong><br />
+                        가상요소와 애니메이션 속성을 잘 사용하는 것이 중요합니다! 각 어떤 효과의 속성인지 잘 알아두세요!
+                    </p>
+                </div>
+                <!-- //sample02 -->
+
+
+                <hr>
+
+                <h3 class="t_tit2">🐶 실습 결과 보기 🐶</h3>
+                <p class="t_desc"><strong>! 결과 보기 전 ! </strong>아래의 html 코드는 Pug문이므로 HTML문법은 위의 코드를 참고하시기 바랍니다!</p>
+                <iframe height="600" style="width: 100%;" scrolling="no" title="CSS_DOG" src="https://codepen.io/eu-ny/embed/WNzLZdR?default-tab=css%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/eu-ny/pen/WNzLZdR">
+                  CSS_DOG</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

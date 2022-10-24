@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+                <li><a href="image01.html">이미지01</a></li>
+                <li class="active"><a href="image02.html">이미지02</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">Image Type02</h2>
+            <p class="t_desc">
+               이번 이미지 유형에서는 애니메이션과 블러 효과를 주어서 더 동적인 페이지를 실습해보겠습니다!<br />
+            </p>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    이미지 유형의 가장 기초적인 레이아웃으로 이미지 박스 안에 텍스트와 링크 박스가 들어가 있는 구조입니다.
+                </p>
+                <div class="t_desc2">
+                    <strong>TIP !</strong>
+                    여백은 10단위로 해주어서 좀 더 효율적으로 작업할 수 있게 합니다:)
+                </div>
+                <h3 class="t_tit3">🎨 그리드와 레이아웃</h3>
+                <img src="https://user-images.githubusercontent.com/106949433/185223557-deeb8211-c70e-431b-8a15-100cd39231be.jpg" alt="site__layout">
+                <h3 class="t_tit3">🎨 완성본</h3>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D564%253A224" allowfullscreen></iframe>  
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
+                <p class="t_desc">
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! TIP !</strong>
+                    이번 유형은 백그라운드에 이미지를 삽입하면 따로 애니메이션과 같은 효과를 주기 어렵기 때문에 img태그를 사용하여 이미지를 삽입하여 작업합니다:)<br />
+                    지난 시간에 작업한 이미지 유형01에서 공통 속성을 사용할 수 있도록 섹션에 섹션 선택자를 붙여줍니다.
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-html">&lt;section id="imageType01" class="image__wrap Nexon section"&gt;
+    &lt;h2&gt;딩동댕 멍멍유치원&lt;/h2&gt;
+    &lt;p&gt;🐾🐶 강아지를 좋아하는 사람들을 위한 멍멍 리스트 입니다. 🐶🐾&lt;/p&gt;
+    &lt;div class="image__inner container"&gt;
+        &lt;article class="image img1"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg02_01.jpg" alt="dog"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;애니멀 2기 이댕댕&lt;/h3&gt;
+                &lt;a href="#" title="자세히 보기" class="more"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img2"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg02_02.jpg" alt="dog"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;애니멀 2기 오댕댕&lt;/h3&gt;
+                &lt;a href="#" title="자세히 보기" class="more"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image img3"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg02_03.jpg" alt="dog"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;애니멀 2기 김댕댕&lt;/h3&gt;
+                &lt;a href="#" title="자세히 보기" class="more"&gt;자세히 보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</pre></code>
+                </div>
+
+                <div class="t_box">
+                    <strong>! html 주의사항 !</strong><br />
+                    • img태그의 속성 중 <i>alt안에 이미지에 대한 설명</i>을 넣어줘야 시각 및 청각 장애인들도 스크린리더기를 통해 이해 가능<br />
+                    • 섹션과 아티클 태그에는 꼭 제목 태그를 자식 요소로 넣어 주어서 웹표준과 웹 접근성, 호환성을 놓치지 않도록 하자!<br />
+                    • a 태그에게 title 속성을 부여해주어야 한다.<br />
+                    • img태그를 사용할 때는 꼭 figure 태그를 선언해주어야 한다.
+                </div>
+
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 : 스타일 적용하기 &gt;</h3>
+                <p class="t_desc">
+                    속성을 지정할 때는 디자인 시안을 참고하면서 html와 번갈아가며 <i>큰 덩어리 부터 스타일을 적용</i>시켜 나가는 것이 중요합니다.<br />
+                    transition, transform, backdrop-filter를 통해 동적인 스타일 속성을 주도록 합시다! <br />
+                    속성에 대한 내용은 코드와 주석을 참고하시면 됩니다:)
+                </p>
+                <p class="t_desc2">
+                    <strong>TIP !</strong><br />
+                    1. 먼저 전체 초기화(Reset)와 폰트 디폴트 설정을 해주는 것이 좋다. <br />
+                    2. 컨테이너 설정을 통해 사이트의 크기와 여백을 설정해준 뒤 메인 콘텐츠인 섹션에게 스타일을 적용시킨다. : 이렇게 컨테이너로 작업하게 되면 더 효율적으로 속성을 적용시킬 수 있게 된다.<br />
+                    3. :hover 속성을 통해 커서가 해당 요소에 닿았을 때의 동적 효과를 주도록 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">/@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+/* font */
+.gmark {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* common : 공통 요소(재활용) */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.section {
+    padding: 120px 0;
+}
+.section>h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.section>p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #666;
+}
+
+/* imageType */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    width: 32%;
+    position: relative;
+    overflow: hidden;   /* 영역 밖 요소 숨기기 */
+}
+.image__box img {
+    vertical-align: top; /* 수직 정렬 */
+    height: 100%;
+}
+.image__desc {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);    /* 블러 효과 */
+    padding: 23px 20px;
+    bottom: -100px;
+    transition: all 0.3s ease-in-out;    /* 움직임 속도 효과 : 전체를 0.3초 동안 천천-보통-천천 순으로 움직이게 하기 */
+}
+.image:hover .image__desc {      /* 커서를 갖다 대었을 때 desc가 위로 올라오도록 설정 : 요소 안에 들어오기 때문에 오버플로우 히든 속성을 받지 않음*/
+    bottom: 0;     
+}
+.image:hover .image__box img {
+    transition: all 0.6s ease-in-out;    /* 움직임 속도 설정 */
+    transform: scale(1.05);      /* 이미지를 확대 시키기 */
+}
+.image__desc .image__title {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* desc 색상 */
+.img1 .image__desc {
+    background: rgba(255, 171, 3, 0.25);
+}
+.img2 .image__desc {
+    background: rgba(205, 94, 36, 0.1);
+}
+.img3 .image__desc {
+    background: rgba(198, 140, 153, 0.1);
+}
+.img1 .image__desc .image__title {
+    color: rgba(60, 32, 0);
+}
+.img2 .image__desc .image__title {
+    color: rgba(96, 33, 6);
+}
+.img3 .image__desc .image__title {
+    color: rgba(111, 33, 66);
+}
+.img1 .image__desc .more {
+    color: rgba(60, 32, 0);
+}
+.img2 .image__desc .more {
+    color: rgba(96, 33, 6);
+}
+.img3 .image__desc .more {
+    color: rgba(111, 33, 66);
+}
+
+
+.image__desc .more {
+    font-size: 16px;
+}
+.image__desc .more:hover {   /* 커서가 닿으면 밑줄 생기게 하기 */
+    text-decoration: underline; 
+}
+</pre></code>
+                </div>
+                <p class="t_box">
+                    <strong>! Css 속성 알아가기 !</strong><br />
+                    transition : 움직임 속도 설정 <br />
+                    transform : 요소의 모양, 크기, 위치 등을 자유롭게 변경 <br />
+                    backdrop-filter : 배경에 그래픽 효과를 설정 (배경에 투명도가 있어야 효과를 확인할 수 있다.)
+                </p>
+
+            </div>
+            <!-- //css -->
+
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/imageType/imageType02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/imageType/imageType02.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/imageType/imageType02.html">원본 페이지 보기</a>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

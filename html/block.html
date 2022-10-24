@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li class="active"><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+    </main>
+    <!-- //header -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">블록(block) 구조 / 인라인 구조(inline)</h2>
+            <p class="t_desc">
+                블록 구조와 인라인 구조는 요소의 종류라고 볼 수 있습니다. 블록 구조는 박스, 인라인 구조는 텍스트 형식이라고 쉽게 생각하시면 됩니다.😆 <br />
+                또한 태그의 종류에 따라 기본적으로 블록과 인라인 구조가 설정되어 있으며 css 속성인 display를 통해 임의적으로 바꿔줄 수도 있습니다.<br />
+                그럼 아래에서 더 자세히 알아보겠습니다!
+            </p>
+            <p class="t_box">
+                <strong>! 자투리 지식 !</strong><br />
+                요소 =  &lt;p&gt; 이것은 요소 입니다. &lt;/p&gt;<br />
+                즉  &lt;시작 태그&gt;&lt;/닫는 태그&gt;로 한 쌍이 되었을 때 요소라 볼 수 있습니다.
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit">#1. 블록(block) 구조 🧱</h3>
+                <p class="t_desc2">
+                    블록 구조란 일반적으로 <i>줄바꿈</i>이 일어나는 형태로 요소가 가로로 정렬되지 않습니다. 즉 전체 가로가 1000px, 블록 구조인 요소의 가로가 400px이라고 가정했을 때 가로 여백이 600px남았어도 줄바꿈은 일어납니다! 
+                    또한 블록 구조는 영역을 표시하기 때문에 <i>패딩과 마진 값</i>을 줄 수 있으며, <i>텍스트, 인라인 요소, 블럭 요소</i>(예외도 존재!)도 모두 포함이 가능합니다. 때문에 블럭 구조는 하나의 <i>박스와 같은 형태</i>라고 볼 수 있습니다.
+                </p>
+
+                <h3 class="t_tit2">블록 구조의 대표적 태그들</h3>
+                <p class="t_box">
+                    div, p, h1~h6, ul, li, ol, table
+                </p>
+
+                <h3 class="t_tit2">! 예시 !</h3>
+                <img src="https://user-images.githubusercontent.com/106949433/185810060-3aa65692-cbd9-466c-bbc6-fb48d8a07c77.jpg" alt="block">
+
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit">#2. 인라인(inline) 구조 📝</h3>
+                <p class="t_desc2">
+                    인라인 구조란 블록 구조와는 달리 줄바꿈이 일어나지 않으며 요소가 가로로 정렬되는 형태입니다. 즉 텍스트처럼 <i>옆으로 나열되는 형태</i>라 볼 수 있습니다. 만약 본문이 1000px인데 인라인 요소의 총합이 1200px이라고 하면 자동으로 줄바꿈을 선언합니다.
+                    인라인 구조는 패딩과 마진값을 설정할 수 없으며 css에서 속성 display(inline block)를 따로 선언해주어야 설정이 가능해집니다. 또한 인라인 구조는 <i>텍스트와 인라인 요소만 포함 가능</i>하며 블록 구조를 포함할 수 없습니다.
+                </p>
+
+                <h3 class="t_tit2">인라인 구조의 대표적 태그들</h3>
+                <p class="t_box">
+                    span, a, em, i, strong
+                </p>
+
+                <h3 class="t_tit2">! 예시 !</h3>
+                <img src="https://user-images.githubusercontent.com/106949433/185810044-e688fb07-9ec8-4550-890d-e5de700c8d3c.jpg" alt="inline">
+
+            </div>
+            <!-- //sample02 -->
+
+
+
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+</body>
+</html>

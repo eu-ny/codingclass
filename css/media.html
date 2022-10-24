@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS : 미디어쿼리</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">기본문법</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS: 미디어쿼리란?</h2>
+                <p class="t_desc2">
+                    해상도에 따라 css를 분기시키기 때문에 반응형 프로젝트에서 반드시 필요한 기법입니다!
+                </p>
+
+                <hr>
+
+                <div class="main_sample">
+                    <div id="sample01" class="sample">
+                        <h3 class="t_tit2">#1. &lt;link ~ media=" "&gt;</h3>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;link rel="stylesheet" media="all and (min-width: 1000px)" href="style_pc.css"&gt;
+</code></pre>
+                        </div>
+                        <p class="t_box">
+                            <strong>!point!</strong>
+                            위 코드는 최소 가로폭 1000px, 즉 1000px 보다 넓은 해상도일 때 style_pc.css를 연결한다는 뜻입니다! <br />
+                            또한 크롬 개발자 도구를 통해 각 기기마다의 해상도에 따른 예시를 볼 수 있습니다.
+                        </p>
+                        <h3 class="t_tit3">해상도 평균 사이즈 표</h3>
+                        <table class="t_table">
+                            <colgroup>
+                                <col style="width: 60%"> 
+                                <col style="width: 40%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>기기</th>
+                                    <th>가로</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="ce">데스크탑</td>
+                                    <td>1920</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">테블릿pc</td>
+                                    <td>768</td>
+                                </tr>
+                                <tr>
+                                    <td class="ce">모바일</td>
+                                    <td>480</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //sample01 -->
+
+                <hr>
+
+                <div id="samle02" class="sample">
+                    <h3 class="t_tit2">#2. @media</h3>
+                    <p class="t_desc2">
+                        첫 로딩 때 성능이 저하되지 않도록 CSS 파일을 하나로 만들어서 CSS 내부에서 조건에 따라 분기시키는 것이 일반적인 형태의 반응형웹 CSS입니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">@media all and (min-width: 1000px) {
+    /* 모든 기기에서 해상도가 최소 1000px 인 경우 적용할 속성들을 적으면 됩니다. */
+}
+</pre></code>
+                    </div>
+                    <h3 class="t_tit2">미디어 타입 종류</h3>
+                    <table class="t_table">
+                        <colgroup>
+                            <col style="width: 40%"> 
+                            <col style="width: 60%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Media Type</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ce">all</td>
+                                <td>모든 미디어 장치에 사용 (기본값)</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">print</td>
+                                <td>프린터에 사용</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">screen</td>
+                                <td>PC, 태블릿, 스마트폰에 사용</td>
+                            </tr>
+                            <tr>
+                                <td class="ce">speech</td>
+                                <td>스크린리더기가 페이지를 읽는데 사용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="t_box">
+                        <strong>!point!</strong>
+                        and 양 옆에 띄어쓰기를 꼭 해주어야 한다!
+                    </p>
+                    <h2 class="t_tit3">코드 예제</h2>
+                    <div class="t_code">
+<pre><code class="language-css">body {
+    color: red;    
+}
+
+@media only screen and (max-width:768px) {
+    body {
+        color: blue;
+    }
+}
+</pre></code>
+                    </div>
+                    <p class="t_box">
+                        원래 해상도(pc)해서는 글자 색상이 red이지만 해상도가 768px보다 작아졌을 때(모바일, 태블릿) 글자 색상을 blue로 지정하겠다는 의미 입니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">@media only screen and (oreientation: portrait) {
+    body {
+        background: skyblue;
+    }
+}
+</pre></code>
+                    </div>
+                    <p class="t_box">
+                        모바일 기기가 세로 방향이 되면, 배경색을 하늘색으로 설정하겠다는 뜻입니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">@media only screen and (oreientation: landscape) {
+    body {
+        background: lightgreen;
+    }
+}
+</pre></code>
+                    </div>
+                    <p class="t_box">
+                        모바일 기기가 가로 방향이 되면, 배경색을 연두색으로 설정하겠다는 뜻입니다.
+                    </p>
+                </div>
+                <!-- //sample02 -->
+
+               <hr>
+                
+                <div id="samle03" class="sample">
+                    <h3 class="t_tit2">#3. 미디어쿼리 실습하기</h3>
+                    <p class="t_desc">
+                        지금까지의 개념을 바탕으로 1280px, 1024px, 768px로 미디어 쿼리 실습을 해보겠습니다!
+                    </p>
+
+                    <h3 class="t_tit3">결과보기</h3>
+                    <iframe height="400" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/dymQYPX?default-tab=html%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/eu-ny/pen/dymQYPX">
+                        Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                      </iframe>
+    
+
+                </div>
+                <!-- //sample03 -->
+    
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/semantic/media.html">원본 소스 보기</a>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/semantic/media.html">원본 페이지 보기</a>
+                </div>
+
+            </div>
+            </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

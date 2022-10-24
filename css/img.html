@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS : 벡터와 비트맵</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="media.html">Media</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">벡터와 비트맵</h2>
+                <p class="t_desc2">
+                    백터와 비트맵은 이미지를 표현하는 방식으로 서로 상반된 방식으로 이미지를 표현합니다.<br />
+                    지금 부터 벡터와 비트맵에 대해 알아보겠습니다!
+                </p>
+
+                <hr>
+
+                <div>
+                    <h3 class="t_tit2">#1. 비트맵(Bitmap) 방식</h3>
+                    <div class="t_desc2">
+                        각 픽셀에 저장된 비트 정보가 집합된 것입니다. 비트맵은 벡터와 다르게 픽셀의 점 하나하나가 이미지를 이루는 요소이기 때문에 벡터보다 정교한 이미지 표현이 가능합니다. 
+                    </div>
+                    <img src="https://user-images.githubusercontent.com/106949433/183765005-6a6ba5f7-8076-4d1d-90db-f48c1b4dacd9.png"
+                        alt="Bitmap" width="300px;">
+                    <p class="t_desc">
+                        <strong>! 특징정리 !</strong><br />
+                        • 비트맵 방식은 <i>색상 정보가 담긴 픽셀</i> 하나 하나가 모여 만들어지는 방식으로 보다 정교한 이미지 표현이 가능하다.<br />
+                        <br />
+                        • 디스플레이는 픽셀의 배열로 구성되어 있으며 픽셀의 <i>배열, 숫자, 비율</i>이 디스플레이의 해상도를 결정한다고 볼 수 있다.<br />
+                        &nbsp;&nbsp;예를 들어서 1920x1080디스플레이가 있다면 이는 가로 1920개 세로 1080개의 픽셀로 구성되어 있는 것!<br />
+                        <br />
+                        • 픽셀 수가 많아질 수록 화질은 좋아지지만 용량도 같이 커지기 때문에 처리속도가 느리다.<br />
+                        <br />
+                        • 픽셀은 사각형태이기 때문에 확대하게 되면 기존에 이루고 있던 픽셀의 수가 변하면서 이미지에 <i>'계단현상'</i> 및 <i>'깨짐현상'</i>이 나타나게 된다.<br />
+                        <br />
+                        • 이미지 편집 및 보정에 있어 가장 많이 사용되며 만약 벡터 기반의 이미지를 불러왔을 때, 수정을 위해 비트맵화 시키는 것을 레스터(=비트맵)화 한다고 부른다.
+                    </p>
+                    <div class="t_box">
+                        <strong>비트맵의 확장자 !</strong>
+                        JPEG, PNG, GIF, BMP
+                    </div>
+                </div>
+                <!-- //벡터 -->
+
+                <hr>
+
+                <div>
+                    <h3 class="t_tit2">#2. 벡터(Vector) 방식</h3>
+                    <div class="t_desc2">
+                        점과 점을 연결함으로써 수학적 함수관계에 의해 이미지를 표현하여 선과 면을 만들어냅니다. 이렇게 만들어진 선이 weight 값과 색상 값, 곡률값을 갖거나 면이 색상 값을 가지게 되고 값을 가진 점, 선, 면의 요소들이 모여 그래픽을 만들게 됩니다.
+                    </div>
+                    <div class="t_box">
+                        좌 : 벡터  /  우 : 비트맵
+                    </div>
+                    <img width="100%;" height="600px;" alt="img_bg01" src="https://user-images.githubusercontent.com/106949433/183771212-3d4b85cb-7a0d-4e88-85bb-58989cf8aefb.png">
+                    <p class="t_desc">
+                        <strong>! 특징정리 !</strong><br />
+                        • 벡터방식은 비트맵과는 다르게 이미지를 수학적인 공식으로 표현하는 방식이다. 즉 점, 선, 면이라는 수학적 함수 관계의 그래픽 요소가 모여 벡터 이미지를 표현하는
+                        것이다.<br />
+                        <br />
+                        • 점과 점을 연결해 선을 만들 수 있고, 선이 모여 면이 만들어 진다. 이렇게 만들어진 선은 두께, 색상, 곡률 값을 갖게 되고, 면은 색상 값을 가지게 된다.<br />
+                        <br />
+                        • 벡터 방식의 그래픽은 고정된 비트맵을 가지고 있는 것이 아니라, 수학적 공식으로 이루어진 오브젝트들이 그때 그때 디스플레이에 비트맵화 되어 스크립에 표시되는
+                        것이다.<br />
+                        <br />
+                        • 벡터의 점은 좌표계(x,y)로 구성되기 때문에 이미지의 크기 조절이나 변형 때문에 해상도가 깨지지 않는다. 때문에 이미지 변형에 있어 자유롭다.<br />
+                        <br />
+                        • 주로 이미지(사진)를 표현하는 비트맵과 달리 벡터는 로고나 서체(텍스트)를 표현하는 데 주로 사용된다. <br />
+                    </p>
+                    <div class="t_box">
+                        <strong>벡터의 확장자 !</strong>
+                        AI, SVG, VML, EPS, PDF
+                    </div>
+                </div>
+                <!-- //벡터 -->
+
+                <hr>
+
+
+                <div>
+                    <h3 class="t_tit2">벡터방식과 비트맵 방식 비교</h3>
+                    <div class="t_desc">
+                        사진 이미지 보정 및 편집 제작은 비트맵, 로고나 서체, 캐릭터 등 다양한 곳에서 응용되어야 하는 그래픽은 벡터를 사용합니다. <br />
+                        작업물의 형식에 따라 더 효율적인 방식을 선택하여 사용해세요!
+                    </div>
+                    <div class="table">
+                        <table class="t_table">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>비트맵(Bitmap)</th>
+                                    <th>벡터(Vector)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>확대 및 변형</td>
+                                    <td>이미지 품질 손상 및 계단 현상</td>
+                                    <td>뚜렷한 외각선, 손상 없음</td>
+                                </tr>
+                                <tr>
+                                    <td>장점</td>
+                                    <td>
+                                        풍부한 색감 표현과 사실적인 표현 가능
+                                    </td>
+                                    <td>선명한 표현, 효과적인 응용 작업</td>
+                                </tr>
+                                <tr>
+                                    <td>단점</td>
+                                    <td> 이미지 확대, 축소로 인한 손상(계단&깨짐현상)</td>
+                                    <td>사진과 같은 이미지의 정교한 작업의 한계</td>
+                                </tr>
+                                <tr>
+                                    <td>확장자</td>
+                                    <td>JPEG, PNG, GIF, BMP</td>
+                                    <td>AI, SVG, VML, EPS, PDF</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //벡터 -->
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

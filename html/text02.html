@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+                <li><a href="text01.html">텍스트01</a></li>
+                <li class="active"><a href="text02.html">텍스트02</a></li>
+                <li><a href="text03.html">텍스트03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">TextType02</h2>
+            <p class="t_desc">
+               웹페이지 실습을 위한 텍스트 유형을 실습해보겠습니다! 이번 유형은 보통 텍스트로만 정보를 제공하고자 할 때 사용합니다.<br>
+               그럼 아래의 코드를 보며 함께 실습 해보겠습니다 😆
+            </p>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    이번 유형은 이미지가 들어가지 않고 대신 아이콘이 들어가게 됩니다. 텍스르로만 이루어진 만큼 더 신경써서 작업해줍니다!
+                </p>
+                <img src="https://user-images.githubusercontent.com/106949433/187702693-5a64333c-39ef-49cf-95eb-8ecdf0e79a8e.png" alt="site__layout">
+                <p class="t_box">
+                    지난 텍스트 유형01과 똑같이 이미지스프라이트 기능을 위하여 프레임을 하나 더 만들어 아이콘을 60px씩 배치시켰습니다 😇
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D821%253A12358" allowfullscreen></iframe>
+                </div>
+
+            <hr>
+
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
+                <p class="t_desc">
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! TIP !</strong><br>
+                    • 구조를 먼저 꼼꼼하게 파악하여 큰 덩어리부터 마크업을 하는 것이 가장 중요합니다.<br>
+                    • 웹표준과 웹 접근성, 호환성을 놓치지 않도록 합니다.<br>
+                    • 공통 선택자와 각각의 선택자를 필요한 곳에 잘 구별하여 넣도록 합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">
+    &lt;section id="textType02" class="section gmak container"&gt;
+    &lt;div id="header"&gt;
+        &lt;div class="CAT"&gt;CUTECAT&lt;/div&gt;
+        &lt;h2&gt;딩동댕&lt;br&gt; 야옹유치원 !&lt;/h2&gt;
+        &lt;p&gt;고양이를 좋아하는 사람들을 위한&lt;br&gt;리스트 입니다. 🐱🐾 &lt;br&gt; 여러분들도 함께 구경해보세요!&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="text__inner"&gt;
+        &lt;div class="text_top"&gt;
+            &lt;article class="text__box"&gt;
+                &lt;span class="icons icon1 ir"&gt;button&lt;/span&gt;
+                &lt;div class="text_desc"&gt;
+                    &lt;h2 class="desc__header"&gt;야옹유치원&lt;/h2&gt;
+                    &lt;p class="desc"&gt;야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="text__box"&gt;
+                &lt;span class="icons icon2 ir"&gt;button&lt;/span&gt;
+                &lt;div class="text_desc"&gt;
+                    &lt;h2 class="desc__header"&gt;공지사항&lt;/h2&gt;
+                    &lt;p class="desc"&gt;야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;div class="text_bottom"&gt;
+            &lt;article class="text__box"&gt;
+                &lt;span class="icons icon3 ir"&gt;button&lt;/span&gt;
+                &lt;div class="text_desc"&gt;
+                    &lt;h2 class="desc__header"&gt;칭찬해요&lt;/h2&gt;
+                    &lt;p class="desc"&gt;야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="text__box"&gt;
+                &lt;span class="icons icon4 ir"&gt;button&lt;/span&gt;
+                &lt;div class="text_desc"&gt;
+                    &lt;h2 class="desc__header"&gt;서운해요&lt;/h2&gt;
+                    &lt;p class="desc"&gt;야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.&lt;/h2&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;f
+</pre></code>
+                </div>
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 : 스타일 적용하기 &gt;</h3>
+                <p class="t_desc">
+                    구조 짜임의 순서대로 css 스타일을 적용시켜 봅시다. 이 때 디자인 시안을 참고하면서 html와 번갈아가며 <i>큰 덩어리 부터 스타일을 적용</i>시켜 나가는 것이 중요합니다.<br />
+                    속성에 대한 내용은 코드와 주석을 보면서 이해해봅시다!
+                </p>
+                <p class="t_desc2">
+                    <strong>! TIP !</strong><br />
+                    1. display: flex를 줄 때 구조를 잘 파악하여 나누어주어야 합니다. <br>
+                    2. 먼저 헤더부분과 컨텐츠 부분을 나누어 주어 flex를 줍니다. <br>
+                    3. 그 뒤 컨텐츠 부분에서 윗 섹션과 아래 섹션을 나누어서 각 섹션마다 flex를 줍니다. <br>
+                    4. 이미지 스트라이프를 사용할 경우 공통 선택자와 각각의 선택자를 부여합니다.<br>
+                    5. 그 뒤 공통 선택자에게는 url()속성, 각각 선택자에게는 background-position 속성을 사용하여 위치를 조정해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">/* font */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* common : 공통 요소(재활용) */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+.section {
+    padding: 120px 0;
+    display: flex;
+    justify-content: space-between ;
+}
+
+#header > h2 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+#header > p {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: left;
+}
+
+#header > .CAT {
+    width: 145px;
+    height: 25px;
+    font-size: 16px;
+    background: #d0004b;
+    padding: 4px 30px;
+    border-radius: 50px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* text__inner */
+/* text_top과 bottom으로 섹션을 나눠줬으니 그 안에서 플렉스를 주어야 2개의 text__box가 가로로 나란히 정렬된다. */
+.text_top {
+    margin-bottom: 50px;
+    display: flex;
+}
+.text_bottom {
+    display: flex;
+}
+.text__box{
+    width: 373px;
+    padding: 20px;
+}
+.text__box:hover {
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+.text_desc .desc__header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.text_desc .desc {
+    font-weight: 300;
+    line-height: 1.4;
+} 
+.icons {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    background: #000;
+    background: url(img/text_icons02.svg); /* 이미지 스프라이트 */
+}
+.icons.icon2 {background-position: -60px;}  /* 아이콘 간격이 60px이므로 간격에 맞춰 포지션으로 위치 조정 */
+.icons.icon3 {background-position: -120px;}
+.icons.icon4 {background-position: -180px;}
+</pre></code>
+                </div>
+            </div>
+            <!-- //css -->
+
+            <hr>
+
+            <h3 class="t_tit">🎉 결과보기 🎉</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/textType/textType02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/textType/textType02.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/textType/textType02.html">원본 페이지 보기</a>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

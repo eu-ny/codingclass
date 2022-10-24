@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textType03</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmak {
+            font-family: 'GmarketSans';
+            font-size: 18px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        /* common : 공통 요소(재활용) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }  
+        
+        body {
+            background: #f5f5f5;
+        }
+
+        /* text */
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between ;
+        }
+        .text__box {
+            /* width: 373px; */
+            width: 32%;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+        .text__box > p {
+            height: 189px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        /* 가상요소를 사용하여 라인 배치 */
+        .text__box::before { 
+            content: '';
+            width: 82%;
+            height: 1px;
+            background: #edecec;
+            position: absolute;
+            left: 30px;
+            top: 248px;
+            align-items: center;
+        }
+        .text__box::after {
+            content: '';
+            width: 82%;
+            height: 1px;
+            background: #edecec;
+            position: absolute;
+            left: 30px;
+            bottom: 85px;
+            align-items: center;
+        }
+
+        /* dogname */
+        .dogname {
+            position: absolute;
+            left: 100px;
+            bottom: 120px;
+        }
+        .dogname > h2 {
+            margin-bottom: 10px;
+        }
+        .dogname > h2 > em {
+            margin-left: 5px;
+            font-style: normal;
+            font-size: 16px;
+            color: #a4a4a4;
+        }
+
+        /* icon */
+        .star {
+            height: 20px;
+            width: 102px; 
+            background: url(img/text_icons03_1.svg);
+        }
+        .star.star2 {background-position: -102px;}
+        .star.star3 {background-position: -204px;}
+
+        .icon {
+            display: inline-block;  
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #000;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background: url(img/text_icons03.svg);
+        }
+        .icon.icon2 {background-position: -60px;}
+        .icon.icon3 {background-position: -120px;}
+
+        /* more */
+        .more {
+            text-align: center;
+        }
+        .more > a {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 6px 20px;
+            margin-top: 30px;
+            color: white;
+            background: #504ecd;
+            text-align: center;
+            border-radius: 50px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section id="textType03" class="section gmak container">
+        <h2>멍멍 유치원</h2>
+        <p>🐶 멍멍 유치원의 말썽꾸러기 강아지 학생들을 소개합니다. 🐶</p>
+        <div class="text__inner">
+            <article class="text__box">
+                <p>친구들과 어울릴 수 있을지 걱정했는데 선생님덕에 무사히 친구들을 사귈 수 있었습니다. 특히 놀이시간에 친구들과 어울릴 수 있도록 도와주셔서 재미있는 시간을 보낼 수 있었습니다. 간식 퀄리티도 좋고 맛도 좋았습니다.  이렇게 소심한 저를 잘 돌봐주신 선생님 감사합니다!</p>
+                <span class="icon icon1 ir">아이콘</span>
+                <div class="dogname">
+                    <h2>김댕댕<em>멍멍 24기</em></h2>
+                    <div class="star star1 ir">별</div>
+                </div>
+                <div class="more"><a href="#">자세히 보기</a></div>
+            </article>
+            <article class="text__box">
+                <p>제일 기억에 남는 활동은 바로 간식 시간이에요! 수제로 만들어진 간식은 간도 딱 맞고 건강에도 좋은 재료로 만들어져서 양심에 찔리지 않고 맘껏 먹을 수 있었습니다~~~! 선생님 맛있는 간식 늘 정성껏 만들어 주셔서 감사합니다~!!!!!!!! 😆</p>
+                <span class="icon icon2 ir">아이콘</span>
+                <div class="dogname">
+                    <h2>오왈왈<em>멍멍 24기</em></h2>
+                    <div class="star star2 ir">별</div>
+                </div>
+                <div class="more"><a href="#">자세히 보기</a></div>
+            </article>
+            <article class="text__box">
+                <p>게을러서 가끔 지각도 하고 말도 잘 안들었지만 끝까지 저를 잘 지도해주셔서 감사했습니다...ㅎㅎㅎ 그 때만 생각하면 너무 죄송하네요 ㅠㅠ <br>댕댕 유치원에 다니면서 많은 것을 배우고 갈 수 있었습니다. 마지막으로 하고싶은 말은 간식 최고!!!!!</p>
+                <span class="icon icon3 ir">아이콘</span>
+                <div class="dogname">
+                    <h2>박비숑<em>멍멍 24기</em></h2>
+                    <div class="star star3 ir">별</div>
+                </div>
+                <div class="more"><a href="#">자세히 보기</a></div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

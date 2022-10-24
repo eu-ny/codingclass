@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="Sprite.html">Sprite</a></li>
+                <li><a href="element.html">element</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 요소(element)를 안보이게 하는 방법</h2>
+                <p class="t_desc">
+                    CSS 속성을 작업하다 보면 요소를 숨겨야 하는 속성들이 필요하게 됩니다. 이번 시간에는 CSS 기법 중 하나인 <strong>요소를 안보이게 하는 방법</strong> 5가지에 대해 알아보겠습니다!😄 
+                </p>
+
+                <hr>
+
+                 <div id="sample01" class="sample">
+                    <h3 class="t_tit2">#1. display : none; </h3>
+                    <p class="t_desc2">
+                      가장 보편적으로 사용하는 속성 중 하나로 요소의 영역이 완전히 사라지게 됩니다.<br>
+                      또한 이 속성을 사용하게 되면 애니메이션 효과도 줄 수 없게 됩니다.
+                    </p>
+                    <h3 class="t_tit3">💡 코드 보기</h3>
+                    <div class="t_code">
+<pre><code class="language-css">p {display : none;}
+</code></pre>
+                    </div>
+                    <style>
+                      .example {
+                        padding: 20px;
+                        border-radius: 20px;
+                        background: rgb(255, 166, 0);
+                      }
+                      .one {
+                        border-radius: 10px;
+                        background: rgb(192,124,0);
+                        color: white;
+                        padding: 10px;
+                        margin: 10px;
+                      }
+                      .one:hover {
+                        display: none;
+                        background: rgb(255, 166, 0);
+                      }
+                    </style>
+                    <div class="example">
+                      <p class="one">없어집니당</p>
+                      <p style="background: rgb(255, 166, 0); color: white;  margin: 0 10px; padding: 10px;">뾰로롱</p>
+                    </div>
+                    <!-- //sample01 -->
+
+                    <hr>
+
+                    <h3 class="t_tit2">#2. opacity: 0;</h3>
+                    <p class="t_desc2">
+                      opacity는 투명도를 설정하는 속성 중 하나로 요소의 투명도를 0으로 하여 요소를 안보이게 합니다.<br>
+                      때문에 요소는 사라져도 영역은 남게 되며 애니메이션도 적용이 가능합니다.
+                    </p>
+                    <h3 class="t_tit3">💡 코드 보기</h3>
+                    <div class="t_code">
+<pre><code class="language-css">p {opacity: 0;}
+</code></pre>
+                    </div>
+                    <style>
+                      .two {
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                        transition: all 0.6s;
+                        background: rgb(192,124,0);
+                        color: white;
+                        padding: 10px;
+                        margin: 10px;
+                      }
+                      .two:hover {
+                        opacity: 0;
+                        background-color: rgb(255, 166, 0);
+                      }
+                    </style>
+                    <div class="example">
+                      <p class="two">없어집니당</p>
+                      <p style="background: rgb(255, 166, 0); color: white; margin: 0 10px; padding: 10px;">뾰로롱</p>
+                    </div>
+                    
+                  </div>
+                  <!-- //sample02 -->
+
+
+                <div id="sample03" class="sample">
+                  <h3 class="t_tit2">#3. visibility: hidden;</h3>
+                  <p class="t_desc2">
+                    visibility: hidden; 속성은 opacity: 0;과 달리 영역이 남는 속성이며 상속이 됩니다.애니메이션 적용이 불가합니다.
+                  </p>
+                  <h3 class="t_tit3">💡 코드 보기</h3>
+                  <div class="t_code">
+<pre><code class="language-css">p {visibility: hidden;}
+</code></pre>
+                    </div>
+                    <style>
+                      .thr {
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                        background: rgb(192,124,0);
+                        color: white;
+                        padding: 10px;
+                        margin: 10px;
+                      }
+                      .example:hover .thr {
+                        visibility: hidden;
+                        background-color: rgb(255, 166, 0);
+                      }
+                    </style>
+                    <div class="example">
+                      <p class="thr">없어집니당</p>
+                      <p style="background: rgb(255, 166, 0); color: white; margin: 0 10px; padding: 10px;">뾰로롱</p>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+                
+                <hr>
+                
+                <div id="sample04" class="sample">
+                  <h3 class="t_tit2">#4. width: 0; height: 0;</h3>
+                  <p class="t_desc2">
+                    높이와 넓이 값을 0으로 하여 요소를 사라지게 만들어 줍니다. 영역은 남지 않지만 애니메이션 효과를 줄 수 있습니다.<br>
+                    따로 텍스트를 작성할 경우 텍스트도 함께 보이지 않도록 설정해주어야 요소와 같이 사라집니다. (ex : overflow: hidden;)
+                  </p>
+                  <h3 class="t_tit3">💡 코드 보기</h3>
+                  <div class="t_code">
+<pre><code class="language-css">p {
+  width: 0; 
+  height: 0;
+}
+</code></pre>
+                    </div>
+                    <style>
+                      .four {
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                        background: rgb(192,124,0);
+                        color: white;
+                        padding: 10px;
+                        margin: 10px;
+                        transition: all 0.8s;
+                      }
+                      .example:hover .four {
+                        width: 0; 
+                        height: 0;
+                        padding: 0;
+                        margin: 0;
+                        overflow: hidden;
+                        background-color: rgb(255, 166, 0);
+                      }
+                    </style>
+                    <div class="example">
+                      <p class="four">없어집니당</p>
+                      <p style="background: rgb(255, 166, 0); color: white; margin: 0 10px; padding: 10px;">뾰로롱</p>
+                    </div>
+                </div>
+                <!-- //sample04 -->
+
+                <hr>
+
+                <div id="sample05" class="sample">
+                  <h3 class="t_tit2">#5. transform : scale(0)</h3>
+                  <p class="t_desc2">
+                    transform : scale(0); 속성은 요소의 변형에 대한 속성으로 요소의 scale 값을 0으로 지정하여 사라지게 만듭니다. <br>
+                    적용하게 되면 영역은 남게되며 애니메이션을 사용할 수 있습니다.
+                  </p>
+                  <h3 class="t_tit3">💡 코드 보기</h3>
+                  <div class="t_code">
+<pre><code class="language-css">p {transform : scale(0);}
+</code></pre>
+                    </div>
+                    <style>
+                      .five {
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                        background: rgb(192,124,0);
+                        color: white;
+                        padding: 10px;
+                        margin: 10px;
+                        transition: all 0.4s;
+                      }
+                      .example:hover .five {
+                        transform : scale(0);
+                        overflow: hidden;
+                        background-color: rgb(255, 166, 0);
+                      }
+                    </style>
+                    <div class="example">
+                      <p class="five">없어집니당</p>
+                      <p style="background: rgb(255, 166, 0); color: white; margin: 0 10px; padding: 10px;">뾰로롱</p>
+                    </div>
+              </div>
+              <!-- //sample05 -->
+
+              <hr>
+
+              <p class="t_desc">
+                다음 시간에 뵙겠습니다! 공부하시느라 고생많으셨습니다~~! 🤩
+              </p>
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

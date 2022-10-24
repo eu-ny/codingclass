@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //for문 이용해서 하나씩 출력하시오!
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+            for (let i = 1; i <= 9; i++) {
+                document.write(i);
+            }
+        }
+    
+        document.write("<br>")
+    
+        //forEach 이용해서 하니씩 출력
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+            arr.forEach(function (el) {
+                document.write(el);
+            });
+        }
+    
+        document.write("<br>")
+    
+        //map()
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+            arr.map(function (el) {
+                document.write(el);
+            });
+    
+        }
+    
+        document.write("<br>")
+    
+        //for in
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+            for (let i in arr) {
+                document.write(arr[i]);
+            }
+        }
+    
+        document.write("<br>")
+    
+        //for of
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    
+            for (let i of arr) {
+                document.write(i);
+            }
+        }
+    </script>
+    
+    <!-- 자바스트립트2 -->
+    
+    <script>
+         document.write("<br>")
+        //01.선언적함수
+        {
+            function func() {
+                document.write("함수가 실행되었습니다.1<br>");
+            }
+            func();
+        }
+        //02. 익명함수
+        //변수 안에 함수를 넣어준다.
+        //변수 = 숫자 문자 베열 특수값 언디파인드 함수 등 자료형 함수 -> 데이터 타입이라고 한다.
+        {
+            const func = function () {
+                document.write("함수가 실행되었습니다.2<br>");
+            }
+            func();
+        }
+        //03. 매개변수 함수
+        //1개 이상, 즉 여러개의 데이터를 전달할 수 있다.
+        {
+            // function func(str1, str2, str3){
+            //     document.write(str1 + str2);
+            // }
+            // func("함수가 실행되었습니다.3<br>");
+    
+            function func(str) {
+                document.write(str);
+            }
+            func("함수가 실행되었습니다.3<br>");
+        }
+        //04. 리턴값 함수
+        {
+            function func() {
+                const str = "함수가 실행되었습니다.4" + "<br>";
+                return str; //결과값과 종료값을 의미한다.
+            }
+            document.write(func());
+        }
+        //05. 화살표 함수 선언적함수
+        {
+            func = () => {
+                document.write("함수가 실행되었습니다.5" + "<br>");
+            }
+            func();
+        }
+        //06. 화살표 함수 익명함수
+        {
+            func = () => {
+                document.write("함수가 실행되었습니다.6" + "<br>");
+            }
+            func();
+        }
+        //07. 매개변수 
+        {
+            func = (str) => {
+                document.write(str);
+            }
+            func("함수가 실행되었습니다.7" + "<br>");
+        }
+        //08. 리턴값 힘수 
+        {
+            func = () => {
+                const str = "함수가 실행되었습니다.8 <br>"
+                return str; //결과값, 종료값을 의미한다.
+            }
+            document.write(func());
+        }
+        //09. 화살표 함수 : 익명 + 매개 + 리턴값 
+        {
+            const func = (str) => {
+                return str;
+            }
+            document.write(func("함수가 실행되었습니다.9" + "<br>"));
+        }
+        //10. 화살표 함수 : 익명 + 매개 + 리턴값 + 괄호 생략
+        //컨스트를 빼면 선언적 함수가 된다.
+        {
+            const func = str => {
+                return str;
+            }
+            document.write(func("함수가 실행되었습니다.10" + "<br>"));
+        }
+        //11. 화살표 함수 : 익명 + 매개 + 리턴값 + 괄호 생략 + 리턴 생략
+        //컨스트를 빼면 선언적 함수가 된다.
+        {
+            const func = str => str;
+    
+            document.write(func("함수가 실행되었습니다.11" + "<br>"));
+        }
+        //12. 화살표 함수 : 선언적 + 매개 + 리턴값 + 괄호 생략 + 리턴 생략
+        {
+            func = str => str;
+    
+            document.write(func("함수가 실행되었습니다.12" + "<br>"));
+        }
+    
+        //데이터 실행 초급 끝//
+    </script>
+    
+    <!-- 자바스크립트3 -->
+</body>
+</html>

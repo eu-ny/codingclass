@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 : 스타일 메서드</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/gsap.html">gsap</a></li>
+                <li><a href="jquery.html">jquery</a></li>
+                <li><a href="basic.html">jquery 기본선택자</a></li>
+                <li><a href="property.html">jquery 속성선택자</a></li>
+                <li><a href="method01.html">jquery 클래스 메서드</a></li>
+                <li><a href="method02.html">jquery 속성 메서드</a></li>
+                <li><a href="method03.html">jquery 스타일 메서드</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Jquery : 스타일 관련 메서드</h2>
+            <p class="t_desc">
+                이번 시간에는 css 속성을 추가할 수 있는 jquery 스타일 관련 메서드에 대해 알아보겠습니다.🧐
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. jquery : css() 메서드</h3>
+                <table class="t_table">
+                    <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 70%;">   
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">취득</td>
+                            <td>$("div").css("width");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">생성 / 변경</td>
+                            <td>$("div").css("background-color", "red").css("padding", "10px");</td>
+                        </tr>
+                        <tr>
+                            <td>$("div").css({"background-color: "red", padding: "10px"});</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">콜백 함수</td>
+                            <td>$("div").attr("width", function(index, w) {<br>
+                                &nbsp;&nbsp;&nbsp;//index는 각 div 요소의 index 0,1,2 <br>
+                                &nbsp;&nbsp;&nbsp;//w는 각 div 요소의 width 값 <br>
+                                &nbsp;&nbsp;&nbsp;return css 속성 // 각 div 요소의 css 속성을 생성 및 변경합니다.<br>
+                                });<br>
+                                ……<br>
+                                &lt;div>내용1&lt;/div> <br>
+                                &lt;div>내용2&lt;/div> <br>
+                                &lt;div>내용3&lt;/div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ css() 메서드 예제</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jqueryex" src="https://codepen.io/eu-ny/embed/eYrmBqP?default-tab=js%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/eYrmBqP">
+                    jqueryex</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. jQuery : width, height 관련 메서드</h3>
+                <table class="t_table">
+                    <colgroup>
+                    <col style="width: 30%;">
+                    <col style="width: 70%;">   
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>메서드 종류</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">width()</td>
+                            <td>요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">innerWidth()</td>
+                            <td>padding이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">outerWidth()</td>
+                            <td>
+                                border와 margin이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.<br>
+                                - outerWidth()는 요소의 width값 + 좌ㆍ우 border값<br>
+                                - outerWidth(true)는 요소의 width값 + 좌ㆍ우 border값 + 좌ㆍ우 margin값
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">height()</td>
+                            <td>요소의 높이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">innerheight()</td>
+                            <td>padding이 적용된 요소의 높이를 취득, 변경할 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">outerHeight()</td>
+                            <td>
+                                border와 margin이 적용된 요소의 높이를 취득, 변경할 수 있습니다.<br>
+                                - outerHeight()는 요소의 height값 + 상ㆍ하 border값<br>
+                                - outerHeight(true)는 요소의 height값 + 상ㆍ하 border값 + 상ㆍ하 margin값
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+                <h3 class="t_tit2">✏️ width, height 메서드 예제</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="jqueryex" src="https://codepen.io/eu-ny/embed/NWMPdWw?default-tab=js%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/NWMPdWw">
+                    jqueryex</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+            </div>
+            <!-- //sample02 -->
+
+            <hr>
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">#3. jQuery : 위치 관련 메서드</h3>
+                <table class="t_table">
+                    <colgroup>
+                    <col style="width: 20%;">
+                    <col style="width: 40%;">   
+                    <col style="width: 40%;">   
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>메서드 종류</th>
+                            <th colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">offset()</td>
+                            <td>
+                                $("div").offset().left<br>
+                                $("div").offset().top<br>
+                                $("div").offset({left:10, top:10})
+                            </td>
+                            <td>
+                                html 기준으로 left, top 값을 변경할 수 있습니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">position()</td>
+                            <td>
+                                $("div").position().left<br>
+                                $("div").position().top
+                            </td>
+                            <td>
+                                부모 요소 기준으로 left, top 값을 취득할 수 있습니다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              
+                <h3 class="t_tit2">✏️ 위치 메서드 예제</h3>
+                <iframe height="600" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/ZEoYLYq?default-tab=js%2Cresult&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/ZEoYLYq">
+                    Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+            </div>
+            <!-- //sample03 -->
+
+            <hr>
+
+            <p class="t_desc">
+                꾸물꾸물 하다보니 이런 시간에 포스팅을 하게 되었네요.... 다음엔 꼭 일찍 올릴 수 있기를~~
+            </p>
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

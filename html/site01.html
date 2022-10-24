@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+                <li><a href="text01.html">텍스트01</a></li>
+                <li><a href="text02.html">텍스트02</a></li>
+                <li class="active"><a href="text03.html">텍스트02</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+        <div class="main_rafer">
+            <div class="document">
+                <h2 class="t_tit">SITE 만들기 </h2>
+                <p class="t_desc">
+                지금까지 웹페이지에 들어가는 기본적인 유형들을 실습해보았죠? 이번에는 지금까지 배웠던 유형들을 합쳐서 실제 웹페이지 + 반응형을 함께 제작해보겠습니다. 🫠 <br>
+                특히 이번 슬라이더 유형은 직접 자바스크립트를 구현하지 않고 스와이퍼라는 슬라이드 프리소스를 사용하여 제작해보았습니다.
+                </p>
+
+                <p class="t_box">
+                    <strong>📖 Swiper란?</strong><br>
+                    슬라이드 이펙트를 간단히 작성할 수 있도록 공개된 무료 소스로 HTML, CSS, JAVASCRIPT를 모두 지원해줍니다.
+                </p>
+
+                <hr>
+
+                <div id="figma" class="sample">
+                    <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                    <p class="t_desc">
+                        제작하기 전 사이트의 구성 요소를 정해줍니다.
+                    </p>
+                    <div class="t_iframe">
+                        <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D1186%253A2593" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">#1. HTML</h3>
+                    <p class="t_desc2">
+                        헤더와 푸터 유형을 제외한 유형들은 메인 영역에 섹션별로 나누어 저장하였습니다. <br>
+                        항상 강조했지만 웹사이트를 제작할 땐 웹표준과 접근성, 호환성을 반드시 지키도록 합니다. 특히 사이트에서 skip메뉴 구현은 반드시 구현해주어야 합니다~~!
+                    </p>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 HTML 보기</summary>
+                        <p class="t_desc">❗️ 스크롤 주의</p>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;body&gt;
+    &lt;div id="skip"&gt;
+        &lt;!-- &lt;a href="headerType"&gt;헤더 영역 바로가기&lt;/a&gt; --&gt;
+        &lt;a href="#sliderType"&gt;슬라이드 영역(배너 광고 등) 바로가기&lt;/a&gt;
+        &lt;a href="#imageType"&gt;이미지 영역 바로가기&lt;/a&gt;
+        &lt;a href="#imgTextType"&gt;이미지/텍스트 영역 바로가기&lt;/a&gt;
+        &lt;a href="#cardType"&gt;카드 영역 바로가기&lt;/a&gt;
+        &lt;a href="#bannerType"&gt;배너 영역 바로가기&lt;/a&gt;
+        &lt;a href="#textType"&gt;텍스트 영역 바로가기&lt;/a&gt;
+        &lt;a href="#footerType#"&gt;푸터 영역 바로가기&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;!-- //skip : 웹표준 준수에 반드시 필요! --&gt;
+
+    &lt;section id="headerType" class="header__wrap nexon"&gt;
+        &lt;div class="header__inner"&gt;
+        &lt;div class="header__logo"&gt;
+            &lt;a href="#"&gt;WEB &lt;em&gt;SITE&lt;/em&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="menu__bar"&gt;&lt;/div&gt;
+        &lt;div class="header__menu"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#sliderType"&gt;슬라이드 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imageType"&gt;이미지 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#imgTextType"&gt;이미지 텍스트 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#cardType"&gt;카드 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#bannerType"&gt;배너 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#textType"&gt;텍스트 영역&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#footerType"&gt;푸터 영역&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="header__member"&gt;
+            &lt;a href="#"&gt;로그인&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //headerType --&gt;
+
+    &lt;main id="mainType"&gt;
+        &lt;section id="sliderType" class="slider__wrap nexon section scroll"&gt;
+        &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
+        &lt;div class="slider__inner"&gt;
+            &lt;!-- &lt;div class="slider"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="desc"&gt;
+                &lt;span&gt;ANIMALS&lt;/span&gt;
+                &lt;h3&gt;cUTE ANIMALS&lt;/h3&gt;
+                &lt;p&gt;
+                    당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!&lt;br /&gt;
+                    여기 애니멀 유치원으로 어서 오세요!
+                &lt;/p&gt;
+                &lt;div class="btn"&gt;
+                    &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__arrow"&gt;
+                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/div&gt; --&gt;
+        &lt;!-- Swiper --&gt;
+            &lt;div class="swiper mySwiper"&gt;
+                &lt;div class="swiper-wrapper"&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div class="desc"&gt;
+                    &lt;span&gt;ANIMALS&lt;/span&gt;
+                    &lt;h3&gt;cUTE ANIMALS&lt;/h3&gt;
+                    &lt;p&gt;
+                        당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!&lt;br /&gt;
+                        여기 애니멀 유치원으로 어서 오세요!
+                    &lt;/p&gt;
+                    &lt;div class="btn"&gt;
+                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                        &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div class="desc"&gt;
+                    &lt;span&gt;ANIMALS&lt;/span&gt;
+                    &lt;h3&gt;cUTE ANIMALS&lt;/h3&gt;
+                    &lt;p&gt;
+                        당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!&lt;br /&gt;
+                        여기 애니멀 유치원으로 어서 오세요!
+                    &lt;/p&gt;
+                    &lt;div class="btn"&gt;
+                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                        &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+                &lt;div class="swiper-slide"&gt;
+                    &lt;div class="desc"&gt;
+                    &lt;span&gt;ANIMALS&lt;/span&gt;
+                    &lt;h3&gt;cUTE ANIMALS&lt;/h3&gt;
+                    &lt;p&gt;
+                        당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!&lt;br /&gt;
+                        여기 애니멀 유치원으로 어서 오세요!
+                    &lt;/p&gt;
+                    &lt;div class="btn"&gt;
+                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                        &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="swiper-button-next"&gt;&lt;/div&gt;
+                &lt;div class="swiper-button-prev"&gt;&lt;/div&gt;
+                &lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //sliderType --&gt;
+
+        &lt;section id="imageType" class="image__wrap nexon section scroll"&gt;
+        &lt;h2&gt;애니멀 유치원&lt;/h2&gt;
+        &lt;p&gt;🐶 당신의 반려 동물에 맞는 반을 골라주세요!🐱&lt;/p&gt;
+        &lt;div class="image__inner container"&gt;
+            &lt;article class="image img1"&gt;
+            &lt;h3 class="image__title"&gt;멍멍 유치원&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;
+                강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는
+                기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다.
+            &lt;/p&gt;
+            &lt;a href="#" title="자세히 보기" class="image__btn"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+            &lt;h3 class="image__title"&gt;야옹 유치원&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;
+                고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는
+                은근하게 다가오는 것이 매력적입니다.
+            &lt;/p&gt;
+            &lt;a href="#" title="자세히 보기" class="image__btn yellow"
+                &gt;자세히 보기&lt;/a
+            &gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //imageType --&gt;
+
+        &lt;section id="imgTextType" class="imgText__wrap nexon section scroll"&gt;
+        &lt;h2 class="blind"&gt;애니멀 유치원 살펴보기&lt;/h2&gt;
+        &lt;div class="imgText__inner container"&gt;
+            &lt;div class="imgText__txt"&gt;
+            &lt;span&gt;ANIMALS&lt;/span&gt;
+            &lt;h3&gt;애니멀 유치원 살펴보기&lt;/h3&gt;
+            &lt;p&gt;
+                교육 및 사회성이 필요한 반려동물들의 애니멀 유치원 소개 사이트 입니다.
+            &lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;애니멀 유치원 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;댕댕꾸러기 소개&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;칭찬해요&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;서운해요&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;공지사항&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;ANIMALS Youtube&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img1"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;멍멍 유치원 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img2"&gt;
+            &lt;li&gt;&lt;a href="#" class="blue"&gt;야옹 유치원 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //imgTextType --&gt;
+
+        &lt;section id="cardType" class="card__wrap nexon section scroll"&gt;
+        &lt;h2&gt;애니멀 활동 소개 📝&lt;/h2&gt;
+        &lt;p&gt;애니멀 유치원의 대표적인 활동 리스트 입니다.&lt;/p&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="asset/img/card_bg01_01.jpg" alt="상업 전시" /&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;개인 활동 시간&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                당신의 각각의 반려동물의 맞춤 교육 활동입니다. 각 애니멀들의 성향 및 고칠점에 대하여 전문가들과 분석하고 1:1 맞춤형으로 교육이 진행됩니다.
+                &lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt;
+                    &lt;svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    &gt;
+                    &lt;path
+                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                        fill="black"
+                    /&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="asset/img/card_bg01_02.jpg" alt="미술 전시" /&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;간식 시간&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                식사 훈련을 함께 동반하며 사료와 함께 수제로 만든 건강 간식이 제공됩니다. 필요에 따라 직접 선택할 수 있으며 주의 사항에 따라 해당 재료를 먹지 못하는 경우 따로 제공합니다.
+                &lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt;
+                    &lt;svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    &gt;
+                    &lt;path
+                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                        fill="black"
+                    /&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="asset/img/card_bg01_03.jpg" alt="사진 전시" /&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;단체 활동 시간&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                개인 활동과 달리 단체로 활동하는 시간이며 각 애니멀들의 사회성, 사교성을 기르기 위한 교육 시간 입니다. 각 성향에 따라 분리 하여 활동할 수 있습니다.
+                &lt;/p&gt;
+                &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt;
+                    &lt;svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    &gt;
+                    &lt;path
+                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                        fill="black"
+                    /&gt;
+                    &lt;/svg&gt;
+                &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //cardType --&gt;
+
+        &lt;section id="bannerType" class="banner__wrap nexon section scroll"&gt;
+        &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="title"&gt;HAPPY ANIMALS&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+            바쁜 당신의 귀여운 강아지, 고양이들을 위한 안식처 한 번 맡겨보세요!
+            &lt;a href="#" title="고양이 보러가기"
+                &gt;애니멀 유치원 GO&lt;/a
+            &gt;
+            &lt;/p&gt;
+            &lt;span class="small"&gt;CUTE ANIMALS&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //bannerType --&gt;
+
+        &lt;section id="textType" class="text__wrap section nexon scroll"&gt;
+        &lt;span&gt;ANIMALS&lt;/span&gt;
+        &lt;h2 class="mb70"&gt;애니멀 유치원을 소개합니다.&lt;/h2&gt;
+        &lt;div class="text__inner container"&gt;
+            &lt;div class="text t1"&gt;
+            &lt;h3 class="text__title"&gt;홈페이지&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;애니멀 유치원의 공식 홈페이지 입니다. 애니멀 유치원의 각 과정과 활동 사진 등을 확인하실 수 있습니다.&lt;/p&gt;
+            &lt;a class="text_btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t2"&gt;
+            &lt;h3 class="text__title"&gt;공지사항&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;애니멀 유치원의 행사, 일정, 모집 등 중요 사항들을 확인할 수 있습니다.&lt;/p&gt;
+            &lt;a class="text_btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t3"&gt;
+            &lt;h3 class="text__title"&gt;주의해요&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;당신의 반려 동물에 대한 주의점(알레르기, 행동, 성격 등)을 작성할 수 있습니다.&lt;/p&gt;
+            &lt;a class="text_btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t4"&gt;
+            &lt;h3 class="text__title"&gt;칭찬해요&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;이 달의 베스트 애니멀 학생을 확인할 수 있습니다.&lt;/p&gt;
+            &lt;a class="text_btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t5"&gt;
+            &lt;h3 class="text__title"&gt;추천해요&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;칭찬해요와 서운해요에 해당하는 투표를 진행하는 곳입니다.&lt;/p&gt;
+            &lt;a class="text_btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="text t6"&gt;
+            &lt;h3 class="text__title"&gt;서운해요&lt;/h3&gt;
+            &lt;p class="text__desc"&gt;각 학생들의 벌점을 확인할 수 있습니다.&lt;/p&gt;
+            &lt;a class="text_btn" href="/"&gt;더보기&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;!-- //textType --&gt;
+
+    &lt;/main&gt;
+    &lt;!-- //mainType --&gt;
+
+    &lt;footer id="footerType" class="footer__wrap nexon section scroll"&gt;
+        &lt;h2 class="blind"&gt;푸터 영역&lt;/h2&gt;
+        &lt;div class="footer__inner container"&gt;
+        &lt;div class="footer__menu"&gt;
+            &lt;div&gt;
+            &lt;h3&gt;사이트&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;헤더 영역&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴 유형01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;메뉴 유형02&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;슬라이드 영역&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형02&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;이미지 영역&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이미지 유형01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이미지 유형02&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트 유형01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트 유형02&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;텍스트 유형01&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;컨텐츠 영역&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;카드 유형01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;카드 유형02&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;카드 유형03&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+            &lt;h3&gt;푸터 영역&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;푸터 메뉴 유형01&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;푸터 컨텍트 유형02&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/"&gt;푸터 이메일 유형03&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer__right"&gt;
+            2022 LEEHAEUN. Portfolio is Power&lt;br /&gt;
+            All rights reserved.
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    &lt;!-- //footerType --&gt;
+
+    &lt;script src="../site/asset/js/swiper-bundle.min.js"&gt;&lt;/script&gt;
+
+    &lt;/body&gt;
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                <div id="sample02" class="sample">
+                    <h3 class="t_tit2">#2. CSS</h3>
+                    <p class="t_desc2">
+                        <strong>! Tip !</strong> <br>
+                        실제 사이트를 제작할 땐 오류를 방지하기 위해 따로 css소스를 제작 후 링크로 선언해줍니다. <br>
+                        또한 반응형은 960px 600px을 기준으로 하여 각 섹션 별로 레이아웃, 컨텐츠 영역, 크기, 색상 등을 수정해주었습니다. 반응형 작업 시 주의할 점은 공통 요소 설정과 속성에서 포지션을 사용했을 경우 반응형(지정크기) 기준에서 다시 위치를 잡아주어야 합니다.<br>
+                        아래는 각 유형 별 CSS 소스 입니다! ( + header유형은 곧 추가 예정입니다.)
+                    </p>
+                    <p class="t_box">
+                        &lt;link rel="stylesheet" href="/경로/swiper.css"/&gt; : 왼쪽과 같이 HTML에 스와이퍼 프리 소스를 저장하여 따로 넣어주어야 합니다.
+                    </p>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Header 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* 준비중 입니다 */
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Slider 보기</summary>
+                        <p class="t_box">스와이퍼 CSS의 우선순위 때문에 !important를 붙여주어 우선순위를 변경해줍니다.</p>
+                        <div class="t_code">
+<pre><code class="language-css">/* slider Type */
+.slider__inner {
+    margin-top: 70px;
+}
+
+/* swiper */
+.swiper-slide {
+    background: url(../img/slider_type01_04.jpg) no-repeat center / cover;
+}
+.swiper-slide .desc {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    box-sizing: border-box;
+}
+.swiper-slide .desc span {
+    font-size: 16px;
+    height: 20px;
+    line-height: 15px;
+    background-color: #fff;
+    padding: 6px 14px 0 14px;
+    border-radius: 30px;
+    text-transform:uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.swiper-slide .desc h3 {
+    font-size: 110px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    margin-left: -8px;
+}
+.swiper-slide .desc p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 120px;
+}
+.swiper-slide .desc .btn a {
+    font-size: 16px;
+    background-color: #fff;
+    padding: 11px 50px;
+    display: inline-block;
+}
+.swiper-slide .desc .btn a.black {
+    background: #000;
+    color: #fff;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    width: 30px !important;
+    height: 56px !important;
+    background-image: url(../img/slider_icon02.svg);
+}
+.swiper-button-next {
+    background-position: -50px 0px;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    opacity: 0;
+}
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 16px !important;
+    background-image: url(../img/slider_icon02.svg) !important;
+    background-position: -20px -70px !important;
+    background-color: transparent !important;
+    opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+    background-position: 0 -70px !important;
+}
+
+/* 반응형 */
+@media (max-width: 960px){
+    .swiper-slide .desc {
+        width: 100%;
+        text-align: center;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 70px;
+    }
+}
+@media (max-width: 600px){
+    .swiper-slide .desc {
+        padding: 80px 0;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 40px;
+    }
+    .swiper-slide .desc p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide .desc .btn a {
+        padding: 10px 25px;
+    }
+}
+@media (max-width: 480px){}
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Image 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* img type */
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.image {
+    width: 49%;
+    height: 370px;
+    color: #fff;
+    padding: 200px 30px 30px 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.image.img1 {
+    background: url(../img/img_bg01_01.jpg) no-repeat center;
+    background-size: cover;
+}
+.image.img2 {
+    background: url(../img/img_bg01_02.jpg) no-repeat center;
+    background-size: cover;
+}
+.image__title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    /* 2줄 효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-right: 30px;
+}
+.image__btn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #a7844f;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+.image__btn.yellow {
+    background-color: #687553;
+}
+.image__btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* 반응형 */
+@media(max-width: 600px){
+    .image__inner {
+        flex-direction: column;
+    }
+    .image {
+        width: 100%;
+        padding: 205px 20px 20px 20px;
+    }
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+    .image__title {
+        font-size: 24px;
+    }
+    .image__desc {
+        font-size: 16px;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Image Text 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* imgText Type */
+.imgText__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.imgText__inner > div {
+    width: 32%;
+    height: 500px;
+}
+.imgText__txt span {
+    font-size: 16px;
+    color: rgb(133, 133, 133);
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-bottom: 20px;
+    display: block;
+    text-align: left;
+}
+.imgText__txt h3 {
+    font-size: 50px;
+    font-weight: 400;
+    color: #6f6257;
+    word-break: keep-all;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+.imgText__txt p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+.imgText__txt ul {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.imgText__txt ul li {
+    position: relative;
+    padding-left: 20px;
+}
+.imgText__txt ul li a {
+    color: #666;
+}
+.imgText__txt ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: #666;
+}
+.imgText__img {
+    border-radius: 10px;
+    position: relative;
+}
+.imgText__img a {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #181715;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: inline-block;
+}
+.imgText__img a:hover {
+    background-color: #ededed;
+    color: #181818;
+}
+/* .imgText__img a.blue {
+    background-color: #7c2b39;
+} */
+.imgText__img.img1 {
+    background: url(../img/imgText_bg01.jpg) no-repeat center / cover;
+}
+.imgText__img.img2 {
+    background: url(../img/imgText_bg02.jpg) no-repeat center / cover;
+}
+
+/* 반응형 */
+@media(max-width: 600px){
+    .imgText__txt span {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .imgText__txt h3 {
+        font-size: 40px;
+    }
+
+    .imgText__txt p {
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+
+    .imgText__inner > div.imgText__img {
+        width: 100%;
+        height: 200px;
+    }
+    .imgText__inner > div.imgText__img.img1 {
+        margin-bottom: 20px;
+    }
+
+    .imgText__img a {
+        left: 20px;
+        bottom: 20px;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Card 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* cardType */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* 중심을 기준으로 하여 정렬에 맞게 모아준다.*/
+}
+.card {
+    width: 32%;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+.card img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card__body {
+    padding: 24px;
+}
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* 한줄 효과 - 텍스트가 한줄을 넘어가면 자동으로 ...처리 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: rgb(126, 126, 126);
+    margin-bottom: 20px;
+    font-weight: 300;
+    /* 세줄 효과 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.card__body span {
+    margin-left: 10px;
+}
+
+@media(max-width: 960px){
+    .card__inner {
+        flex-wrap: wrap;
+    }
+    .card {
+        width: 48%;
+    }
+
+    .card:last-child {
+        display: none;
+    }
+
+    .card__body .desc {
+        font-size: 16px;
+    }
+}
+
+/* 반응형 */
+@media(max-width: 600px){
+    .card {
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card__body {
+        padding: 20px;
+    }
+
+    .card:last-child {
+        display: inline-block;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Banner 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* banner Type */
+.banner__inner {
+    background-image: url(../img/banner_type01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 60px;
+    line-height: 1;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 22px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+.banner__inner .small {
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+/* 반응형 */
+@media(max-width: 960px){
+    .banner__inner {
+        padding: 100px 0;
+    }
+}
+@media(max-width: 600px){
+    .banner__inner {
+        padding: 80px 0;
+    }
+    .banner__inner .title {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .banner__inner .desc {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Text 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* text Type */
+.text__wrap span {
+    display: block;
+    color: #666;
+    text-align: center;
+    font-size: 16px;
+    text-underline-position: underline;
+    margin-bottom: 16px;
+}
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text {
+    width: 32%;
+    margin-bottom: 2%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+.text:hover {
+    background: #f5f5f5;
+}
+.text__title {
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    padding-top: 75px;
+}
+.text__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: url(../img/text_icons01.svg);
+}
+.text.t1 .text__title::before {
+    background-position: 0 0;
+}
+.text.t2 .text__title::before {
+    background-position: -60px 0;
+}
+.text.t3 .text__title::before {
+    background-position: -120px 0;
+}
+.text.t4 .text__title::before {
+    background-position: -180px 0;
+}
+.text.t5 .text__title::before {
+    background-position: -240px 0;
+}
+.text.t6 .text__title::before {
+    background-position: -300px 0;
+}
+.text__desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 20px;
+    color: #666;
+}
+.text_btn {
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    text-underline-position: under; /* 언더라인이 글자에서 쪼금 더 내려온다. */
+    color: #666;
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .text {
+        width: 49%;
+        background: #F5F5F5;
+    }
+}
+@media (max-width: 600px) {
+    .text__title {
+        font-size: 24px;
+    }
+    .text__desc {
+        font-size: 16px;
+    }
+}
+@media (max-width: 480px) {
+    .text {
+        width: 100%;
+    }
+}    
+</code></pre>
+                        </div>
+                    </details>
+                    <details style="margin-bottom: 10px;">
+                        <summary> 💡 Footer 보기</summary>
+                        <div class="t_code">
+<pre><code class="language-css">/* footer Type */
+.footer__wrap {
+    background: #1a1a1a;
+    color: #fff;
+}
+.footer__menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.footer__menu > div {
+    width: 16%;
+}
+.footer__menu h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer__menu li a {
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+.footer__right {
+    font-weight: 300;
+    border-top: 1px dashed #a3a3a3;
+    text-align: center;
+    padding-top: 40px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 반응형 */
+@media(max-width: 960px) {
+    .footer__menu {
+        display: none;
+    }
+    .footer__right {
+        padding-top: 0;
+        border-top: 0;
+    }
+    .footer__wrap {
+        padding: 40px 0;
+    }
+}
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample02 -->
+
+                <hr>
+
+                <div id="sample03" class="sample">
+                    <h3 class="t_tit2">#3. JAVASCRIPT</h3>
+                    <p class="t_desc2">
+                        헤더와 스크롤 기능, 그리고 슬라이드 구현을 위한 스크립트 입니다. <br>
+                        스와이퍼를 사용하더라도 링크 외에 변수 설정은 따로 해주어야 합니다. 다음은 화살표를 누를 경우 or 터치하여 옆으로 밀 경우 다음 슬라이드로 이동하는 것과 자동으로 2초마다 넘어가도록 변수를 설정해주었습니다.<br>
+                        헤더와 스크롤 기능은 후에 헤더 유형과 함께 추가 될 예정 입니다.
+                    </p>
+                        <div class="t_code">
+                            <p class="t_box">
+                                &lt;script src="/경로/swiper-bundle.min.js"&gt;&lt;/script&gt; : 왼쪽과 같이 HTML에 스와이퍼 프리 소스를 저장하여 따로 넣어주어야 합니다.
+                            </p>
+<pre><code class="language-js">var swiper = new Swiper(".mySwiper", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 2000,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        type: 'bullets',
+    },
+});
+</code></pre>
+                        </div>
+                    </details>
+                </div>
+                <!-- //sample03 -->
+
+
+
+
+                <hr>
+
+                <h3 class="t_tit">📖 결과보기 📖</h3>
+                <h3 class="t_tit2" style="margin: 20px 0; text-align: center;"> 표준 🖥</h3>
+                <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/site/index.html" frameborder="0"></iframe>
+                </div>
+                <h3 class="t_tit2" style="margin: 20px 0; text-align: center; "> 모바일 📱</h3>
+                <div class="t_iframe" style="min-height: 800px; width: 600px; padding-top: 0; margin: 0 auto;">
+                    <iframe src="https://eu-ny.github.io/coding/site/index.html" frameborder="0"></iframe>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/site/index.html">원본 소스 보기</a>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/site/index.html">원본 페이지 보기</a>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

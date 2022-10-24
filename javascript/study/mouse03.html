@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🖱 마우스 효과 : 조명효과 🖱</h2>
+            <p class="t_desc">
+                이번 시간에는 커서에게 조명효과를 주도록 해보겠습니다.😆 <br>
+                배경 이미지를 어둡게한 상태에서 커서 영역에 똑같은 이미지를 넣어주면 그 부분만 밝아 보여 마지 조명을 비춘 듯 한 효과를 볼 수 있답니다~~ 신가하죠~?!<br>
+                그럼 함께 실습해봅시다~!
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    페이지 섹션과 마우스 인포(커서 위치값 박스)를 각각 나누어 구조에 맞게 레이아웃을 짠 뒤 스크립트를 위한 선택자를 각각 부여합니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;section id="mouseType03"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;&lt;span class="style1"&gt;Energy&lt;/span&gt; and &lt;span&gt;persistence&lt;/span&gt; conquer all things&lt;/p&gt;
+        &lt;p&gt;&lt;span&gt;기운&lt;/span&gt;과 &lt;span&gt;끈기&lt;/span&gt;는 모든 것을 이겨낸다.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;  
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    position: absolute; : 기존의 마우스 커서를 따라다니도록 포지션을 정해줍니다. (스크립트와 GSAP을 통해 left와 top값이 이동할 때 마다 변하도록 설정해줄 것이므로 왼쪽 상단 모서리에 잠시 위치시켜 줍니다.)<br>
+                    background-attachment: fixed; : 이미지 고정(브라우저 창의 상대적 위치)으로 스크롤을 내려도 이미지가 올라가지 않습니다!
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기 : 마우스 포인터 / 커서 / 에니메이션효과</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;  /* vw를 사용하면 스크롤이 생기므로vh로 작업 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 200;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 300;
+}
+.mouse__wrap p span {
+    padding-bottom: 3px;
+    border-bottom: 0.1vw solid #e7ad00;
+    color: #e7ad00;
+}
+
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+
+/* mouse__cursor */
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    background-image: url(../assets/img/city_bg05-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border: 5px solid #fff;
+}
+
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    오늘의 포인트! getBoundingClientRect()메서드를 통해 커서의 위치값과 크기값을 모두 불러옵니다. 그 뒤 커서의 가로, 세로길이를 불러온 뒤 커서를 영역 가운데로 맞춰줍니다! <br>
+                    오늘 스크립트는 간단한 편이니 먼저 주석과 함께 흐름을 이해 한뒤 정리된 전체 스크립트로 다시 한 번 복습해봅시다~!
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> 💡 전체 스크립트 보기</summary>
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//선택자
+const cursor = document.querySelector(".mouse__cursor"); // 커서
+
+// const circleW = cursor.offsetWidth; //200 : 보더 값 포함
+// const circleH = cursor.offsetHdight; //200 : 보더 값 포함
+// const circle2 = cursor.clientWidth; //190 : 보더 값 제외
+
+const circle = cursor.getBoundingClientRect(); //커서의 모든 위치값
+//getBoundingClientRect() 메서드가 불러오는 위치값들 (커서의 영역 크기 == 200*200)
+// const DOMRect = {
+//     x: 0,
+//     y: 0,
+//     bottom: 200,
+//     height: 200,
+//     lift: 0,
+//     right: 200,
+//     top: 0,
+//     width: 200
+// }
+
+//마우스가 움직일 때 커서의 이벤트설정
+//GSAP으로 설정 : 지속시간 / 커서의 왼쪽 기준 커서의 위쪽 기준으로 커서의 위치값 정하기
+window.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+        duration: 0.3, 
+        //커서가 커서 영역 가운데로 오도록 반을 나누어 준다.
+        left: e.pageX - circle.width/2,
+        top: e.pageY - circle.height/2,
+    });            
+});
+</code></pre>
+                    </div>
+                </details>
+                <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//01 선택자
+const cursor = document.querySelector(".mouse__cursor"); // 커서
+const circle = cursor.getBoundingClientRect(); //커서의 모든 위치값
+
+//02 마우스가 움직일 때 커서의 이벤트설정 : GSAP
+window.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+        duration: 0.3, 
+        left: e.pageX - circle.width/2,
+        top: e.pageY - circle.height/2,
+    });            
+});
+</code></pre>
+                                        </div>
+                    
+                <h3 class="t_tit3">✏️ 스크립트 보기 : 자바스크립트</h3>
+                <p class="t_desc2">
+                    <strong>! JAVASCRIPT TIP !</strong><br>
+                    1. 먼저 커서 선택자를 만들어준 뒤 커서의 위치값을 모두 불러올 수 있도록 요소객체의 메서드인 getBoundingClientRect()를 이용해줍니다.<br>
+                    2. 이벤트 리스너의 메서드 중 mousemove를 통해 마우스가 움직일 때 실행되는 요소(커서) 이벤트 함수를 만듭니다.<br>
+                    3. GSAP을 통해 커서를 커서 영역 가운데로 맞춰준 뒤 부드럽게 작동되도록 지속시간을 설정해줍니다.
+                </p>
+
+                <hr>
+                
+                <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/mouseEffect03" frameborder="0"></iframe>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/mouseEffect03.html">원본 소스 보기</a>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/mouseEffect03.html">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- //sample02 -->
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

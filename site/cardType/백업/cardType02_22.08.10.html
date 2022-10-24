@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            /* 이미지가 밖으로 나오는 것을 막아준다. */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* 중심을 기준으로 간격을 떨어뜨린다.*/
+        }
+
+        .card {
+            width: 23.5%;
+            /* background: #f5f5f5; */
+        }
+
+        .card__body {
+            padding: 16px 0 20px 0;
+        }
+
+        .card__body .card__body__header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* 중심을 기준으로 간격을 떨어뜨린다.*/
+        }
+
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+
+        .card__body .btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 5px;
+            background-color: #884A4A;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap gmarket section">
+        <h2>파스타 요리하기🍝</h2>
+        <p>토마토와 오일 그리고 크림 등 다양한 파스타를 만나보세요!<br />
+            그리고 파스타의 매력을 느껴보세요!
+        </p>
+        <div class="card__inner container top">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_01.jpg" alt="파스타01">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">파스타의 정의</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_02.jpg" alt="파스타02">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">파스타 면의 종류</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_03.jpg" alt="파스타03">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">파스타의 종류</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_04.jpg" alt="파스타04">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">파스타의 재료</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+
+        </div>
+        <div class="card__inner container bottom">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_05.jpg" alt="파스타05">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">토마토 파스타</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_06.jpg" alt="파스타06">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">오일 파스타</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_07.jpg" alt="파스타07">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">로제 파스타</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg02_08.jpg" alt="파스타08">
+                </figure>
+                <div class="card__body">
+                    <div class="card__body__header">
+                        <h3 class="tit">크림 파스타</h3>
+                        <a href="#" class="btn">
+                            <span aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="24" height="24" rx="5" fill="white" />
+                                    <rect width="24" height="24" rx="5" fill="#884A4A" />
+                                    <path
+                                        d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.7071 12.7071C19.0976 12.3166 19.0976 11.6834 18.7071 11.2929L12.3431 4.92893C11.9526 4.53841 11.3195 4.53841 10.9289 4.92893C10.5384 5.31946 10.5384 5.95262 10.9289 6.34315L16.5858 12L10.9289 17.6569C10.5384 18.0474 10.5384 18.6805 10.9289 19.0711C11.3195 19.4616 11.9526 19.4616 12.3431 19.0711L18.7071 12.7071ZM6 13L18 13V11L6 11V13Z"
+                                        fill="white" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <p class="desc">
+                        파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파스타를 더 알아볼까요?
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</body>
+
+</html>

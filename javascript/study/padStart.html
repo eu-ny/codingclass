@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 문자열 메서드</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 : 문자열 메서드 : padStart() / padEnd()</h2>
+            <p class="t_desc">
+               이번 시간에는 문자열 메서드인 <strong>padStart() / padEnd()</strong>에 대해 알아보겠습니다! 😁
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. padStart( )</h3>
+                <p class="t_desc">
+                    padStart() 메서드는 주어진 길이에 맞게 앞 자리에 문자열을 채우고, 새로운 문자열을 반환합니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! padStart( ) 사용 방법 !</strong><br />
+                    "문자열".padStart(길이(자리수));<br />
+                    "문자열".padStart(길이(자리수), "추가 할 문자열");
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "456";
+
+const cirrentStr1 = str1.padStart(1, "0");      //456
+const cirrentStr2 = str1.padStart(2, "0");      //456
+const cirrentStr3 = str1.padStart(3, "0");      //456 : 기존 문자열에서 자리수가 늘어나지 않았기 때문에 문자열이 추가되지 않는다.
+const cirrentStr4 = str1.padStart(4, "0");      //0456 : 자릿수보다 클 경우 앞에 0이 붙는다.
+const cirrentStr5 = str1.padStart(5, "0");      //00456 : 자릿수보다 클 경우 앞에 0이 붙는다.
+const cirrentStr6 = str1.padStart(6, "0");      //000456 : 자릿수보다 클 경우 앞에 0이 붙는다.
+const cirrentStr7 = str1.padStart(6, "1");      //111456 : 자릿수보다 클 경우 앞에 1이 붙는다.
+const cirrentStr8 = str1.padStart(6, "12");     //121456 : 자릿수보다 클 경우 앞에 121이 붙는다.
+const cirrentStr9 = str1.padStart(6, "123");    //123456 : 자릿수보다 클 경우 앞에 123이 붙는다.
+const cirrentStr10 = str1.padStart(6, "1234");  //123456 : 자리수보다 문자열이 길기 때문에 문자열의 마지막 값은 출력되지 않는다.
+const cirrentStr11 = str1.padStart(6);          //   456 : 뒤에 문자열을 입력하지 않으면 앞의 자리수만큼 공백 처리 된다. : 456은 자릿수가 3이니 남은 3만큼의 공백이 생김
+</code></pre>
+                </div>
+                <p class="t_box">
+                    <strong>! point !</strong> 문자열을 추가했을 때 문자열의 자리수보다 문자열이 긴 경우 추가 된 문자열의 마지막 값은 출력되지 않는다.<br />
+                    이 때 만약 자리수는 늘어났는데 추가할 문자열이 없을 경우 공백처리한다.<br />
+                    기존 문자열에서 길이를 추가했을 때 자리수가 늘어나지 않았을 경우 문자열은 추가되지 않는다.
+                </p>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. padEnd( )</h3>
+                <p class="t_desc">
+                    padEnd() 메서드는 주어진 길이에 맞게 뒷 자리에 문자열을 채우고, 새로운 문자열을 반환합니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! padEnd( ) 사용 방법 !</strong><br />
+                    "문자열".padEnd(길이);<br />
+                    "문자열".padEnd(길이, "문자열");
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "456";
+
+const cirrentStr1 = str1.padEnd(1, "0");     // 456
+const cirrentStr2 = str1.padEnd(2, "0");     // 456
+const cirrentStr3 = str1.padEnd(3, "0");     // 456
+const cirrentStr4 = str1.padEnd(4, "0");     // 4560
+const cirrentStr5 = str1.padEnd(5, "0");     // 45600
+const cirrentStr6 = str1.padEnd(6, "0");     // 456000
+const cirrentStr7 = str1.padEnd(6, "1");     // 456111
+const cirrentStr8 = str1.padEnd(6, "12");    // 456121
+const cirrentStr9 = str1.padEnd(6, "123");   // 456123
+const cirrentStr10 = str1.padEnd(6, "1234");  // 456123
+const cirrentStr11 = str1.padEnd(6);          // 456___ (공백이 티가 안나서 임시로 하이픈으로 대체!)
+</code></pre>
+                </div>
+                <p class="t_box">
+                    <strong>! point !</strong> 문자열을 추가했을 때 문자열의 자리수보다 문자열이 긴 경우 추가 된 문자열의 마지막 값은 출력되지 않는다.<br />
+                    이 때 만약 자리수는 늘어났는데 추가할 문자열이 없을 경우 공백처리한다.<br />
+                    기존 문자열에서 길이를 추가했을 때 자리수가 늘어나지 않았을 경우 문자열은 추가되지 않는다.
+                </p>
+            </div>
+            <!-- //sample02 -->
+
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

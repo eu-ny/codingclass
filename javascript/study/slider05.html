@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이미지 슬라이드 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="slider02.html">슬라이드 효과</a></li>
+                <li><a href="slider03.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 - 이미지 슬라이드(버튼, dot메뉴) </h2>
+            <p class="t_desc">
+                이번 시간에는 자동으로 넘어가지 않고 버튼과 닷 메뉴를 클릭했을 때 해당 순서로 이미지가 넘어가도록 구현해보겠습니다! 🥹
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    각 이미지마다 css설정을 주기 위해 따로 부모를 2번 감싸서 묶어줍니다.<br>
+                    또한 버튼 아래 닷메뉴 구조를 추가해주었습니다. 닷 메뉴는 스크립트로 구현할 것이므로 주석처리를 해줍니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;section id="sliderType05"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider" role="group" aria-label="1/5"&gt;
+                    &lt;img src="../assets/img/Mountian_bg01.jpg" alt="이미지6"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider" role="group" aria-label="2/5"&gt;
+                    &lt;img src="../assets/img/Mountian_bg02.jpg" alt="이미지7"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider" role="group" aria-label="3/5"&gt;
+                    &lt;img src="../assets/img/Mountian_bg03.jpg" alt="이미지8"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider" role="group" aria-label="4/5"&gt;
+                    &lt;img src="../assets/img/Mountian_bg04.jpg" alt="이미지9"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider" role="group" aria-label="5/5"&gt;
+                    &lt;img src="../assets/img/Mountian_bg05.jpg" alt="이미지10"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="slider__btn"&gt;
+            &lt;a href="#" class="prev" role="button" aria-label="왼쪽 이미지"&gt;prev&lt;/a&gt;
+            &lt;a href="#" class="next" role="button" aria-label="오른쪽 이미지"&gt;next&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="slider__dot"&gt;
+            &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    1. 이미지를 가로로 연결하기 위해 포지션을 relative로 설정하고 영역에서 벗어나는 이미지를 안보이게 처리하기 위해 overflow: hidden을 설정해줍니다.<br>
+                    2. 이미지가 연속적으로 움직일 수 있도록 첫번째 이미지를 6번째에 추가로 넣습니다. (애니메이션 설정은 스크립트 파트에서!!)<br>
+                    3. 마찬가지로 이미지가 6장이기 때문에 inner의 가로 크기를 +하여 4800px로 설정합니다.<br>
+                    4. 닷 메뉴 스타일을 지정해줍니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {  /* 이미지가 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+.slider__inner {/* 전체 이미지를 감싸고 있는 부모 : 움직이는 부분 속성주기 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 4800px; /* 총 여섯개의 이미지 */
+    height: 450px;
+}
+.slider {   /* 개별적인 이미지 (각각의 이미지 설정) */
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+.slider:nth-child(1)::before {content: '이미지6';}
+.slider:nth-child(2)::before {content: '이미지7';}
+.slider:nth-child(3)::before {content: '이미지8';}
+.slider:nth-child(4)::before {content: '이미지9';}
+.slider:nth-child(5)::before {content: '이미지10';}
+.slider:nth-child(6)::before {content: '이미지6';}
+
+@media(max-width : 800px){
+    .slider__img {
+        width: 400px;
+        height: 250px;
+    }
+    .slider {
+        width: 400px;
+        height: 250px;
+    }
+}
+
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+}
+.slider__btn a:hover {
+    border-radius: 50px;
+    background: rgba(38, 52, 103, 0.4);
+}
+.slider__btn a.prev {
+    left: 0;
+}
+.slider__btn a.next {
+    right: 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 2px;
+}
+.slider__dot .dot.active {
+    background: rgba(255,255,255,0.9);
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    반복문을 통해 문자열을 생성하고 각 함수를 만들어 재활용이 가능하도록 합니다.
+                </p>
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">{
+    const sliderWrap = document.querySelector(".slider__wrap");
+    const sliderImg = document.querySelector(".slider__img");   //보여지는 영역
+    const sliderInner = document.querySelector(".slider__inner"); //움직이는 영역
+    const slider = document.querySelectorAll(".slider");      //각각의 이미지
+    const sliderBtn = document.querySelector(".slider__btn"); //버튼
+    const sliderBtnPrev= sliderBtn.querySelector(".prev"); // 왼쪽버튼
+    const sliderBtnNext = sliderBtn.querySelector(".next"); // 오른쪽 버튼
+    const sliderDot = document.querySelector(".slider__dot"); // 닷메뉴
+
+    let currentIndex = 0;                       //현재 이미지
+    let sliderCount = slider.length;            //이미지 갯수
+    let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+
+    let dotIndex = "";
+    
+    function intit(){
+        // dot 만들어주기!
+        // slider.forEach(() =&gt; {
+        //     dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;";
+        // });
+        // dot 만들어주기!
+        slider.forEach(() =&gt; dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;");
+        sliderDot.innerHTML = dotIndex;
+
+        //첫번째 닷 버튼 활성화 표시(active)
+        sliderDot.firstChild.classList.add("active");
+
+    }
+    intit();
+
+    //이미지 이동 스크립트
+    function gotoSlider(num){
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
+        currentIndex = num;
+
+
+        //두번재 이미지에서 두번째 닷 버튼 활성화 (탭 메뉴와 원리 동일)
+        //1. 닷 메뉴의 클래스를 모두 삭제
+        //2. 해당 이미지의 해당 닷 메뉴에 클래스 추가
+        let dotActive = document.querySelectorAll(".slider__dot .dot");
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[num].classList.add("active");
+    }
+
+    //버튼을 클릭할 때 이미지 이동 작동시키기
+    document.querySelectorAll(".slider__btn a").forEach((btn, index) =&gt; {
+        btn.addEventListener("click", () =&gt; {
+            let prevIndex = (currentIndex + (sliderCount - 1 )) % sliderCount;
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+            if(btn.classList.contains("prev")){
+                gotoSlider(prevIndex);
+            }else{
+                gotoSlider(nextIndex);
+            }
+        });
+    });
+
+    //dot 메뉴를 클릭할 때 이미지 이동 작동시키기
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index) =&gt; {
+        dot.addEventListener("click", () =&gt; {
+            gotoSlider(index);
+        });
+    });
+
+    //자바스크립트는 순서댜로 진행되므로 실행문이 맨 밑에 있어서 나오지 않은 것.
+}
+</code></pre>
+                    </div>
+
+                <hr>
+                
+                <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/sliderEffect05.html" frameborder="0"></iframe>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/sliderEffect05.html">원본 소스 보기</a>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/sliderEffect05.html">원본 페이지 보기</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

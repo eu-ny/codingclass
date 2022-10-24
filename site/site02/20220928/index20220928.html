@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site02</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/image.css">
+    <link rel="stylesheet" href="assets/css/baaner.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+<body>
+    <div id="skip">
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#textType01">텍스트01 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType02">텍스트02 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
+      </div>
+      <!-- //skip -->
+
+    <header id="headerType" class="header__wrap gmark">
+        <h2>WEB <em>site</em></h2>
+          <nav id="nav" class="header__menu">
+            <ul>
+              <li><a href="#sliderType">슬라이드</a></li>
+              <li><a href="#textType01">텍스트01</a></li>
+              <li><a href="#imageType">이미지</a></li>
+              <li><a href="#cardType">카드</a></li>
+              <li><a href="#bannerType">배너</a></li>
+              <li><a href="#textType02">텍스트02</a></li>
+              <li><a href="#footerType">푸터</a></li>
+            </ul>
+          </nav>
+          <div class="header__ham">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+      </header>
+      <!-- //headerType -->
+
+      <main id="main">
+        <section id="sliderType" class="slider__wrap gmark content__item">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div>
+                                <div class="ball1"></div>
+                                <div class="ball2"></div>
+                                <div class="ball3"></div>
+                                <div class="ball4"></div>
+                                <div class="ball5"></div>
+                                <div class="ball6"></div>
+                            </div>
+                            <div class="desc container">
+                                <figure>
+                                    <img src="assets/img/header_gradient.jpg" alt="이미지" class="circle">
+                                        <div class="camera">
+                                            <img src="assets/img/slider_icon01.png" alt="">
+                                        </div>
+                                        <div class="action">
+                                            <img src="assets/img/slider_icon02.png" alt="">
+                                        </div>
+                                        <div class="usan">
+                                            <img src="assets/img/slider_icon03.png" alt="">
+                                        </div>
+                                </figure>
+                                <h3>NEW<br>
+                                    PORTFOLIO</h3>
+                                <p>
+                                    너무 무리하지 말아요!<br>
+                                    이미 당신은 해내고 있고<br>
+                                    앞으로도 잘 할 수 있을거예요! 
+                                </p>
+                                <div class="btn">
+                                    <a href="#">더 알아보기</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //sliderType-->    
+
+        <section id="textType" class="gmark">
+            <div class="text_section container">
+                <div id="header">
+                    <span>FRONTEND</span>
+                    <h2>프론트앤드<br> 전문과정</h2>
+                    <p>프론트앤드 개발자로 취업하기 위한<br>전문 과정입니다. <br>여러분들도 도전해보세요!</p>    
+                </div>
+                <div class="text__inner">
+                    <div class="text_top">
+                        <article class="text__box">
+                            <span class="icons icon1 ir">button</span>
+                            <div class="text_desc">
+                                <h2 class="desc__header">웹 디자인</h2>
+                                <p class="desc">웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작 할 계</h2>
+                            </div>
+                        </article>
+                        <article class="text__box">
+                            <span class="icons icon2 ir">button</span>
+                            <div class="text_desc">
+                                <h2 class="desc__header">웹 퍼블리셔</h2>
+                                <p class="desc">퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</h2>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="text_bottom">
+                        <article class="text__box">
+                            <span class="icons icon3 ir">button</span>
+                            <div class="text_desc">
+                                <h2 class="desc__header">프론트앤드 개발자</h2>
+                                <p class="desc">사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스를 개발합니다.</h2>
+                            </div>
+                        </article>
+                        <article class="text__box">
+                            <span class="icons icon4 ir">button</span>
+                            <div class="text_desc">
+                                <h2 class="desc__header">백앤드 개발자</h2>
+                                <p class="desc">용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된입니다.</h2>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //textType -->
+
+        <section id="imageType" class="image__wrap gmark img__section">
+            <h2>웹쓰 스터디 멤버</h2>
+            <p>웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자 멤버를 소개합니다.</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <figure class="image__box">
+                        <img src="assets/img/img_bg02_01.jpg" alt="dog">
+                    </figure>
+                    <div class="image__desc">
+                        <h3 class="image__title">웹쓰 20기 이댕댕</h3>
+                        <a href="#" title="자세히 보기" class="more">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="image img2">
+                    <figure class="image__box">
+                        <img src="assets/img/img_bg02_02.jpg" alt="dog">
+                    </figure>
+                    <div class="image__desc">
+                        <h3 class="image__title">웹쓰 20기 오댕댕</h3>
+                        <a href="#" title="자세히 보기" class="more">자세히 보기</a>
+                    </div>
+                </article>
+                <article class="image img3">
+                    <figure class="image__box">
+                        <img src="assets/img/img_bg02_03.jpg" alt="dog">
+                    </figure>
+                    <div class="image__desc">
+                        <h3 class="image__title">웹쓰 20기 김댕댕</h3>
+                        <a href="#" title="자세히 보기" class="more">자세히 보기</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //imageType -->
+
+        <section id="cardType" class="card__wrap gmark card_section">
+            <h2>포트폴리오 구경하기</h2>
+            <p>웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 강의 사이트입니다. <br>
+                Gmarket Sans Light 22px 150% #67778A 
+            </p>
+            <div class="card__inner container">
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                    <h3 class="tit">김가영, 포폴! <a href="#" class="more"><span class="ir">더보기</span></a></h3>
+                    <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                    <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                    <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                    <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                    <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                       <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                       <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                       <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                        <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                       <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                        <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                       <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                       <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+                <acticle class="card">
+                    <img src="assets/img/card_bg02_01.jpg" alt="파스타">
+                       <h3 class="tit">김가영, 포폴!<a href="#" class="more"><span  class="ir">더보기</span></a></h3>
+                        <p class="desc"> 사이트를 만들기 위한 기초 강의입니다. 기본 코딩에 대한 감각을 익히고, 웹 표준을 준수하면서......</p> 
+                </acticle>
+            </div>
+        </section>
+        <!-- //cardType -->
+
+        <section id="bannerType" class="banner__wrap gmark container">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">유튜버 웹보이</h3>
+                <p class="desc">더 다양한 강의는 유튜브를 통해 제공하고 있습니다.<br>
+                    구독과 좋아요! 부탁드립니다.                    
+                </p>
+                <div class="banner_btn">
+                    <a href="#">바로가기</a>
+                </div>
+                <figure>    
+                    <img src="assets/img/header_gradient.jpg" class="circle" alt="circle">
+                    <img src="assets/img/youtube.png" class="youtube" alt="youtubeIcon">
+                </figure>
+                <div>
+                    <div class="ball1"></div>
+                    <div class="ball2"></div>
+                    <div class="ball3"></div>
+                    <div class="ball4"></div>
+                    <div class="ball5"></div>
+                    <div class="ball6"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //bannerType -->
+
+        <section id="textType" class="gmark">
+            <div class="txt_section2 container">
+                <h2>멍멍 유치원</h2>
+                <p>🐶 멍멍 유치원의 말썽꾸러기 강아지 학생들을 소개합니다. 🐶</p>
+                <div class="text__inner2">
+                    <article class="text__box2">
+                        <p>불과 3달전만해도 여러 원인들로 인해 자존감이 밑바닥이였던 저에게 이 스터디는 너무 소중한 시간이었어요. 매일 마음속으로 울고싶다를 외쳤던 저였는데 이제는 조금이나마 이겨 낼 수 있을 것 같네요. 다음에 선생님 만났을 때는 많이 발전해있는 제가 되었으면 좋겠네요...</p>
+                        <span class="icon icon1 ir">아이콘</span>
+                        <div class="dogname">
+                            <h2>김댕댕<em>멍멍 24기</em></h2>
+                            <div class="star star1 ir">별</div>
+                        </div>
+                        <div class="more"><a href="#">자세히 보기</a></div>
+                    </article>
+                    <article class="text__box2">
+                        <p>제일 기억에 남는 활동은 바로 간식 시간이에요! 수제로 만들어진 간식은 간도 딱 맞고 건강에도 좋은 재료로 만들어져서 양심에 찔리지 않고 맘껏 먹을 수 있었습니다~~~! 선생님 맛있는 간식 늘 정성껏 만들어 주셔서 감사합니다~!!!!!!!! 😆</p>
+                        <span class="icon icon2 ir">아이콘</span>
+                        <div class="dogname">
+                            <h2>오왈왈<em>멍멍 24기</em></h2>
+                            <div class="star star2 ir">별</div>
+                        </div>
+                        <div class="more"><a href="#">자세히 보기</a></div>
+                    </article>
+                    <article class="text__box2">
+                        <p>게을러서 가끔 지각도 하고 말도 잘 안들었지만 끝까지 저를 잘 지도해주셔서 감사했습니다...ㅎㅎㅎ 그 때만 생각하면 너무 죄송하네요 ㅠㅠ <br>댕댕 유치원에 다니면서 많은 것을 배우고 갈 수 있었습니다. 마지막으로 하고싶은 말은 간식 최고!!!!!</p>
+                        <span class="icon icon3 ir">아이콘</span>
+                        <div class="dogname">
+                            <h2>박비숑<em>멍멍 24기</em></h2>
+                            <div class="star star3 ir">별</div>
+                        </div>
+                        <div class="more"><a href="#">자세히 보기</a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- textType -->
+
+        <footer id="footerType" class="gmark">
+            <div class="footer__wrap container">
+                <div class="top">
+                    <div class="left">
+                        <h3>Webstoryboy</h3>
+                        <p>
+                            안녕하세요!<br>
+                            더 다양한 정보 확인<br>
+                            webstoryboy@naver.com
+                        </p>
+                    </div>
+                    <div class="right">
+                        <div>
+                            <h3>사이트</h3>
+                            <ul>
+                                <li><a href="#">웹표준 사이트</a></li>
+                                <li><a href="#">반응형 사이트</a></li>
+                                <li><a href="#">패럴랙스 사이트</a></li>
+                                <li><a href="#">포트폴리오 사이트</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>유형</h3>
+                            <ul>
+                                <li><a href="#">이미지 유형</a></li>
+                                <li><a href="#">카드 유형</a></li>
+                                <li><a href="#">이미지/텍스트 유형</a></li>
+                                <li><a href="#">배너 유형</a></li>
+                                <li><a href="#">텍스트 유형</a></li>
+                                <li><a href="#">푸터 유형</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>스크립트</h3>
+                            <ul>
+                                <li><a href="#">검색 이펙트</a></li>
+                                <li><a href="#">퀴즈 이펙트</a></li>
+                                <li><a href="#">마우스 이펙트</a></li>
+                                <li><a href="#">슬라이드 이펙트</a></li>
+                                <li><a href="#">패랠랙스 이펙트</a></li>
+                                <li><a href="#">게임 이펙트</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>레퍼런스</h3>
+                            <ul>
+                                <li><a href="#">CSS</a></li>
+                                <li><a href="#">FONTS</a></li>
+                                <li><a href="#">BLOG</a></li>
+                                <li><a href="#">REFERENCE</a></li>
+                                <li><a href="#">TUTORIAL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p>Copyright 2022. All Rights Reserved. - Designed by Webstoryboy</p>
+                </div>
+            </div>
+        </footer>
+        <!-- //footerType -->
+
+    </main>
+
+        <script>
+            const btnHam = document.querySelector(".header__ham");
+            const btnMenu = document.querySelector(".header__menu");
+            const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+            btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+
+        })
+
+        btnMenuList.forEach((List)=>{
+            List.addEventListener("click", ()=>{
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+                document.body.classList.remove("fixed");
+            })
+        })
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        });
+
+
+        </script>
+    <!-- //ham -->
+   <script src="asset/js/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                    clickable: true,
+                },
+            });
+    
+            const btnStop = document.querySelector(".swiper-button-stop");
+            const btnStart = document.querySelector(".swiper-button-play");
+    
+            btnStart.style.display = "none";
+    
+            document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+                swiper.autoplay.stop();
+                btnStart.style.display = "block";
+                btnStop.style.display = "none";
+    
+            });
+            document.querySelector(".swiper-button-play").addEventListener("click", () => {
+                swiper.autoplay.start();
+                btnStart.style.display = "none";
+                btnStop.style.display = "block";
+            });
+    
+            document.querySelectorAll("a").forEach(li => {
+                li.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({
+                        behavior:"smooth"
+                    });
+                });
+            });
+    </script>
+</body>
+</html>

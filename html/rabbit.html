@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li class="active"><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+    </main>
+    <!-- //main_menu -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">Illustrator : 펜 툴로 캐릭터 그리기 01</h2>
+            <p class="t_desc">
+               이번 시간에는 디자인 프로그램인 일러스트레이터(Illustrator)를 사용하여 모자 쓴 어린이👧와 토끼🐰를 작업해보겠습니다.
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. 어린이 캐릭터</h3>
+                <p class="t_desc">
+                    일러트스레이터의 도형툴과 패스파인더를 이용하여 캐릭터를 만들어보자!
+                </p>
+                <img src="https://user-images.githubusercontent.com/106949433/186006676-77648487-fab6-4707-9c42-5621450d1210.jpg" alt="어린이"/>
+                <p class="t_box">
+                    <strong>! TIP !</strong><br />
+                    모자의 밧줄모양은 직사각형에 radius 20px 정도 준 뒤 선툴을 이용하여 ctl + d로 간격에 맞게 10를 복사합니다. 그 뒤 패스타인더를 이용해 10등분을 합니다.<br />
+                </p>
+
+
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. 토끼 캐릭터</h3>
+                <p class="t_desc">
+                   이번 토끼 작업은 더 심화버전으로 팬 툴을 사용하여 직접 토끼를 그려보도록 하겠습니다! 또한 모양확장과 라이브페인터를 사용하여 채색을 해보도록 하겠습니다.
+                </p>
+                <img src="https://user-images.githubusercontent.com/106949433/186006696-4107d8b7-246a-4c40-b000-f4bd07c28ae3.jpg" alt="rabbit" />
+                
+                <p class="t_box">
+                    <strong>! TIP !</strong><br />
+                    1. 펜 툴과 shift + w(선의 굵기 조정)를 사용하여 토끼 선 작업을 해준다.<br />
+                    2. 완성 된 토끼를 드래그하여 모양 확장을 해준다.<br />
+                    3. 라이브 페인터를 사용하여 채색한다.<br />
+                    4. 명암을 작업할 때에도 펜 툴로 작업한다. 이때 주의할 점은 라이브 페인터를 끈 뒤 면과 선색이 없는 상태에서 작업해야한다.<br />
+                    5. 색 조정을 하고 싶을 시 옵션바에서 컬러 아트웍을 클릭해 조정해준다.
+                </p>
+            </div>
+            <!-- //sample02 -->
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <img src="https://user-images.githubusercontent.com/106949433/186006688-3db84820-c0b2-4fb5-8a51-95ebea9d9c33.jpg" alt="rabbit" />
+            <!-- //result -->
+
+
+
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

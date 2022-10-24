@@ -1,0 +1,289 @@
+/* textType first */
+#textType {
+  background: #f6f8fd;
+}
+.text_section {
+  padding: 120px 0;
+  display: flex;
+  justify-content: space-between;
+}
+#header {
+  width: 30%;
+}
+
+#header > h2 {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+#header > p {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#header > span {
+  width: 180px;
+  height: 26px;
+  padding-top: 4px;
+  font-size: 16px;
+  background: #d0004b;
+  border-radius: 50px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.ir {
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* text__inner */
+/* text_top과 bottom으로 섹션을 나눠줬으니 그 안에서 플렉스를 주어야 2개의 text__box가 가로로 나란히 정렬된다. */
+.text__inner {
+  width: 70%;
+}
+.text_top {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.text_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.text__box {
+  width: 340px;
+  padding: 20px;
+}
+.text__box:hover {
+  background: #d2d5dd;
+  border-radius: 10px;
+}
+.text_desc .desc__header {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.text_desc .desc {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.icons {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  background: #000;
+  background: url(../img/text_icons02.svg); /* 이미지 스프라이트 */
+}
+.icons.icon2 {
+  background-position: -60px;
+} /* 아이콘 간격이 60px이므로 간격에 맞춰 포지션으로 위치 조정 */
+.icons.icon3 {
+  background-position: -120px;
+}
+.icons.icon4 {
+  background-position: -180px;
+}
+
+@media (max-width: 800px) {
+  .text_section {
+    display: block;
+  }
+  #header {
+    width: 100%;
+    text-align: center;
+  }
+  #header h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  #header p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .text__inner {
+    width: 100%;
+  }
+  .text_top {
+    flex-direction: column;
+    align-items: center;
+  }
+  .text_bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* textType second */
+.txt_section2 {
+  padding: 120px 20px;
+}
+
+.txt_section2 > h2 {
+  font-size: 50px;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.txt_section2 > p {
+  font-size: 22px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.ir {
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+/* text */
+.text__inner2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.text__box2 {
+  width: 32%;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+.text__box2 > p {
+  /* height: 189px; */
+  line-height: 1.5;
+  margin-bottom: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+}
+/* 가상요소를 사용하여 라인 배치 */
+.text__box2::before {
+  content: "";
+  width: 82%;
+  height: 1px;
+  background: #edecec;
+  position: absolute;
+  left: 30px;
+  top: 222px;
+  align-items: center;
+}
+.text__box2::after {
+  content: "";
+  width: 82%;
+  height: 1px;
+  background: #edecec;
+  position: absolute;
+  left: 30px;
+  bottom: 82px;
+  align-items: center;
+}
+
+/* dogname */
+.dogname {
+  position: absolute;
+  left: 100px;
+  bottom: 110px;
+}
+.dogname > h2 {
+  margin-bottom: 10px;
+}
+.dogname > h2 > em {
+  margin-left: 5px;
+  font-style: normal;
+  font-size: 16px;
+  color: #a4a4a4;
+}
+
+/* icon */
+.star {
+  height: 20px;
+  width: 102px;
+  background: url(../img/text_icons03_1.svg);
+}
+.star.star2 {
+  background-position: -102px;
+}
+.star.star3 {
+  background-position: -204px;
+}
+
+.icon {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  background: url(../img/text_icons03.svg);
+}
+.icon.icon2 {
+  margin-top: 75px;
+  background-position: -60px;
+}
+.icon.icon3 {
+  background-position: -120px;
+}
+
+/* more */
+.more {
+  text-align: center;
+}
+.more > a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 6px 20px;
+  margin-top: 20px;
+  color: white;
+  background: #504ecd;
+  text-align: center;
+  border-radius: 50px;
+}
+@media (max-width: 960px) {
+  .icon {
+    margin-top: 70px;
+  }
+  .icon.icon2 {
+    margin-top: 70px;
+  }
+}
+@media (max-width: 800px) {
+  .text__inner2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .txt_section2 > h2 {
+    font-size: 40px;
+  }
+  .txt_section2 > p {
+    font-size: 16px;
+  }
+  .text__box2 {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  .text__box2::before {
+    display: none;
+  }
+}

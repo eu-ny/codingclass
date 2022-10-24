@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🖱 마우스 효과 : 마우스 포인터 따라다니기 🖱</h2>
+            <p class="t_desc">
+                이번 시간에는 마우스 커서를 움직임에 따라 해당 영역에 커서가 닿았을 때 이벤트가 발생하는 효과를 실습해보겠습니다 😆
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    페이지 섹션과 마우스 인포(커서 위치값 박스)를 각각 나누어 구조에 맞게 레이아웃을 짠 뒤 스크립트를 위한 선택자를 각각 부여합니다.<br>
+                    또한 텍스트에서 스타일 변경 및 이벤트를 발생시키고 싶은 곳에 각각 선택자를 선언합니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;section id="mouseType01"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;The &lt;span class="style1"&gt;future&lt;/span&gt; depends on &lt;span class="style2"&gt;what we do&lt;/span&gt; in the &lt;span class="style3"&gt;present&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;span class="style4"&gt;미래&lt;/span&gt;는 &lt;span class="style5"&gt;현재&lt;/span&gt; 우리가 &lt;span class="style6"&gt;무엇을 하는가&lt;/span&gt;에 달려 있다.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;div class="mouse__info"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetX: &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;offsetY: &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageX: &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;pageY: &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenX: &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;li&gt;screenY: &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    1. 커서 영역 설정과 좌표값 박스를 설정합니다<br>
+                    2. 그 뒤 텍스트에서 커서가 닿았을 때 이벤트를 발생시키고 싶은 곳에 애니메이션 속성을 부여합니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기 : 마우스 포인터 / 위치(좌표)박스 영역</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;  /* vw를 사용하면 스크롤이 생기므로vh로 작업 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none; /* 커서를 해당 영역에서 안보이게 한다. */
+}
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 200;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 300;
+}
+.mouse__wrap p span {
+    padding-bottom: 3px;
+    border-bottom: 0.1vw solid #e7ad00;
+    color: #e7ad00;
+}
+
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+
+        /* mouse__cursor */
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,0.1);
+    user-select: none; /* 커서 이벤트 발생하지 않게 함. (선택되지 않게 함.) */
+    pointer-events: none;
+    /* perspective: 400px;
+    transform-style: preserve-3d; */
+    transition: background-color 0.3s, border-color 0.3s, transform 0.6s, border-radius 0.3s;
+}
+.mouse__cursor.style1 {
+    background-color: rgba(77, 49, 18, 0.4);
+    border-color: #e7ad00;
+    border-radius: 0;
+}
+.mouse__cursor.style2 {
+    background-color: rgba(24, 58, 78, 0.4);
+    border-color: #008be7;
+    transform: scale(2) rotateY(720deg);
+}
+.mouse__cursor.style3 {
+    background-color: rgba(77, 49, 18, 0.4);
+    border-color: #e7ad00;
+    transform: scale(5) skew(10deg);
+}
+.mouse__cursor.style4 {
+    background-color: rgba(53, 23, 65, 0.4);
+    border-color: #ad66ba;
+    transform: scale(10);
+}
+.mouse__cursor.style5 {
+    background-color: rgba(24, 58, 78, 0.4);
+    border-color: #008be7;
+    transform: scale(1);
+}
+.mouse__cursor.style6 {
+    background-color: rgba(145, 46, 86, 0.4);
+    border-color: #f586af;
+    border-radius: 0;
+    transform: scale(3) rotateX(545deg) skew(10deg);
+}
+
+/*  .mouse__info */
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+</code></pre>
+                    </div>
+                </details>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기 : 페이지 섹션</summary>
+                    <div class="t_code">
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100%; /* 100%하면 스크롤바가 생기지 않는다 */
+    height: 100vh;
+    font-family: "Pretendard";
+    overflow: hidden; /* 영역을 벗어나면 스크롤 생기지 않게 안보이게 하기 */
+    background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+  }
+  
+  /* 배경 이미지 */
+  body.img01 {
+    background: url(../img/effect_bg01-2.jpg) no-repeat center / cover;
+  }
+  body.img02 {
+    background: url(../img/effect_bg02-2.jpg) no-repeat center / cover;
+  }
+  body.img03 {
+    background: url(../img/effect_bg03-2.jpg) no-repeat center / cover;
+  }
+  body.img04 {
+    background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+  }
+  body.img05 {
+    background: url(../img/effect_bg05-2.jpg) no-repeat center / cover;
+  }
+  body.img06 {
+    background: url(../img/effect_bg06-2.jpg) no-repeat center / cover;
+  }
+  body.img07 {
+    background: url(../img/effect_bg07-2.jpg) no-repeat center / cover;
+  }
+  body.img08 {
+    background: url(../img/effect_bg08-2.jpg) no-repeat center / cover;
+  }
+  body.img09 {
+    background: url(../img/effect_bg09-2.jpg) no-repeat center / cover;
+  }
+  body.img10 {
+    background: url(../img/effect_bg10-2.jpg) no-repeat center / cover;
+  }
+  
+  body::after {
+    /* 가상 요소 : 배경 전체 불투명도 씌우기 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(23, 20, 88, 0.500);
+    z-index: -1;
+  }
+  
+  img {
+    width: 100%;
+    vertical-align: top; /* 이미지 정렬 */
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  /* scroll */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #28293600;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.500);
+    border-radius: 20px;
+  }
+  
+  /* layout */
+  #header {
+    z-index: 2000; /* 제트 인덱스는 서로 형제여야 하며 꼭 포지션을 함께 사용해주어야 한디. */
+  }
+  #main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 1000;
+  }
+  #footer {
+    position: relative;
+    z-index: 3000;
+  }
+  
+  /* header */
+  #header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    padding: 20px;
+  }
+  #header h1 {
+    display: inline-block;
+    font-weight: 200;
+    margin-bottom: 10px;
+    border-bottom: 0.5px solid #fff;
+  }
+  #header p {
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  #header li {
+    display: inline-block;
+  }
+  #header li a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  #header li.active a {
+    background-color: #fff;
+    color: #282936;
+  }
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    이벤트 메서드인 <i>mouseover()</i>과 <i>mouseout()</i> 그리고 위치 속성들을 통해 스크립트를 완성해보자! <br>
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> 💡 전체 스크립트 보기</summary>
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//커서 위치 좌표 값
+window.addEventListener("mousemove", (event) =&gt; {
+    document.querySelector(".clientX").innerText = event.clientX; //브라우저 기준
+    document.querySelector(".clientY").innerText = event.clientY;
+    document.querySelector(".offsetX").innerText = event.offsetX; //요소 기준
+    document.querySelector(".offsetY").innerText = event.offsetY;
+    document.querySelector(".pageX").innerText = event.pageX; //문서 기준
+    document.querySelector(".pageY").innerText = event.pageY;
+    document.querySelector(".screenX").innerText = event.screenX; //디바이스 기준
+    document.querySelector(".screenY").innerText = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor"); //지역 변수(함수안)는 이벤트가 작동 X 전역변수로 해야 이벤트가 작동되기 때문에 전역 변수로 작업.
+
+//커서 영역 정하기
+window.addEventListener("mousemove", (e) =&gt; {
+
+    cursor.style.left = e.clientX -25 + "px";
+    cursor.style.top = e.clientY -25  + "px";
+});
+
+//커서 이벤트 작동시키기 - 각각 출력문으로 스타일 적용 - 비효율적
+// document.querySelector(".style1").addEventListener("mouseover", () => {
+//     cursor.classList.add("style1");
+// });
+// document.querySelector(".style1").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style1");
+// });
+// document.querySelector(".style2").addEventListener("mouseover", () => {
+//     cursor.classList.add("style2");
+// });
+// document.querySelector(".style2").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style2");
+// });
+// document.querySelector(".style3").addEventListener("mouseover", () => {
+//     cursor.classList.add("style3");
+// });
+// document.querySelector(".style3").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style3");
+// });
+// document.querySelector(".style4").addEventListener("mouseover", () => {
+//     cursor.classList.add("style4");
+// });
+// document.querySelector(".style4").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style4");
+// });
+// document.querySelector(".style5").addEventListener("mouseover", () => {
+//     cursor.classList.add("style5");
+// });
+// document.querySelector(".style5").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style5");
+// });
+// document.querySelector(".style6").addEventListener("mouseover", () => {
+//     cursor.classList.add("style6");
+// });
+// document.querySelector(".style6").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style6");
+// });
+
+// for문 : 마우스 커서 이벤트 작동시키기
+//for문 식 쓰고 반복되는 실행문 쓰기 - 그 뒤 숫자 지우고 i로 변경하기 
+for(let i=1; i&lt;=6; i++){
+    document.querySelector(".style"+ i).addEventListener("mouseover", () => {
+        cursor.classList.add("style" + i);
+    });
+    document.querySelector(".style"+ i).addEventListener("mouseout", () => {
+        cursor.classList.remove("style"+ i);
+    });
+}
+
+// forEach() : 마우스 커서 이벤트 작동시키기
+num = [1,2,3,4,5,6];
+    num.forEach(el => {
+        document.querySelector(".style"+ el).addEventListener("mouseover", () => {
+            cursor.classList.add("style" + el);
+        });
+        document.querySelector(".style"+ el).addEventListener("mouseout", () => {
+            cursor.classList.remove("style"+ el);
+        });
+    });
+
+// forEach() : 마우스 커서 이벤트 작동시키기
+document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add("style" + (num+1));
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove("style" + (num+1));
+    });
+});
+
+// getAttribute : 마우스 커서 이벤트 작동시키기
+    document.querySelectorAll('.mouse__wrap span').forEach((span) => {
+        const attr = span.getAttribute('class');
+        span.addEventListener("mouseover", () => {
+            const cursor = document.querySelector('.mouse__cursor');
+            cursor.classList.add(attr);
+        });
+        span.addEventListener("mouseout", () => {
+            const cursor = document.querySelector('.mouse__cursor');
+            cursor.classList.remove(attr);
+        });
+    });
+</code></pre>
+                    </div>
+                </details>
+                <h3 class="t_tit3">✏️ 스크립트 보기 : 자바스크립트</h3>
+                <p class="t_desc2">
+                    <strong>! JAVASCRIPT TIP !</strong><br>
+                    1. 위치(좌표)값을 출력하기 위해 innerText를 통해 이벤트 위치 속성을 부여합니다.<br>
+                    2. 커서를 커서 영역의 중심에 맞추기 위해 브라우저 기준의 위치 속성인 clientX/Y를 사용합니다. <br>
+                    3. 이 때 반드시 문자열을 추가하여 그 값의 단위를 설정해주어야 합니다!(+ "px")<br>
+                    4. getAttribute 메서드를 사용하여 마우스 이벤트 메서드를 효율적으로 실행시킵니다.<br>
+                    5. 그 외에는 아래의 주석을 참고하여 더 자세하게 알아봅시다!<br>
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">//커서 위치 좌표 값
+window.addEventListener("mousemove", (event) => {
+    document.querySelector(".clientX").innerText = event.clientX; //브라우저 기준
+    document.querySelector(".clientY").innerText = event.clientY;
+    document.querySelector(".offsetX").innerText = event.offsetX; //요소 기준
+    document.querySelector(".offsetY").innerText = event.offsetY;
+    document.querySelector(".pageX").innerText = event.pageX; //문서 기준
+    document.querySelector(".pageY").innerText = event.pageY;
+    document.querySelector(".screenX").innerText = event.screenX; //디바이스 기준
+    document.querySelector(".screenY").innerText = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor"); //지역 변수(함수안)는 이벤트가 작동 X 전역변수로 해야 이벤트가 작동되기 때문에 전역 변수로 작업
+
+//커서 영역 정하기
+window.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX -25 + "px";
+    cursor.style.top = e.clientY -25  + "px";
+});
+
+// getAttribute : 마우스 커서 이벤트 작동시키기
+document.querySelectorAll('.mouse__wrap span').forEach((span) => {
+    const attr = span.getAttribute('class');
+    span.addEventListener("mouseover", () => {
+        const cursor = document.querySelector('.mouse__cursor');
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () => {
+        const cursor = document.querySelector('.mouse__cursor');
+        cursor.classList.remove(attr);
+    });
+});
+</code></pre>
+                </div>
+
+                <hr>
+                
+                <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/mouseEffect01" frameborder="0"></iframe>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/mouseEffect01.html">원본 소스 보기</a>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/mouseEffect01.html">원본 페이지 보기</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈1</a></li>
+                <li><a href="quiz02.html">퀴즈2</a></li>
+                <li><a href="quiz03.html">퀴즈3</a></li>
+                <li><a href="quiz04.html">퀴즈4</a></li>
+                <li><a href="quiz04.html">퀴즈5</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>               
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 객관식 유형</h2>
+            <p class="t_desc2">
+                자바스크립트를 이용하여 웹디자인기능사 필기문제를 객관식 유형 퀴즈로 여러개 제작해보기<br>
+                하나의 객관식 문제를 자바스크립트를 이용하여 만들어보자!
+            </p>
+
+            <hr>
+            <div>
+                <h3 class="t_tit2">#1. 선택자 자바스크립트 소스</h3>
+                <p class="t_box">
+                    상수에게 해당명칭(ex: quizType)을 선언해주고 쿼리셀랙터(태그, 아이디, 클래스를 선택할 수 있는 것)로 선택한 요소를 찾아서 넣어보자!<br>
+                </p>
+                <div class="t_code">
+<pre><code class="language-js"> //선택자
+const quizType = document.querySelector(".quiz__type"); //퀴즈종류
+const quizNumber = document.querySelector(".quiz__question .number"); //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask"); //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm"); //퀴즈 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result"); //정답 결과
+const quizView = document.querySelector(".quiz__view"); //강아지
+const quizSelects = document.querySelector(".quiz__selects"); //객관식 보기
+const quizChoice = quizSelects.querySelectorAll(".choice"); //객관식 보기
+const quizSelect = quizSelects.querySelectorAll(".select"); //객관식 선택
+
+//quizSelects.querySelectorAll(".select") = 퀴즈 셀렉터 안에 셀렉터를 찾게 해준다.
+//choice와 select는 복수로 구현되어야 하기 때문에 querySelectorAll을 사용하여 모두 선택해준다.
+</code></pre>
+                </div>
+                <p class="t_desc" style="margin-bottom: 50px !important;">
+                    =&gt; document 대신 quizSelects를 선언한 이유는 만약 문제가 100개 이상이 되면 선택과 보기는 400개 이상이 되기 때문에 document에서 찾는 것 보단 요소가 소속되어 있는 부모 요소를 써주어야 더 빠르게 찾을 수 있기 때문이다.
+                </p>
+                <details>
+                    <summary>결과 보기</summary>
+                    <img src="https://user-images.githubusercontent.com/106949433/183391595-3ee7d321-99e9-4033-9f95-539bfe7e684e.jpg" alt="quiz02">
+                </details>
+            </div>
+            <!-- //선택자 -->
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">#2. 문제 정보 자바스크립트 소스</h3>
+                <p class="t_box">
+                    배열 안 객체로 데이터를 저장하여 키와 값으로 여러개의 문제정보(데이터)를 효율적으로 저장시킨다.<br />
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">//문제정보
+const quizInfo = [
+    {
+        answerType : "웹디자인기능사 2010년 01회",
+        answerNum : "1",
+        answerAsk : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어는 무엇인가?",
+        answerChoice : ["아바타", "쿠키", "포털", "허브"],
+        answerResult : "1",
+        answerEx : "정답은 아바타이다. 분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어를 아바타라고 한다."
+    }
+]
+</code></pre>
+                </div>
+            </div>
+            <!-- // 문제정보 -->
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">#3. 문제 출력하기 자바스크립트 소스</h3>
+                <p class="t_box">
+                    textContent를 사용하여 퀴즈 문제를 출력해보자. 이때 <i>객관식 보기와 선택칸은 복수</i>이기 때문에 <i>반복문</i>을 사용하여 따로 출력해보자!
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">function updateQuiz(){
+    //퀴즈 종류, 번호, 질문, 정답(해설) 출력
+    quizType.textContent = quizInfo[0].answerType;
+    quizNumber.textContent = quizInfo[0].answerNum + ". ";
+    quizAsk.textContent = quizInfo[0].answerAsk;
+    quizResult.textContent = quizInfo[0].answerEx; //정답 란에 해설을 넣어서 답대신 해설이 구현되도록 한다.
+
+
+
+    //객관식 보기 출력
+    
+    //for문
+     for( let i=0; i&lt;4; i++){
+         quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+     }
+
+    //forEach문
+    quizChoice.forEach(function (e, i){
+        quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+    });
+
+
+
+    // 해설 숨기기
+    quizResult.style.display = "none";
+    
+}
+updateQuiz(); // = 함수실행문
+</code></pre>
+                </div>
+                <p class="t_desc2" style="margin-bottom: 50px !important;">
+                    <strong>function 함수명칭(){};</strong><br />
+                    위와 같이 함수를 사용하여 각 해당하는 스크립트(반복문, 출력 등)를 묶어주어서 충돌 및 오류의 가능성을 없애준다.<br />
+                    함수를 사용하면 꼭 괄호를 닫은 뒤 함수 실행문을 작성해주어야 스크립트가 정상으로 실행된다.
+                </p>
+
+                <h3 class="t_tit3">&lt;for문으로 객관식 보기 출력&gt;</h3>
+                <p class="t_desc">
+                    i가 0일 때 i가 4보다 작은 3까지 반복시킨다. 반복하면서 각각의 quizChoice에 answerChoice를 순서대로 대입하여 구현시킨다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">for( let i=0; i&lt;4; i++){
+    quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+}
+</code></pre>
+                </div>
+                <div class="t_desc2"><strong>for문과 length</strong><br />
+                    현 데이터는 단수이기 때문에 quizInfo.length를 사용하면 1번밖에 반복이 되지 않아서 오류가 난다. 때문에 해당하는 배열의 길이에 맞게 인덱스로 선언해주어야 제대로 구현해주어야 한다.<br />
+                    만약 length로 구현하고 싶다면 <i>i &lt; quizInfo[0].answerChoice[i].length;</i> 로 표현하면 <i>answerChoice의 길이</i>만큼 반복하기 때문에 오류는 나지 않는다.
+                </div>
+                <!-- //for -->
+
+                <h3 class="t_tit3">&lt;forEach문으로 객관식 보기 출력&gt;</h3>
+                <p class="t_desc">
+                    마찬가지로 객관식 보기 출력이기 때문에 반복되어야 하는 quizChoice로 forEach문을 작성해야 한다.<br />
+                    4번을 반복하여 quizChoice에 answerChoice를 순서대로 대입하여 구현시킨다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">quizChoice.forEach(function (e, i){
+    quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+});
+</code></pre>
+                </div>
+                <!-- //forEach -->
+
+            </div>
+            <!-- //문제 출력하기 -->
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">#4. 정답 확인하기 자바스크립트 소스</h3>
+                <p class="t_box">
+                    <i>함수</i>를 이용하여 for문으로 작성한 정답 확인 스크립트를 묶어보자. <br />
+                    그리고 마지막 함수 실행문에서 addEventListener를 통해 구현되는 이벤트로 정답을 확인해보자!
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">//정답 확인
+function answerQuiz(){
+    //사용자가 선택한 정답이 문제정답과 같은지 확인하기 (사용자답 == 문제 정답)
+    //사용자가 선택한 input에서 css 속성인 checked 스타일이 나타날때 정답을 확인할 수 있다.
+
+    for( let i=0; i&lt;quizSelect.length; i++){
+        if(quizSelect[i].checked == true){ //보기에 체크가 되어있는 상태일 경우 
+            //체크된 번호와 정답 번호가 같을 경우 true
+            if(quizSelect[i].value == quizInfo[0].answerResult){
+                // alert("정답");
+                quizView.classList.add("like");
+            } else {
+                // alert("오답");
+                quizView.classList.add("dislike");
+                quizResult.style.display = "block";
+                quizConfirm.style.display = "none";
+            }
+        } else {}
+    }
+}
+quizConfirm.addEventListener("click", answerQuiz); //함수실행문
+
+//기존 함수실행문인 answerQuiz();대신 addEventListener를 사용하여 실행시킬 수도 있다.
+</code></pre>
+                </div>
+
+                <p class="t_desc2"><strong>for문 정리</strong><br />
+                    i가 0일 때, quizSelect의 길이만큼 반환해라. <br />
+                    그리고 총 4개의 quizSelect들 중 한가지를 체크를 했을 때 true일 경우, 또 만약 그 체크한 값이 정답 값과 같을 때 classList.add()를 구현하라.<br />
+                    false일 경우에도 해당하는 classList.add()를 구현해라.
+                    그리고 이 모든 이벤트는 quizConfirm을 클릭했을 때 실행되도록 하여라.
+                </p>
+            </div>
+            <!-- //정답 확인하기 -->
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">!기억해야 할 문법!</h3>
+                <p class="t_desc">
+                    <i>함수를 이용한 스크립트 묶기</i><br />
+                    여러개의 스크립트(데이터 저장과 출력, 반복문 등)가 충돌되지 않도록 한 덩어리 씩 함수로 묶어준다. 
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">function answerQuiz(){
+    for(){}
+};
+answerQuiz();
+</code></pre>
+                </div>
+                <!-- 1 -->
+
+                <p class="t_desc">
+                    <i>if문에서 css속성 가져오기</i><br />
+                    css와 마찬가지로 속성을 가져오기 위해서는 .클래스 명을 선언해주면 된다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">if(quizSelect[i].checked == true){}
+</code></pre>
+                </div>
+                <!-- 2 -->
+
+            </div>
+            <!-- //기억 -->
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/quizEffect04.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/quizEffect04.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/javascript/effect/quizEffect04.html">원본 페이지 보기</a>
+            </div>
+
+
+            
+        </div> 
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+</html>

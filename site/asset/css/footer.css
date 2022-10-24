@@ -1,0 +1,46 @@
+/* footer Type */
+.footer__wrap {
+    background: #1a1a1a;
+    color: #fff;
+}
+.footer__menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.footer__menu > div {
+    width: 16%;
+}
+.footer__menu h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.footer__menu li a {
+    font-size: 14px;
+    font-weight: 300;
+    color: #666;
+    margin-bottom: 10px;
+    display: block;
+}
+.footer__right {
+    font-weight: 300;
+    border-top: 1px dashed #a3a3a3;
+    text-align: center;
+    padding-top: 40px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 반응형 */
+@media(max-width: 960px) {
+    .footer__menu {
+       display: none;
+    }
+    .footer__right {
+        padding-top: 0;
+        border-top: 0;
+    }
+    .footer__wrap {
+        padding: 40px 0;
+    }
+}

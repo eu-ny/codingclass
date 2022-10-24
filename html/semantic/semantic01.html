@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: normal;
+            font-size: 18px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* container */
+        .container {
+            width: 1200px;
+            height: 1060px;
+            margin: 0 auto;
+            background: #eee;
+        }
+
+        .container .header__box {
+            width: 100%;
+            height: 200px;
+            background-color: #d7c8d5;
+            display: flex;
+        }
+        .container .header__box h1 {
+            display: inline-block;
+            width: 140px;
+            height: 140px;
+            margin: 30px 30px;
+            background-color: #be9bbb;
+            text-align: center;
+            line-height: 140px;
+        }
+        
+        .container .header__box nav {
+            width: 970px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            margin: 100px 30px 30px;
+            background-color: #be9bbb;
+        }
+
+        .container .header__box nav ul li {
+            margin: 0 50px;
+            display: inline-block;
+            justify-content: space-between;
+        }
+
+        /* main */
+        .container .main__box {
+            box-sizing: border-box;
+            height: 600px;
+            background-color: #d7c8d5;
+            margin-top: 30px;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-evenly
+        }
+        .container .main__box section {
+            width: 400px;
+            height: 540px;
+            text-align: center;
+            line-height: 540px;
+            background-color: #be9bbb;
+        }
+        .container .main__box .section__box {
+            display: flex;
+        }
+        .container .main__box .section__box .st01 {
+            margin-right: 30px;
+        }
+        .container .main__box .article__box {
+            text-align: center;
+            line-height: 255px;
+        }
+        .container .main__box article {
+            width: 280px;
+            height: 255px;
+            margin-bottom: 30px;
+            background-color: #be9bbb;
+        }
+        .container .main__box aside {
+            width: 280px;
+            height: 255px;
+            background-color: #be9bbb;
+        }
+
+        /* footer */
+        .container .footer__box {
+            height: 200px;
+            background-color: #d7c8d5;
+            margin-top: 30px;
+            display: flex;
+            justify-content: right;
+        }
+        .container .footer__box .footer__main {
+            justify-content: center;
+            margin: 30px;
+            height: 200px;
+            line-height: 200px;
+        }
+        .container .footer__main > address {
+            width: 970px;
+            height: 65px;
+            margin: 0 0 10px;
+            line-height: 70px;
+            text-align: center;
+            background-color: #be9bbb;
+        }
+        .container .footer__main > p {
+            width: 970px;
+            height: 65px;
+            line-height: 70px;
+            text-align: center;
+            background-color: #be9bbb;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrap" class="container score">
+        <header id="header" class="header__box">
+            <h1>반응형 웹</h1>
+            <nav>
+                <ul>
+                    <li><a href="#"></a>메뉴01</li>
+                    <li><a href="#"></a>메뉴02</li>
+                    <li><a href="#"></a>메뉴03</li>
+                    <li><a href="#"></a>메뉴04</li>
+                    <li><a href="#"></a>메뉴05</li>
+                </ul>
+            </nav>
+        </header>
+        <main id="main" class="main__box">
+            <div class="section__box">
+                <section class="st01">
+                    <h2>콘텐츠 그룹01</h2>
+                </section>
+                <section class="st02">
+                    <h2>콘텐츠 그룹02</h2>
+                </section>
+            </div>
+            <div class="article__box">
+                <article>
+                    <h2>주요 기사</h2>
+                </article>
+                <aside>광고</aside>
+            </div>
+        </main>
+        <footer id="footer" class="footer__box">
+            <div class="footer__main">
+                <address>경기도 XXX XXXX 031)000-0000 honggildong@naver.com</address>
+                <p>COPYRIGHT © All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롯데월드</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        /* font */
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+        em,
+        i,
+        address {
+            font-style: normal;
+        }
+        li {
+            list-style: none;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* common : 공통 요소(재활용) */
+        #main {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* header */
+        #header {
+            width: 100%;
+            height: 100px;
+            padding: 50px 0 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #header .logo {
+            float: left;
+            position: absolute;
+            top: 40px;
+        }
+        #header .logo img{
+            width: 120px;
+            height: 80px;
+        }
+        #header .nav {
+            float: right;
+        }
+        #header .nav li {
+           display: inline;
+        }
+        #header .nav a {
+            display: inline-block;
+            padding: 30px 0 30px 60px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .banner {
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .slider__img {
+            position: relative;
+            width: 960px;
+            height: 420px;
+        }
+        .slider__inner {/* 전체 이미지를 감싸고 있는 부모 : 움직이는 부분 속성주기 */
+            display: flex;
+            flex-wrap: wrap;
+            width: 1920px;
+        }
+        .slider {   /* 개별적인 이미지 (각각의 이미지 설정) */
+            position: relative;
+            width: 960px;
+        }
+        .slider:nth-child(1)::before {content: '';}
+        .slider:nth-child(2)::before {content: '';}
+        .slider:nth-child(1) {z-index: 2;}
+        .slider:nth-child(2) {z-index: 1;}
+
+        .ad__top {
+            display: flex;
+            width: 960px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .ad__top .ad__box01 {
+            width: 49%;
+            padding: 30px;
+            margin-right: 20px;
+            border: 1px solid #ccc;
+        }
+        .ad__top .ad__box01 > h2{
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .ad__top .ad__box01 > h2 > em {
+            font-size: 18px;
+            font-weight: 300;
+        }
+        .ad__desc {
+            display: flex;
+            justify-content: space-between;
+        }
+        .ad__desc > p {
+            line-height: 1.8;
+            font-size: 18px;
+            font-weight: 300;
+        }
+        .ad__box02 {
+            width: 49%;
+        }
+        .ad__box02 > img {
+            height: 210px;
+        }
+
+
+        .ad__bottom > h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .ad__bottom p {
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        .ad__bottom .ad__img {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .ad__bottom .ad__img img {
+            width: 230px
+        }
+        
+        .border {
+            margin-top: 30px;
+            height: 1px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #footer {
+            clear: both;
+            margin-top: 30px;
+            margin-bottom: 70px;
+        }
+        #footer > p {
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: rgb(72, 72, 72);
+        }
+        #footer .copy {
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main id="main">
+        <div class="container nexon">
+            <header id="header">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="로고">
+                    <h1 class="blind">로고</h1>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">즐길거리</a></li>
+                        <li><a href="#">요금/우대해택</a></li>
+                        <li><a href="#">이용가이드</a></li>
+                        <li><a href="#">소통서비스</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="section">
+                <h2 class="blind">섹션</h2>
+                <div class="banner">
+                    <div class="slider__img">
+                        <div class="slider__inner">
+                            <div class="slider">
+                                <img src="images/banner.jpg" alt="배너">
+                            </div>
+                            <div class="slider">
+                                <img src="images/banner02.jpg" alt="배너">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ad__top">
+                    <div class="ad__box01">
+                        <h2>롯데월드 소식 | <em>뉴스 ∙ 공지</em></h2>
+                        <div class="ad__desc">
+                            <p>그럴싸진관 미라클 <br> 드림스테이지 '힘내 소중한 너' <br> '힘내 소중한 너' 음원 발매 <br> 이용 요금 조정 안내 </p>
+                            <p>2018.11.09<br>2018.11.20<br>2018.11.13<br>2018.11.12</p>
+                        </div>
+                    </div>
+                    <div class="ad__box02">
+                        <div class="ad__imgbox">
+                            <img src="images/ad01.jpg" alt="배너">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section">
+                <div class="ad__bottom">
+                    <h2>특별한 경험</h2>
+                    <div class="ad__img">
+                        <div class="ad__img01">
+                            <img src="images/ad02.jpg" alt="ad">
+                            <p>연간회원안내</p>
+                        </div>
+                        <div class="ad__img02">
+                            <img src="images/ad03.jpg" alt="ad">
+                            <p>프리미엄투어</p>
+                        </div>
+                        <div class="ad__img03">
+                            <img src="images/ad04.jpg" alt="ad">
+                            <p>공연참여 프로그램</p>
+                        </div>
+                        <div class="ad__img04">
+                            <img src="images/ad05.jpg" alt="ad">
+                            <p>단체프로그램</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="border"></div>
+            <footer id="footer">
+                    <p>서울 특별시 송파구 올림픽로 240 호텔데 롯데월드 | 대표자 박동기</p>
+                    <p>사업자등록번호 : 219-85-00014 | 통신판매업신고번호 : 송파 제5513호 | 전화 : 1661-2000</p>
+                    <p class="copy">COPYLIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED.</p>
+            </footer>
+        </div>
+    </main>
+  
+    <script>
+       const sliderInner = document.querySelector(".slider__inner");
+        const slider = document.querySelectorAll(".slider");
+        let currentIndex = 0;
+
+        sliderInner.style.transition = "all 0.6s";
+
+        setInterval(()=> {
+            currentIndex = (currentIndex +1) % slider.length;
+
+            sliderInner.style.transform = "translateX("+ -960 * currentIndex +"px)";
+        },2000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+                <li><a href="image01.html">이미지01</a></li>
+                <li><a href="image02.html">이미지02</a></li>
+                <li class="active"><a href="image03.html">이미지03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">Image Type03</h2>
+            <p class="t_desc">
+               이번 이미지 유형에서는 지난 시간 배웠던 유형들의 심화 버전 입니다. 애니메이션과 블러 효과, 그리고 이미지 스트라이트 기법을 사용하여 실습해보겠습니다!<br />
+            </p>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    이미지 유형의 가장 기초적인 레이아웃으로 이미지 박스 안에 텍스트와 링크 박스가 들어가 있는 구조입니다.
+                </p>
+                <div class="t_desc2">
+                    <strong>TIP !</strong>
+                    기본 화면은 1200(1160)이므로 코딩할 땐 주의합니다!
+                </div>
+                <h3 class="t_tit3">🎨 그리드와 레이아웃</h3>
+                <img src="https://user-images.githubusercontent.com/106949433/185810169-7911e4f4-ba63-485e-97e9-90d3c18bb262.png" alt="site__layout">
+                <h3 class="t_tit3">🎨 완성본</h3>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D710%253A569" allowfullscreen></iframe>  
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
+                <p class="t_desc">
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! TIP !</strong>
+                    이번 유형은 백그라운드에 이미지를 삽입하면 따로 애니메이션과 같은 효과를 주기 어렵기 때문에 img태그를 사용하여 이미지를 삽입하여 작업합니다:)<br />
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-html">&lt;section id="imageType01" class="image__wrap gowun section"&gt;
+    &lt;h2&gt;딩동댕 야옹 유치원&lt;/h2&gt;
+    &lt;p&gt;🐾🐱 고양이를 좋아하는 사람들을 위한 냥냥 리스트 입니다. 🐱🐾&lt;/p&gt;
+    &lt;div class="image__inner container-fluid"&gt;
+        &lt;article class="image"&gt;
+            &lt;!-- &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg03_06.jpg" alt="cat"&gt;
+            &lt;/figure&gt; : 백그라운드 기법으로 삽입할 거라서 임시로 주석처리를 해줍니다!--&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;딩동댕 야옹 유치원&lt;/h3&gt;
+                &lt;p class="image__txt"&gt;애니멀 2기 김냥냥&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="image__sns"&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;인스타&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;유튜브&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;공유&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg03_07.jpg" alt="cat"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;딩동댕 야옹 유치원&lt;/h3&gt;
+                &lt;p class="image__txt"&gt;애니멀 2기 김냥냥&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="image__sns"&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg03_08.jpg" alt="cat"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;딩동댕 야옹 유치원&lt;/h3&gt;
+                &lt;p class="image__txt"&gt;애니멀 2기 김냥냥&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="image__sns"&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg03_09.jpg" alt="cat"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;딩동댕 야옹 유치원&lt;/h3&gt;
+                &lt;p class="image__txt"&gt;애니멀 2기 김냥냥&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="image__sns"&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="image"&gt;
+            &lt;figure class="image__box"&gt;
+                &lt;img src="img/img_bg03_10.jpg" alt="cat"&gt;
+            &lt;/figure&gt;
+            &lt;div class="image__desc"&gt;
+                &lt;h3 class="image__title"&gt;딩동댕 야옹 유치원&lt;/h3&gt;
+                &lt;p class="image__txt"&gt;애니멀 2기 김냥냥&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="image__sns"&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;페이스북&lt;/span&gt;&lt;/a&gt;
+                &lt;a href="#" class="link"&gt;&lt;span class="ir"&gt;트위터&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</pre></code>
+                </div>
+
+                <div class="t_box">
+                    <strong>! html 주의사항 !</strong><br />
+                    • img태그의 속성 중 <i>alt안에 이미지에 대한 설명</i>을 넣어줘야 시각 및 청각 장애인들도 스크린리더기를 통해 이해 가능<br />
+                    • 섹션과 아티클 태그에는 꼭 제목 태그를 자식 요소로 넣어 주어서 웹표준과 웹 접근성, 호환성을 놓치지 않도록 하자!<br />
+                    • img태그를 사용할 때는 꼭 figure 태그를 선언해주어야 한다.
+                </div>
+
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 : 스타일 적용하기 &gt;</h3>
+                <p class="t_desc">
+                    이번 레이아웃은 flex가 아닌 그리드 기법으로 작업해보겠습니다.<br />
+                    transition, transform, backdrop-filter를 통해 동적인 스타일 속성을 주도록 하고 이미지 스프라이트 기법을 통해 아이콘을 효율적으로 삽입해보도록 합시다! <br />
+                    속성에 대한 내용은 코드와 주석을 참고하시면 됩니다:)
+                </p>
+                <p class="t_desc2">
+                    <strong>TIP !</strong><br />
+                    1. 먼저 전체 초기화(Reset)와 폰트 기본 설정을 해주는 것이 좋다. <br />
+                    2. 큰 섹션부터 속성을 적용시킨다. 세부적인 요소는 마지막에 적용한다.<br />
+                    3. :hover 속성을 통해 커서가 해당 요소에 닿았을 때의 동적 효과를 주도록 한다.<br />
+                    4. :nth-child( ) 속성을 사용하여 이미지 스프라이트와 그리드 레이아웃을 효율적으로 작업할 수 있다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">@import url('https://webfontworld.github.io/yangheeryu/GowunBatang.css');
+
+/* font */
+.gowun {
+    font-family: 'GowunBatang';
+    font-weight: 400;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* common : 공통 요소(재활용) */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+.container-fluid {
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.section > h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    text-align: center; 
+    color: #666;
+}
+/* 이미지가 있을 때 텍스트 숨기기 */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* imageType */
+.image__inner {
+    display: grid;
+    grid-template-areas: 
+    "box1 box1 box2 box3"
+    "box1 box1 box4 box5"
+    ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
+.image {
+    position: relative;
+    overflow: hidden;
+}
+.image__inner .image:nth-child(1) {
+    grid-area: box1;
+    background: url(img/img_bg03_06.jpg) ;
+    background-size: cover;
+}
+.image__inner .image:nth-child(2) {
+    grid-area: box2;
+}
+.image__inner .image:nth-child(3) {
+    grid-area: box3;
+}
+.image__inner .image:nth-child(4) {
+    grid-area: box4;
+}
+.image__inner .image:nth-child(5) {
+    grid-area: box5;
+}
+.image__desc {
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    background:  rgda(255,255,255,0.3);
+    backdrop-filter: blur(6px);
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.4s ease;
+}
+.image:hover .image__desc {
+    bottom: 0;
+}
+.image__desc h3 {
+    font-size: 20px;
+    color: #fff;
+}
+.image__desc p {
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ebebeb;
+}
+.image__sns {
+    position: absolute;
+    right: -100px;
+    top: 10px;
+    transition: all 0.4s ease;
+}
+.image__sns a {
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 5px;
+    background: url(img/img_bg03_icons.svg);
+}
+.image__sns a:nth-child(2) {
+    background-position: -50px 0;
+}
+.image__sns a:nth-child(3) {
+    background-position: -100px 0;
+}
+.image__sns a:nth-child(4) {
+    background-position: -150px 0;
+}
+.image__sns a:nth-child(5) {
+    background-position: -200px 0;
+}
+.image:hover .image__sns {
+    right: 10px;
+}
+</pre></code>
+                </div>
+                <p class="t_box">
+                    <strong>! Css 속성 알아가기 !</strong><br />
+                    transition : 움직임 속도 설정 <br />
+                    transform : 요소의 모양, 크기, 위치 등을 자유롭게 변경 <br />
+                    backdrop-filter : 배경에 그래픽 효과를 설정 (배경에 투명도가 있어야 효과를 확인할 수 있다.<br />
+                    :nth-child( ) : n번째 자식 요소에게만 스타일 적용 <br />
+                    background: url( ) : 백그라운드에 이미지 삽입
+                </p>
+
+            </div>
+            <!-- //css -->
+
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/imageType/imageType03.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/imageType/imageType03.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/imageType/imageType03.html">원본 페이지 보기</a>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

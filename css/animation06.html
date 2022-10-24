@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="animation01.html">animation</a></li>
+                <li><a href="animation02.html">animation02</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 애니메니션 만들기 : 통통 텍스트 애니메이션</h2>
+                <p class="t_desc">
+                    이번 시간에는 CSS 실습으로 텍스트가 통통 튀는 애니메이션을 만들어보겠습니다~~!
+                </p>
+
+                <hr>
+
+                <div id="sample01" class="sample">
+                  <h3 class="t_tit2">#1. HTML </h3>
+                  <p class="t_desc2">
+                    각각의 span 태그에 텍스트를 하나씩 입력해주시면 됩니다!
+                  </p>
+                  <div class="t_code">
+<pre><code class="language-HTML">&lt;h1&gt;
+  &lt;span&gt;t&lt;/span&gt;
+  &lt;span&gt;o&lt;/span&gt;
+  &lt;span&gt;m&lt;/span&gt;
+  &lt;span&gt;e&lt;/span&gt;
+  &lt;span&gt;t&lt;/span&gt;
+  &lt;span&gt;o&lt;/span&gt;
+  &lt;span&gt;l&lt;/span&gt;
+  &lt;span&gt;v&lt;/span&gt;
+  &lt;span&gt;e&lt;/span&gt;
+&lt;/h1&gt;
+</code></pre>
+                  </div>
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                <div id="sample02" class="sample">
+                  <h3 class="t_tit2">#2. CSS </h3>
+                  <p class="t_desc2">
+                    다음은 CSS 코드 입니다!
+                  </p>
+                  <div class="t_code">
+<pre><code class="language-css">html, body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(140deg, beige 0%, salmon 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  height: 100px;
+}
+h1 span {
+  font-family: '궁서체';
+  font-size: 80px;
+  color: #fff;
+  position: relative;
+  top: 20px;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #ccc,
+               0 3px 0 #ccc,
+               0 4px 0 #ccc,
+               0 5px 0 #ccc,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0,0,0,0.4);
+  animation: bounce 0.3s ease infinite alternate;
+}
+h1 span:nth-child(2){
+  animation-delay: 0.1s;
+}
+h1 span:nth-child(3){
+  animation-delay: 0.2s;
+}
+h1 span:nth-child(4){
+  animation-delay: 0.3s;
+}
+h1 span:nth-child(5){
+  animation-delay: 0.4s;
+}
+h1 span:nth-child(6){
+  animation-delay: 0.5s;
+}
+h1 span:nth-child(7){
+  animation-delay: 0.6s;
+}
+h1 span:nth-child(8){
+  animation-delay: 0.7s;
+}
+h1 span:nth-child(9){
+  animation-delay: 0.8s;
+}
+
+@keyframes bounce {
+  100%{
+    top: -20px;
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #ccc,
+                 0 3px 0 #ccc,
+                 0 4px 0 #ccc,
+                 0 5px 0 #ccc,
+                 0 6px 0 transparent,
+                 0 7px 0 transparent,
+                 0 8px 0 transparent,
+                 0 9px 0 transparent,
+                 0 50px 25px rgba(0,0,0,0.4);
+  }
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <hr>
+
+                <h3 class="t_tit2">#3. 결과보기 </h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="animation06" src="https://codepen.io/eu-ny/embed/dyeRxvp?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/eu-ny/pen/dyeRxvp">
+                  animation06</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

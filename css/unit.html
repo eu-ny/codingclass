@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="Sprite.html">Sprite</a></li>
+                <li><a href="unit.html">단위</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 단위 </h2>
+                <p class="t_desc">
+                    이번 시간에는 CSS의 단위에 대해 알아보겠습니다!😄
+                </p>
+
+                <hr>
+
+                 <div id="sample01" class="sample">
+                    <h3 class="t_tit2">#1. px(픽셀) </h3>
+                    <p class="t_desc2">
+                      해상도에 따라 상대적으로 달라지는 기본 단위로 글자 크기를 지정하지 않았을 경우 보통 16px로 자동 설정됩니다.
+                    </p>
+
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                <div id="sample02" class="sample">
+                  <h3 class="t_tit2">#2. %(퍼센트) </h3>
+                  <p class="t_desc2">
+                    부모 요소의 크기를 100% 기준으로 계산한 % 단위<br />
+                    특별한 설정이 없다면 16px = 100% / 24px = 150%가 됩니다.
+                  </p>
+                </div>
+                <!-- //sample02 -->
+
+                <hr>
+
+                <div id="sample03" class="sample">
+                  <h3 class="t_tit2">#3. em </h3>
+                  <p class="t_desc2">
+                    부모 요소의 폰트 크기를 100% 기준으로 계산한 100분의 1단위 <br>
+                    특별한 설정이 없다면 16px = 1em / 24px(16px x 1.5 = 24px) = 1.5em가 됩니다.
+                  </p>
+                </div>
+                <!-- //sample03 -->
+
+                <hr>
+
+                <div id="sample04" class="sample">
+                  <h3 class="t_tit2">#4. rem </h3>
+                  <p class="t_desc2">
+                    em과 비슷하지만 부모 요소가 아닌 <i>최상위 요소의 크기</i>를 100% 기준으로 계산합니다.<br>
+                    r은 root. 즉 html요소를 뜻하므로 html 요소에서 지정한 크기가 1rem이 됩니다.
+                  </p>
+                </div>
+                <!-- //sample04 -->
+
+                <hr>
+
+                <div id="sample05" class="sample">
+                  <h3 class="t_tit2">#5. vw, vh </h3>
+                  <p class="t_desc2">
+                    vw, vh (vertical height & vertical width)는 반응형 웹에 최적화된 단위로 부모요소에 영향을 받는 퍼센트와는 달리 요소의 너비값과 높이값을 뷰포트의 너비값과 높이값에 비례하는 단위입니다.<br />
+                    즉 vw은 뷰포트의 너비값의 100분의 1 단위 / vh는 뷰포트의 높이값의 100분의 1 단위가 됩니다.
+                  </p>
+                  <p class="t_box">
+                    <strong>! 예시 ! </strong><br />
+                    브라우저 높이값이 900px이면 1vh는 9px<br />
+                    브라우저 너비값이 750px이면 1vw는 7.5px
+                  </p>
+                </div>
+                <!-- //sample05 -->
+
+                <hr>
+
+                <div id="sample06" class="sample">
+                  <h3 class="t_tit2">#6. vmin, vmax </h3>
+                  <p class="t_desc2">
+                    vmin은 뷰포트의 너비와 높이값을 기준으로 최소값을 지정할 수 있습니다. <br>
+                    vmax는 뷰포트의 너비와 높이값을 기준으로 최대값을 지정할 수 있습니다.
+                  </p>
+                  <p class="t_box">
+                    <strong>! 예시 ! </strong><br />
+                    브라우저의 크기가 1100px 너비, 그리고 700px 높이일때 1vmin은 7px이 되고 1vmax는 11px
+                    너비값이 800px로 되고 높이값이 1080px이 되면 vmin은 8px이 되고 vmax는 10.8px이 된다.
+                  </p>
+                </div>
+                <!-- //sample06 -->
+
+                <hr>
+
+                <div id="sample07" class="sample">
+                  <h3 class="t_tit2">#7. ex, ch </h3>
+                  <p class="t_desc2">
+                    지정된 폰트와 폰트 사이즈에 의존하는 em, rem과 비슷하지만 ex, ch는 폰트의 특정 수치에 영향을 받습니다. <br>
+                    ch 단위는 요소 글꼴의 glyph "0" 의 사전 길이(너비) 이며, ex 단위의 정의는 "현재 폰트의 x-높이값 또는 em의 절반 값"이라고 할 수 있습니다.
+                  </p>
+                </div>
+                <!-- //sample07 -->
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

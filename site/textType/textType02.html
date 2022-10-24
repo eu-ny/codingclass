@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>textType</title>
+
+    <style>
+        /* font */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        /* reset */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common : 공통 요소(재활용) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+            display: flex;
+            justify-content: space-between ;
+        }
+
+        #header > h2 {
+            font-size: 50px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        #header > p {
+            font-size: 18px;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        #header > .CAT {
+            width: 145px;
+            height: 25px;
+            font-size: 16px;
+            background: #d0004b;
+            padding: 4px 30px;
+            border-radius: 50px;
+            color: #fff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* text__inner */
+        /* text_top과 bottom으로 섹션을 나눠줬으니 그 안에서 플렉스를 주어야 2개의 text__box가 가로로 나란히 정렬된다. */
+        .text_top {
+            margin-bottom: 50px;
+            display: flex;
+        }
+        .text_bottom {
+            display: flex;
+        }
+        .text__box{
+            width: 373px;
+            padding: 20px;
+        }
+        .text__box:hover {
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        .text_desc .desc__header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .text_desc .desc {
+            font-weight: 300;
+            line-height: 1.4;
+        } 
+        .icons {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            background: #000;
+            background: url(img/text_icons02.svg); /* 이미지 스프라이트 */
+        }
+        .icons.icon2 {background-position: -60px;}  /* 아이콘 간격이 60px이므로 간격에 맞춰 포지션으로 위치 조정 */
+        .icons.icon3 {background-position: -120px;}
+        .icons.icon4 {background-position: -180px;}
+        
+
+    </style>
+</head>
+<body>
+    <section id="textType02" class="section gmak container">
+        <div id="header">
+            <div class="CAT">CUTECAT</div>
+            <h2>딩동댕<br> 야옹유치원 !</h2>
+            <p>고양이를 좋아하는 사람들을 위한<br>리스트 입니다. 🐱🐾 <br> 여러분들도 함께 구경해보세요!</p>    
+        </div>
+        <div class="text__inner">
+            <div class="text_top">
+                <article class="text__box">
+                    <span class="icons icon1 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">야옹유치원</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
+                <article class="text__box">
+                    <span class="icons icon2 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">공지사항</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
+            </div>
+            <div class="text_bottom">
+                <article class="text__box">
+                    <span class="icons icon3 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">칭찬해요</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
+                <article class="text__box">
+                    <span class="icons icon4 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">서운해요</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

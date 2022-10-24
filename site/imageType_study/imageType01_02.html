@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imageType01</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        /* font */
+        .Nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common : 공통 요소(재활용) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section > h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+
+        /* imgType */
+        #imageType01 {
+            background-color: #ccc;
+            height: 500px;
+        }
+        .image__wrap {}
+        .image__inner {}
+        .image {}
+        .image__title {}
+        .image__desc {}
+        .image__btn {}
+
+    </style>
+</head>
+<body>
+    <section id="imageType01" class="image__wrap Nexon section container"> <!-- 섹션 선택자를 따로 준 이유는 여러 유형을 만들 때 공통적으로 들어가기 때문이다. 즉 재활용을 하기 위한 선택자라고 보면 된다. -->
+        <h2>귀여운 동물들</h2>
+        <p>🐶 동물을 좋아하는 사람들을 위한 동물 리스트 입니다. 🐱</p>
+        <div class="image__inner">
+            <article class="image">
+                <!-- <img src="../cardType/img/img_bg01_01.jpg" alt="dog" /> : 백그라운드 이미지로 넣을 예정-->
+                <h3 class="image__title">귀여운 동물 강아지</h3> <!-- 충돌 방지를 위해 복잡하더라도 선택자 정해주기 : 개인마다 다른 방법 차용 괜찮다. -->
+                <p class="image__desc">강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는 기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다. 그냥 귀엽습니다. </p>
+                <a href="#" class="image__btn">자세히 보기</a>
+            </article>
+            <article class="image">
+                <!-- <img src="../cardType/img/img_bg01_02.jpg" alt="cat" /> : 백그라운드 이미지로 넣을 예정 -->
+                <h3 class="image__title">귀여운 동물 고양이</h3>
+                <p class="image__desc">고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는 은근하게 다가오는 것이 매력적입니다. </p>
+                <a href="#" class="image__btn">자세히 보기</a>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

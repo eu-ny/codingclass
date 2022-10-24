@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 : 필터 선택자</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/gsap.html">gsap</a></li>
+                <li><a href="jquery.html">jquery</a></li>
+                <li><a href="basic.html">jquery 기본선택자</a></li>
+                <li><a href="property.html">jquery 속성선택자</a></li>
+                <li><a href="filter.html">jquery 필터 선택자</a></li>
+                <li><a href="quest.html">jquery 탐색 선택자</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Jquery : 필터 선택자</h2>
+            <p class="t_desc">
+                이번 시간에는 자바스크립트의 jquery 필터 선택자에 대해 알아보겠습니다.😆
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. jquery 기본 필터 선택자</h3>
+                <p class="t_desc">
+                    필터 선택자는 선택자에 : (클론)이 붙은 선택자를 의미합니다. 다음의 표를 보며 필터 선택자의 종류를 알아봅시다!
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <colgroup>
+                            <col style="width: 20%"> 
+                            <col style="width: 20%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tr>
+                            <th class="ce">선택자 종류</th>
+                            <th class="ce" colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">:even</td>
+                            <td class="ce">$("tr:even")</td>
+                            <td>tr 요소 중 짝수 행만 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:odd</td>
+                            <td class="ce">$("tr:odd")</td>
+                            <td>tr 요소 중 홀수 행만 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:first</td>
+                            <td class="ce">$("td:first")</td>
+                            <td>첫번째 td 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:last</td>
+                            <td class="ce">$("td:last")</td>
+                            <td>마지막 td 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:header</td>
+                            <td class="ce">$(":header")</td>
+                            <td>헤딩(h1~h6) 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:eq</td>
+                            <td class="ce">$("li:eq(0)")</td>
+                            <td>
+                                index가 0인 li 요소를 선택합니다.<br>
+                                **index는 0번이 첫번째 요소 입니다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:gt</td>
+                            <td class="ce">$("li:gt(0)")</td>
+                            <td>index가 0보다 큰 li 요소들을 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:not</td>
+                            <td class="ce">$("li:not(.bg)")</td>
+                            <td>li 요소 중에서 class명이 bg가 아닌 li 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:root</td>
+                            <td class="ce">$(":root")</td>
+                            <td>html을 의미합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:animated</td>
+                            <td class="ce">$(":animated")</td>
+                            <td>움직이는 요소를 선택합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ jQuery 기본 필터 선택자 예제</h3>
+                <iframe height="400" style="width: 100%;" scrolling="no" title="JQUERY03" src="https://codepen.io/eu-ny/embed/BarXeap?default-tab=&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/BarXeap">
+                    JQUERY03</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- //sample01 -->
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. jquery 자식 필터 선택자</h3>
+                <p class="t_desc">
+                    자식 필터 선택자 중 <i>'child'</i>가 붙은 선택자는 요소가 <i>순차적으로 나열</i>되어 있을 때 사용이 가능하며 
+                    <i>'of-type'</i>이 붙은 선택자는 요소가 <u>순차적으로 나열되어 있지 않아도</u> <i>동일 요소</i>면 선택이 가능합니다.
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <colgroup>
+                            <col style="width: 15%"> 
+                            <col style="width: 25%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tr>
+                            <th class="ce">선택자 종류</th>
+                            <th class="ce" colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">:first-child</td>
+                            <td class="ce">$("span:first-child")</td>
+                            <td>첫번째 span요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:last-child</td>
+                            <td class="ce">$("span:last-child")</td>
+                            <td>마지막 span요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:first-of-type</td>
+                            <td class="ce">$("span:first-of-type")</td>
+                            <td>span요소 중에서 첫번째 span 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:last-of-type</td>
+                            <td class="ce">$("span:last-of-type")</td>
+                            <td>span요소 중에서 마지막 span 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:nth-child()</td>
+                            <td class="ce">$("span:nth-child(2)")</td>
+                            <td>
+                                두번째 span요소를 선택합니다.<br>
+                                nth-child(2n)은 2, 4, 6, ...번째 요소를 선택하고, <br>
+                                nth-child(2n+1)은 1, 3, 5, ...번째 요소를 선택합니다.                    
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:nth-last-child()</td>
+                            <td class="ce">$("span:nth-last-child(2)")</td>
+                            <td>마지막에서 두번째 span 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:nth-of-type()</td>
+                            <td class="ce">$("span:nth-of-child(2)")</td>
+                            <td>span요소 중에서 두번째 span 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:nth-last-of-type()</td>
+                            <td class="ce">$("span:nth-last-of-child(2)")</td>
+                            <td>span요소 중 마지막에서 두번째 span 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:only-child</td>
+                            <td class="ce">$("div &gt; span:only-child")</td>
+                            <td>div의 자식요소에서 오직 span 요소가 하나만 있는 span요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:only-child</td>
+                            <td class="ce">$("div &gt; span:only-child")</td>
+                            <td>div의 자식요소에서 span 요소가 하나만 있는 span요소를 선택합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ jQuery 자식 필터 선택자 예제</h3>
+                <iframe height="400" style="width: 100%;" scrolling="no" title="JQUERY04" src="https://codepen.io/eu-ny/embed/xxWvNaG?default-tab=&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/xxWvNaG">
+                    JQUERY04</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- //sample02 -->
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">#3. jquery 콘텐츠 필터 선택자</h3>
+                <p class="t_desc">
+                    다음은 콘텐츠 필터 선택자 종류입니다! 이제 중간정도 왔습니다. 힘내봅시다! 😂
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <colgroup>
+                            <col style="width: 20%"> 
+                            <col style="width: 20%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tr>
+                            <th class="ce">선택자 종류</th>
+                            <th class="ce" colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">:contains()</td>
+                            <td class="ce">$("p:contains('html')")</td>
+                            <td>p 요소 중에서 'html' 텍스트를 포함하고 있는 p 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:empty</td>
+                            <td class="ce">$("div:empty")</td>
+                            <td>div 요소 중에서 자식요소가 없는 div 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:parent</td>
+                            <td class="ce">$("span:parent")</td>
+                            <td>span 요소 중에서 자식요소가 있는 span 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:has()</td>
+                            <td class="ce">$("section:has(article)")</td>
+                            <td>section 요소 중에서 article을 하위요소로 가지고 있는 section 요소를 선택합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ jQuery 콘텐츠 필터 선택자 예제</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/bGvXPVm?default-tab=&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/bGvXPVm">
+                    Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                  </iframe>
+            </div>
+            <!-- //sample03 -->
+
+            <div id="sample04" class="sample">
+                <h3 class="t_tit2">#4. jquery 폼 필터 선택자</h3>
+                <p class="t_desc">
+                    다음은 폼 필터 선택자 종류입니다! 좀 더 힘내봅시다! 😂
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <colgroup>
+                            <col style="width: 20%"> 
+                            <col style="width: 20%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tr>
+                            <th class="ce">선택자 종류</th>
+                            <th class="ce" colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">:text</td>
+                            <td class="ce">$("input:text")</td>
+                            <td>&lt;inpun type = "text"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:password</td>
+                            <td class="ce">$("input:password")</td>
+                            <td>&lt;inpun type = "password"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:image</td>
+                            <td class="ce">$("input:image")</td>
+                            <td>&lt;inpun type = "image"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:file</td>
+                            <td class="ce">$("input:file")</td>
+                            <td>&lt;inpun type = "file"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:button</td>
+                            <td class="ce">$("input:button")</td>
+                            <td>&lt;inpun type = "button"&gt;, &lt;button&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:checkbox</td>
+                            <td class="ce">$("input:checkbox")</td>
+                            <td>&lt;inpun type = "checkbox"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:radio</td>
+                            <td class="ce">$("input:radio")</td>
+                            <td>&lt;inpun type = "radio"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:submit</td>
+                            <td class="ce">$("input:submit")</td>
+                            <td>&lt;inpun type = "submit"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:reset</td>
+                            <td class="ce">$("input:reset")</td>
+                            <td>&lt;inpun type = "reset"&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:input</td>
+                            <td class="ce">$(":input")</td>
+                            <td>모든 &lt;input&gt; 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:checked</td>
+                            <td class="ce">$("input:checked")</td>
+                            <td>&lt;input&gt; 요소에 ckecked 속성이 있는 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:selected</td>
+                            <td class="ce">$("input:selected")</td>
+                            <td>&lt;option&gt; 요소에 selected 속성이 있는 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:focus</td>
+                            <td class="ce">$("input:focus")</td>
+                            <td>현재 &lt;input&gt; 요소에 포커스가 있는 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:disabled</td>
+                            <td class="ce">$("input:disabled")</td>
+                            <td>&lt;input&gt; 요소에 disabled 속성이 있는 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:enabled</td>
+                            <td class="ce">$("input:enabled")</td>
+                            <td>&lt;input&gt; 요소에 disabled 속성이 아닌 요소를 선택합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ jQuery 폼 필터 선택자 예제</h3>
+                <iframe height="400" style="width: 100%;" scrolling="no" title="JQUERY06" src="https://codepen.io/eu-ny/embed/eYMqqWG?default-tab=&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/eYMqqWG">
+                    JQUERY06</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+            <!-- //sample04 -->
+
+            <div id="sample05" class="sample">
+                <h3 class="t_tit2">#5. jquery 가시성 필터 선택자</h3>
+                <p class="t_desc">
+                    다음은 가시성 필터 선택자 종류입니다! 드디어 마지막 필터 선택자! 화이팅 🫠🫠
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <colgroup>
+                            <col style="width: 20%"> 
+                            <col style="width: 20%">
+                            <col style="width: 60%">
+                        </colgroup>
+                        <tr>
+                            <th class="ce">선택자 종류</th>
+                            <th class="ce" colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">:hidden</td>
+                            <td class="ce">div:hidden</td>
+                            <td>div 요소 중 hidden인 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">:visible</td>
+                            <td class="ce">div:visible</td>
+                            <td>div 요소 중 visible 요소를 선택합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 class="t_tit2">✏️ jQuery 가시성 필터 선택자 예제</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/QWmeeBp?default-tab=&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/QWmeeBp">
+                    Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+                  <img src="https://user-images.githubusercontent.com/106949433/187599859-1befc3c9-5244-469f-a1e0-d94b6c176a93.png" alt="filter">
+            </div>
+            <!-- //sample05 -->
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

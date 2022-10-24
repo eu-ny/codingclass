@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>site 만들기 02</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/common.css" />
+    <!-- <link rel="stylesheet" href="assets/css/font.css" /> -->
+    <!-- // 공통 CSS -->
+
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/slider.css" />
+    <!-- // main CSS -->
+
+    <link rel="stylesheet" href="assets/css/swiper.css">
+  </head>
+  <body>
+    <div id="skip">
+      <a href="#sliderType">슬라이드 영역 바로가기</a>
+      <a href="#textType01">텍스트01 영역 바로가기</a>
+      <a href="#imageType">이미지 영역 바로가기</a>
+      <a href="#cardType">카드 영역 바로가기</a>
+      <a href="#bannerType">배너 영역 바로가기</a>
+      <a href="#textType02">텍스트02 영역 바로가기</a>
+      <a href="#footerType">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType" class="header__wrap gmark">
+      <h2 class="blind">MUSIC</h2>
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">ON <em>PLAY</em></a>
+        </div>
+        <nav id="nav" class="header__menu">
+          <ul>
+            <li><a href="#sliderType">슬라이드</a></li>
+            <li><a href="#textType01">텍스트01</a></li>
+            <li><a href="#imageType">이미지</a></li>
+            <li><a href="#cardType">카드</a></li>
+            <li><a href="#bannerType">배너</a></li>
+            <li><a href="#textType02">텍스트02</a></li>
+            <li><a href="#footerType">푸터</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- //headerType -->
+
+    <main id="main">
+        <section id="sliderType" class="slider__wrap gmark">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slider__img1">
+                            <div class="desc container">
+                                <h3>TODAY<br> TRENDY MUSIC </h3>
+                                <p>
+                                    당신의 일상을<br>
+                                    트렌디하게 바꿔줄 시간<br>
+                                    지금 바로 ON PLAY를 감상해보세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider__img2">
+                            <div class="desc container">
+                                <h3>TODAY<br> TRENDY MUSIC </h3>
+                                <p>
+                                    당신의 일상을<br>
+                                    트렌디하게 바꿔줄 시간<br>
+                                    지금 바로 ON PLAY를 감상해보세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider__img3">
+                            <div class="desc container">
+                                <h3>TODAY<br> TRENDY MUSIC </h3>
+                                <p>
+                                    당신의 일상을<br>
+                                    트렌디하게 바꿔줄 시간<br>
+                                    지금 바로 ON PLAY를 감상해보세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#" class="blue">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider__img4">
+                            <div class="desc container">
+                                <h3>TODAY<br> TRENDY MUSIC </h3>
+                                <p>
+                                    당신의 일상을<br>
+                                    트렌디하게 바꿔줄 시간<br>
+                                    지금 바로 ON PLAY를 감상해보세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#" class="blue">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide slider__img5">
+                            <div class="desc container">
+                                <h3>TODAY<br> TRENDY MUSIC </h3>
+                                <p>
+                                    당신의 일상을<br>
+                                    트렌디하게 바꿔줄 시간<br>
+                                    지금 바로 ON PLAY를 감상해보세요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#" class="blue">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //sliderType-->    
+    
+    </main>
+
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                type: 'bullets',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="animation01.html">animation</a></li>
+                <li><a href="animation02.html">animation02</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 애니메니션 만들기 : 🕶 입체적인 애니메이션 작업~ 😎 + 마우스 오버 효과 🖱</h2>
+                <p class="t_desc">
+                    이번 시간에는 CSS 실습으로 입체적인 애니메이션을 만들어보겠습니다~~! 오늘의 포인트 속성은 바로~~ <strong><i>transform-style: preserve-3d;</i></strong>입니다!
+                </p>
+
+                <hr>
+
+                <div id="sample01" class="sample">
+                  <h3 class="t_tit2">#1. HTML </h3>
+                  <p class="t_desc2">
+                    구조를 앞과 뒤가 따로 있다 생각하여 마크업을 해주시면 됩니다.
+                  </p>
+                  <div class="t_code">
+<pre><code class="language-HTML">&lt;div class="hover__wrap"&gt;
+  &lt;div class="hover__updown"&gt;
+    &lt;figure class="front"&gt;
+      &lt;img src="https://user-images.githubusercontent.com/106949433/191177895-3875da4c-06b6-42f8-83cb-b5a7fe7ac88a.jpg" alt="hoverUp 이미지"&gt;
+      &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 올리면 Up&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;figure class="back"&gt;
+      &lt;img src="https://user-images.githubusercontent.com/106949433/191177915-75551c83-9f83-49cc-a1fc-3eff65e014df.jpg" alt="hoverDown 이미지"&gt;
+      &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 내리면 Down&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="hover__leftright"&gt;
+    
+    &lt;figure class="front"&gt;
+      &lt;img src="https://user-images.githubusercontent.com/106949433/191177923-3b338ef2-50ae-48c3-83d1-827f29e39b99.jpg" alt="hoverLeft 이미지"&gt;
+      &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 올리면 to Right&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    
+    &lt;figure class="back"&gt;
+      &lt;img src="https://user-images.githubusercontent.com/106949433/191177925-8578bc0b-b09d-4e7c-9b95-21f998b1ae84.jpg" alt="hoverRight 이미지"&gt;
+      &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 내리면 to Left&lt;/p&gt;
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                  </div>
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                <div id="sample02" class="sample">
+                  <h3 class="t_tit2">#2. CSS </h3>
+                  <p class="t_desc2">
+                    다음은 CSS 코드 입니다!<br>
+                    오늘의 포인트는 <i>transform-style: preserve-3d;</i>와 <i>perspective</i>로 입체적인 효과를 주고 싶을 때 사용하는 속성입니다.<br>
+                    perspective == 원근감을 주는 속성
+                  </p>
+                  <div class="t_code">
+<pre><code class="language-css">@font-face {
+  font-family: ‘LocusSangsang’;
+  font-weight: normal;
+  font-style: normal;
+  src: url(‘https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot’);
+  src: url(‘https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot?#iefix’) format(‘embedded-opentype’),
+       url(‘https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff2’) format(‘woff2’),
+       url(‘https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff’) format(‘woff’),
+       url(‘https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.ttf’) format(“truetype”);
+  font-display: swap;
+}
+body {
+font-family: ‘LocusSangsang’;
+background-image: linear-gradient(135deg, #191970 0%, #483088 40%, #0370DB 100%);
+height: 100vh;
+}
+.hover__wrap {
+display: flex;
+justify-content:center;
+align-items: center;
+height: 100vh;
+}
+.hover__wrap > div  {
+max-width: 400px;
+margin: 3%;
+position: relative;
+/*  원근감을 주는 것  */
+perspective: 1000px;
+}
+.hover__wrap > div img {
+width: 100%;
+border: 5px solid #F0F8FF;
+box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+box-sizing: border-box;
+vertical-align: top;
+}
+.hover__wrap > div .front {
+transition: transform 1s;
+backface-visibility: hidden;
+transform-style: preserve-3d;
+}
+.hover__wrap > div .back {
+position: absolute;
+left: 0;
+top: 0;
+z-index: -1;
+transition: transform 1s;
+transform-style: preserve-3d;
+}
+.hover__wrap > div figcaption {
+background: rgba(0,0,0,0.4);
+color: #F8F8FF;
+padding: 10px;
+text-align: center;
+line-height: 1.5;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%) translatez(100px);
+width: 60%;
+backface-visibility: hidden;
+}
+.hover__updown {
+}
+.hover__leftright {
+}
+/* mouse hover effect */
+.hover__updown .front {
+transform: rotateX(0deg);
+}
+.hover__updown:hover .front {
+transform: rotateX(180deg);
+}
+.hover__updown .back {
+transform: rotateX(-180deg);
+}
+.hover__updown:hover .back {
+transform: rotateX(0deg);
+}
+.hover__leftright .front {
+transform: rotateY(0deg);
+}
+.hover__leftright:hover .front {
+transform: rotateY(180deg);
+}
+.hover__leftright .back {
+transform: rotateY(-180deg);
+}
+.hover__leftright:hover .back {
+transform: rotateY(0deg);
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <hr>
+
+                <h3 class="t_tit2">#3. 결과보기 </h3>
+                <iframe height="436.09375" style="width: 100%;" scrolling="no" title="animation05" src="https://codepen.io/eu-ny/embed/gOzRwGe?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/eu-ny/pen/gOzRwGe">
+                  animation05</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                  on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li class="active"><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+    </main>
+    <!-- //main_menu -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">HTML : 구조 관련 요소 = 시멘틱 태그</h2>
+            <p class="t_desc">
+               시멘틱 태그란 해석 그대로 의미가 있는 태그로도 볼 수 있습니다. 즉 구조를 나타내는 태그로 정보를 구체적으로 선언하여 웹표준과 접근성을 준수하기 위한 태그이기도 합니다.<br />
+               먼저 구조 요소가 어떤 것이 있는지 살펴본 후 시멘틱 태그를 사용하여 레이아웃을 구성해보도록 하겠습니다.
+            </p>
+            <div class="t_iframe">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCRivhLLSq7nlNlC0LEAhe5%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583-%25EA%25B0%259C%25EC%259D%25B8%3Fnode-id%3D697%253A65" allowfullscreen></iframe>
+            </div>
+
+            <hr>
+
+            <div id="table" class="sample">
+                <h3 class="t_tit2">구조 관련 요소(=시멘틱 태그)</h3>
+                <p class="t_desc">
+                    구조 관련 요소에는 &lt;header&gt;, &lt;section&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;aside&gt;가 있습니다.
+                </p>
+                <table class="t_table">
+                    <colgroup>
+                        <col style="width: 10%"> 
+                        <col style="width: 20%"> 
+                        <col style="width: 70%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>요소 유형</th>
+                            <th>태그형</th>
+                            <th>태그의 의미 및 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce" rowspan="12">블록 레벨 요소</td>
+                            <td class="ce" rowspan="2">
+                                &lt;header&gt;<br />
+                                &lt;/header&gt;
+                            </td>
+                            <td>1. HTML문서의 헤더 영역을 의미하는 태그로 제목이나 내비게이션, 검색 등의 내용들을 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만,&lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">
+                                &lt;section&gt;<br />
+                                &lt;/section&gt;
+                            </td>
+                            <td>1. HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며, 섹션 주세에 대한 제목 요소 (&lt;h2&gt; ~ &lt;h6&gt;) 를 포함하는 게 좋다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">
+                                &lt;footer&gt;<br />
+                                &lt;/footer&gt;
+                            </td>
+                            <td>1. HTML문서의 푸터 영역을 의미하는 태그로 섹션 작성자나 저작권에 대한 정보, 관련된 문서의 링크를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만,&lt;header&gt;, &lt;footer&gt; 태그는 포함할 수 없다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">
+                                &lt;nav&gt;<br />
+                                &lt;/nav&gt;
+                            </td>
+                            <td>1. HTML문서의 메인 메뉴나 목차 등을 정의해 주는 태그이다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">
+                                &lt;article&gt;<br />
+                                &lt;/article&gt;
+                            </td>
+                            <td>1. HTML문서 내에서 독립적으로 배포 또는 재사용이 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하는 태그이며 제목 요소 (&lt;h2&gt; ~ &lt;h6&gt;)를 포함하는 것이 좋다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce" rowspan="2">
+                                &lt;aside&gt;<br />
+                                &lt;/aside&gt;
+                            </td>
+                            <td>1. 메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며 HTML 문서의 오른쪽이나 왼쪽의 사이드 메뉴나 광고 등의 영역으로 사용된다.</td>
+                        </tr>
+                        <tr>
+                            <td>2. 텍스트, 인라인 요소, 블록레벨 요소를 포함할 수 있다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //table -->
+
+            <hr>
+
+            <div id="flex" class="sample">
+                <h3 class="t_tit2">#1. HTML</h3>
+                <p class="t_desc">
+                    다음은 위 요소들로 HTML 마크업을 해보도록 하겠습니다!
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-html">&lt;div id="wrap" class="container score"&gt;
+    &lt;header id="header" class="header__box"&gt;
+        &lt;h1&gt;반응형 웹&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;메뉴01&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;메뉴02&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;메뉴03&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;메뉴04&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;메뉴05&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main id="main" class="main__box"&gt;
+        &lt;div class="section__box"&gt;
+            &lt;section class="st01"&gt;
+                &lt;h2&gt;콘텐츠 그룹01&lt;/h2&gt;
+            &lt;/section&gt;
+            &lt;section class="st02"&gt;
+                &lt;h2&gt;콘텐츠 그룹02&lt;/h2&gt;
+            &lt;/section&gt;
+        &lt;/div&gt;
+        &lt;div class="article__box"&gt;
+            &lt;article&gt;
+                &lt;h2&gt;주요 기사&lt;/h2&gt;
+            &lt;/article&gt;
+            &lt;aside&gt;광고&lt;/aside&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;footer id="footer" class="footer__box"&gt;
+        &lt;div class="footer__main"&gt;
+            &lt;address&gt;경기도 XXX XXXX 031)000-0000 honggildong@naver.com&lt;/address&gt;
+            &lt;p&gt;COPYRIGHT © All rights reserved.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</pre></code>
+                </div>
+
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="flex" class="sample">
+                <h3 class="t_tit2">#2. css</h3>
+                <p class="t_desc">
+                    마크업에 스타일을 부여해보겠습니다!<br />
+                    아직 미숙하니 그저 참고만 해주세요!
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-css">@import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+.score {
+    font-family: 'SCoreDream';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* container */
+.container {
+    width: 1200px;
+    height: 1060px;
+    margin: 0 auto;
+    background: #eee;
+}
+
+.container .header__box {
+    width: 100%;
+    height: 200px;
+    background-color: #d7c8d5;
+    display: flex;
+}
+.container .header__box h1 {
+    display: inline-block;
+    width: 140px;
+    height: 140px;
+    margin: 30px 30px;
+    background-color: #be9bbb;
+    text-align: center;
+    line-height: 140px;
+}
+
+.container .header__box nav {
+    width: 970px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    margin: 100px 30px 30px;
+    background-color: #be9bbb;
+}
+
+.container .header__box nav ul li {
+    margin: 0 50px;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+/* main */
+.container .main__box {
+    box-sizing: border-box;
+    height: 600px;
+    background-color: #d7c8d5;
+    margin-top: 30px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly
+}
+.container .main__box section {
+    width: 400px;
+    height: 540px;
+    text-align: center;
+    line-height: 540px;
+    background-color: #be9bbb;
+}
+.container .main__box .section__box {
+    display: flex;
+}
+.container .main__box .section__box .st01 {
+    margin-right: 30px;
+}
+.container .main__box .article__box {
+    text-align: center;
+    line-height: 255px;
+}
+.container .main__box article {
+    width: 280px;
+    height: 255px;
+    margin-bottom: 30px;
+    background-color: #be9bbb;
+}
+.container .main__box aside {
+    width: 280px;
+    height: 255px;
+    background-color: #be9bbb;
+}
+
+/* footer */
+.container .footer__box {
+    height: 200px;
+    background-color: #d7c8d5;
+    margin-top: 30px;
+    display: flex;
+    justify-content: right;
+}
+.container .footer__box .footer__main {
+    justify-content: center;
+    margin: 30px;
+    height: 200px;
+    line-height: 200px;
+}
+.container .footer__main > address {
+    width: 970px;
+    height: 65px;
+    margin: 0 0 10px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #be9bbb;
+}
+.container .footer__main > p {
+    width: 970px;
+    height: 65px;
+    line-height: 70px;
+    text-align: center;
+    background-color: #be9bbb;
+}
+</pre></code>
+                </div>
+
+            </div>
+            <!-- //css -->
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/semantic/semantic01" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/semantic/semantic01">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/semantic/semantic01">원본 페이지 보기</a>
+            </div>
+            <!-- //result -->
+
+
+
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

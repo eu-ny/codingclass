@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 페럴렉스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🖱 페럴렉스 효과 : 이질감 효과 🖱</h2>
+            <p class="t_desc">
+                <strong>페럴랙스(parallax)</strong>란 의미로 사용자가 스크롤링을 할 때 발생하는 이벤트(배경과 요소마다 속도 및 크기의 차이를 주어 입체적으로 느껴지게 하는 효과 등)를 말합니다.<br>
+                이번 시간에는 스크롤을 내릴 때 넘버, 이미지, 텍스트의 각 위치값에 오차를 주어서 다르게 주어 이질감을 주는 효과를 실습해보겠습니다.🤩<br>
+                추가로 필요한 소스는 GSAP로 스크롤 이벤트를 부드럽게 작동하기 위해서 입니다~! 그럼 실습하러 고고릥~ 🚗 💨
+            </p>
+            <br>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/parallaxEffect05.html" frameborder="0"></iframe>
+            </div>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;nav id="parallax__nav" class="show"&gt;
+    &lt;ul&gt;
+      &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;!-- //parallax__nav --&gt;
+  
+  &lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+      &lt;section id="section1" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section1&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          미래는 현재 우리가 무엇을 하는가에 달려 있다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section1 --&gt;
+  
+      &lt;section id="section2" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section2&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          어제로 돌아갈 수 없다. 왜냐하면 나는 어제와는 다른 사람이 되었기
+          때문이다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section2 --&gt;
+  
+      &lt;section id="section3" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section3&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          언제나 현재에 집중할수 있다면 행복할것이다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section3 --&gt;
+  
+      &lt;section id="section4" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section4&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          먼저 핀 꽃은 먼저진다 남보다 먼저 공을 세우려고 조급히 서둘것이
+          아니다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section4 --&gt;
+  
+      &lt;section id="section5" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section5&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          좋은 성과를 얻으려면 한 걸음 한 걸음이 힘차고 충실하지 않으면 안
+          된다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section5 --&gt;
+  
+      &lt;section id="section6" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section6&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          성공의 비결은 단 한 가지, 잘할 수 있는 일에 광적으로 집중하는
+          것이다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section6 --&gt;
+  
+      &lt;section id="section7" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section7&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section7 --&gt;
+  
+      &lt;section id="section8" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section8&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          흔히 사람들은 기회를 기다리고 있지만 기회는 기다리는 사람에게 잡히지
+          않는 법이다.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section8 --&gt;
+  
+      &lt;section id="section9" class="content__item"&gt;
+        &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+        &lt;h1 class="content__item__title"&gt;section9&lt;/h1&gt;
+        &lt;figure class="content__item__imgWrap"&gt;
+          &lt;div class="content__item__img"&gt;&lt;/div&gt;
+        &lt;/figure&gt;
+        &lt;p class="content__item__desc"&gt;
+          이미끝나버린 일을 후회하기 보다는 하고 싶었던 일들을 하지못한 것을
+          후회하라.
+        &lt;/p&gt;
+      &lt;/section&gt;
+      &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  &lt;!-- //main --&gt;
+  
+  &lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+  &lt;/aside&gt;
+  &lt;!-- //parallax__info --&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    html은 메뉴, 섹션, 섹션에 들어갈 콘텐츠(이미지와 텍스트)등을 마크업해주시면 됩니다.<br>
+                    이 때 섹션에 들어가는 콘텐츠들에게 선택자들을 부여하여 스크립트와 스타일을 주는 데 어려움이 없도록 합니다:)
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: -200px;
+    z-index: 2000;
+    background-color: rgba(95, 95, 95, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top 0.4s ease;
+}
+
+#parallax__nav.show {
+    top: 20px;
+}
+
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#parallax__nav li a {
+    display: inline-block;
+    /* width: 30px; */
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+
+#parallax__cont {
+    max-width: 1600px;
+    /* background-color: rgba(255,255,255,0.1); */
+    width: 98%;
+    margin: 0 auto;
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255,255,255,0.1); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 10vw;
+}
+
+.content__item:nth-child(even) {
+    margin-left: 0;
+    text-align: right;
+}
+
+.content__item__num {
+    font-size: 35vw;
+    font-family: "Lato";
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+
+.content__item:nth-child(even) .content__item__num {
+    right: -5vw;
+    left: auto;
+}
+
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize; /* 첫글자만 대문자 */
+}
+
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.content__item__img {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -5px;
+    top: -5px;
+    background-image: url(../assets/img/city_bg02.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: saturate(0%);
+    /* transition: all 1s; */
+}
+
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/city_bg03.jpg);
+}
+
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/city_bg04.jpg);
+}
+
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/city_bg05.jpg);
+}
+
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/Mountian_bg01.jpg);
+}
+
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/Mountian_bg02.jpg);
+}
+
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/Mountian_bg03.jpg);
+}
+
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/Mountian_bg04.jpg);
+}
+
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/Mountian_bg05.jpg);
+}
+
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+
+/* 반응형 */
+@media (max-width: 800px) {
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+}
+
+/* 페럴렉스 인포 */
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0, 0, 0.4);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#parallax__info li,
+.scrollTop {
+    line-height: 1.4;
+}
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    섹션을 콘텐츠 요소 별이 아닌 한 번에 동작하도록 하려면 각 콘텐츠 요소들에게 속성을 부여하지 않고 공통 선택자에게만 속성을 부여하면 됩니다.<br>
+                    반대로 각 콘텐츠 요소별로 움직이게 하고 싶다면 각 콘텐츠 요소마다 에니메이션을 설정해주면 됩니다. <br>
+                </p>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트로 페럴랙스 효과 주기 </h3>
+                <p class="t_desc">
+                    먼저 전체적인 흐름을 보고 주석과 함께 스크립트가 어떻게 작동되는지 확인해봅시다! 🥹
+                </p>
+                <p class="t_desc2">
+                    오늘 스크립트에서도 지난 시간과 같이 <i>재귀함수</i>를 사용하여 스크립트를 완성하였습니다. <br>
+                    즉 오늘의 스크립트 포인트는! 재귀함수와 이질감을 주도록 이동 거리의 오차를 구하는 식, 그리고 gsap을 이용한 스크롤 에니메이션 구현 입니다~!<br>
+                    그럼 코드보러 슝~~ 해보아요~🚗💨 (재귀함귀에 대한 설명은 페럴렉스04번을 참고해주세요~)
+                </p>
+                <details style="margin-bottom: 30px;">
+                    <summary> 💡 전체 스크립트 보기</summary>
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//함수 설정
+function scroll(){
+
+    //01 scrollTop값 구하고 값을 선택 요소에 출력
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+    //02 이질감 효과 주기
+    document.querySelectorAll(".content__item").forEach(item =&gt; {
+        //선택자
+        //선택한 콘텐츠(넘버, 이미지, 텍스트)들을 타겟(변수)에게 설정한다.
+        const taget1 = item.querySelector(".content__item__img");
+        const taget2 = item.querySelector(".content__item__desc");
+        const taget3 = item.querySelector(".content__item__num");
+
+        //이동시킬 거리 (오차주기)
+        //현재 스크롤 탑 값이 1000일 경우 -item.offsetTop(섹션의 시작 스크롤값 위치)를 하면 0이 나온다. 이때 스크롤을 내리면 scrollTop은 다시 본래의 값으로 돌아오며 내렸을 때의 값에서 다시 item.offsetTop을 뺐을 때 나오는 값에 0.1을 곱할 경우 나오는 값이 변수에게 대입되는 것이다.
+        //scrollTop과 item.offsetTop값은 같기 때문에 0이 나오는 것.
+        //즉 scrollTop이 content__item(섹션)의 시작 위치 값에 도달했을 때 값을 0으로 만든 뒤 다시 scrollTop이 이동할 때 나오는 값에 원하는 오차값을 곱하여 반환되는 값을 구한다. 그 값이 y축의 이동 거리가 된다.
+        //다음 content__item(섹션)에 도달할 경우 값은 다시 0이 된다.
+        let offset1 = (scrollTop - item.offsetTop) * 0.1;
+        let offset2 = (scrollTop - item.offsetTop) * 0.15;
+        let offset3 = (scrollTop - item.offsetTop) * 0.2;
+        
+        //03 GSAP
+        // 스크립트로 스타일을 설정할 경우 : css스타일 중 transform을 통해 이미지와 텍스트의 각 고정위치에서 움직이려는 거리를 설정한다. 각각이 콘텐츠들의 이동 거리가 다르므로 스크롤이 움직일 때 이질감을 준다.
+        // taget1.style.transform = `translateY(${offset}px)`;
+        // taget2.style.transform = `translateX(${offset}px)`;
+
+        //gsap으로 스타일 주기 : 더 많은 애니메이션 속성 설정이 가능하며 움직임이 부드럽다. (한 번에 스타일을 선언할 수 있어 편리) : 주의할 점은 꼭 gsap의 CDN을 가져와야 한다는 것.
+        //스타일을 줄 요소, {duration : 지속시간, translateX or Y(gsap에서는 x, y): 선택한 축 방향으로 이동할 값, ease: 전환 효과 (움직임 설정 : 시작과 끝의 속도 조절 등)}
+        gsap.to(taget1, {duration: .3, y: offset1, ease: "power4.out"});
+        gsap.to(taget2, {duration: .3, y: offset2});
+        gsap.to(taget3, {duration: .3, y: offset2, ease: "expo.out"});
+    });
+
+    //04 : 1초에 60번 실행
+    //함수가 무한하게 반복되어도 한 번 움직일 때 60번만 실행이라는 제한이 걸려있기 때문에 서버가 다운이 되지 않는다.
+    requestAnimationFrame(scroll); 
+}
+scroll(); //실행문
+</code></pre>
+                    </div>
+                </details>
+                <h3 class="t_tit2"> 핵심 자바스크립트 📌</h3>
+                <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">document.querySelectorAll(".content__item").forEach(item =&gt; {
+    let offset1 = (scrollTop - item.offsetTop) * 0.1;   //100일 경우 10
+    let offset2 = (scrollTop - item.offsetTop) * 0.15;  //100일 경우 15
+    let offset3 = (scrollTop - item.offsetTop) * 0.2;   //100일 경우 20
+});
+</code></pre>
+                </div>
+                <p class="t_desc2">
+                    1. scrollTop이 item.offsetTop(= content__item.offsetTop)의 시작 위치 값에 도달했을 때 값을 0으로 만든 뒤 다시 scrollTop이 이동할 때 나오는 값에 원하는 오차값을 곱하여 반환되는 값을 변수에 대입합니다.<br>
+                    2. 변수에 대입 된 값이 바로 다음에 설정할 translateY의 이동 거리가 됩니다. 즉 0에서 100만큼 이동한다 가정하여 곱한 값이 0.1일 때 Y축으로 10px을 움직이게 되는 것입니다. <br>
+                    3. 그 뒤 다음 item.offsetTop(= content__item)에 도달할 경우 값은 다시 0이 됩니다.
+                </p>
+                <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">document.querySelectorAll(".content__item").forEach(item =&gt; {
+    gsap.to(taget1, {duration: .3, y: offset1, ease: "power4.out"});
+    gsap.to(taget2, {duration: .3, y: offset2});
+    gsap.to(taget3, {duration: .3, y: offset2, ease: "expo.out"});
+});
+</code></pre>
+                </div>
+                <p class="t_desc2">
+                    1. gsap을 사용하여 CSS 움직임 설정을 해줄 경우 기본 스크립트로 구현하는 것보다 더 많은 속성과 부드러운 움직임을 설정할 수 있게 됩니다.<br>
+                    2. 사용 방법은 스타일을 줄 요소, {duration : 지속시간, translateX or Y(gsap에서는 x, y): 축 방향으로 이동할 값, ease: 전환 효과 (움직임 설정 : 시작과 끝의 속도 조절 등)}으로 작성하시면 됩니다.<br>
+                    3. 이 때 translateY에 offset1을 대입했기 때문에 만약 전체 100px을 움직일 경우 translateY는 10px을 움직이게 됩니다.<br><br>
+                    <strong>TIP!</strong> 좀 더 다양한 ease를 설정하고 싶은 경우 GSAP 홈페이지에 들어가서 확인하시면 됩니다! 또한 GSAP을 사용할 경우 반드시 CDN을 가져와야 합니다!!
+                </p>
+                <h3 class="t_tit2"> 📖 정리 📖 </h3>
+                <div class="t_box">
+                    1. 섹션1 offsetTop값 : 500px / 섹션2 offsetTop값 : 1000px =&gt; scrollTop == 500px / scrollTop == 1000px 일 때 0px이 됩니다. <br><br>
+                    2. 다시 움직인 scrollTop값이 700일 때 다시 섹션1의 offsetTop값을 뻰 경우 200이 되며 * 0.1을 했을 때 20을 반환하게 됩니다. 즉 최종적으로 translateY에게 이 값을 대입하게 되면 스크롤을 내릴 때 해당 컨텐츠가 20px씩 내려가게 됩니다. 이때 이동 효과를 더 크게 하고 싶은 경우 곱하는 값을 더 크게 설정하시면 됩니다.<br><br>
+                    3. 그 뒤 다음 섹션 값인 1000에 되었을 때 scrollTop값은 다시 0이 됩니다. 때문에 계속해서 모든 content__item들의 애니메이션이 작동되는 것 입니다.
+                </div>
+
+                <hr>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/parallaxEffect05.html">원본 소스 보기</a>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/parallaxEffect05.html">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- //sample02 -->
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS : 기본문법</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">기본문법</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS 기본 문법 4가지</h2>
+                <p class="t_desc2">
+                    지금부터 CSS 기본 문법 4가지를 알아보도록 하겠습니다!😀
+                </p>
+
+                <hr>
+
+                <div class="main_sample">
+                    <div id="sample01" class="sample">
+                        <h3 class="t_tit2">#1. 내부 스타일시트</h3>
+                        <div class="t_desc">HTML문서 안에 &lt;style&gt; 태그를 사용하여 css가 문서와 함께 저장되도록 합니다.</div>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;!DOCUMENT html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;내부 스타일시트&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+        p {
+            color: red;   /* p 태그 안의 글씨 색상을 빨간색으로 설정합니다. */
+        }
+    &lt;/style&gt;
+&lt;head&gt;
+&lt;body&gt;
+    &lt;p&gt;이 문장의 색은 빨강입니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        </div>
+                    </div>
+                    <!-- //sample01 -->
+
+                    <hr>
+
+                    <div id="samle02" class="sample">
+                        <h3 class="t_tit2">#2. 외부 스타일시트</h3>
+                        <p class="t_desc">스타일 속성을 따로 저장하여 HTML문서와 연결할 수 있습니다. <br />
+                            파일의 확장명은 '.css'로 저장해주어야 하며 HTML문서에서는 &lt;link&gt; 태그를 사용하여 선언 합니다.</p>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;!DOCUMENT html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;내부 스타일시트&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt; &lt;!-- CSS 파일 경로 선언 --&gt;
+&lt;head&gt;
+&lt;body&gt;
+    &lt;p&gt;이 문장의 색은 빨강입니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        <h3 class="t_tit3">style.css - 외부 경로</h3>
+<pre><code class="language-css">@charset "UTF-8";
+p {
+    color: red;
+}
+</code></pre>
+                        </div>
+                        <p class="t_desc2">이처럼 내부 스타일시트와는 달리 외부 스타일시트는 html문서에 경로 선언만 해준다면 모든 페이지에서 동일한 시트를 적용할 수 있다.</p>
+                    </div>
+                    <!-- //sample02 -->
+
+                    <hr>
+                        
+                    <div id="samle03" class="sample">
+                        <h3 class="t_tit2">#3. @import</h3>
+                        <p class="t_desc">
+                            css안으로 다른 css 파일을 불러올 수 있습니다. 
+                        </p>
+                        <p class="t_desc2">여러개를 사용하면 복잡해져서 오히려 유지보수가 어렵기 때문에 되도록이면 하나 정도만 사용하는 것이 좋습니다.<br /> 또한 사용할 경우 css 가장 첫번째 줄에서 선언해주어야 합니다.</p>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;!DOCUMENT html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;내부 스타일시트&lt;/title&gt;
+    &lt;style&gt;
+        @import url("style.css");
+    &lt;/style&gt;
+&lt;head&gt;
+&lt;body&gt;
+    &lt;p&gt;이 문장의 색은 빨강입니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        <h3 class="t_tit3">style.css - @import</h3>
+<pre><code class="language-css">@charset "UTF-8";
+@import url("common.css");
+</code></pre>
+                        </div>
+                    </div>
+                    <!-- //sample03 -->
+
+                    <hr>
+
+                    <div id="samle03" class="sample">
+                        <h3 class="t_tit2">#4. 인라인 스타일 (inline-style)</h3>
+                        <p class="t_desc">
+                            해당 태그에 직접 style속성을 부여하여 css를 정의해주는 방법이다. 
+                        </p>
+                        <p class="t_desc2"><strong>! 주의 !</strong>우선순위가 절대적으로 높아야 할 경우 사용해야 합니다.</p>
+                        <div class="t_code">
+<pre><code class="language-html">&lt;!DOCUMENT html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;인라인 스타일&lt;/title&gt;
+&lt;head&gt;
+&lt;body&gt;
+    &lt;p style="color: red;"&gt;이 문장의 색은 빨강입니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        </div>
+                    </div>
+                    <!-- //sample04 -->
+
+            </div>
+            </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

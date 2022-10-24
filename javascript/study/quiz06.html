@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈1</a></li>
+                <li><a href="quiz02.html">퀴즈2</a></li>
+                <li><a href="quiz03.html">퀴즈3</a></li>
+                <li><a href="quiz04.html">퀴즈4</a></li>
+                <li><a href="quiz04.html">퀴즈5</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>               
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit"> 퀴즈 객관식 유형 : 슬라이드 형식 </h2>
+            <p class="t_desc2">
+                이번 시간에는 퀴즈를 슬라이드 형식으로 제작해봅시다!<br />
+                그 뒤 정답 갯수와 문제의 총 갯수, 총 점수를 구하는 식을 만들어 봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">! 미리 보기 !</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/quizEffect06.html" frameborder="0"></iframe>
+            </div>
+
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">#1. 퀴즈 인포 (문제 모음) 만들기</h3>
+                <p class="t_box">
+                    데이터 저장 타입인 배열안 객체를 통해 각각의 퀴즈 문제를 키와 값으로 데이터화 시켜 저장해줍니다.<br>
+                    지난 퀴즈와 달리 객체안에 또 배열을 만들어서 저장해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">const quizInfo = [
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "1",
+        answerAsk : "웹 디자인에 대한 설명으로 거리가 먼 것은?",
+        answerChoice : [
+            "웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+            "웹 디자인은 개인용 홈페이지 이외에 기업용 등 다양하다.",
+            "웹 디자인은 Web과 Design이라는 두 가지 개념이 결합된 것이다.",
+            "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        ],
+        answerResult : "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        answerEx : "기업을 상징하는 것은 CI이다.",
+    },
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "2",
+        answerAsk : "디자인의 심미성에 대한 설명으로 맞는 것은?",
+        answerChoice : [
+            "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+            "감성적인 부분으로 모든 사람에게 동일하게 나타난다.",
+            "합리적이며 객관적인 미적 활동이다.",
+            "국가, 민족, 관습, 시대와 관계없이 동일하게 나타난다.",
+    ],
+        answerResult : "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+        answerEx : "심미성 : 형태와 색채조화를 이루어 '아름다움'의성징을 만들어내는 것 대중형의 조형성이라고도 말하며, 시대적인 미의 기준, 사회적인 개성에 따라 변화된다.",
+    },
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "3",
+        answerAsk : "동시 대비에 해당하지 않는 것은?",
+        answerChoice : [
+            "색상 대비",
+            "명도 대비",
+            "보색 대비",
+            "한난 대비",
+        ],
+        answerResult : "한난 대비",
+        answerEx : "서로 가까이 놓여진 두개 이상의 색을 동시에 볼 때 일어나는 색채대비를 말한다. 동시대비는 색채의 3속성들의 차이에 따른 지각변화에 따라서 명도대비, 색상대비, 채도대비, 보색대비로 구분된다. 심리에 관한 색용어. 서로 반대되거나 대단히 틀리는 감각, 감정 등이 동시에 비교하면, 그 한쪽 또는 양쪽의 특성이 한층 명백해 지는 일. 예를들면, 똑같은 회색의 원(圓)을 흰종이와 검은 종이 위에 놓고 볼 때 검은종이 위에서는 희게 보이고, 흰종이 위에서는 검게 보이는 것 등이 동시적 대비이다.",
+    },...........
+    //위와 같은 방법으로 문제를 쭉 나열해줍니다.
+</code></pre>
+                </div>
+            </div>
+            <!-- //퀴즈 인포 -->
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">#2. 함수와 변수를 통해 퀴즈 문자열 넣기</h3>
+                <p class="t_box">
+                    데이터를 실행해 줄 함수안에 매개변수와 템플릿 문자열을 사용하여 문제를 해당 란에 출력해봅시다!<br>
+                    이 때 상수 안에 저장할 값은 html로 작성한 코드이기 때문에 기존에 html로 작업했던 코드들은 주석처리 하거나 삭제해줍니다!
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">//선택자
+const quizType = document.querySelector(".quiz__type");                 //퀴즈 타입
+const quizQuestion = document.querySelector(".quiz__question");         //문제 번호와 질문을 quizQuestion 상수에 저장
+const quizSelects = document.querySelector(".quiz__selects");           //객관식 보기
+const quizResult = document.querySelector(".quiz__answer .result");     //문제 정답
+const quizCunfirm = document.querySelector(".quiz__answer .confirm");;    //정답확인버튼
+const quizView = document.querySelector(".quiz__view"); 
+
+let quizCount = 0;
+let quizScore = 0; //맞힌 문제의 개수
+
+//문제 출력 (문제 번호, 문제 질문)
+//매개변수와 템플릿 문자열을 활용하여 문제를 저장해준다.
+const updateQuiz = (index) =&gt; {
+    const questionTag = `
+        &lt;span class="number"&gt;${quizInfo[index].answerNum}. &lt;/span&gt;
+        &lt;div class="ask"&gt;${quizInfo[index].answerAsk}&lt;/div&gt;
+    `;
+    const choiceTag = `
+        &lt;label for="select1"&gt; 
+            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
+        &lt;/label&gt;
+
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
+        &lt;/label&gt;
+        
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
+        &lt;/label&gt;
+        
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
+        &lt;/label&gt;
+    `;
+
+
+    //문제 출력
+    quizType.innerHTML = quizInfo[index].answerType;    //퀴즈 종류
+    quizQuestion.innerHTML = questionTag;               //quizQuestion에 questionTag에 저장된 문제 번호와 질문을 innerHTML을 통해 넣어준다.
+    quizSelects.innerHTML = choiceTag;                  //객관식 문항
+    quizResult.innerHTML = quizInfo[index].answerEx;    //해설
+    
+
+    const quizChoice = quizSelects.querySelectorAll(".choice"); //보기가 4개라서 all사용하여 모두 선택해준다.
+
+    for(let i=0; i&lt;quizChoice.length; i++){
+        quizChoice[i].setAttribute("onclick", "choiceSelected(this)");
+    }
+
+    //문제와 해설 숨기기
+    quizResult.style.display = "none";
+    quizCunfirm.style.display = "none";
+}
+updateQuiz(quizCount); //실행문
+</code></pre>
+                </div>
+            </div>
+            <!-- //문제 출력 -->
+
+
+            <hr>
+
+
+            <div>
+                <h3 class="t_tit2">#3. 함수와 조건문을 작성하여 정답 확인하기<br> + 문제 갯수와 맞힌 갯수 확인하기</h3>
+                <p class="t_box">
+                     익명 함수와 매개변수, if문을 통해 사용자가 체크한 값과 정답 값을 비교하는 식을 만들어봅시다. 그리고 총 점수를 구하는 식도 구해봅시다!
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">//정답 확인하기
+const choiceSelected = (answer) => {
+    let userAnswer = answer.textContent;    //사용자가 체크한 정답
+    let currentAnswer = quizInfo[quizCount].answerResult; //문제 정답
+
+    if(userAnswer == currentAnswer){
+        quizView.classList.add("like");
+        quizScore++; //정답일 때 마다 Score 하나씩 올리기
+        console.log("정답");
+    } else {
+        quizView.classList.add("dislike");
+        quizResult.style.display = "block";
+        console.log("오답");
+    }
+    quizCunfirm.style.display = "block";
+}
+
+// 정답 확인 후 다음문제 종료와 갯수 확인
+const answerQuiz = () => {
+    //마지막 문제 완료 후 종료
+    let scoreSet = Math.floor(quizScore * 100 / quizInfo.length); // 점수 구하는 식(맞힌 갯수 x 100 나누기 총 문제 갯수)를 scoreSet에 대입
+    if(quizInfo.length -1 == quizCount){     // quizInfo.length는 길이 값이지만 퀴즈 카운드는 인덱스 값이기 때문에 0부터 시작하기 때문에 -1을 해주어야 한다.
+        if(scoreSet >= 60){ //위 조건이 실행되었을 때 scoreSet이 조건에 맞으면 참, 틀리면 거짓을 반환.
+            quizCunfirm.textContent = `당신은 총 ${quizInfo.length}문제 중 ${quizScore}문제를 맞추셨습니다. 점수: ${scoreSet}점 ! 합격 !`;
+        } else {
+            quizCunfirm.textContent = `당신은 총 ${quizInfo.length}문제 중 ${quizScore}문제를 맞추셨습니다. 점수: ${scoreSet}점 ! 불합격 !`;
+        } 
+    }
+
+    quizCount++;
+    updateQuiz(quizCount);
+    quizView.classList.remove("like", "dislike"); //다음 문제 클릭시 강아지 표젱 리셋
+} 
+
+quizCunfirm.addEventListener("click", answerQuiz);
+</code></pre>
+                </div>
+            </div>
+            <!-- //정답 확인 -->
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/quizEffect06.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/javascript/effect/quizEffect06.html">원본 페이지 보기</a>
+            </div>
+
+
+
+            
+        </div> 
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+</html>

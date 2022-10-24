@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //선언적 함수
+        {
+            function func (){
+                document.write("실행1");
+            }
+            func();
+        }
+        //익명함수
+        {
+            const func = function(){
+                document.write("실행2");
+            }
+            func();
+        }
+        //매개변수 함수 
+        {
+            function func (str){
+                document.write(str);
+            }
+            func("실행3<br>");
+        }
+        //리턴값 함수
+        {
+            function func(){
+                const str = "실행4";
+                return str;
+            }
+            document.write(func());
+
+        }
+        //화살표함수1
+        {
+            func = () => {
+                document.write("실행5");
+            }
+            func();
+        }
+        //화살표함수2
+        {
+            const func = () => {
+                document.write("실행6");
+            }
+            func();
+        }
+        //화살표함수3
+        {
+            func = (str) => {
+                document.write(str);
+            }
+            func("실행7");
+        }
+        //화살표 함수4
+        {
+            func = () => {
+                const str = "실행8";
+                return str;
+            }
+            document.write(func());
+        }
+    </script>
+    
+</body>
+</html>

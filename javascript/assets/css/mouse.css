@@ -1,0 +1,446 @@
+@import url("https://webfontworld.github.io/pretendard/Pretendard.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%; /* 100%하면 스크롤바가 생기지 않는다 */
+  height: 100vh;
+  font-family: "Pretendard";
+  overflow: hidden; /* 영역을 벗어나면 스크롤 생기지 않게 안보이게 하기 */
+  background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+}
+
+/* 배경 이미지 */
+body.img01 {
+  background: url(../img/effect_bg01-2.jpg) no-repeat center / cover;
+}
+body.img02 {
+  background: url(../img/effect_bg02-2.jpg) no-repeat center / cover;
+}
+body.img03 {
+  background: url(../img/effect_bg03-2.jpg) no-repeat center / cover;
+}
+body.img04 {
+  background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+}
+body.img05 {
+  background: url(../img/effect_bg05-2.jpg) no-repeat center / cover;
+}
+body.img06 {
+  background: url(../img/effect_bg06-2.jpg) no-repeat center / cover;
+}
+body.img07 {
+  background: url(../img/effect_bg07-2.jpg) no-repeat center / cover;
+}
+body.img08 {
+  background: url(../img/effect_bg08-2.jpg) no-repeat center / cover;
+}
+body.img09 {
+  background: url(../img/effect_bg09-2.jpg) no-repeat center / cover;
+}
+body.img10 {
+  background: url(../img/effect_bg10-2.jpg) no-repeat center / cover;
+}
+body.img11 {
+  background: url(../img/city_bg05-2.jpg) no-repeat center / cover;
+}
+body.img12 {
+  background: url(../img/Mountian_bg03-2.jpg) no-repeat center / cover;
+}
+body.img13 {
+  background: url(../img/city_bg01-2.jpg) no-repeat center / cover;
+}
+body.img14 {
+  background: url(../img/city_bg02-2.jpg) no-repeat center / cover;
+}
+body.img15 {
+  background: url(../img/city_bg03-2.jpg) no-repeat center / cover;
+}
+body.img16 {
+  background: url(../img/city_bg04-2.jpg) no-repeat center / cover;
+}
+body.img17 {
+  background: url(../img/city_bg05-2.jpg) no-repeat center / cover;
+}
+body.img18 {
+  background: url(../img/Mountian_bg02-2.jpg) no-repeat center / cover;
+}
+body.img19 {
+  background: url(../img/Mountian_bg04-2.jpg) no-repeat center / cover;
+}
+body.img20 {
+  background: url(../img/Mountian_bg05-2.jpg) no-repeat center / cover;
+}
+
+body::after {
+  /* 가상 요소 : 배경 전체 불투명도 씌우기 */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(23, 20, 88, 0.500);
+  z-index: -1;
+}
+
+img {
+  width: 100%;
+  vertical-align: top; /* 이미지 정렬 */
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #28293600;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.500);
+  border-radius: 20px;
+}
+
+/* layout */
+#header {
+  z-index: 2000; /* 제트 인덱스는 서로 형제여야 하며 꼭 포지션을 함께 사용해주어야 한디. */
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: 1000;
+}
+#footer {
+  position: relative;
+  z-index: 3000;
+}
+
+/* header */
+#header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  padding: 20px;
+}
+#header h1 {
+  display: inline-block;
+  font-weight: 200;
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid #fff;
+}
+#header p {
+  font-weight: 200;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+#header li {
+  display: inline-block;
+}
+#header li a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+}
+#header li.active a {
+  background-color: #fff;
+  color: #282936;
+}
+
+/* footer */
+#footer .source {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  padding: 10px 30px;
+  font-size: 14px;
+}
+
+/* modal__wrap */
+.modal__btn {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  display: inline-block;
+  padding: 10px 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.modal__btn:hover {
+  background-color: #f5f5f5;
+  color: #555;
+}
+
+.modal__cont {
+  font-size: 14px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden; /* X축으로는 스크롤 바가 생기지 않게 해준다. */
+  display: flex;
+  align-items: center; /* 가운데 정렬 aic */
+  justify-content: center; /* 가운데 정렬 jcc */
+  transform: scale(0); /* 요소 안보이게 하기 */
+}
+
+.modal__box {
+  width: 70%;
+  height: 70vh;
+  border-radius: 0.6rem;
+  box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%); /* 스크립트를 사용할 때 편한 컬러 설정 단위! */
+  transform: scale(0);
+}
+.modal__box .title {
+  padding-inline: 1rem;
+  background-color: hsl(252 24% 10%);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  height: 50px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.modal__box .title .dot {
+  width: 15px;
+  height: 15px;
+  background-color: hsl(180 2% 50%);
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 2rem;
+}
+.modal__box .title .dot::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-color: hsl(180 2% 50%);
+  border-radius: 50%;
+}
+.modal__box .title .dot::after {
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-color: hsl(180 2% 50%);
+  border-radius: 50%;
+}
+.modal__box .title .plus {
+  background: hsl(242 19% 21%);
+  padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  color: #7a7d9d;
+}
+.modal__box .title .tabs {
+  display: flex;
+  margin-left: 50px;
+}
+.modal__box .title .tabs > div {
+  color: hsl(39 50% 59%);
+  background-color: hsl(242 19% 21%);
+  padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 0.4rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+  background-color: black;
+}
+.modal__box .title .tabs > div em {
+  font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+  margin-right: 0.4rem;
+  margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close {
+  margin-left: 5rem;
+}
+.modal__box .cont {
+  background-color: #282936; /* cont 배경색 */
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.modal__box .cont > div {
+  display: none;
+}
+.modal__box .cont > div.active {
+  display: block;
+  height: 100%;
+}
+
+.modal__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #1f224a;
+  padding: 1rem 1rem 0.8rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 7px -5px hsl(180deg 2% 10%);
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.modal__close:hover {
+  background-color: #33377d;
+}
+.modal__close svg {
+  color: #fff;
+}
+
+/* 모달 애니메이션 */
+.modal__cont.show {
+  /* 전체 배경 */
+  animation: foldOut 1s ease forwards; /* forwards 애니메이션이 작동된 후 고정*/
+}
+.modal__cont.show.hide {
+  animation: foldIn 0.3s 0.5s ease backwards;
+}
+.modal__cont.show .modal__box {
+  /* 스트립트 배경 */
+  transform: scale(0);
+  animation: zoomOut 0.5s 1s ease forwards;
+}
+.modal__cont.show.hide .modal__box {
+  animation: zoomIn 0.5s ease forwards;
+}
+.modal__cont.show .modal__close {
+  /* 닫기 버튼 */
+  animation: opacityOut 0.8s 1s ease forwards;
+}
+.modal__cont.show.hide .modal__close {
+  animation: opacityIn 0.3s ease forwards;
+}
+
+@keyframes foldOut {
+  /* show가 붙었을 때 작동되는 애니메이션*/
+  0% {
+    transform: scaleX(0) scaleY(0.001);
+  }
+  50% {
+    transform: scaleX(1) scaleY(0.001);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+  }
+}
+@keyframes foldIn {
+  /* show hide가 붙었을 때 작동되는 애니메이션*/
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    transform: scaleX(1) scaleY(0.001);
+  }
+  100% {
+    transform: scaleX(0) scaleY(0.001);
+  }
+}
+@keyframes zoomOut {
+  /* show가 붙었을 때 작동되는 애니메이션*/
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomIn {
+  /* show hide가가 붙었을 때 작동되는 애니메이션*/
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes opacityOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacityIn {
+  /* show hide가 붙었을 때 작동되는 애니메이션*/
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .modal__box .title {
+    overflow: hidden;
+  }
+  .modal__box .title .dot {
+    display: none;
+  }
+  .modal__box .title .tabs {
+    margin-left: 0; /* 줄였을 때 상단 원 지우기*/
+  }
+  .modal__box .title .dot > div .close {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  #header {
+    width: 100%;
+    text-align: center;
+  }
+  #header h1 {
+    line-height: 1.4;
+  }
+  .modal__box {
+    width: 96%;
+  }
+}
+
+/* 요소를 안보이게 하는 방법 
+    1. display : none;   애니메이션이 되지 않고 영역이 남지 않는다.
+    2. opacity: 0;       애니메이션이 작동 되고 영역이 남는다.
+    3. visibility: hidden;       애니메이션이 작동되지 않고 영역이 남는다.
+    4. width: 0; height: 0;      애니메이션이 작동되고 영역이 남지 않는다.  = blind효과 
+    5. transform : scale(0)      애니메이션은 작동되고 영역은 남지 않는다. 
+*/

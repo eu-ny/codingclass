@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li class="active"><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">CardType01</h2>
+            <p class="t_desc">
+               웹페이지 실습을 위한 <i>카드타입</i> 페이지 기초 실습하기!
+            </p>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    피그마를 통해 원하는 카드 유형을 디자인 합니다. 디자인을 할 땐 만들고자 하는 <i>페이지의 성격</i>을 잘 파악하여 <i>그리드</i>를 만들어주는 것이 중요합니다.<br />
+                    그리드 작업이 완벽해야 후에 코딩을 하는 데 있어서도 오류 및 오차가 생기지 않아 불편해지지 않습니다!
+                </p>
+                <img src="https://user-images.githubusercontent.com/106949433/183720238-0b7b02df-2951-4db9-b0d2-cac83305f544.jpg" alt="site__layout" aria-hidden="true">
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D1%253A70" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
+                <p class="t_desc">
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다. 
+                </p>
+                <p class="t_desc2">
+                    <strong>구조 파악하기</strong><br />
+                    1. 카드 레이아웃은 보통 웹 메인 페이지의 섹션 부분에 위치한다. 때문에 시멘틱 태그인 &lt;section&GT;을 사용해주어 카드 영역에 해당하는 모든 요소를 묶어준다.<br />
+                    2. 카드영역은 총 3개이기 때문에 3개의 &lt;article&GT;을 사용해주어 묶어준다.<br />
+                    3. article의 헤더 부분에는 &lt;figure&GT;를 사용하여 이미지를 삽입해준다. 마친가지로 바디 부분에는 해당하는 텍스트를 작성하면 된다.<br />
+                    4. 웹 접근성에 맞춰 btn을 나타내는 span 태그에게 <i>aria-hidden="true"</i>라는 속성을 주어 스크린리더 프로그램이 내용과 관련이 없는 <i>svg파일을 읽지 않고</i> 지나가도록 해준다.
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-html">&lt;section id="cardType" class="card__wrap nexon section"&gt;
+&lt;h2&gt;전시회 리스트&lt;/h2&gt;
+&lt;p&gt;전시를 좋아하는 사람들을 위한 전시 리스트&lt;/p&gt;
+&lt;div class="card__inner container"&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg01.jpg" alt="상업 전시"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;상업 전시를 찾고 계신가요?&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+                상업적인 성격을 띄는 전시회로 대표적으로는 디자인아트페어, 키아프 등등이 있습니다. 이 전시회에서는 관람 뿐만 아니라 현장에서 바로 구매할 수 있습니다.
+            &lt;/p&gt;
+            &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt; 
+                    &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                        &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                        &lt;/svg&gt;                                
+                &lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg02.jpg" alt="미술 전시"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;미술 전시를 찾고 계신가요?&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+                순수미술과 같은 예술 분야를 주로 전시하며 가벼운 상업 전시와는 달리 좀더 깊은 문화 예술을 관람할 수 있습니다. 전문적인기관에서 운영하는 경우가 대부분 입니다.
+            &lt;/p&gt;
+            &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt; 
+                    &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                        &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                        &lt;/svg&gt;                                
+                &lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;  
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg03.jpg" alt="사진 전시"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;사진 전시를 찾고 계신가요?&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+                사진을 주제로 하여 일상의 모습 또는 그 이상을 보여주는 작품들을 감상할 수 있습니다. 최근 사진전의 수요가 오르는 추세이며, 가볍게 관람하기에도 좋습니다. 
+            &lt;/p&gt;
+            &lt;a class="btn" href="#"&gt;
+            더 자세히 보기
+            &lt;span aria-hidden="true"&gt; 
+                &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                    &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                    &lt;/svg&gt;                                
+            &lt;/span&gt;
+        &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+</pre></code>
+                </div>
+
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 &gt;</h3>
+                <p class="t_desc">
+                    구조 짜임의 순서대로 css 스타일을 적용시켜보자. css 스타일을 적용시킬 땐 <i>선택자의 위치와 관계를 주의</i>해서 선언해야 한다!
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-css">/* fonts */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none; /* 텍스트를 초기화. */
+    color: #000;
+}
+img {
+    width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* common */
+.container {                /* 부모 컨테이너 박스를 만들어 가로 값을 고정시킨다. */
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.section {
+    padding: 120px 0;
+}
+.section &gt; h2 { 
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;     /* 텍스트를 가운데로 정렬한다. */
+    margin-bottom: 20px;
+}
+/* 요소 &gt; 요소는 부모와 자식의 관계를 나타낸다. 마찬가지로 요소 + 요소는 형제 관계를 나타낸다.*/
+.section &gt; p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+/* cardType */
+.card__inner {
+    display: flex;
+    justify-content: space-around; /* 중심을 기준으로 정렬하여 모아준다.*/
+}
+.card {
+    width: 32%;
+    background: #f5f5f5;
+}
+.card__body {
+    padding: 24px;
+}
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+.card__body .btn {}
+</pre></code>
+                </div>
+
+            </div>
+            <!-- //css -->
+
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">!오늘의 포인트!</h3>
+                <p class="t_desc">
+                    <i>figure 태그</i><br />
+                    이미지 또는 그래프 등의 도표 자료들을 의미하는 시멘틱 태그이다.<br />
+                    때문에 img와 같은 태그를 사용할 때에는 꼭 함꼐 사용해주어야 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;figure&gt;&lt;/figure&gt;
+
+&lt;!-- 예시 --&gt;
+&lt;figure&gt;
+    &lt;img src="" alt=""&gt;
+&lt;/figure&gt;
+</code></pre>
+                </div>
+                <!-- 1 -->
+
+                <p class="t_desc">
+                    <i>aria-hidden="true" 속성</i><br />
+                    웹 접근성을 위해 스크린리더 프로그램이 <i>내용과 관련이 없는 파일</i>을 읽지 않고 지나가도록 해준다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;span aria-hidden="true"&gt;
+    &lt;svg&gt;svg소스&lt;/svg&gt;
+&lt;/span&gt;
+</code></pre>
+                </div>
+                <!-- 2 -->
+
+                <p class="t_desc">
+                    <i>css속성 선택자(요소)의 우선순위</i><br />
+                    위치를 더 자세히 선언해줄 수록 우선순위가 높아진다. 또한 오류의 가능성도 낮아지기 때문에 구조가 복잡할 수 록 위치와 선택자 명칭을 중요하게 선언해주어야 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">.card .card__body .btn {} //1
+.card__body .btn {} //2
+</code></pre> 
+                </div>
+                <!-- 3 -->
+
+                <p class="t_desc">
+                    <i>css속성 선택자(요소)간의 관계</i><br />
+                    요소 &gt; 요소는 부모와 자식의 관계를 나타낸다. 마찬가지로 요소 + 요소는 형제 관계를 나타낸다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">.section &gt; h2 /*section안에 h2라는 자식요소를 의미*/
+.section &gt; h2 + p /*section안에 자식요소와 h2와 h2의 형제 요소인 p를 의미*/
+</code></pre>
+                </div>
+                <!-- 4 -->
+
+            </div>
+            <!-- //포인트 -->
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/cardType/cardType01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/cardType/cardType01.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/cardType/cardType01.html">원본 페이지 보기</a>
+            </div>
+
+
+        </div>
+    </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

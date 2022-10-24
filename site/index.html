@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- 언어 -->
+    <meta charset="UTF-8" />
+    <!-- 호환성 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사이트 만들기</title>
+
+    <!-- SEO -->
+    <meta name="author" content="enny" />
+    <meta name="description" content="사이트 만들기 튜토리얼 입니다." />
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 으니" />
+    <meta name="robots" content="all" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="asset/css/font.css" />
+    <link rel="stylesheet" href="asset/css/reset.css" />
+    <link rel="stylesheet" href="asset/css/common.css" />
+
+    <!-- CSS section -->
+    <link rel="stylesheet" href="asset/css/header.css" />
+    <link rel="stylesheet" href="asset/css/slider.css" />
+    <link rel="stylesheet" href="asset/css/image.css" />
+    <link rel="stylesheet" href="asset/css/imgTextType.css" />
+    <link rel="stylesheet" href="asset/css/card.css" />
+    <link rel="stylesheet" href="asset/css/bannerType.css" />
+    <link rel="stylesheet" href="asset/css/text.css" />
+    <link rel="stylesheet" href="asset/css/footer.css" />
+
+    <!-- CSS swiper -->
+    <link rel="stylesheet" href="asset/css/swiper.css"/>
+  </head>
+  <body>
+    <div id="skip">
+      <!-- <a href="headerType">헤더 영역 바로가기</a> -->
+      <a href="#sliderType">슬라이드 영역(배너 광고 등) 바로가기</a>
+      <a href="#imageType">이미지 영역 바로가기</a>
+      <a href="#imgTextType">이미지/텍스트 영역 바로가기</a>
+      <a href="#cardType">카드 영역 바로가기</a>
+      <a href="#bannerType">배너 영역 바로가기</a>
+      <a href="#textType">텍스트 영역 바로가기</a>
+      <a href="#footerType#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip : 웹표준 준수에 반드시 필요! -->
+
+    <section id="headerType" class="header__wrap nexon">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">WEB <em>SITE</em></a>
+        </div>
+        <div class="menu__bar"></div>
+        <div class="header__menu">
+            <ul>
+                <li><a href="#sliderType">슬라이드 영역</a></li>
+                <li><a href="#imageType">이미지 영역</a></li>
+                <li><a href="#imgTextType">이미지 텍스트 영역</a></li>
+                <li><a href="#cardType">카드 영역</a></li>
+                <li><a href="#bannerType">배너 영역</a></li>
+                <li><a href="#textType">텍스트 영역</a></li>
+                <li><a href="#footerType">푸터 영역</a></li>
+            </ul>
+        </div>
+        <div class="header__member">
+          <a href="#">로그인</a>
+        </div>
+
+        <div class="header__ham">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+    <!-- //headerType -->
+
+    <main id="mainType">
+      <section id="sliderType" class="slider__wrap nexon scroll">
+        <h2 class="blind">슬라이드 영역</h2>
+        <div class="slider__inner">
+          <!-- <div class="slider">
+            <div class="slider__img">
+              <div class="desc">
+                <span>ANIMALS</span>
+                <h3>cUTE ANIMALS</h3>
+                <p>
+                  당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                  여기 애니멀 유치원으로 어서 오세요!
+                </p>
+                <div class="btn">
+                  <a href="#">자세히 보기</a>
+                  <a href="#" class="black">사이트 보기</a>
+                </div>
+              </div>
+            </div>
+            <div class="slider__arrow">
+              <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+              <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+            </div>
+            <div class="slider__dot">
+              <a href="#" class="dot active"><span class="ir">1</span></a>
+              <a href="#" class="dot"><span class="ir">2</span></a>
+              <a href="#" class="dot"><span class="ir">3</span></a>
+              <a href="#" class="play"><span class="ir">플레이</span></a>
+              <a href="#" class="stop"><span class="ir">정지</span></a>
+            </div>
+          </div> -->
+        <!-- Swiper -->
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="desc">
+                    <span>ANIMALS</span>
+                    <h3>cUTE ANIMALS</h3>
+                    <p>
+                      당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                      여기 애니멀 유치원으로 어서 오세요!
+                    </p>
+                    <div class="btn">
+                      <a href="#">자세히 보기</a>
+                      <a href="#" class="black">사이트 보기</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="desc">
+                    <span>ANIMALS</span>
+                    <h3>cUTE ANIMALS</h3>
+                    <p>
+                      당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                      여기 애니멀 유치원으로 어서 오세요!
+                    </p>
+                    <div class="btn">
+                      <a href="#">자세히 보기</a>
+                      <a href="#" class="black">사이트 보기</a>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="desc">
+                    <span>ANIMALS</span>
+                    <h3>cUTE ANIMALS</h3>
+                    <p>
+                      당신의 반려 동물에게 새로운 친구를 만나게 하고 싶나요?!<br />
+                      여기 애니멀 유치원으로 어서 오세요!
+                    </p>
+                    <div class="btn">
+                      <a href="#">자세히 보기</a>
+                      <a href="#" class="black">사이트 보기</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button">
+                <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                <div class="swiper-button-play"><span class="ir">play</span></div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+      </section>
+      <!-- //sliderType -->
+
+      <section id="imageType" class="image__wrap nexon section scroll">
+        <h2>애니멀 유치원</h2>
+        <p>🐶 당신의 반려 동물에 맞는 반을 골라주세요!🐱</p>
+        <div class="image__inner container">
+          <article class="image img1">
+            <h3 class="image__title">멍멍 유치원</h3>
+            <p class="image__desc">
+              강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는
+              기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다.
+            </p>
+            <a href="#" title="자세히 보기" class="image__btn">자세히 보기</a>
+          </article>
+          <article class="image img2">
+            <h3 class="image__title">야옹 유치원</h3>
+            <p class="image__desc">
+              고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는
+              은근하게 다가오는 것이 매력적입니다.
+            </p>
+            <a href="#" title="자세히 보기" class="image__btn yellow"
+              >자세히 보기</a
+            >
+          </article>
+        </div>
+      </section>
+      <!-- //imageType -->
+
+      <section id="imgTextType" class="imgText__wrap nexon section scroll">
+        <h2 class="blind">애니멀 유치원 살펴보기</h2>
+        <div class="imgText__inner container">
+          <div class="imgText__txt">
+            <span>ANIMALS</span>
+            <h3>애니멀 유치원 살펴보기</h3>
+            <p>
+              교육 및 사회성이 필요한 반려동물들의 애니멀 유치원 소개 사이트 입니다.
+            </p>
+            <ul>
+              <li><a href="#">애니멀 유치원 사이트</a></li>
+              <li><a href="#">댕댕꾸러기 소개</a></li>
+              <li><a href="#">칭찬해요</a></li>
+              <li><a href="#">서운해요</a></li>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">ANIMALS Youtube</a></li>
+            </ul>
+          </div>
+          <div class="imgText__img img1">
+            <li><a href="#">멍멍 유치원 사이트</a></li>
+          </div>
+          <div class="imgText__img img2">
+            <li><a href="#" class="blue">야옹 유치원 사이트</a></li>
+          </div>
+        </div>
+      </section>
+      <!-- //imgTextType -->
+
+      <section id="cardType" class="card__wrap nexon section scroll">
+        <h2>애니멀 활동 소개 📝</h2>
+        <p>애니멀 유치원의 대표적인 활동 리스트 입니다.</p>
+        <div class="card__inner container">
+          <article class="card">
+            <figure class="card__header">
+              <img src="asset/img/card_bg01_01.jpg" alt="상업 전시" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">개인 활동 시간</h3>
+              <p class="desc">
+                당신의 각각의 반려동물의 맞춤 교육 활동입니다. 각 애니멀들의 성향 및 고칠점에 대하여 전문가들과 분석하고 1:1 맞춤형으로 교육이 진행됩니다.
+              </p>
+              <a class="btn" href="#">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__header">
+              <img src="asset/img/card_bg01_02.jpg" alt="미술 전시" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">간식 시간</h3>
+              <p class="desc">
+                식사 훈련을 함께 동반하며 사료와 함께 수제로 만든 건강 간식이 제공됩니다. 필요에 따라 직접 선택할 수 있으며 주의 사항에 따라 해당 재료를 먹지 못하는 경우 따로 제공합니다.
+              </p>
+              <a class="btn" href="#">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__header">
+              <img src="asset/img/card_bg01_03.jpg" alt="사진 전시" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">단체 활동 시간</h3>
+              <p class="desc">
+                개인 활동과 달리 단체로 활동하는 시간이며 각 애니멀들의 사회성, 사교성을 기르기 위한 교육 시간 입니다. 각 성향에 따라 분리 하여 활동할 수 있습니다.
+              </p>
+              <a class="btn" href="#">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- //cardType -->
+
+      <section id="bannerType" class="banner__wrap nexon section scroll">
+        <h2 class="blind">배너 영역</h2>
+        <div class="banner__inner">
+          <h3 class="title">HAPPY ANIMALS</h3>
+          <p class="desc">
+            바쁜 당신의 귀여운 강아지, 고양이들을 위한 안식처 한 번 맡겨보세요!
+            <a href="#" title="고양이 보러가기"
+              >애니멀 유치원 GO</a
+            >
+          </p>
+          <span class="small">CUTE ANIMALS</span>
+        </div>
+      </section>
+      <!-- //bannerType -->
+
+      <section id="textType" class="text__wrap section nexon scroll">
+        <span>ANIMALS</span>
+        <h2 class="mb70">애니멀 유치원을 소개합니다.</h2>
+        <div class="text__inner container">
+          <div class="text t1">
+            <h3 class="text__title">홈페이지</h3>
+            <p class="text__desc">애니멀 유치원의 공식 홈페이지 입니다. 애니멀 유치원의 각 과정과 활동 사진 등을 확인하실 수 있습니다.</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t2">
+            <h3 class="text__title">공지사항</h3>
+            <p class="text__desc">애니멀 유치원의 행사, 일정, 모집 등 중요 사항들을 확인할 수 있습니다.</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t3">
+            <h3 class="text__title">주의해요</h3>
+            <p class="text__desc">당신의 반려 동물에 대한 주의점(알레르기, 행동, 성격 등)을 작성할 수 있습니다.</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t4">
+            <h3 class="text__title">칭찬해요</h3>
+            <p class="text__desc">이 달의 베스트 애니멀 학생을 확인할 수 있습니다.</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t5">
+            <h3 class="text__title">추천해요</h3>
+            <p class="text__desc">칭찬해요와 서운해요에 해당하는 투표를 진행하는 곳입니다.</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t6">
+            <h3 class="text__title">서운해요</h3>
+            <p class="text__desc">각 학생들의 벌점을 확인할 수 있습니다.</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+        </div>
+      </section>
+      <!-- //textType -->
+
+    </main>
+    <!-- //mainType -->
+
+    <footer id="footerType" class="footer__wrap nexon section scroll">
+      <h2 class="blind">푸터 영역</h2>
+      <div class="footer__inner container">
+        <div class="footer__menu">
+          <div>
+            <h3>사이트</h3>
+            <ul>
+              <li><a href="#">웹표준 사이트</a></li>
+              <li><a href="#">웹표준 사이트</a></li>
+              <li><a href="#">웹표준 사이트</a></li>
+              <li><a href="#">웹표준 사이트</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>헤더 영역</h3>
+            <ul>
+              <li><a href="#">메뉴 유형01</a></li>
+              <li><a href="#">메뉴 유형02</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>슬라이드 영역</h3>
+            <ul>
+              <li><a href="#">슬라이드 유형01</a></li>
+              <li><a href="#">슬라이드 유형02</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>이미지 영역</h3>
+            <ul>
+              <li><a href="#">이미지 유형01</a></li>
+              <li><a href="#">이미지 유형02</a></li>
+              <li><a href="#">이미지/텍스트 유형01</a></li>
+              <li><a href="#">이미지/텍스트 유형02</a></li>
+              <li><a href="#">텍스트 유형01</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>컨텐츠 영역</h3>
+            <ul>
+              <li><a href="/">카드 유형01</a></li>
+              <li><a href="/">카드 유형02</a></li>
+              <li><a href="/">카드 유형03</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>푸터 영역</h3>
+            <ul>
+              <li><a href="/">푸터 메뉴 유형01</a></li>
+              <li><a href="/">푸터 컨텍트 유형02</a></li>
+              <li><a href="/">푸터 이메일 유형03</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__right">
+          2022 LEEHAEUN. Portfolio is Power<br />
+          All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <!-- //footerType -->
+
+    <script src="../site/asset/js/swiper-bundle.min.js"></script>
+   <script>
+    var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
+
+        btnStart.style.display = "none";
+
+        document.querySelector(".swiper-button-stop").addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+
+        });
+        document.querySelector(".swiper-button-play").addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+
+        })
+
+        btnMenuList.forEach((List)=>{
+            List.addEventListener("click", ()=>{
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+                document.body.classList.remove("fixed");
+            })
+        })
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        });
+
+        document.querySelectorAll("a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior:"smooth"
+                });
+            });
+        });
+   </script>
+  </body>
+</html>

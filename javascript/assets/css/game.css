@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'YdestreetB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+
+/* game header */
+#header {
+    font-family: 'YdestreetB';
+    position: fixed;
+    width: 100%;
+    background: rgb(14, 8, 52);
+    /* height: 30px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+#header h1 {
+    color: #f5f5f5;
+    font-size: 20px;
+    padding: 5px;
+}
+
+#header .time {
+    color: #f5f5f5;
+}
+
+/* main */
+/* cursor */
+.mouse__cursor {
+    z-index: 2001;
+    position: absolute;
+    left: 0;
+    top: 0;
+    user-select: none;
+    pointer-events: none;
+}
+.icon1 {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 54px;
+}
+.icon img {
+    width: 100%;
+}
+.icon span {
+    display: block;
+    background: #000;
+    color: white;
+    font-size: 14px;
+    padding: 2px;
+    white-space: nowrap;
+    text-align: center;
+}
+.icon2 {
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    width: 54px;
+}
+.icon3 {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+    width: 54px;
+}
+.icon4 {
+    position: absolute;
+    left: 100px;
+    top: 400px;
+    width: 54px;
+}
+.icon5 {
+    position: absolute;
+    left: 100px;
+    top: 500px;
+    width: 54px;
+}
+.icon6 {
+    position: absolute;
+    left: 100px;
+    top: 600px;
+    width: 54px;
+}
+
+/* footer */
+#footer {
+    font-family: 'YdestreetB';
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgb(14, 8, 52);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+#footer .agent {
+    font-size: 14px;
+}
+
+/* 기기 별 푸터 스타일 */
+.mac #footer {}
+.window #footer {}

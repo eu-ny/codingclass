@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 라이브러리</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="gsap.html">gsap</a></li>
+                <li><a href="../jquery/jquery.html">jquery</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 : GSAP 라이브러리</h2>
+            <p class="t_desc">
+                이번 시간에는 자바스크립트의 라이브러리인 GSAP 대해 알아보겠습니다.😆
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. GSAP란?</h3>
+                <p class="t_desc">
+                    The GreenSock Animation Platform의 약자로 프론트엔드 개발자와 디자이너들이 쉽게 사용할 수 있는 애니메이션 자바스크립트 라이브러리 입니다.<br>
+                    특히 GSAP은 세밀한 움직임과 동작의 연속성을 훨씬 간편하게 설정할 수 있습니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>📖 GSAP 사용 방법 📖</strong><br />
+                    GSAP는 CDN 에서 라이브러리 링크를 가져오면 됩니다.
+                    라이브러리를 가져올 땐 js 파일 링크를 가져오는 것처럼, CDN의 절대 주소를 가져오면 됩니다!
+                </p>
+
+                <hr>
+
+                <h3 class="t_tit2">#2. GSAP 객체를 만드는 기본 메서드</h3>
+                <p class="t_desc2">
+                    1. gsap.to()<br>
+                    2. gsap.from()<br>
+                    3. gsap.fromTo()
+                </p>
+                <p class="t_desc">
+                    gsap의 메소드 to는 첫번째 인자로 DOM 요소를 받는데, 마치 querySelector와 같이 클래스를 표기하며 ,두 번째 인자로는 옵션값들을 담은 객체를 전달하게 됩니다.<br>
+                    각 메서드들의 사용방법은 거의 같습니다. to는 해당 요소를 어디로 보낼지, 마찬가지로 from은 어디에서, fromTo는 어디에서 어디로 어떻게 애니메이션을 만들지 결정하기 위한 메서드라고 생각하면 됩니다!
+                </p>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <h3 class="t_tit2">#3. GSAP 예제를 통해 알아보기</h3>
+
+            <p class="codepen" data-height="406.3671875" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="YzampPw" data-user="eu-ny" style="height: 406.3671875px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/eu-ny/pen/YzampPw">
+                Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

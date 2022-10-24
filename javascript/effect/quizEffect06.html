@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트 : 슬라이드 형식</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+    <link rel="stylesheet" href="../assets/css/quiz_source.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+    <link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Danjunghae/Cafe24Danjunghae.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식 확인하기 : 슬라이드 형식 : 함수와 변수를 이용</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <!-- <span class="number"></span>
+                    <div class="ask"></div> -->
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">오답입니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <!-- <label for="select1"> 
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice"></span>
+                        </label> -->
+                    </div>
+
+                    <div class="result"></div>
+                    <button class="confirm">다음 문제 보기 ➡️</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+
+    <div class="quiz__source">
+        <div class="source__btn">Source</div>
+        <div class="window">
+            <div class="title-bar">
+                 <div class="minimize">
+                     <div class="symbol"></div>
+                 </div>
+                 <div class="maximize">
+                     <div class="symbol"></div>
+                 </div>
+                 <div class="close">
+                     <div class="symbol"></div>
+                 </div>
+            </div>
+            <div class="menu-bar">
+                <div class="active">
+                    <em>JAVASCRIPT</em>
+                </div>
+                <div>
+                    <em>HTML</em>
+                </div>
+                <div>
+                    <em>CSS</em>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="content">
+                    <div class="main">
+                         <div class="active">
+<pre><code class="language-js">//함수 유형 : 함수와 변수를 이용한 형태로 작업. js03
+//문제정보
+const quizInfo = [
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "1",
+        answerAsk : "웹 디자인에 대한 설명으로 거리가 먼 것은?",
+        answerChoice : [
+            "웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+            "웹 디자인은 개인용 홈페이지 이외에 기업용 등 다양하다.",
+            "웹 디자인은 Web과 Design이라는 두 가지 개념이 결합된 것이다.",
+            "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        ],
+        answerResult : "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+        answerEx : "기업을 상징하는 것은 CI이다.",
+    },
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "2",
+        answerAsk : "디자인의 심미성에 대한 설명으로 맞는 것은?",
+        answerChoice : [
+            "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+            "감성적인 부분으로 모든 사람에게 동일하게 나타난다.",
+            "합리적이며 객관적인 미적 활동이다.",
+            "국가, 민족, 관습, 시대와 관계없이 동일하게 나타난다.",
+    ],
+        answerResult : "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+        answerEx : "심미성 : 형태와 색채조화를 이루어 '아름다움'의성징을 만들어내는 것 대중형의 조형성이라고도 말하며, 시대적인 미의 기준, 사회적인 개성에 따라 변화된다.",
+    },
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "3",
+        answerAsk : "동시 대비에 해당하지 않는 것은?",
+        answerChoice : [
+            "색상 대비",
+            "명도 대비",
+            "보색 대비",
+            "한난 대비",
+        ],
+        answerResult : "한난 대비",
+        answerEx : "서로 가까이 놓여진 두개 이상의 색을 동시에 볼 때 일어나는 색채대비를 말한다. 동시대비는 색채의 3속성들의 차이에 따른 지각변화에 따라서 명도대비, 색상대비, 채도대비, 보색대비로 구분된다. 심리에 관한 색용어. 서로 반대되거나 대단히 틀리는 감각, 감정 등이 동시에 비교하면, 그 한쪽 또는 양쪽의 특성이 한층 명백해 지는 일. 예를들면, 똑같은 회색의 원(圓)을 흰종이와 검은 종이 위에 놓고 볼 때 검은종이 위에서는 희게 보이고, 흰종이 위에서는 검게 보이는 것 등이 동시적 대비이다.",
+    },
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "4",
+        answerAsk : "계통 생명이라고도 하며 색상, 명도, 채도를 표시하는 색명은?",
+        answerChoice : [
+            "특정색명",
+            "관용색명",
+            "일반색명",
+            "근대색명",
+        ],
+        answerResult : "일반색명",
+        answerEx : "일반색명- 감성적으로 느껴진 느낌을 수식어로 덧붙여 사용 ex)빨강 Red, 'R'처럼 표색계를 이용하여 기호나 이름으로 표현 '어두운 파랑','연보라'명도, 채도에 대한 수식어로 표현 / 관용색명 - 관습적이거나 연상적인 느낌으로 이름을 붙이는 방법 ex)'귤색', '밤색', '무지개색','코발트 블루'와 같이 고유한 이름을 이용하여 표현",
+    },
+    {
+        answerType : "웹디자인기능사 2015년 01회",
+        answerNum : "5",
+        answerAsk : "색채조화의 공통원리에 대한 설명으로 틀린 것은?",
+        answerChoice : [
+            "질서의 원리는 효과적인 반응을 일으키는 질서 있는 계획에 따라 선택된 색채들에서 생긴다.",
+            "비모호성의 원리는 두 색 이상의 배색에 있어서 모호함이 없는 명료한 배색에서만 얻어진다.",
+            "동류의 원리는 가장 가까운 색채끼리의 배색은 보는 사람에게 친근감을 주며 조화를 느끼게 한다.",
+            "유사의 원리는 색의 3속성의 차이가 큰 색상의 배색이 더욱 조화롭게 나타난다.",
+        ],
+        answerResult : "유사의 원리는 색의 3속성의 차이가 큰 색상의 배색이 더욱 조화롭게 나타난다.",
+        answerEx : "유사조화: 두 가지 이상의 색이 서로 속성이 같거나 비슷하여 잘 어울리는 것을 말한다.",
+    }
+];
+
+const quizType = document.querySelector(".quiz__type");                     //퀴즈 타입
+const quizQuestion = document.querySelector(".quiz__question");             //문제 번호와 질문을 quizQuestion 상수에 저장
+const quizSelects = document.querySelector(".quiz__selects");               //객관식 보기
+const quizResult = document.querySelector(".quiz__answer .result");         //퀴즈 해설
+const quizCunfirm = document.querySelector(".quiz__answer .confirm");;      //정답확인버튼
+const quizView = document.querySelector(".quiz__view"); 
+
+let quizCount = 0;
+let quizScore = "";
+
+//문제출력
+//매개변수와 템플릿 문자열을 활용하여 문제를 삽입해준다.
+const updateQuiz = (index) =&gt; {
+    const questionTag = `
+        &lt;span class="number"&gt;${quizInfo[index].answerNum}. &lt;/span&gt;
+        &lt;div class="ask"&gt;${quizInfo[index].answerAsk}&lt;/div&gt;
+    `;
+    const choiceTag = `
+        &lt;label for="select1"&gt; 
+            &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[0]}&lt;/span&gt;
+        &lt;/label&gt;
+
+        &lt;label for="select2"&gt;
+            &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[1]}&lt;/span&gt;
+        &lt;/label&gt;
+        
+        &lt;label for="select3"&gt;
+            &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[2]}&lt;/span&gt;
+        &lt;/label&gt;
+        
+        &lt;label for="select4"&gt;
+            &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+            &lt;span class="choice"&gt;${quizInfo[index].answerChoice[3]}&lt;/span&gt;
+        &lt;/label&gt;
+    `;
+
+
+    //문제 출력
+    quizType.innerHTML = quizInfo[index].answerType;    //퀴즈 문항
+    quizQuestion.innerHTML = questionTag;               //quizQuestion에 questionTag에 저장된 문제 번호와 질문을 innerHTML을 통해 넣어준다.
+    quizSelects.innerHTML = choiceTag;                  //객관식 문항
+    quizResult.innerHTML = quizInfo[index].answerEx;    //해설
+    
+
+    const quizChoice = quizSelects.querySelectorAll(".choice"); //보기가 4개라서 all사용
+
+    for(let i=0; i&lt;quizChoice.length; i++){
+        quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
+    }
+
+    //문제와 해설 숨기기
+    quizResult.style.display = "none";
+    quizCunfirm.style.display = "none";
+}
+updateQuiz(quizCount);
+
+//정답 확인하기
+const choiceSelected = (answer) =&gt; {
+    let userAnswer = answer.textContent;    //사용자가 체크한 정답
+    let currentAnswer = quizInfo[quizCount].answerResult; //문제 정답
+
+    if(userAnswer == currentAnswer){
+        quizView.classList.add("like");
+        quizScore++;
+        console.log("정답");
+    } else {
+        quizView.classList.add("dislike");
+        quizResult.style.display = "block";
+        console.log("오답");
+    }
+    quizCunfirm.style.display = "block";
+}
+
+// 정답 확인 후 다음문제 종료와 갯수 확인
+const answerQuiz = () => {
+    //마지막 문제 완료 후 종료
+    scoreSet = Math.floor(quizScore * 100 / quizInfo.length); // 맞힌 갯수 x 100 나누기 총 문제 갯수
+    if(quizInfo.length -1 == quizCount){     // quizInfo.length는 길이 값이지만 퀴즈 카운드는 인덱스 값이기 때문에 0부터 시작하기 때문에 -1을 해주어야 한다.
+        if(scoreSet >= 60){
+            quizCunfirm.textContent = `당신은 총 ${quizInfo.length}문제 중 ${quizScore}문제를 맞추셨습니다. 점수: ${scoreSet}점 ! 합격 !`;
+        } else {
+            quizCunfirm.textContent = `당신은 총 ${quizInfo.length}문제 중 ${quizScore}문제를 맞추셨습니다. 점수: ${scoreSet}점 ! 불합격 !`;
+        } 
+    }
+
+    quizCount++;
+    updateQuiz(quizCount);
+    quizView.classList.remove("like", "dislike"); //다음 문제 클릭시 강아지 표젱 리셋
+} 
+
+quizCunfirm.addEventListener("click", answerQuiz);
+</code></pre>
+                         </div>
+                         <div>
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="quiz__wrap"&gt;
+        &lt;div class="quiz"&gt;
+            &lt;span class="quiz__type"&gt;&lt;/span&gt;
+            &lt;h2 class="quiz__question"&gt;
+                &lt;!-- &lt;span class="number"&gt;&lt;/span&gt;
+                &lt;div class="ask"&gt;&lt;/div&gt; --&gt;
+            &lt;/h2&gt;
+            &lt;div class="quiz__view"&gt;
+                &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
+                &lt;div class="false"&gt;오답입니다!&lt;/div&gt;
+                &lt;div class="dog"&gt;
+                    &lt;div class="head"&gt;
+                        &lt;div class="ears"&gt;&lt;/div&gt;
+                        &lt;div class="face"&gt;&lt;/div&gt;
+                        &lt;div class="eyes"&gt;
+                            &lt;div class="teardrop"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="nose"&gt;&lt;/div&gt;
+                        &lt;div class="mouth"&gt;
+                            &lt;div class="tongue"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="chin"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="body"&gt;
+                        &lt;div class="tail"&gt;&lt;/div&gt;
+                        &lt;div class="legs"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="quiz__answer"&gt;
+                &lt;div class="quiz__selects"&gt;
+                    &lt;!-- &lt;label for="select1"&gt; 
+                        &lt;input type="radio" id="select1" class="select" name="select" value="1"&gt;
+                        &lt;span class="choice"&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+
+                    &lt;label for="select2"&gt;
+                        &lt;input type="radio" id="select2" class="select" name="select" value="2"&gt;
+                        &lt;span class="choice"&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+                    
+                    &lt;label for="select3"&gt;
+                        &lt;input type="radio" id="select3" class="select" name="select" value="3"&gt;
+                        &lt;span class="choice"&gt;&lt;/span&gt;
+                    &lt;/label&gt;
+                    
+                    &lt;label for="select4"&gt;
+                        &lt;input type="radio" id="select4" class="select" name="select" value="4"&gt;
+                        &lt;span class="choice"&gt;&lt;/span&gt;
+                    &lt;/label&gt; --&gt;
+                &lt;/div&gt;
+
+                &lt;div class="result"&gt;&lt;/div&gt;
+                &lt;button class="confirm"&gt;다음 문제 보기 ➡️&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                         </div>
+                         <div>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f6f6f6;
+    background-image:
+        linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+        linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+        linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+        linear-gradient(#cdcccc, #cdcccc);
+    background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
+}
+
+#header {
+    background: #262626;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+    /*포지션 앱솔루트 속성을 줄 때는 기준점을 꼭 설정해주어야 한다.*/
+}
+
+#header::before {
+    content: "";
+    border: 4px ridge #A3A3A3;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    box-sizing: border-box;
+    z-index: -1;
+}
+
+#header h1 {
+    padding: 3px 3px 5px 10px;
+    font-family: "DungGeunMo";
+    font-size: 30px;
+}
+
+#header h1 a {
+    color: #CB7A1D
+}
+
+#header h1 em {
+    font-size: 16px;
+    font-style: normal;
+}
+
+@media (max-width: 600px) {
+    #header h1 em {
+        display: none;
+    }
+}
+
+#header nav {
+    padding-right: 10px;
+}
+
+#header nav li {
+    display: inline;
+}
+
+#header nav li a {
+    color: #fff;
+    padding: 0 10px;
+    border: 1px dashed #fff;
+    font-family: "DungGeunMo";
+}
+
+#header nav li.active a {
+    color: #000;
+    background: #fff;
+}
+
+#footer {
+    background: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 150px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 10000;
+}
+
+#footer a {
+    color: #000;
+    font-family: "DungGeunMo";
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/*  quiz__wrap */
+.quiz__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.quiz {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    border: 8px ridge #cacaca;
+    margin: 10px;
+}
+
+.quiz__type {
+    background-color: #cacaca;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    border: 3px ridge #cacaca;
+    color: #3b3b3b;
+    font-family: "DungGeunMo";
+    padding: 4px;
+}
+
+.quiz__question {
+    border-top: 6px ridge #cacaca;
+    border-bottom: 6px ridge #cacaca;
+    padding: 13px 30px;
+    font-family: "Cafe24Danjunghae";
+    line-height: 1.3;
+}
+
+.quiz__question .number {
+    color: rgb(255, 135, 7);
+}
+
+.quiz__question .ask {
+    display: inline;
+}
+
+.quiz__answer {
+    border-top: 6px ridge #cacaca;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.quiz__answer .input {
+    width: 100%;
+    border: 6px ridge #cacaca;
+    font-size: 22px;
+    padding: 13px 20px;
+    background-color: #fff;
+    font-family: "Cafe24Danjunghae";
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.quiz__answer .confirm {
+    border: 6px ridge #cacaca;
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 20px;
+    background-color: #d6d6d6;
+    font-family: "Cafe24Danjunghae";
+    cursor: pointer;
+}
+
+.quiz__answer .result {
+    width: 100%;
+    font-size: 22px;
+    padding: 13px 20px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Cafe24Danjunghae";
+}
+
+.quiz__view {
+    background-color: #f5f5f5;
+    font-family: "Cafe24Danjunghae";
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz__view .true {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    /*한 줄 일 때 가운데로 오게해줌*/
+    background-color: #eaa000;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    left: 70%;
+    top: 100px;
+    opacity: 0;
+}
+
+.quiz__view .false {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    background-color: rgb(126, 48, 48);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    right: 70%;
+    top: 100px;
+    opacity: 0;
+}
+
+.quiz__view.like .true {
+    opacity: 1;
+    animation: wobble 0.6s;
+}
+
+.quiz__view.dislike .false {
+    opacity: 1;
+    animation: wobble 0.6s;
+}
+
+.quiz__selects {
+    margin: 5px 0;
+}
+
+.quiz__selects label {
+    display: flex;
+}
+
+.quiz__selects label input {
+    position: absolute;
+    left: -9999px;
+}
+
+.quiz__selects label span {
+    font-size: 20px;
+    line-height: 1.3;
+    font-family: "Cafe24Danjunghae";
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.quiz__selects label span::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 15px;
+    display: flex;
+    flex-shrink: 0; 
+    box-shadow: inset 0px 0px 0px 4px #ffae00;
+    transition: all 0.25s;
+}
+
+.quiz__selects label input:checked + span {
+    background-color: #e2e1de;
+} 
+/* input박스를 checked 한 상태일 때 스타일이 나타나도록 함. */
+/* 즉 input이 checked일 때 형제인 span과 함께 스타일을 적용시키는 것. */
+
+.quiz__selects label input:checked + span::before {
+    box-shadow: inset 0px 0px 0px 10px #ffae00;
+}
+
+.quiz__confirm {
+    width: 100%;
+    text-align: center;
+}
+.quiz__confirm .check {
+    font-size: 22px;
+    line-height: 1.3;
+    padding: 13px 60px;
+    border: 6px ridge #cacaca;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Cafe24Danjunghae";
+    cursor: pointer;
+    margin: 40px 0;
+    transition: background 0.3s;
+}
+.quiz__confirm .check:hover {
+    background-color: #fec32e56;
+}
+
+
+@keyframes wobble {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    15% {
+        transform: translateX(-25%) rotate(-5deg);
+    }
+
+    30% {
+        transform: translateX(20%) rotate(3deg);
+    }
+
+    45% {
+        transform: translateX(-15%) rotate(-3deg);
+    }
+
+    60% {
+        transform: translateX(10%) rotate(2deg);
+    }
+
+    75% {
+        transform: translateX(-5%) rotate(-1deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+/* dog */
+.dog .tail,
+.dog .chin,
+.dog .tongue::before,
+.dog .tongue::after,
+.dog .mouth,
+.dog .nose,
+.dog .teardrop,
+.dog .eyes,
+.dog .face::before,
+.dog .face::after,
+.dog .ears::before,
+.dog .ears::after {
+    transition: 0.2s ease-in;
+}
+
+.dog {
+    padding-top: 50px;
+}
+
+.dog .head,
+.dog .body {
+    position: relative;
+    width: 115px;
+}
+
+.dog .head {
+    height: 115px;
+    border-radius: 50% 50% 0 0;
+    margin: 0 auto;
+}
+
+.dog .ears {
+    position: relative;
+    top: -14%;
+    width: 100%;
+}
+
+.dog .ears::before,
+.dog .ears::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 70px;
+    background: #CB7A1D;
+    border-top: 11px solid #F7AA2B;
+    border-left: 7px solid #F7AA2B;
+    border-right: 7px solid #F7AA2B;
+}
+
+.dog .ears::before {
+    left: 0;
+    border-radius: 50% 45% 0 0;
+}
+
+.dog .ears::after {
+    right: 0;
+    border-radius: 45% 50% 0 0;
+}
+
+.dog .face {
+    position: absolute;
+    background: #F7AA2B;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% 50% 0 0;
+}
+
+.dog .face::before,
+.dog .face::after {
+    content: "";
+    display: block;
+    margin: auto;
+    background: #FEFEFE;
+}
+
+.dog .face::before {
+    width: 15px;
+    height: 35px;
+    margin-top: 24px;
+    border-radius: 20px 20px 0 0;
+}
+
+.dog .face::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    width: 60px;
+    height: 65px;
+    border-radius: 45% 45% 0 0;
+}
+
+.dog .eyes {
+    position: relative;
+    top: 29%;
+    text-align: center;
+}
+
+.dog .eyes::before,
+.dog .eyes::after {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: #451D1C;
+    margin: 0 14.5%;
+}
+
+.dog .teardrop {
+    position: absolute;
+    top: 125%;
+    left: 19%;
+    width: 6px;
+    height: 6px;
+    border-radius: 0 50% 50% 50%;
+    transform: rotate(45deg);
+    background: #FEFEFE;
+    visibility: hidden;
+}
+
+.dog .nose {
+    position: relative;
+    top: 35%;
+    width: 16px;
+    height: 8px;
+    border-radius: 35px 35px 65px 65px;
+    background: #451D1C;
+    margin: auto;
+}
+
+.dog .mouth {
+    position: relative;
+    top: 34.5%;
+    width: 4px;
+    height: 6px;
+    margin: 0 auto;
+    text-align: center;
+    background: #451D1C;
+}
+
+.dog .mouth::before,
+.dog .mouth::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 4px solid #451D1C;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    z-index: 2;
+}
+
+.dog .mouth::before {
+    transform: translateX(-89%) rotate(45deg);
+}
+
+.dog .mouth::after {
+    transform: translateX(-2px) rotate(45deg);
+}
+
+.dog .tongue {
+    position: relative;
+    z-index: 1;
+}
+
+.dog .tongue::before,
+.dog .tongue::after {
+    content: "";
+    position: absolute;
+}
+
+.dog .tongue::before {
+    top: 10px;
+    left: -7px;
+    width: 18px;
+    height: 0;
+    border-radius: 50%;
+    background: #451D1C;
+    z-index: -1;
+}
+
+.dog .tongue::after {
+    top: 14px;
+    left: -4px;
+    width: 12px;
+    height: 0;
+    border-radius: 20px;
+    background: #F5534F;
+    z-index: 5;
+}
+
+.dog .chin {
+    position: relative;
+    top: 47.5%;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    border-top: 10px solid #E8E7EC;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.dog .body {
+    position: relative;
+    height: 139px;
+    margin: auto;
+    z-index: 0;
+}
+
+.dog .body::before,
+.dog .body::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    margin: auto;
+    background: #F7AA2B;
+}
+
+.dog .body::after {
+    top: -2px;
+    bottom: -1px;
+    width: 60px;
+    background: #FEFEFE;
+}
+
+.dog .tail {
+    position: absolute;
+    left: -60%;
+    bottom: 1px;
+    background: #F7AA2B;
+    width: 93px;
+    height: 15px;
+    transform: rotate(45deg);
+    transform-origin: 100% 50%;
+    border-radius: 25px 0 0 25px;
+    z-index: -2;
+    animation: movetail 0.1s linear infinite alternate forwards;
+}
+
+.dog .legs {
+    position: absolute;
+    bottom: 0;
+    left: -10%;
+    width: 120%;
+    height: 15%;
+    background: #F7AA2B;
+    border-radius: 10px 10px 0 0;
+}
+
+.dog .legs::before,
+.dog .legs::after {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    background: #CB7A1D;
+    z-index: -1;
+}
+
+.dog .legs::before {
+    left: -7.5%;
+    width: 115%;
+    height: 55%;
+    border-radius: 5px 5px 0 0;
+}
+
+.dog .legs::after {
+    left: -3.5%;
+    width: 107%;
+    height: 250%;
+    border-radius: 20px 20px 35px 35px;
+}
+
+.like .dog .face::before {
+    margin-top: 10px;
+}
+
+.like .dog .face::after {
+    height: 85px;
+}
+
+.like .dog .eyes {
+    top: 13%;
+}
+
+.like .dog .eyes::before,
+.like .dog .eyes::after {
+    width: 18px;
+    height: 5px;
+    margin: 0px 12.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+
+.like .dog .eyes::after {
+    transform: rotate(37.5deg);
+}
+
+.like .dog .nose {
+    top: 18%;
+}
+
+.like .dog .mouth {
+    top: 16.5%;
+}
+
+.like .dog .tongue::before {
+    height: 12px;
+}
+
+.like .dog .tongue::after {
+    height: 24px;
+    animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
+}
+
+.like .dog .chin {
+    top: 34%;
+}
+
+.like .dog .tail {
+    animation: movetail 0.1s linear infinite alternate forwards;
+}
+
+.dislike .dog .ears::before {
+    transform: rotate(-50deg) translate(-7px, 2px);
+}
+
+.dislike .dog .ears::after {
+    transform: rotate(50deg) translate(7px, 2px);
+}
+
+.dislike .dog .face::before {
+    margin-top: 28px;
+}
+
+.dislike .dog .face::after {
+    height: 55px;
+}
+
+.dislike .dog .eyes {
+    top: 38%;
+}
+
+.dislike .dog .eyes::before,
+.dislike .dog .eyes::after {
+    width: 18px;
+    height: 5px;
+    margin: 0px 14.5%;
+    transform: rotate(-37.5deg);
+    border-radius: 20px;
+}
+
+.dislike .dog .eyes::after {
+    transform: rotate(37.5deg);
+}
+
+.dislike .dog .teardrop {
+    animation: cry 0.1s ease-in 0.25s forwards;
+}
+
+.dislike .dog .nose {
+    top: 44%;
+}
+
+.dislike .dog .mouth {
+    top: 42%;
+}
+
+.dislike .dog .chin {
+    top: 52%;
+}
+
+.dislike .dog .tail {
+    transform: rotate(0);
+    animation: none;
+}
+  
+
+@keyframes movetongue {
+    100% {
+        height: 27px;
+    }
+}
+
+@keyframes movetail {
+    0% {
+        transform: rotate(37deg);
+    }
+
+    100% {
+        transform: rotate(52deg);
+    }
+}
+
+@keyframes cry {
+    100% {
+        visibility: visible;
+    }
+}
+</code></pre>
+                         </div>
+                     </div>       
+                 </div>
+            </div>
+        </div>
+    </div>   
+    <!-- quiz__source -->
+
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script src="../assets/js/quiz_common.js"></script>
+
+    <script>
+        //함수 유형 : 함수와 변수를 이용한 형태로 작업. js03
+        //문제정보
+        const quizInfo = [
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "1",
+                    answerAsk : "웹 디자인에 대한 설명으로 거리가 먼 것은?",
+                    answerChoice : [
+                        "웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+                        "웹 디자인은 개인용 홈페이지 이외에 기업용 등 다양하다.",
+                        "웹 디자인은 Web과 Design이라는 두 가지 개념이 결합된 것이다.",
+                        "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                    ],
+                    answerResult : "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                    answerEx : "기업을 상징하는 것은 CI이다.",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "2",
+                    answerAsk : "디자인의 심미성에 대한 설명으로 맞는 것은?",
+                    answerChoice : [
+                        "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+                        "감성적인 부분으로 모든 사람에게 동일하게 나타난다.",
+                        "합리적이며 객관적인 미적 활동이다.",
+                        "국가, 민족, 관습, 시대와 관계없이 동일하게 나타난다.",
+                ],
+                    answerResult : "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+                    answerEx : "심미성 : 형태와 색채조화를 이루어 '아름다움'의성징을 만들어내는 것 대중형의 조형성이라고도 말하며, 시대적인 미의 기준, 사회적인 개성에 따라 변화된다.",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "3",
+                    answerAsk : "동시 대비에 해당하지 않는 것은?",
+                    answerChoice : [
+                        "색상 대비",
+                        "명도 대비",
+                        "보색 대비",
+                        "한난 대비",
+                    ],
+                    answerResult : "한난 대비",
+                    answerEx : "서로 가까이 놓여진 두개 이상의 색을 동시에 볼 때 일어나는 색채대비를 말한다. 동시대비는 색채의 3속성들의 차이에 따른 지각변화에 따라서 명도대비, 색상대비, 채도대비, 보색대비로 구분된다. 심리에 관한 색용어. 서로 반대되거나 대단히 틀리는 감각, 감정 등이 동시에 비교하면, 그 한쪽 또는 양쪽의 특성이 한층 명백해 지는 일. 예를들면, 똑같은 회색의 원(圓)을 흰종이와 검은 종이 위에 놓고 볼 때 검은종이 위에서는 희게 보이고, 흰종이 위에서는 검게 보이는 것 등이 동시적 대비이다.",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "4",
+                    answerAsk : "계통 생명이라고도 하며 색상, 명도, 채도를 표시하는 색명은?",
+                    answerChoice : [
+                        "특정색명",
+                        "관용색명",
+                        "일반색명",
+                        "근대색명",
+                    ],
+                    answerResult : "일반색명",
+                    answerEx : "일반색명- 감성적으로 느껴진 느낌을 수식어로 덧붙여 사용 ex)빨강 Red, 'R'처럼 표색계를 이용하여 기호나 이름으로 표현 '어두운 파랑','연보라'명도, 채도에 대한 수식어로 표현 / 관용색명 - 관습적이거나 연상적인 느낌으로 이름을 붙이는 방법 ex)'귤색', '밤색', '무지개색','코발트 블루'와 같이 고유한 이름을 이용하여 표현",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "5",
+                    answerAsk : "색채조화의 공통원리에 대한 설명으로 틀린 것은?",
+                    answerChoice : [
+                        "질서의 원리는 효과적인 반응을 일으키는 질서 있는 계획에 따라 선택된 색채들에서 생긴다.",
+                        "비모호성의 원리는 두 색 이상의 배색에 있어서 모호함이 없는 명료한 배색에서만 얻어진다.",
+                        "동류의 원리는 가장 가까운 색채끼리의 배색은 보는 사람에게 친근감을 주며 조화를 느끼게 한다.",
+                        "유사의 원리는 색의 3속성의 차이가 큰 색상의 배색이 더욱 조화롭게 나타난다.",
+                    ],
+                    answerResult : "유사의 원리는 색의 3속성의 차이가 큰 색상의 배색이 더욱 조화롭게 나타난다.",
+                    answerEx : "유사조화: 두 가지 이상의 색이 서로 속성이 같거나 비슷하여 잘 어울리는 것을 말한다.",
+                }
+            ];
+
+            const quizType = document.querySelector(".quiz__type");                     //퀴즈 타입
+            const quizQuestion = document.querySelector(".quiz__question");             //문제 번호와 질문을 quizQuestion 상수에 저장
+            const quizSelects = document.querySelector(".quiz__selects");               //객관식 보기
+            const quizResult = document.querySelector(".quiz__answer .result");         //퀴즈 해설
+            const quizCunfirm = document.querySelector(".quiz__answer .confirm");;      //정답확인버튼
+            const quizView = document.querySelector(".quiz__view"); 
+
+            let quizCount = 0;
+            let quizScore = "";
+
+            //문제출력
+            //매개변수와 템플릿 문자열을 활용하여 문제를 삽입해준다.
+            const updateQuiz = (index) => {
+                const questionTag = `
+                    <span class="number">${quizInfo[index].answerNum}. </span>
+                    <div class="ask">${quizInfo[index].answerAsk}</div>
+                `;
+                const choiceTag = `
+                    <label for="select1"> 
+                        <input type="radio" id="select1" class="select" name="select" value="1">
+                        <span class="choice">${quizInfo[index].answerChoice[0]}</span>
+                    </label>
+
+                    <label for="select2">
+                        <input type="radio" id="select2" class="select" name="select" value="2">
+                        <span class="choice">${quizInfo[index].answerChoice[1]}</span>
+                    </label>
+                    
+                    <label for="select3">
+                        <input type="radio" id="select3" class="select" name="select" value="3">
+                        <span class="choice">${quizInfo[index].answerChoice[2]}</span>
+                    </label>
+                    
+                    <label for="select4">
+                        <input type="radio" id="select4" class="select" name="select" value="4">
+                        <span class="choice">${quizInfo[index].answerChoice[3]}</span>
+                    </label>
+                `;
+
+
+                //문제 출력
+                quizType.innerHTML = quizInfo[index].answerType;    //퀴즈 문항
+                quizQuestion.innerHTML = questionTag;               //quizQuestion에 questionTag에 저장된 문제 번호와 질문을 innerHTML을 통해 넣어준다.
+                quizSelects.innerHTML = choiceTag;                  //객관식 문항
+                quizResult.innerHTML = quizInfo[index].answerEx;    //해설
+                
+
+                const quizChoice = quizSelects.querySelectorAll(".choice"); //보기가 4개라서 all사용
+
+                for(let i=0; i<quizChoice.length; i++){
+                    quizChoice[i].setAttribute("onclick", "choiceSelected(this)")
+                }
+
+                //문제와 해설 숨기기
+                quizResult.style.display = "none";
+                quizCunfirm.style.display = "none";
+            }
+            updateQuiz(quizCount);
+
+            //정답 확인하기
+            const choiceSelected = (answer) => {
+                let userAnswer = answer.textContent;    //사용자가 체크한 정답
+                let currentAnswer = quizInfo[quizCount].answerResult; //문제 정답
+
+                if(userAnswer == currentAnswer){
+                    quizView.classList.add("like");
+                    quizScore++;
+                    console.log("정답");
+                } else {
+                    quizView.classList.add("dislike");
+                    quizResult.style.display = "block";
+                    console.log("오답");
+                }
+                quizCunfirm.style.display = "block";
+            }
+
+            // 정답 확인 후 다음문제 종료와 갯수 확인
+            const answerQuiz = () => {
+                //마지막 문제 완료 후 종료
+                scoreSet = Math.floor(quizScore * 100 / quizInfo.length); // 맞힌 갯수 x 100 나누기 총 문제 갯수
+                if(quizInfo.length -1 == quizCount){     // quizInfo.length는 길이 값이지만 퀴즈 카운드는 인덱스 값이기 때문에 0부터 시작하기 때문에 -1을 해주어야 한다.
+                    if(scoreSet >= 60){
+                        quizCunfirm.textContent = `당신은 총 ${quizInfo.length}문제 중 ${quizScore}문제를 맞추셨습니다. 점수: ${scoreSet}점 ! 합격 !`;
+                    } else {
+                        quizCunfirm.textContent = `당신은 총 ${quizInfo.length}문제 중 ${quizScore}문제를 맞추셨습니다. 점수: ${scoreSet}점 ! 불합격 !`;
+                    } 
+                }
+
+                quizCount++;
+                updateQuiz(quizCount);
+                quizView.classList.remove("like", "dislike"); //다음 문제 클릭시 강아지 표젱 리셋
+            } 
+
+            quizCunfirm.addEventListener("click", answerQuiz);
+
+    </script>
+</body>
+
+</html>

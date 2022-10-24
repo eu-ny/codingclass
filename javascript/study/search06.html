@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 검색 이펙트</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔍 검색 효과 : sort(), reverse()를 이용하여 정렬하기</h2>
+            <p class="t_desc">
+                이번 시간에는 sort(), reverse() 메서드를 통해 클릭할 경우 해당 조건으로 속성을 정렬하는 실습을 해보겠습니다. <br>
+                + 추가로 랜덤으로 속성이 정렬되는 실습도 해보겠습니다......... 🥲
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    search__click에서 li 요소에게 data-데이터명="데이터 값"을 설정합니다. =&gt; 추후 스크립트에 사용하기 위함! (클릭이벤트, 숫자 치환)
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;sort(), reverse()를 이용하여 정렬하기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li class="btn1"&gt;&lt;a href="#"&gt;반대로 정렬&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn2"&gt;&lt;a href="#"&gt;내림차순 정렬&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn3"&gt;&lt;a href="#"&gt;오름차순 정렬&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn4"&gt;&lt;a href="#"&gt;알파벳순(a-z)&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn5"&gt;&lt;a href="#"&gt;알파벳순(z-a)&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn6"&gt;&lt;a href="#"&gt;랜덤 정렬&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;CSS 전체 속성 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    버튼의 스타일 및 페이지 스타일을 설정해주시면 됩니다!
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.search__click li {
+    display: inline;
+}
+
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트  </h3>
+                <p class="t_desc">
+                    이번 스크립트에서는 sort(), reverse() 메서드, 그리고 매개변수를 통해 스크립트를 작업해보겠습니다.<br>
+                    자세한 내용은 아래의 스크립트 주석과 함께 살펴보겠습니다!!
+                </p>
+                <p class="t_desc2">
+                    <strong>! JAVASCRIPT TIP !</strong><br>
+                    1. 재활용 함수를 설정하여 보다 스크립트를 편리하게 작성할 수 있습니다.
+                    2. 변수명.sort(): 조건에 따라 정렬합니다.<br>
+                    3. 변수명.reverse(): 반대로 정렬합니다.<br>
+                </p>
+                <!-- <details style="margin-bottom: 10px;"> -->
+                    <!-- <summary> 💡 전체 스크립트 보기</summary> -->
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//cssProperty : 데이터 객체화 시키기
+const cssProperty = [
+    { num: 1, name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
+    { num: 2, name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
+    { num: 3, name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
+    { num: 4, name: "align-self", desc: " 특정 item의 정렬을 따로 하고 싶을 때 사용합니다." },
+    { num: 5, name: "all", desc: " CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값, 상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다." },
+    { num: 6, name: "animation", desc: " 애니메이션과 관련된 속성을 일괄적로 처리합니다." },
+    { num: 7, name: "animation-delay", desc: " 애니메이션 지연 시간을 설정합니다." },
+    { num: 8, name: "animation-direction", desc: " 애니메이션 움직임 방향을 설정합니다." },
+    { num: 9, name: "animation-duration", desc: " 애니메이션 움직인 시간을 설정합니다." },
+    { num: 10, name: "animation-fill-mode", desc: " 애니메이션이 끝난 후의 상태를 설정합니다." },
+    .
+    .
+    .
+    { num: 382, name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
+];
+
+//선택자
+const cssList = document.querySelector(".search__list .line");
+
+//데이터 출력하기
+const updateList = () => {
+    let listCSS = "";
+
+    cssProperty.forEach((data, index) => {
+        listCSS += `<li>${data.num}. ${data.name} : ${data.desc}</li>`
+    });
+
+    cssList.innerHTML = listCSS;
+}
+updateList();
+
+//스크립스는 순서대로 작동하므로 순서 주의
+
+//반대로 정렬
+function sortReverse(){
+    cssProperty.reverse();
+    updateList();
+}
+//내림차순 정렬
+function sortDescending(){
+    cssProperty.sort((a,b) => {
+        return b.num - a.num;
+    });
+    updateList();
+}
+//오름차순 정렬
+function sortAscending(){
+    cssProperty.sort((a,b) => {
+        return a.num - b.num;
+    });
+    updateList();
+}
+
+
+
+//미션!
+//알파벳(a-z) 정렬
+function sortAlphabet(){
+    cssProperty.sort((a,b) => {
+        return a.name.localeCompare(b.name);
+    });
+updateList();
+}
+
+//알파벳(z-a) 정렬
+function sortAlphabetZ(){
+    cssProperty.sort((a,b) => {
+        return b.name.localeCompare(a.name);
+    });
+updateList();
+}
+
+
+
+
+//반대로 정렬 클릭
+document.querySelector(".btn1").addEventListener("click", () => {
+    sortReverse();
+});
+
+//내림차순 정렬 클릭
+document.querySelector(".btn2").addEventListener("click", () => {
+    sortDescending();
+});
+
+//오름차순 정렬 클릭
+document.querySelector(".btn3").addEventListener("click", () => {
+    sortAscending();
+});
+
+
+
+//알파벳(a-z) 정렬 클릭
+document.querySelector(".btn4").addEventListener("click", () => {
+    sortAlphabet();
+});
+
+//알파벳(z-a) 정렬 클릭
+document.querySelector(".btn5").addEventListener("click", () => {
+    sortAlphabetZ();
+});
+
+
+//랜덤 반복
+//피셔 예이츠 알고리즘
+//1
+document.querySelector(".btn6").addEventListener("click", (e) => {
+    e.preventDefault();
+    for( let i=cssProperty.length-1; i>=0; i--){
+        const radomIndex = Math.floor(Math.random() * (i + 1));
+        // console.log(radomIndex)
+        // 위까지 하고 출력하면 중복 숫자가 발생한다. 때문에
+        // 객체구조분해할당을 사용하여 작업한다. = [1,2,3] = [3,2,1] : 이렇게 쓰면 중복된 숫자가 나오지 않는다.
+        [cssProperty[i], cssProperty[radomIndex]] = [cssProperty[radomIndex], cssProperty[i]]; // 중복 제거... 모르면 걍 외워...
+        cssProperty.innerHTML += cssProperty[i];
+    }
+    updateList();
+});
+
+
+</code></pre>
+                    </div>
+                <!-- </details> -->
+
+                <hr>
+                
+           
+                <h3 class="t_tit2">#3. 결과 </h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect06" frameborder="0"></iframe>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect06.html">원본 소스 보기</a>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect06.html">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- //sample02 -->
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

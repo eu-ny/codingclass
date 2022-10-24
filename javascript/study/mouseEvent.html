@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : Mouse Event</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="function03.html">함수의 유형</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouseEvent.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 : Mouse Event Method</h2>
+            <p class="t_desc">
+               이번 시간에는 마우스 이벤트 메서드 중 <i>mouseover와 mouseenter의 차이점</i>에 대해 알아보겠습니다 ~ 😁 
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. mouseover와 mouseout 메서드 📖</h3>
+                <p class="t_desc">
+                    • <i>mouseover</i> 메서드는 마우스 커서가 지정 영역 안으로 들어왔을 때 이벤트가 발생하는 메서드 입니다. <br>
+                    • <i>mouseout</i> 메서드는 마우스 커서가 지정 영역 안에서 바깥으로 나갔을 때 이벤트가 발생하는 메서드 입니다.
+                </p>
+                <p class="t_box">
+                    💡 이처럼 mouseover 메서드는 mouseout 메서드와 짝을 이루기 때문에 꼭 함께 사용해주어야 합니다!  
+                </p>       
+            </div>
+            <!-- //sample01 -->
+            
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. mouseenter와 mouseleave 메서드 📖</h3>
+                <p class="t_desc">
+                    <i>mouseenter와</i> 메서드는 마우스 커서가 지정 영역 안으로 들어왔을 때 이벤트가 발생하는 메서드 입니다. <br>
+                    <i>mouseleave</i> 메서드는 마우스 커서가 지정 영역 안에서 바깥으로 나갔을 때 이벤트가 발생하는 메서드 입니다.
+                </p> 
+                <p class="t_box">
+                    💡 마찬가지로 mouseenter와 메서드는 mouseleave 메서드와 짝을 이루기 때문에 꼭 함께 사용해주어야 합니다!  
+                </p>
+            </div>
+            <!-- //sample02 -->
+                   
+            <hr>
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">#3. mouseover와 mouseenter의 차이점은 무엇인가요? 🧐</h3>
+                <p class="t_desc">
+                    <i>mouseover</i> 메서드와 <i>mouseenter</i>메서드는 얼핏보면 똑같아 보이지만 실제 메서드를 적용했을 때 그 차이점을 뚜렷하게 확인할 수 있습니다.
+                </p> 
+                <p class="t_desc2">
+                    마우스오버(아웃)은 이벤트를 설정한 부모요소의 자식요소에게 이벤트를 설정하지 않아도 포인터를 감지하면 이벤트가 발생합니다. <br>
+                    즉 mouseover 메서드는 이벤트 버블링이 적용되는 메서드이기 때문에 부모 요소의 이벤트가 자식 요소에게도 실행 되는 것입니다.<br>
+                    <br>
+                    💡 이벤트 버블링 : 하위요소의 이벤트를 상위요소가 제어하는 하는 것<br>
+                    <br>
+                    반면에, mouseenter 메서드는 해당 요소 안에 있는지 외부에 있는지만 따지기 때문에 이벤트가 한 번만 발생하게 됩니다.<br>
+                    즉 자식 요소에게 부모 요소의 이벤트가 발생하지 않으며 오로지 해당 영역에 마우스 포인터가 들어와야 이벤트가 발생하므로 포인터가 외부로 나갔다가 들어왔을 때 이벤트가 한 번만 실행되는 것입니다.<br>
+                    또한 mouseenter는 Explorer전용 이벤트로 브라우저를 고려하지 않아도 작동이 된다는 차이점이 있습니다.
+                </p>
+                <h3 class="t_tit3">✏️ 예제 01</h3>
+                <iframe height="500" style="width: 100%;" scrolling="no" title="마우스오버와 마우스엔터 차이" src="https://codepen.io/eu-ny/embed/eYrmwdQ?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/eYrmwdQ">
+                    마우스오버와 마우스엔터 차이</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <h3 class="t_tit3">✏️ 예제 02</h3>
+                <iframe height="400" style="width: 100%;" scrolling="no" title="마우스오버와 마우스엔터 차이" src="https://codepen.io/eu-ny/embed/jOxEozB?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/eu-ny/pen/jOxEozB">
+                    마우스오버와 마우스엔터 차이</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>
+                </iframe>
+                <p class="t_box">
+                    😇 이처럼 마우스오버와 엔터의 차이는 이벤트 버블링이 발생하냐 안하냐에 따른 차이점이 있다고 정리하면 될 것 같습니다!
+                </p>  
+            </div>
+            <!-- //sample03 -->
+
+
+
+
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

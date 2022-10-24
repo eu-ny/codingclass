@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+<main id="main">
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">VSCODE : SCSS 설치하기</h2>
+            <p class="t_desc">
+                안녕하세요~! 토매토 입니다 🍅 <br>
+                이번 시간에는 vscode에서 SCSS를 설치하고 사용하는 방법을 알아볼텐데요! 우선 아래의 확장 프로그램(extension)을 다운받아 주세요!
+            </p>
+
+            <h2 class="t_tit2">🔶 01. Sass</h2>
+            <img src="https://blog.kakaocdn.net/dn/bZLKgE/btrMyi0CURa/MdeDs0ESIkWS3Vvt4SsJlk/img.png" alt="1">
+
+            <h2 class="t_tit2">🔶 02. Live Sass Compiler</h2>
+            <p class="t_desc">
+                아래의 Live Sass Compiler는 실시간으로 SCSS를 CSS로 컴파일 시켜주는 확장 프로그램입니다.
+            </p>
+            <img src="https://blog.kakaocdn.net/dn/elQYMV/btrMwZU0IiF/L0J8XcNEbu3GDqK42IKdEK/img.png" alt="2">
+
+            <hr>
+
+            <p class="t_desc">
+                다운 모두 받으셨나요?<br>
+                그럼 다음의 방법과 함께 차근차근 적용시켜보겠습니다~!
+            </p>
+
+            <p class="t_box">
+                1. 먼저 cmd + ⇧ + p 또는 F1을 눌러서 'json'을 검색한 후 'settings.json'에 들어갑니다.<br>
+
+                (들어가는 방법은 지난 에러 솔루션을 참고하시면 됩니다~! )
+            </p>
+            <p class="t_box">
+                2. 그 다음 다음의 코드를 중괄호 안에 넣어주면 됩니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js"> "liveSassCompile.settings.generateMap": false,
+"liveSassCompile.settings.formats": [
+    {
+    "format": "expanded",
+    "extensionName": ".css",
+    "savePath": "~/../css/"
+    },
+    {
+    "format": "compressed",
+    "extensionName": ".min.css",
+    "savePath": "~/../css/"
+    }
+]
+</pre></code>
+            </div>
+            <p class="t_box">
+                2-1. 우선 위의 코드가 어떤 의미인지 간단히 이해해보겠습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">"liveSassCompile.settings.generateMap": false,
+</pre></code>
+            </div>
+            <p class="t_desc">
+                컴파일 할 경우 자동으로 MAP파일과 정보들이 함께 표기되는데 이를 해제하려면 false로 바꿔주시면 됩니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">"liveSassCompile.settings.formats": [
+    {
+    "format": "expanded",
+    "extensionName": ".css",
+    "savePath": "~/../css/"
+    },
+    {
+    "format": "compressed",
+    "extensionName": ".min.css",
+    "savePath": "~/../css/"
+    }
+]
+</pre></code>
+            </div>
+            <p class="t_desc">
+                포멧설정, 컴파일 했을 때 css 파일의 성격 ( .css: 일반 css 파일 / .min.css : 축약 형식의 css )<br>
+                "savePath": "~/../css/"는 새로 css폴더를 생성하여 그곳에 저장하겠다는 의미입니다.
+            </p>
+
+
+            <hr>
+
+            <p class="t_box">3. 아래의 빨간 박스에 위치한 버튼을 클릭하여 작동이 잘 되는 지 테스트하면 됩니다!</p>
+            
+            <img src="https://blog.kakaocdn.net/dn/dc5fdL/btrMygBJ500/zoEV8ssfalJrTsN7XJMKUK/img.png" alt="">
+
+
+        </div>
+    </div>
+</main>
+
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

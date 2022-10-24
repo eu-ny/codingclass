@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : includes()</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="search02.html">search02</a></li>
+                <li><a href="search03.html">search03</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">charAt()을 통해 검색 사이트 제작하기</h2>
+            <p class="t_desc">
+               이번 시간에는 문자열 메서드 중 하나인 charAt() 메서드를 통해 알파벳과 css속성의 첫글자가 동일한 것만 나오는 검색 사이트를 제작해보겠습니다!<br />
+               먼저 <strong>charAt()</strong> 메서드에 대한 이해를 높이기 위해 전 게시글을 보고 오시는 것이 좋습니다 ;)
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML : 구조 짜기 </h3>
+                <p class="t_box">
+                    <strong>! point !</strong> <br />
+                    버튼을 위한 알파벳 마크업을 작업해줍니다. 스크립트와 css속성을 위해 인포 안에 keyword 부모 요소를 만들어 줍니다.<br>
+                </p>
+                <h3 class="t_tit3">✏️코드 보기</h3>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="search__info"&gt;
+    &lt;div class="keyword"&gt;
+        &lt;span&gt;a&lt;/span&gt;
+        &lt;span&gt;b&lt;/span&gt;
+        &lt;span&gt;c&lt;/span&gt;
+        &lt;span&gt;d&lt;/span&gt;
+        &lt;span&gt;e&lt;/span&gt;
+        &lt;span&gt;f&lt;/span&gt;
+        &lt;span&gt;g&lt;/span&gt;
+        &lt;span&gt;h&lt;/span&gt;
+        &lt;span&gt;i&lt;/span&gt;
+        &lt;span&gt;j&lt;/span&gt;
+        &lt;span&gt;k&lt;/span&gt;
+        &lt;span&gt;l&lt;/span&gt;
+        &lt;span&gt;n&lt;/span&gt;
+        &lt;span&gt;m&lt;/span&gt;
+        &lt;span&gt;o&lt;/span&gt;
+        &lt;span&gt;p&lt;/span&gt;
+        &lt;span&gt;q&lt;/span&gt;
+        &lt;span&gt;r&lt;/span&gt;
+        &lt;span&gt;s&lt;/span&gt;
+        &lt;span&gt;t&lt;/span&gt;
+        &lt;span&gt;u&lt;/span&gt;
+        &lt;span&gt;v&lt;/span&gt;
+        &lt;span&gt;w&lt;/span&gt;
+        &lt;span&gt;x&lt;/span&gt;
+        &lt;span&gt;y&lt;/span&gt;
+        &lt;span&gt;z&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div&gt;CSS 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                </div>
+                <p class="t_desc">
+                    알파벳 버튼 작업이 끝나면 속성 리스트를 작업해줍니다.
+                </p>
+                <details>
+                    <summary> ✏️ 리스트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;li&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : accent-color는 요소의 강조 색상을 지정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;align-content&lt;/strong&gt; : align-content는 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;align-items&lt;/strong&gt; : align-item은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;align-self&lt;/strong&gt; : align-self는 개별적 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;all&lt;/strong&gt; : all은 요소의 모든 속성을 초기화합니다. 또는 상속을 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation&lt;/strong&gt; : animation은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-delay&lt;/strong&gt; : animation-delay는 애니메이션 지연 시간을 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-direction&lt;/strong&gt; : animation-direction는 애니메이션 움직임 방향을 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-duration&lt;/strong&gt; : animation-duration는 애니메이션 움직임 시간을 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-fill-mode&lt;/strong&gt; : animation-fill-mode는 애니메이션이 끝난 후의 상태를 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-iteration-count&lt;/strong&gt; : animation-iteration-count는 애니메이션의 반복 횟수를 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-name&lt;/strong&gt; : animation-name은 애니메이션 Keyframe 이름을 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-play-state&lt;/strong&gt; : animation-play-state는 애니메이션의 진행 상태를 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-timeline&lt;/strong&gt; : animation-timeline은 요소에 적용할 스크롤 애니메이션을 설명하는 하나 이상의 @scroll-timeline at-rules 이름을 지정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;animation-timing-function&lt;/strong&gt; : animation-timing-function은 애니메이션 움직임의 속도를 설정합니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;appearance&lt;/strong&gt; : appearance는 webit 계열의 브라우저의 type="search" 필드의 둥근 테두리 값이나 reset 효과를 나타내는 버튼을 삭제하는 데 사용할 수 있습니다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;aspect-ratio&lt;/strong&gt; : aspect-ratio는 요소의 크기를 비율대로 조정할 수 있게 합니다.&lt;/li&gt;
+
+&lt;!-- 위 a알파벳의 리스트처럼 작업해줍니다.(나머지는 생략!) --&gt;
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample02 -->
+
+            <hr>
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">#3. CSS : 스타일주기 </h3>
+                <p class="t_box">
+                    <strong>! point !</strong> <br />
+                    마크업을 참고하여 스타일 속성을 설정해보자! <br>
+                    💡 스타일 속성은 정해진 것이 아니니 실습하실 분들은 직접 속성을 알아보고 스타일을 설정하는 것도 좋은 방법입니다!
+                </p>
+                <details>
+                    <summary> ✏️ 속성 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* font color */
+:root {
+    --htmlColor : #223547;
+    --cssColor : #472237;
+    --javascriptColor : #624313;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor);
+}
+*, *:before, *:after {
+    box-sizing:border-box;
+}
+a {
+    color: var(--htmlColor);
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+/* header */
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    display: inline;
+    position: relative;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'NexonLv1Gothic';
+}
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;   
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #F1F3F6;
+    padding: 30px;
+    text-align: center;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 {
+    font-family: 'Tmon';
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+
+/* search__box */
+.search__box {
+    margin-bottom: 40px;
+}
+/* ir효과 */
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+/* search__list */
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list li.show {
+    display: block;
+}
+
+/* search__info_type */
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* search__info_keword */
+.search__info .keyword{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword span {
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 모바일 */
+@media (max-width: 600px){
+    .search__wrap {
+        padding: 20px;
+    }
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+/* footer */
+#footer {
+    text-align: center;
+}
+#footer a {
+    color: #000;
+    font-family: 'NexonLv1Gothic';
+    padding-bottom: 50px;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample03 -->
+
+            <hr>
+
+            <div id="sample04" class="sample">
+                <h3 class="t_tit2">#4. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    <i>charAt()와 반복문, 조건문</i>을 통해 스크립트를 완성해보자! <br>
+                    코드의 주석과 함께 스크립트를 이해해보도록 합니다:)
+                </p>
+                <h3 class="t_tit3">✏️스크립트 보기</h3>
+                <div class="t_code">
+<pre><code class="language-js">//선택자
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");  //알파벳
+const searchList = document.querySelectorAll(".search__list ul li");  //목록 리스트
+const searchInfo = document.querySelector(".search__info .num");      //갯수
+
+//전체 갯수 구하기
+searchInfo.textContent = searchList.length;
+
+//searchBox 검색 영역
+searchKeyword.forEach(el => {
+    el.addEventListener("click", () => {
+        const searchWord = el.innerText;  // 사용자가 클릭한 알파벳 / searchWord에 클릭한 알파벳 데이터 저장
+
+        searchList.forEach(el => {
+            const cssName = el.querySelector("strong").innerText; //CSS 속성 텍스트 / cssName에 셀렉터한 요소 데이터 저장
+
+            //알파벳 첫글자와 css속성의 첫글자가 같은 것만 출력된다.
+            if(searchWord.charAt(0) === cssName.charAt(0)){
+                el.classList.remove("hide");
+            }else {
+                el.classList.add("hide");
+            }
+        });
+    });
+});
+</code></pre>
+                    <p class="t_desc2">
+                        <strong>! 검색 영역이 작동되는 과정 알아보기 !</strong><br />
+                        ***charAt(검색값) 메서드는 사용자가 검색한 문자열이 상수에 저장한 데이터 내에 포함되었을 때 숫자를 반환하게 됩니다.*** <br />
+                        1. forEach문을 통해 사용자가 알파벳을 클릭한 경우 반복문과 조건문을 실행시킵니다. <br />
+                        2. classList를 통해 hide라는 클래스를 추가해주고 charAt()을 이용하여 css속성의 첫글자와 알파벳이 동일한 리스트는 hide가 지워져 출력되도록 합니다.<br />
+                        (→ css 속성값으로 hide에게 display: none;을 주었기 때문에 값이 동일하지 않은 경우 보이지 않게 된다!)
+                    </p>
+
+                    <!-- <h3 class="t_tit3">✏️ 쫌쫌따리 미션 : 각 알파벳마다 해당하는 속성의 갯수가 몇 개 인지 스크립트를 작성하시오</h3>
+                    <p class="t_desc">
+                        그동안 자주 나왔던 반복문들을 이용해서 전체 갯수를 구하는 식도 만들어 봅시다!
+                    </p>
+<pre><code class="language-js">for(let i=0; i&lt;=searchList.length; i++){
+    document.querySelector(".search__info .num").innerText = i;
+}
+</code></pre> -->
+                </div>
+            </div>
+            <!-- //sample04 -->
+
+            <hr />
+
+
+            <h3 class="t_tit2">#4. 결과 </h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect03" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect03.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect03.html">원본 페이지 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

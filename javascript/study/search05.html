@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 검색 이펙트</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">🔍 검색 효과 : filter()를 이용하여 속성 중요도 순으로 검색하기 </h2>
+            <p class="t_desc">
+                이번 시간에는 filter 통해 중요도 순으로 클릭할 경우 속성이 나타나는 실습을 해보겠습니다. <br>
+                + 추가로 중요도(별)이 몇개 이상일 경우 해당 속성이 나오는 실습도 해보겠습니다......... 🥲
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    search__click에서 li 요소에게 data-데이터명="데이터 값"을 설정합니다. =&gt; 추후 스크립트에 사용하기 위함! (클릭이벤트, 숫자 치환)
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;filter()를 이용하여 속성 클릭 시 중요도 순으로 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li data-star="0"&gt;&lt;a href="#"&gt;☆☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="1"&gt;&lt;a href="#"&gt;★☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="2"&gt;&lt;a href="#"&gt;★★☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="3"&gt;&lt;a href="#"&gt;★★★☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="4"&gt;&lt;a href="#"&gt;★★★★☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="5"&gt;&lt;a href="#"&gt;★★★★★&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li data-num="1"&gt;&lt;a href="#"&gt;1개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-num="2"&gt;&lt;a href="#"&gt;2개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-num="3"&gt;&lt;a href="#"&gt;3개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-num="4"&gt;&lt;a href="#"&gt;4개 이상&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;CSS 전체 속성 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+            &lt;div&gt;CSS 선택 속성 : &lt;span class="num2"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    이전 검색 이펙트와 스타일이 동일하며 새로운 구조인 search__click의 스타일을 설정해주시면 됩니다!
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.search__click li {
+    display: inline;
+}
+
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트  </h3>
+                <p class="t_desc">
+                    이번 스크립트에서는 filter() 메서드, 그리고 매개변수를 통해 스크립트를 작업해보겠습니다.<br>
+                    자세한 내용은 아래의 스크립트 주석과 함께 살펴보겠습니다!
+                </p>
+                <p class="t_desc2">
+                    <strong>! JAVASCRIPT TIP !</strong><br>
+                    1. for of : 반복문
+                    2. 변수명.filter((element) =&gt; element 조건식) : 변수에서 해당 조건에 해당하는 요소를 가져옵니다.<br>
+                    3. dataset = data-데이터명="데이터 값"을 모두 불러오는 속성!
+                </p>
+                <!-- <details style="margin-bottom: 10px;"> -->
+                    <!-- <summary> 💡 전체 스크립트 보기</summary> -->
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">//01.선택자
+//cssProperty : 데이터 객체화 시키기
+const cssProperty = [
+    { star: 1 , name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
+    { star: 5 , name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
+    { star: 4 , name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
+    { star: 1 , name: "align-self", desc: " 특정 item의 정렬을 따로 하고 싶을 때 사용합니다." },
+    { star: 1 , name: "all", desc: " CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값, 상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다." },
+    { star: 3 , name: "animation", desc: " 애니메이션과 관련된 속성을 일괄적로 처리합니다." },
+    { star: 3 , name: "animation-delay", desc: " 애니메이션 지연 시간을 설정합니다." },
+    { star: 3 , name: "animation-direction", desc: " 애니메이션 움직임 방향을 설정합니다." },
+    { star: 3 , name: "animation-duration", desc: " 애니메이션 움직인 시간을 설정합니다." },
+    .
+    .
+    .
+    { star: 3 , name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
+];
+const searchList = document.querySelector(".search__list ul"); //서치리스트
+const searchClick = document.querySelectorAll(".search__click ul li"); //클릭 요소
+const searchNum = document.querySelector(".search__info .num"); //전체속성
+const starNum = document.querySelectorAll(".search__click ul li a") //별
+
+//전체속성갯수표시
+searchNum.innerText = cssProperty.length + "개";
+
+
+//02 출력하기 : 출력하기를 함수화 시키기 : 이렇게 할 경우 재활용이 가능한 스크립트가 된다!
+//2.매개변수를 받아서 작업
+function updateList(cssProperty2){
+    listCSS = "";
+
+    //for of문을 사용하여 반복.
+    //3.받은 매개변수 값을 다시 data라는 변수에 저장시킨다. 즉 data == cssProperty
+    for( const data of cssProperty2 ){
+        //서치리스트 ul안에 들어갈 li리스트의 구조 설정!
+        // listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt;${data.star}&lt;/em&gt;&lt;/li&gt;`;
+
+        //숫자 별로 치환 방법1
+        //변수를 설정하여 텍스트 별의 데이터값을 넣는다.
+        // listStar = starNum[data.star].innerText;
+        // listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt;${listStar}&lt;/em&gt;&lt;/li&gt;`;
+        
+        // 방법2 : if문을 통해 리스트의 구조 중 숫자를 별로 치환해주기.
+        if(data.star === 0){
+            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ☆☆☆☆☆ &lt;/em&gt;&lt;/li&gt;`;
+        }
+        if(data.star === 1){
+            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★☆☆☆☆ &lt;/em&gt;&lt;/li&gt;`;
+        }
+        if(data.star === 2){
+            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★☆☆☆ &lt;/em&gt;&lt;/li&gt;`;
+        }
+        if(data.star === 3){
+            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★★☆☆ &lt;/em&gt;&lt;/li&gt;`;
+        }
+        if(data.star === 4){
+            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★★★☆ &lt;/em&gt;&lt;/li&gt;`;
+        }
+        if(data.star === 5){
+            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★★★★ &lt;/em&gt;&lt;/li&gt;`;
+        }
+    }
+
+    //서치리스트에 위의 구조를 innerHTML을 통해 넣어준다.(요소를 넣어야 하므로!)
+    searchList.innerHTML = listCSS;
+
+}
+//1. 매개변수로 위의 변수값 가져온 후 함수에 저장 
+updateList(cssProperty);
+
+
+//03. 클릭하기
+//searchClick의 요소 모두 선택 후 이벤트 클릭 설정(이벤트 리스너는 다중 선택자가 불가하므로 반복문을 통해 다중 설정이 가능!)
+searchClick.forEach(element =&gt; {
+    element.addEventListener("click",()=&gt;{
+        //위의 html에서 searchClick의 li의 data-star 속성을 가져온 후 target변수에 저장
+        const target = element.dataset.star;
+        //마찬 가지로 위의 data-num 속성을 모두 가져온 뒤 target2에 저장!
+        const target2 = element.dataset.num;
+
+        //콜백함수
+        //filter와 find의 사용법이 같다. 다만 조건을 쓸 수 있다는 점에서 다르다!
+        const filterList = cssProperty.filter(data =&gt; data.star == target || data.star &gt;= target2);
+
+        //매개변수로 위의 변수 값을 가져와 함수를 실행시킨다.
+        updateList(filterList);
+    });
+});
+</code></pre>
+                    </div>
+                <!-- </details> -->
+
+                <hr>
+                
+           
+                <h3 class="t_tit2">#3. 결과 </h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect05" frameborder="0"></iframe>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect05.html">원본 소스 보기</a>
+                </div>
+    
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect05.html">원본 페이지 보기</a>
+                </div>
+            </div>
+            <!-- //sample02 -->
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

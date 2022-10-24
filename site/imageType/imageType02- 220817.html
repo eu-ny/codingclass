@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형01</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        /* font */
+        .gmark {
+            font-family: 'GmarketSans';
+            font-weight: 300;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common : 공통 요소(재활용) */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            text-align: center;
+            color: #666;
+        }
+
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 373px;
+            height: 476px;
+            position: relative;
+        }
+        .image__title {
+            margin-top: 25px;
+        }
+        .image .box{
+            width: 373px;
+            height: 100px;
+            text-align: center;
+            display: inline-block;
+            background: #E1AB03;
+            position: absolute;
+            bottom: 0;
+        }
+        .image .box.red {
+            background: #CD5E24;
+        }
+        .image .box.pink {
+            background: #C68C99;
+        }
+        .image.img1 {
+            background: url(img/img_bg02_01.jpg) no-repeat center;
+            margin-right: 20px;
+        }
+        .image.img2 {
+            background: url(img/img_bg02_02.jpg) no-repeat center;
+            margin-right: 20px;
+        }
+        .image.img3 {
+            background: url(img/img_bg02_03.jpg) no-repeat center;
+        }
+        .image__title {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType01" class="image__wrap Nexon section"> <!-- 섹션 선택자를 따로 준 이유는 여러 유형을 만들 때 공통적으로 들어가기 때문이다. 즉 재활용을 하기 위한 선택자라고 보면 된다. -->
+        <h2>딩동댕 멍멍유치원</h2>
+        <p>🐾🐶 강아지를 좋아하는 사람들을 위한 멍멍 리스트 입니다. 🐶🐾</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <div class="box">
+                    <h3 class="image__title">애니멀 2기 이댕댕</h3>
+                    <a href="#" title="자세히 보기" class="image__btn">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img2">
+                <div class="box red">
+                    <h3 class="image__title">애니멀 2기 오댕댕</h3>
+                    <a href="#" title="자세히 보기" class="image__btn red">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img3">
+                <div class="box pink">
+                    <h3 class="image__title">애니멀 2기 김댕댕</h3>
+                    <a href="#" title="자세히 보기" class="image__btn pink">자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

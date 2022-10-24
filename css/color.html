@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색상 표현 방법</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="Sprite.html">Sprite</a></li>
+                <li><a href="unit.html">단위</a></li>
+                <li><a href="color.html">색상 표현 방법</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 색상 표현 방법 </h2>
+                <p class="t_desc">
+                    CSS에서는 색상을 설정하는 총 7가지의 방법이 있습니다. 먼저 기존 CSS에 있던 방법 3가지, CSS3에서 추가된 4가지 방법이 있습니다. <br />
+                    이번 시간에는 이러한 CSS의 색상 표현 방법에 대해 알아보겠습니다!😄
+                </p>
+
+                <hr>
+
+                <h2 class="t_tit">🔶 CSS 색상 표현 방법 🔶</h2>
+
+                 <div id="sample01" class="sample">
+                    <h3 class="t_tit2">#1. 색상 이름으로 표현 </h3>
+                    <p class="t_desc2">
+                      red, pink와 같이 색상의 이름을 나타내는 방법으로, 약 140가지의 색상 이름들이 브라우저에 미리 정의되어 있습니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: orange;}
+</code></pre>
+                    </div>
+                    <p style="background-color: orange;">orange</p>
+
+                    <hr>
+
+                    <h3 class="t_tit2">#2. RGB값으로 표현 </h3>
+                    <p class="t_desc2">
+                      rgb(red, green, blue)와 같은 형식으로 색을 표현합니다.<br />
+                      여기서 red, green, blue 각각의 변수에는 0에서 255사이의 정수를 입력하거나 백분율 값을 지정하여 색상을 설정합니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: rgb(255, 165, 0);}
+p {background-color: rgb(100%, 0%, 0%);}
+</code></pre>
+                    </div>
+                    <p style="background-color:rgb(255, 165, 0);">orange</p>
+                    <p style="background-color:rgb(100%, 0%, 0%);">red</p>
+
+                    <hr>
+
+                    <h3 class="t_tit2">#3. HEX(16진수)값으로 표현 </h3>
+                    <p class="t_desc2">
+                      hex(16진수) 색상값은 RGB 색상값을 각각 16진수로 변환한 것입니다.<br />
+                      #rrggbb = rr: red / gg: green / bb : blue로 00에서 ff까지의 범위 값입니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: #FFA500;}
+</code></pre>
+                    </div>
+                    <p style="background-color: #FFA500;">orange</p>
+                    <details>
+                      <summary>✏️ HEX 표 확인하기</summary>
+                      <table class="t_table">
+                        <tbody>
+                          <tr>
+                            <th>이름</th>
+                            <th>색상 <br />코드</th>
+                            <th>이름</th>
+                            <th>색상 <br />코드</th>
+                            <th>이름</th>
+                            <th>색상 <br />코드</th>
+                          </tr>
+                          <tr>
+                            <td>red</td>
+                            <td style="background:#ff0000; color:#ffffff">#FF0000</td>
+                            <td>lime</td>
+                            <td style="background:#00ff00; color:#ffffff">#00FF00</td>
+                            <td>blue</td>
+                            <td style="background:#0000ff; color:#ffffff">#0000FF</td>
+                          </tr>
+                        
+                          <tr>
+                            <td>indianred
+                            </td>
+                            <td style="background:#cd5c5c; color:#ffffff">#CD5C5C
+                            </td>
+                            <td>aquamarine
+                            </td>
+                            <td style="background:#7fffd4; color:#ffffff">#7FFFD4
+                            </td>
+                            <td>cyan(=aqua)
+                            </td>
+                            <td style="background:#00ffff; color:#ffffff">#00FFFF
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>darksalmon
+                            </td>
+                            <td style="background:#e9967a; color:#ffffff">#E9967A
+                            </td>
+                            <td>mediumspringgreen
+                            </td>
+                            <td style="background:#00fa9a; color:#ffffff">#00FA9A
+                            </td>
+                            <td>aqua(=cyan)
+                            </td>
+                            <td style="background:#00ffff; color:#ffffff">#00FFFF
+                            </td>
+                          </tr>
+                            
+                          <tr>
+                            <td>lightcoral
+                            </td>
+                            <td style="background:#f08080; color:#ffffff">#F08080
+                            </td>
+                            <td>springgreen
+                            </td>
+                            <td style="background:#00ff7f; color:#ffffff">#00FF7F
+                            </td>
+                            <td>mediumturquoise
+                            </td>
+                            <td style="background:#48d1cc; color:#ffffff">#48D1CC
+                            </td>
+                          </tr>
+                            
+                          <tr>
+                            <td>salmon
+                            </td>
+                            <td style="background:#fa8072; color:#ffffff">#FA8072
+                            </td>
+                            <td>palegreen
+                            </td>
+                            <td style="background:#98fb98; color:#ffffff">#98FB98
+                            </td>
+                            <td>darkturquoise
+                            </td>
+                            <td style="background:#00ced1; color:#ffffff">#00CED1
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>orangered
+                            </td>
+                            <td style="background:#ff4500; color:#ffffff">#FF4500
+                            </td>
+                            <td>greenyellow
+                            </td>
+                            <td style="background:#adff2f; color:#ffffff">#ADFF2F
+                            </td>
+                            <td>cadetblue
+                            </td>
+                            <td style="background:#5f9ea0; color:#ffffff">#5F9EA0
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>crimson
+                            </td>
+                            <td style="background:#dc143c; color:#ffffff">#DC143C
+                            </td>
+                            <td>chartreuse
+                            </td>
+                            <td style="background:#7fff00; color:#ffffff">#7FFF00
+                            </td>
+                            <td>slategray
+                            </td>
+                            <td style="background:#708090; color:#ffffff">#708090
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>firebrick
+                            </td>
+                            <td style="background:#b22222; color:#ffffff">#B22222
+                            </td>
+                            <td>lawngreen
+                            </td>
+                            <td style="background:#7cfc00; color:#ffffff">#7CFC00
+                            </td>
+                            <td>lightcyan
+                            </td>
+                            <td style="background:#e0ffff; color:#000000">#E0FFFF
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                          <td>darkred
+                          </td>
+                          <td style="background:#8b0000; color:#ffffff">#8B0000
+                          </td>
+                          <td>green
+                          </td>
+                          <td style="background:#008000; color:#ffffff">#008000
+                          </td>
+                          <td>paleturquoise
+                          </td>
+                          <td style="background:#afeeee; color:#ffffff">#AFEEEE
+                          </td></tr>
+                          
+                          <tr>
+                            <td>mediumvioletred
+                            </td>
+                            <td style="background:#c71585; color:#ffffff">#C71585
+                            </td>
+                            <td>lightgreen
+                            </td>
+                            <td style="background:#90ee90; color:#ffffff">#90EE90
+                            </td>
+                            <td>powderblue
+                            </td>
+                            <td style="background:#b0e0e6; color:#ffffff">#B0E0E6
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>pink
+                            </td>
+                            <td style="background:#ffc0cb; color:#ffffff">#FFC0CB
+                            </td>
+                            <td>yellowgreen
+                            </td>
+                            <td style="background:#9acd32; color:#ffffff">#9ACD32
+                            </td>
+                            <td>lightsteelblue
+                            </td>
+                            <td style="background:#b0c4de; color:#ffffff">#B0C4DE
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>lightpink
+                            </td>
+                            <td style="background:#ffb6c1; color:#ffffff">#FFB6C1
+                            </td>
+                            <td>limegreen
+                            </td>
+                            <td style="background:#32cd32; color:#ffffff">#32CD32
+                            </td>
+                            <td>steelblue
+                            </td>
+                            <td style="background:#4682b4; color:#ffffff">#4682B4
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>hotpink
+                            </td>
+                            <td style="background:#ff69b4; color:#ffffff">#FF69B4
+                            </td>
+                            <td>mediumseagreen
+                            </td>
+                            <td style="background:#3cb371; color:#ffffff">#3CB371
+                            </td>
+                            <td>lightblue
+                            </td>
+                            <td style="background:#add8e6; color:#ffffff">#ADD8E6
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>deeppink
+                            </td>
+                            <td style="background:#ff1493; color:#ffffff">#FF1493
+                            </td>
+                            <td>darkseagreen
+                            </td>
+                            <td style="background:#8fbc8f; color:#ffffff">#8FBC8F
+                            </td>
+                            <td>skyblue
+                            </td>
+                            <td style="background:#87ceeb; color:#ffffff">#87CEEB
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                          <td>paleviolentred
+                          </td>
+                          <td style="background:#db7093; color:#ffffff">#DB7093
+                          </td>
+                          <td>forestgreen
+                          </td>
+                          <td style="background:#228b22; color:#ffffff">#228B22
+                          </td>
+                          <td>lightskyblue
+                          </td>
+                          <td style="background:#87cefa; color:#ffffff">#87CEFA
+                          </td></tr>
+                          
+                          <tr>
+                          <td>darkkhaki
+                          </td>
+                          <td style="background:#bdb76b; color:#ffffff">#BDB76B
+                          </td>
+                          <td>seagreen
+                          </td>
+                          <td style="background:#2e8b57; color:#ffffff">#2E8B57
+                          </td>
+                          <td>deepskyblue
+                          </td>
+                          <td style="background:#00bfff; color:#ffffff">#00BFFF
+                          </td></tr>
+                          
+                          <tr>
+                          <td>khaki
+                          </td>
+                          <td style="background:#f0e68c; color:#ffffff">#F0E68C
+                          </td>
+                          <td>olivedrab
+                          </td>
+                          <td style="background:#6b8e23; color:#ffffff">#6B8E23
+                          </td>
+                          <td>cornflowerblue
+                          </td>
+                          <td style="background:#6495ed; color:#ffffff">#6495ED
+                          </td></tr>
+                          
+                          <tr>
+                          <td>palegoldenrod
+                          </td>
+                          <td style="background:#eee8aa; color:#000000">#EEE8AA
+                          </td>
+                          <td>olive
+                          </td>
+                          <td style="background:#808000; color:#ffffff">#808000
+                          </td>
+                          <td>royalblue
+                          </td>
+                          <td style="background:#4169e1; color:#ffffff">#4169E1
+                          </td></tr>
+                          
+                          <tr>
+                          <td>lightgoldenrodyellow
+                          </td>
+                          <td style="background:#fafad2; color:#000000">#FAFAD2
+                          </td>
+                          <td>darkolivegreen
+                          </td>
+                          <td style="background:#556b2f; color:#ffffff">#556B2F
+                          </td>
+                          <td>mediumslateblue
+                          </td>
+                          <td style="background:#7b68ee; color:#ffffff">#7B68EE
+                          </td></tr>
+                          
+                          <tr>
+                          <td>lightyellow
+                          </td>
+                          <td style="background:#ffffe0; color:#000000">#FFFFE0
+                          </td>
+                          <td>darkgreen
+                          </td>
+                          <td style="background:#006400; color:#ffffff">#006400
+                          </td>
+                          <td>dodgerblue
+                          </td>
+                          <td style="background:#1e90ff; color:#ffffff">#1E90FF
+                          </td></tr>
+                          
+                          <tr>
+                          <td>lemonchiffon
+                          </td>
+                          <td style="background:#fffacd; color:#000000">#FFFACD
+                          </td>
+                          <td>mediumaquamarine
+                          </td>
+                          <td style="background:#66cdaa; color:#ffffff">#66CDAA
+                          </td>
+                          <td>mediumblue
+                          </td>
+                          <td style="background:#0000cd; color:#ffffff">#0000CD
+                          </td></tr>
+                          
+                          <tr>
+                          <td>yellow
+                          </td>
+                          <td style="background:#ffff00; color:#000000">#FFFF00
+                          </td>
+                          <td>turquoise
+                          </td>
+                          <td style="background:#40e0d0; color:#ffffff">#40E0D0
+                          </td>
+                          <td>darkblue
+                          </td>
+                          <td style="background:#00008b; color:#ffffff">#00008B
+                          </td></tr>
+                          
+                          <tr>
+                          <td>gold
+                          </td>
+                          <td style="background:#ffd700; color:#ffffff">#FFD700
+                          </td>
+                          <td>lightseagreen
+                          </td>
+                          <td style="background:#20b2aa; color:#ffffff">#20B2AA
+                          </td>
+                          <td>navy
+                          </td>
+                          <td style="background:#000080; color:#ffffff">#000080
+                          </td></tr>
+                          
+                          <tr>
+                          <td>papayawhip
+                          </td>
+                          <td style="background:#ffefd5; color:#000000">#FFEFD5
+                          </td>
+                          <td>darkcyan
+                          </td>
+                          <td style="background:#008b8b; color:#ffffff">#008B8B
+                          </td>
+                          <td>midnightblue
+                          </td>
+                          <td style="background:#191970; color:#ffffff">#191970
+                          </td></tr>
+                          
+                          <tr>
+                          <td>moccasin
+                          </td>
+                          <td style="background:#ffe4b5; color:#000000">#FFE4B5
+                          </td>
+                          <td>teal
+                          </td>
+                          <td style="background:#008080; color:#ffffff">#008080
+                          </td>
+                          <td>gainsboro
+                          </td>
+                          <td style="background:#dcdcdc; color:#000000">#DCDCDC
+                          </td></tr>
+                          
+                          <tr>
+                          <td>peachpuff
+                          </td>
+                          <td style="background:#ffdab9; color:#000000">#FFDAB9
+                          </td>
+                          <td>honeydew
+                          </td>
+                          <td style="background:#f0fff0; color:#000000">#F0FFF0
+                          </td>
+                          <td>lightgrey
+                          </td>
+                          <td style="background:#d3d3d3; color:#000000">#D3D3D3
+                          </td></tr>
+                          
+                          <tr>
+                          <td>lightsalmon
+                          </td>
+                          <td style="background:#ffa07a; color:#ffffff">#FFA07A
+                          </td>
+                          <td>mintcream
+                          </td>
+                          <td style="background:#f5fffa; color:#000000">#F5FFFA
+                          </td>
+                          <td>silver
+                          </td>
+                          <td style="background:#c0c0c0; color:#ffffff">#C0C0C0
+                          </td></tr>
+                          
+                          <tr>
+                          <td>orange
+                          </td>
+                          <td style="background:#ffa500; color:#ffffff">#FFA500
+                          </td>
+                          <td>azure
+                          </td>
+                          <td style="background:#f0ffff; color:#000000">#F0FFFF
+                          </td>
+                          <td>darkgray
+                          </td>
+                          <td style="background:#a9a9a9; color:#ffffff">#A9A9A9
+                          </td></tr>
+                          
+                          <tr>
+                          <td>darkorange
+                          </td>
+                          <td style="background:#ff8c00; color:#ffffff">#FF8C00
+                          </td>
+                          <td>aliceblue
+                          </td>
+                          <td style="background:#f0f8ff; color:#000000">#F0F8FF
+                          </td>
+                          <td>gray(grey)
+                          </td>
+                          <td style="background:#808080; color:#ffffff">#808080
+                          </td></tr>
+                          
+                          <tr>
+                          <td>coral
+                          </td>
+                          <td style="background:#ff7f50; color:#ffffff">#FF7F50
+                          </td>
+                          <td>ghostwhite
+                          </td>
+                          <td style="background:#f8f8ff; color:#000000">#F8F8FF
+                          </td>
+                          <td>dimgray
+                          </td>
+                          <td style="background:#696969; color:#ffffff">#696969
+                          </td></tr>
+                          
+                          <tr>
+                          <td>tomato
+                          </td>
+                          <td style="background:#ff6347; color:#ffffff">#FF6347
+                          </td>
+                          <td>whitesmoke
+                          </td>
+                          <td style="background:#f5f5f5; color:#000000">#F5F5F5
+                          </td>
+                          <td>darkslategray
+                          </td>
+                          <td style="background:#2f4f4f; color:#ffffff">#2F4F4F
+                          </td></tr>
+                          
+                          <tr>
+                          <td>orangered
+                          </td>
+                          <td style="background:#ff4500; color:#ffffff">#FF4500
+                          </td>
+                          <td>lavenderblush
+                          </td>
+                          <td style="background:#fff0f5; color:#000000">#FFF0F5
+                          </td>
+                          <td>lightslategray
+                          </td>
+                          <td style="background:#778899; color:#ffffff">#778899
+                          </td></tr>
+                          
+                          <tr>
+                          <td>lavender
+                          </td>
+                          <td style="background:#e6e6fa; color:#000000">#E6E6FA
+                          </td>
+                          <td>mistyrose
+                          </td>
+                          <td style="background:#ffe4e1; color:#000000">#FFE4E1
+                          </td>
+                          <td>peru
+                          </td>
+                          <td style="background:#cd853f; color:#ffffff">#CD853F
+                          </td></tr>
+                          
+                          <tr>
+                          <td>thistle
+                          </td>
+                          <td style="background:#d8bfd8; color:#ffffff">#D8BFD8
+                          </td>
+                          <td>antiquewhite
+                          </td>
+                          <td style="background:#faebd7; color:#000000">#FAEBD7
+                          </td>
+                          <td>chocolate
+                          </td>
+                          <td style="background:#d2691e; color:#ffffff">#D2691E
+                          </td></tr>
+                          
+                          <tr>
+                          <td>plum
+                          </td>
+                          <td style="background:#dda0dd; color:#ffffff">#DDA0DD
+                          </td>
+                          <td>seashell
+                          </td>
+                          <td style="background:#fff5ee; color:#000000">#FFF5EE
+                          </td>
+                          <td>maroon
+                          </td>
+                          <td style="background:#800000; color:#ffffff">#800000
+                          </td></tr>
+                          
+                          <tr>
+                          <td>violet
+                          </td>
+                          <td style="background:#ee82ee; color:#ffffff">#EE82EE
+                          </td>
+                          <td>snow
+                          </td>
+                          <td style="background:#fffafa; color:#000000">#FFFAFA
+                          </td>
+                          <td>saddlebrown
+                          </td>
+                          <td style="background:#8b4513; color:#ffffff">#8B4513
+                          </td></tr>
+                          
+                          <tr>
+                          <td>fuchsia(=magenta)
+                          </td>
+                          <td style="background:#ff00ff; color:#ffffff">#FF00FF
+                          </td>
+                          <td>beige
+                          </td>
+                          <td style="background:#f5f5dc; color:#000000">#F5F5DC
+                          </td>
+                          <td>brown
+                          </td>
+                          <td style="background:#a52a2a; color:#ffffff">#A52A2A
+                          </td></tr>
+                          
+                          <tr>
+                          <td>magenta(=fuchsia)
+                          </td>
+                          <td style="background:#ff00ff; color:#ffffff">#FF00FF
+                          </td>
+                          <td>linen
+                          </td>
+                          <td style="background:#faf0e6; color:#000000">#FAF0E6
+                          </td>
+                          <td>sienna
+                          </td>
+                          <td style="background:#a0522d; color:#ffffff">#A0522D
+                          </td></tr>
+                          
+                          <tr>
+                          <td>orchid
+                          </td>
+                          <td style="background:#da70d6; color:#ffffff">#DA70D6
+                          </td>
+                          <td>oldlace
+                          </td>
+                          <td style="background:#fdf5e6; color:#000000">#FDF5E6
+                          </td>
+                          <td>darkred
+                          </td>
+                          <td style="background:#8b0000; color:#ffffff">#8B0000
+                          </td></tr>
+                          
+                          <tr>
+                          <td>cornsilk
+                          </td>
+                          <td style="background:#fff8dc; color:#000000">#FFF8DC
+                          </td>
+                          <td>floralwhite
+                          </td>
+                          <td style="background:#fffaf0; color:#000000">#FFFAF0
+                          </td>
+                          <td>burlywood
+                          </td>
+                          <td style="background:#deb887; color:#ffffff">#DEB887
+                          </td></tr>
+                          
+                          <tr>
+                          <td>blanchedalmond
+                          </td>
+                          <td style="background:#ffebcd; color:#000000">#FFEBCD
+                          </td>
+                          <td>ivory
+                          </td>
+                          <td style="background:#fffff0; color:#000000">#FFFFF0
+                          </td>
+                          <td>tan
+                          </td>
+                          <td style="background:#d2b48c; color:#ffffff">#D2B48C
+                          </td></tr>
+                          
+                          <tr>
+                            <td>bisque
+                            </td>
+                            <td style="background:#ffe4e4; color:#000000">#FFE4E4
+                            </td>
+                            <td>mediumorchid
+                            </td>
+                            <td style="background:#ba55d3; color:#ffffff">#BA55D3
+                            </td>
+                            <td>rosybrown
+                            </td>
+                            <td style="background:#bc8f8f; color:#ffffff">#BC8F8F
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>navajowhite
+                            </td>
+                            <td style="background:#ffdead; color:#000000">#FFDEAD
+                            </td>
+                            <td>darkorchid
+                            </td>
+                            <td style="background:#9932cc; color:#ffffff">#9932CC
+                            </td>
+                            <td>mediumpurple
+                            </td>
+                            <td style="background:#9370db; color:#ffffff">#9370DB
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>blueviolet
+                            </td>
+                            <td style="background:#8a2be2; color:#ffffff">#8A2BE2
+                            </td>
+                            <td>darkviolet
+                            </td>
+                            <td style="background:#9400d3; color:#ffffff">#9400D3
+                            </td>
+                            <td>darkmagenta
+                            </td>
+                            <td style="background:#8b008b; color:#ffffff">#8B008B
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>slateblue
+                            </td>
+                            <td style="background:#6a5acd; color:#ffffff">#6A5ACD
+                            </td>
+                            <td>purple
+                            </td>
+                            <td style="background:#800080; color:#ffffff">#800080
+                            </td>
+                            <td>wheat
+                            </td>
+                            <td style="background:#f5deb3; color:#000000">#F5DEB3
+                            </td>
+                          </tr>
+                          
+                          <tr>
+                            <td>darkslateblue</td>
+                            <td style="background:#483d8b; color:#ffffff">#483D8B</td>
+                            <td>indigo</td>
+                            <td style="background:#4b0082; color:#ffffff">#4B0082</td>
+                            <td>darkgoldenrod</td>
+                            <td style="background:#b8860b; color:#ffffff">#B8860B</td>
+                          </tr>
+                          
+                          <tr>
+                            <td>sandybrown</td>
+                            <td style="background:#f4a460; color:#ffffff">#F4A460</td>
+                            <td>goldenrod</td>
+                            <td style="background:#daa520; color:#ffffff">#DAA520</td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          
+                          <tr>
+                            <td>black</td>
+                            <td style="background:#000000; color:#ffffff">#000000</td>
+                            <td>white</td>
+                            <td style="background:#ffffff; color:#000000">#FFFFFF</td>
+                            <td></td>
+                            <td></td>
+                        </tbody>
+                      </table>
+                    </details>
+                    
+                  </div>
+                  <!-- //sample01 -->
+
+                  <hr>
+
+                  <h2 class="t_tit">🔶 CSS3에서 추가된 색상 표현 방법 🔶</h2>
+
+                  <div id="sample02" class="sample">
+                    <h3 class="t_tit2">#1. RGBA 색상값으로 표현 </h3>
+                    <p class="t_desc2">
+                      RGBA 색상값은 RGB 색상값에 알파 채널 값을 더한 색상값입니다.<br>
+                      여기서 알파 채널(alpha channel)이란 색상의 투명도를 나타내는 채널입니다. 알파 채널 값은 완전한 투명 상태인 0.0부터 투명도가 전혀 없는 1.0 사이의 값을 가집니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: rgba(255, 165, 0, 0);}
+p {background-color: rgba(255, 165, 0, 0.5);}
+p {background-color: rgba(255, 165, 0, 1);}
+</code></pre>
+                    </div>
+                    <p style="background-color: rgba(255, 165, 0, 0);">orange</p>
+                    <p style="background-color: rgba(255, 165, 0, 0.5);">orange</p>
+                    <p style="background-color: rgba(255, 165, 0, 1);">orange</p>
+
+                    <hr>
+
+                    <h3 class="t_tit2">#2. HSL 색상값으로 표현</h3>
+                    <p class="t_desc2">
+                      HSL 색상값은 빛의 삼원색으로 색을 표현하는 RGB 색상값과는 달리 색상, 채도, 명도를 사용해서 색을 표현합니다.<br>
+                      즉 HSL은 각각 색상(Hue), 채도(Saturation), 명도(Lightness)를 의미합니다.<br>
+                      색상은 0부터 360 사이의 값에 따라 결정되며, 색상환(color wheel)의 각도를 나타냅니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: hsl(39, 100%, 50%);}
+</code></pre>
+                    </div>
+                    <p style="background-color: hsl(39, 100%, 50%);">orange</p>
+
+                    <hr>
+
+                    <h3 class="t_tit2">#3. HSLA값으로 표현 </h3>
+                    <p class="t_desc2">
+                      rgba와 마찬가지로 hsl에 불투명도를 추가한 색상 표현 방법입니다. 
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: hsl(39, 100%, 50%, 0);}
+p {background-color: hsl(39, 100%, 50%, 0.5);}
+p {background-color: hsl(39, 100%, 50%, 1);}
+</code></pre>
+                    </div>
+                    <p style="background-color: hsl(39, 100%, 50%, 0);">orange</p>
+                    <p style="background-color: hsl(39, 100%, 50%, 0.5);">orange</p>
+                    <p style="background-color: hsl(39, 100%, 50%, 1);">orange</p>
+
+                    <hr>
+<!-- 
+                    <h3 class="t_tit2">#4. Opacity 속성 </h3>
+                    <p class="t_desc2">
+                      opacity 속성은 색상에 대한 투명도를 설정해 줍니다.<br />
+                      opacity 속성값은 완전한 투명 상태인 0.0부터 투명도가 전혀 없는 1.0 사이의 값을 가집니다.
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">p {background-color: rgb(255, 165, 0); opacity: 0.5;}
+</code></pre>
+                    </div>
+                    <p style="background-color: rgb(255, 165, 0); opacity: 0.5;">orange</p>
+                    
+                  </div> -->
+                  <!-- //sample01 -->
+
+                  
+
+
+            </div>
+          </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

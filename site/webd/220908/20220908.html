@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        /* font */
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img { 
+            width: 100%;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        em,
+        i,
+        address {
+            font-style: normal;
+        }
+        li {
+            list-style: none;
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -99999px;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+        #header .logo > img {
+            width: 150px;
+            height: 50px;
+        }
+        #header nav li {
+           display: inline;
+        }
+        #header nav a {
+            display: inline-block;
+            padding: 30px 0 30px 60px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        /* slider */
+        #bannerType{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .slider__img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider__inner {
+            display: flex;
+            flex-wrap: wrap;
+            width: 3480px;
+            height: 410px;
+        }
+        .slider {
+            position: relative;
+            width: 1160px;
+            height: 410px;
+        }
+
+
+
+        #adType {
+            width: 1160px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        #adType .left {
+            width: 44%;
+            padding: 30px;
+            background: #f5f5f5;
+            position: relative;
+        }
+        #adType .left .left__icon {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            right: 40px;
+            bottom: 30px;
+        }
+        #adType .left .left__tit {
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        #adType .left .left__desc {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        #adType .left .left__search {
+            font-size: 18px;
+        }
+        #adType .right {
+            width: 44%;
+            padding: 30px;
+            background: #f5f5f5;
+            position: relative;
+        }
+        #adType .right .right__icon {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            right: 40px;
+            bottom: 30px;
+        }
+        #adType .right .right__tit {
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        #adType .right .right__desc {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        #adType .right .right__search {
+            font-size: 18px;
+        }
+        #adType .right .right__search>em {
+            font-size: 14px;
+            margin-left: 5px;
+            color: rgb(143, 143, 143);
+        }
+
+        #cardType {}
+        #cardType .card__header {
+            display: flex;
+            margin-bottom: 40px;
+        }
+        #cardType .card__header> h2{
+            font-weight: 600;
+            font-size: 26px;
+            margin-right: 10px;
+        }
+        #cardType .card__header > h2 a:first-child {
+            padding-right: 10px;
+            border-right: 2px solid #000;
+        }
+        #cardType .card__header > p > a {
+            font-weight: 600;
+            font-size: 26px;
+            color: #777;
+        }
+        #cardType {
+            margin-bottom: 70px;
+        }
+
+        #cardType .card__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        #cardType .card {
+            width: 32%;
+            position: relative;
+        }
+        #cardType .card img {
+            margin-bottom: 20px;
+        }
+        #cardType .num {
+            width: 60px;
+            height: 60px;
+            box-sizing: border-box;
+            padding: 3px;
+            background: #252525;
+            color: #fff;
+            text-align: center;
+            line-height: 58px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        #cardType .num.first {
+            width: 80px;
+            height: 80px;
+            padding-left: 20px;
+            padding-top: 25px;
+            text-align: left;
+            line-height: normal;
+        }
+        .card__descBox {
+            display: flex;
+            position: relative;
+        }
+        .card__desc1 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        .card__desc2 {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .card__desc2 >em {
+            font-weight: 300;
+            font-size: 14px;
+        }
+        .card__icon {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .footer__inner {
+            background: #252525;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 30px 50px;
+            text-align: left;
+            position: relative;
+        }
+        .footer__inner .logo > img {
+            width: 150px;
+            height: 50px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .footer__info {
+            margin-top: 10px;
+        }
+        .footer__inner .footer__menu {
+            display: flex;
+            text-align: left;
+        }
+        .footer__inner .footer__menu > div {
+            margin-top: 10px;
+            margin-right: 30px;
+            margin-left: 30px;
+            height: 20px;
+            border-right: 1px solid #777;
+        }
+        .footer__inner .footer__menu >p {
+            font-size: 16px;
+            font-weight: 600;
+            padding-top: 10px;
+        }
+        .footer__inner .copy {
+            margin-top: 40px;
+        }
+        .footer__inner .copy >p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #777;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <header id="header" class="section nexon container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="로고">
+                <h1 class="blind">로고</h1>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#">COOKIT소개</a></li>
+                    <li><a href="#">COOKIT메뉴</a></li>
+                    <li><a href="#">리뷰</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">MY쿡킷</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+            <h2 class="blind">main</h2>
+            <section id="bannerType" class="section nexon container">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider">
+                            <img src="images/banner01.jpg" alt="배너">
+                        </div>
+                        <div class="slider">
+                            <img src="images/banner01_2.jpg" alt="배너">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="adType" class="section nexon container">
+                <h2 class="blind">ad</h2>
+                <div class="left">
+                    <div class="left_descBox">
+                        <h3 class="left__tit">
+                            우리집도 COOKIT 배송이 되나요?
+                        </h3>
+                        <p class="left__desc">
+                            배송이 가능한지 알려드려요.
+                        </p>    
+                    </div>
+                    <div class="left__icon">
+                        <img src="images/icon_02.jpg" alt="아이콘">
+                    </div>
+                    <a href="#" class="left__search">배송지 검색</a>
+                </div>
+                <div class="right">
+                    <h3 class="right__tit">
+                        7월 30일(화)에 받을 수 있어요
+                    </h3>
+                    <p class="right__desc">
+                        오전 7시까지 주문하시면 다음날 배송됩니다.
+                    </p>
+                    <div class="right__icon">
+                        <img src="images/icon_03.jpg" alt="아이콘">
+                    </div>
+                    <p class="right__search">63:28:32<em>남은 시간</em></p>
+                </div>
+            </section>
+
+            <section id="cardType" class="section nexon container">
+                <div class="card__header">
+                    <h2><a href="#">실시간 베스트</a></h2>
+                    <p><a href="#">생생한 리뷰</a></p>
+                </div>
+                <div class="card__inner">
+                    <div class="card">
+                        <div class="card__info">
+                            <div class="card__img">
+                                <img src="images/card01.jpg" alt="card">
+                            </div>
+                            <div class="num first">
+                                <p class="card__num">BEST<br>01</p>
+                            </div>
+                        </div>
+                        <div class="card__descBox">
+                            <div class="card_desc">
+                                <p class="card__desc1">평양식 어복쟁반</p>
+                                <p class="card__desc2">33,800원<em>/3인분</em></p>
+                            </div>
+                            <div class="card__icon">
+                                <img src="images/icon_01.jpg" alt="아이콘">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__info">
+                            <div class="card__img">
+                                <img src="images/card01_2.jpg" alt="card">
+                            </div>
+                            <div class="num">
+                                <p class="card__num">02</p>
+                            </div>
+                        </div>
+                        <div class="card__descBox">
+                            <div class="card_desc">
+                                <p class="card__desc1">새우주꾸미삽겹살</p>
+                                <p class="card__desc2">29,800원<em>/3인분</em></p>
+                            </div>
+                            <div class="card__icon">
+                                <img src="images/icon_01.jpg" alt="아이콘">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__info">
+                            <div class="card__img">
+                                <img src="images/card01_3.jpg" alt="card">
+                            </div>
+                            <div class="num">
+                                <p class="card__num">03</p>
+                            </div>
+                        </div>
+                        <div class="card__descBox">
+                            <div class="card_desc">
+                                <p class="card__desc1">방풍나물 아귀찜</p>
+                                <p class="card__desc2">32,800원<em>/3인분</em></p>
+                            </div>
+                            <div class="card__icon">
+                                <img src="images/icon_01.jpg" alt="아이콘">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="section nexon container">
+            <div class="footer__inner">
+                <div class="logo">
+                    <img src="images/logo02.jpg" alt="로고">
+                    <h1 class="blind">로고</h1>
+                </div>
+                </dic>
+                <div class="footer__info">
+                    <div class="footer__menu">
+                        <p>이용약관</p>
+                        <div></div>
+                        <p>개인정보처리방침</p>
+                        <div></div>
+                        <p>법적고지</p>
+                        <div></div>
+                        <p>사업자정보 확인</p>
+                    </div>
+                    <div class="copy">
+                        <p>씨제이제일제당(주) | 대표자:신현재</p>
+                        <p>주소:서울 중구 동호로 330 CJ제일제당 센터(우) 04560 | 사업자등록번호:104-86-09535</p>
+                        <p>통신판매업신고 중구 제 07767호 | 개인정보보호책임자:류화정</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const sliderWrap = document.querySelector("#bannerType");
+        const sliderImg = document.querySelector(".slider__img");   //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner"); //움직이는 영역
+        const slider = sliderWrap.querySelectorAll(".slider");      //각각의 이미지
+
+        let currentIndex = 0; //현재 보이는 이미지
+        let sliderCount = slider.length; //이미지 총 갯수
+        let sliderWidth = sliderImg.offsetWidth; //이미지 가로 값 (offsetWidth : 가로 값 구하는 메서드) sliderImg:요소
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true); // 제이쿼리는 클론만 적기 복사를 위해서는 true 꼭 적기 : 첫번째 자식 요소 복사하기(이미지)
+        
+        sliderInner.appendChild(sliderClone);   //첫번째 이미지를 마지막에 넣어준다.
+
+        function sliderEffect(){
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s";
+
+            sliderInner.style.transform = "translateX(-" + sliderWidth * currentIndex + "px)";
+            // sliderInner.style.transform = "translateX(-800px)";   800 * 1
+            // sliderInner.style.transform = "translateX(-1600px)";  800 * 2
+            // sliderInner.style.transform = "translateX(-2400px)";  800 * 3
+            // sliderInner.style.transform = "translateX(-3200px)";  800 * 4
+            // sliderInner.style.transform = "translateX(-4000px)";  800 * 5
+            // sliderInner.style.transform = "translateX(-4800px)";  800 * 6
+
+            //마지막 사진에 위치했을 때 : 효율성보단 간편한 코드 
+            // if(currentIndex == sliderCount){
+            //     sliderInner.style.transition = "0s";
+            //     sliderInner.style.transform = "translateX(0px)";
+            //     currentIndex = 0; 
+            // 이 코드를 사용하게 된다면 마지막에서 첫번쨰로 넘어갈 때 어색하게 넘어가진다. (애니메이션 적용이 되지 않기 때문.)
+            // }
+
+            //마지막 사진에 위치했을 때 : 효율성보단 간편한 코드 
+            //첫번째로 넘어갈 때 스무스하게 넘어가도록 한 것.
+            if(currentIndex == sliderCount){
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                    sliderInner.style.transform = "translateX(0px)";
+                },700);
+
+                currentIndex = 0; //마지막 사진이 왔을 때 다음 이미지로 넘어가지 않고 다시 초기화 시키기
+            }
+
+        }
+        setInterval(sliderEffect,2000);
+        //setInterval : 여러번 반복시켜 주는 것
+        //setTimeout : 한 번만 사용
+    </script>
+
+    
+</body>
+</html>

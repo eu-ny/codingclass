@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 : 기본선택자</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="../study/basic.html">기본 규칙</a></li>
+                <li><a href="../study/gsap.html">gsap</a></li>
+                <li><a href="jquery.html">jquery</a></li>
+                <li><a href="basic.html">jquery 기본선택자</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery : 기본 선택자</h2>
+            <p class="t_desc">
+                이번 시간에는 자바스크립트의 jQuery 기본 선택자에 대해 알아보겠습니다.😆
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. jQuery 기본 선택자</h3>
+                <p class="t_desc">
+                    jquery에서는 html요소와 관련된 기능 구현이 많기 떄문에 CSS와 밀접한 관계가 있습니다.<br>
+                    다음의 표와 함께 기본 선택자의 종류를 알아봅시다! 😇
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <colgroup>
+                            <col style="width: 30%"> 
+                            <col style="width: 30%">
+                            <col style="width: 40%">
+                        </colgroup>
+                        <tr>
+                            <th class="ce">선택자 종류</th>
+                            <th class="ce" colspan="2">설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">태그 선택자</td>
+                            <td class="ce">$("p")</td>
+                            <td>p 태그를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">id 선택자</td>
+                            <td class="ce">$("#section")</td>
+                            <td>id가 section인 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">class 선택자</td>
+                            <td class="ce">$(".section")</td>
+                            <td>class가 section인 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">자식 선택자</td>
+                            <td class="ce">$("#section &gt; ul &gt; li")</td>
+                            <td>#section의 자식 요소 중 li를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">인접 선택자</td>
+                            <td class="ce">$("#section + #content")</td>
+                            <td>#section의 바로 다음에 오는 #content를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">형제 선택자</td>
+                            <td class="ce">$("#section ~ #content")</td>
+                            <td>#section의 형제 요소인 #content를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">종속 선택자</td>
+                            <td class="ce">$("div.logo")</td>
+                            <td>div 태그 중 클래스가 logo인 요소를 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">그룹 선택자</td>
+                            <td class="ce">$("#section .content .logo")</td>
+                            <td>#section과 .content .logo 요소들을 모두 선택합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">전체 선택자</td>
+                            <td class="ce">$("*")</td>
+                            <td>모든 요소를 선택합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 class="t_tit2">✏️ jQuery 기본 선택자 예제</h3>
+                <p class="t_desc">
+                    예제를 보며 더 자세하게 선택자를 알아봅시다!
+                </p>
+                <p class="codepen" data-height="400" data-theme-id="dark" data-default-tab="js,result" data-slug-hash="WNzVObm" data-user="eu-ny" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/eu-ny/pen/WNzVObm">
+                    JQUERY01</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+            <!-- //sample01 -->
+            
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

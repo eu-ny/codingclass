@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+                <li><a href="animation01.html">animation</a></li>
+                <li><a href="animation02.html">animation02</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : 애니메니션 만들기 : 빙글빙글 로딩 애니메이션</h2>
+                <p class="t_desc">
+                    이번 시간에는 CSS 실습으로 상자가 돌아가다가 빙글빙글 돌아가는 로딩 애니메이션을 만들어보겠습니다~~!
+                </p>
+
+                <hr>
+
+                <div id="sample01" class="sample">
+                  <h3 class="t_tit2">#1. HTML </h3>
+                  <p class="t_desc2">
+                    원의 갯수 만큼 div를 넣어주시면 됩니다.
+                  </p>
+                  <div class="t_code">
+<pre><code class="language-HTML">&lt;div class="loader"&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+  &lt;div class="ball"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                  </div>
+                </div>
+                <!-- //sample01 -->
+
+                <hr>
+
+                <div id="sample02" class="sample">
+                  <h3 class="t_tit2">#2. CSS </h3>
+                  <p class="t_desc2">
+                    다음은 CSS 코드 입니다!
+                  </p>
+                  <div class="t_code">
+<pre><code class="language-css">body {
+  background: DarkSeaGreen;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  animation: spin .6s linear infinite reverse;
+}
+
+.ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  animation: spin 1s infinite ease-in-out
+}
+
+.ball:after {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  top: 0;
+}
+
+.ball:nth-child(2) {
+  animation-delay: -0.1s;
+}
+.ball:nth-child(3) {
+  animation-delay: -0.2s;
+}
+.ball:nth-child(4) {
+  animation-delay: -0.3s;
+}
+.ball:nth-child(5) {
+  animation-delay: -0.4s;
+}
+.ball:nth-child(6) {
+  animation-delay: -0.5s;
+}
+.ball:nth-child(7) {
+  animation-delay: -0.6s;
+}
+.ball:nth-child(8) {
+  animation-delay: -0.7s;
+}
+.ball:nth-child(9) {
+  animation-delay: -0.8s;
+}
+.ball:nth-child(10) {
+  animation-delay: -0.9s;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+</code></pre>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <hr>
+
+                <h3 class="t_tit2">#3. 결과보기 </h3>
+                <iframe height="351.2239685058594" style="width: 100%;" scrolling="no" title="animation08" src="https://codepen.io/eu-ny/embed/ZEoXBZp?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                  See the Pen <a href="https://codepen.io/eu-ny/pen/ZEoXBZp">
+                  animation08</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                  on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

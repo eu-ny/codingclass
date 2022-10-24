@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 내장 함수</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="function03.html">함수의 유형</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">자바스크립트 : 내장 함수</h2>
+            <p class="t_desc">
+               <strong>내장 함수란?</strong> 자바스크립트에 기본적으로 내장되어 있는 함수를 말합니다.<br />
+               지금부터 내장 함수에 대해 자세히 알아봅시다!
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">1. 인코딩, 디코딩 함수</h3>
+                <p class="t_desc">
+                    URL주소에 쿼리 정보를 전송하여 데이터를 처리해야 하는 경우 유니코드 문자가 포함되어 있으면 오류가 걸릴 확률이 높습니다. 때문에 인코딩 함수를 통해 문자를 부호화 시켜서 처리한 후 디코딩 함수를 통해 문자로 다시 되돌릴 수 있습니다.
+                </p>
+                <table class="t_table">
+                    <colgroup>
+                        <col style="width: 30%"> 
+                        <col style="width: 70%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">encodeURIComponent(&nbsp;)</td>
+                            <td>영문, 숫자와 (&nbsp;) - _ . ~ * ! ' 을 제외한 문자를 인코딩합니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">decodeURIComponent(&nbsp;) </td>
+                            <td>encodeURIComponent(&nbsp;)의 디코딩 함수</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">2. 숫자, 유/무한 값 판별 함수 </h3>
+                <table class="t_table">
+                    <colgroup>
+                        <col style="width: 20%"> 
+                        <col style="width: 80%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">isNaN(&nbsp;)</td>
+                            <td>
+                                숫자인지 아닌지를 판별하는 함수입니다. <br />
+                                숫자이면 false를 반환해 주고 숫자가 아니면 true를 반환해 줍니다.<br />
+                                (NaN = Not a Number)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">isFinite(&nbsp;)</td>
+                            <td>
+                                유한값인지 무한값인지 판별하는 함수입니다. <br />
+                                유한값이면 true를 반환하고, 무한값이면 false를 반환합니다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //sample02 -->
+
+            <hr>
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">3. 숫자, 문자 변환 함수 </h3>
+                <table class="t_table">
+                    <colgroup>
+                        <col style="width: 30%"> 
+                        <col style="width: 70%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">Number(&nbsp;)</td>
+                            <td>숫자로 변환해 주는 함수입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">parselnt(&nbsp;)</td>
+                            <td>숫자와 문자가 포함되어 있을 경우 정수 부분만 숫자로 변환해 주는 함수입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">parseFloat(&nbsp;)</td>
+                            <td>숫자와 문자가 포함되어 있을 경우 소수 부분까지 숫자로 변환해 주는 함수입니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">String(&nbsp;)</td>
+                            <td>문자로 바꾸어 주는 함수 입니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //sample03 -->
+
+            <hr>
+
+            <div id="sample04" class="sample">
+                <h3 class="t_tit2">4. 자바스크립트 코드 변경 함수 </h3>
+                <table class="t_table">
+                    <colgroup>
+                        <col style="width: 30%"> 
+                        <col style="width: 70%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>함수명</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">eval(&nbsp;)</td>
+                            <td>문자를 자바스크립트 코드로 변경해 주는 함수입니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- //sample04 -->
+
+            <hr>
+
+            <h3 class="t_tit2">내장 함수 예제</h3>
+            <details>
+                <summary><strong>예제 보기</strong></summary>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    // 인코딩, 디코딩 함수
+    var encodeStr = '자바스크립트';
+    console.log(encodeURIComponent(encodeStr)); //%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8
+    var decodeStr = encodeURIComponent(encodeStr); 
+    console.log(decodeURIComponent(decodeStr)); //자바스크립트
+
+
+    // 숫자, 유한무한 값 판별 함수
+    var num1 = '숫자'; 
+    if (!isNaN(num1)) {
+        console.log('숫자');
+    } else {
+        console.log('숫자아님');  //숫자아님
+    }
+    var num2 = 1/0; 
+    if (isFinite(num2)){
+        console.log('유한값');
+    } else {
+        console.log('무한값');  //무한값
+    }
+
+
+    // 숫자, 문자 변환 함수
+    var num3 = '10';
+    console.log(Number(num3)); //10
+    var num4 = '100px';
+    console.log(parseInt(num4)); //100
+    var num5 = '33.3%';
+    console.log(parseFloat(num5)); //33.3%
+    var num6 = 10;
+    console.log(typeof num6);         //number
+    console.log(typeof String(num6)); //string
+
+
+    // 자바스크립트 코드 변경 함수
+    var str1 = 'var num7 = 10';
+    var str2 = 'var num8 = 20';
+    eval(str1);
+    eval(str2);
+    console.log(num7 + num8); //30
+}
+</code></pre>
+                </div>
+            </details>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

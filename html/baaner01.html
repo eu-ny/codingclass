@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 해은</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li><a href="block.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="semantic.html">시멘틱 태그</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+                <li><a href="card01.html">카드01</a></li>
+                <li><a href="card02.html">카드02</a></li>
+                <li><a href="card03.html">카드03</a></li>
+                <li><a href="text01.html">텍스트01</a></li>
+                <li><a href="header01.html">헤더01</a></li>
+                <li class="active"><a href="imgTxet01.html">이미지/텍스트01</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <!-- //nav -->
+
+    <div class="main_rafer">
+        <div class="document">
+            <h2 class="t_tit">BannerType01</h2>
+            <p class="t_desc">
+               웹페이지 실습을 위한 배너 유형을 실습해보겠습니다! 이번 배너 유형은 이미지와 텍스트 영역, 아이콘이 함께 들어있는 타입입니다.<br>
+               그럼 아래의 코드를 보며 함께 실습 해보겠습니다 ~ 😆
+            </p>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    이번 유형은 배너 타입으로 컨셉에 맞는 레이아웃과 디자인을 설정하시면 됩니다. 아래의 피그마를 참고하여 HTML, CSS를 설정해봅시다. 😇
+                </p>
+                <!-- <img src="https://user-images.githubusercontent.com/106949433/187956502-fb469774-88bf-404c-85bd-a97188f79eb3.png" alt="site__layout">
+                <p class="t_box">
+                    아래의 피그마를 참고하여 HTML, CSS를 설정해봅시다. 😇
+                </p> -->
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D1184%253A2279" allowfullscreen></iframe>
+                </div>
+
+            <hr>
+
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
+                <p class="t_desc">
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>TIP !</strong><br>
+                    • 섹션, 아티클과 같은 시멘틱 태그에는 꼭 헤딩 태그를 함께 사용해주어야 웹표준을 준수하게 됩니다.<br>
+                    • 섹션 영역에 웹표준 준수를 위해 선언한 h2태그가 사용자 눈에 보이지 않도록 블라인드 속성을 주기 위해 선택자로 블라인드를 설정합니다.<br>
+                    • 이너(이미지 삽입) | 제목 | 텍스트(텍스트, 링크) | 텍스트(머리말) 구조로 큰 틀을 설정합니다.
+                </p>
+
+                <div class="t_code">
+<pre><code class="language-html">&lt;section id="bannerType" class="banner__wrap nexon"&gt;
+    &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;애니멀 유치원&lt;/h3&gt;
+        &lt;p class="desc"&gt;세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다.
+            &lt;a href="#" title="고양이 보러가기"&gt;다들 고양이 자랑과 이미지 보고 가세요.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="small"&gt;배너 유형 01&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</pre></code>
+                </div>
+            </div>
+            <!-- //html -->
+
+            <hr>
+
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 : 스타일 적용하기 &gt;</h3>
+                <p class="t_desc">
+                    구조 짜임의 순서대로 css 스타일을 적용시켜 봅시다. 이 때 디자인 시안을 참고하면서 html와 번갈아가며 <i>큰 덩어리 부터 스타일을 적용</i>시켜 나가는 것이 중요합니다.<br />
+                    속성에 대한 내용은 코드와 주석을 보면서 이해해봅시다!
+                </p>
+                <p class="t_desc2">
+                    <strong>TIP !</strong><br />
+                    • 먼저 전체 초기화(Reset)와 폰트 디폴트 설정을 해주는 것이 좋습니다. <br />
+                    • 각 영역과 섹션에 반복적으로 들어가는 속성들은 공통 속성으로 따로 설정하는 것이 좋습니다.<br />
+                    • 컨테이너 설정을 통해 메인 화면 크기와 여백을 설정해준 뒤 메인 콘텐츠인 섹션에게 스타일을 적용시킵니다.<br />
+                    • span 태그는 display: block를 먼저 설정하여 작업하는 것이 편리합니다.<br>
+                    • 이미지는 background: url()을 이용하여 배경에 삽입합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">/* font */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+em,
+i,
+address {
+    font-style: normal;
+}
+li {
+    list-style: none;
+}
+.blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+/* common : 공통 요소(재활용) */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+.section {
+    padding: 120px 0;
+}
+.section > h2 {
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.gray {
+    background-color: #f5f5f5;
+}
+
+/* bannerType */
+
+.banner__inner {
+    background-image: url(../img/banner_type01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
+}
+.banner__inner .title {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+.banner__inner .small {
+    display: block
+    font-size: 16px;
+    text-decoration: underline;
+}
+</pre></code>
+                </div>
+            </div>
+            <!-- //css -->
+
+            <hr>
+
+            <h3 class="t_tit2">🎉 결과보기 🎉</h3>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/bannerType/bannerType01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/bannerType/bannerType01.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/bannerType/bannerType01.html">원본 페이지 보기</a>
+            </div>
+
+
+        </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

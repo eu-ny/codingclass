@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이미지 슬라이드 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="slider02.html">슬라이드 효과</a></li>
+                <li><a href="slider03.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 - 이미지 슬라이드(버튼, dot메뉴, 무한으로 움직이기, 자동플레이 정지버튼, 자동플레이 버튼) </h2>
+            <p class="t_desc">
+                이번 시간에는 지금까지 했던 슬라이드 실습을 모두 응용한 최종적인 슬라이드를 구현해보겠습니다. 🥹 모두 고생많으셨습니다! 🫠🫠🔥
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML / CSS 설정하기</h3>
+                <p class="t_desc2">
+                    <strong>! HTML TIP !</strong><br>
+                    각 이미지마다 css설정을 주기 위해 따로 부모를 2번 감싸서 묶어줍니다.<br>
+                    또한 버튼 아래 닷메뉴와 재생정지버튼 구조는 스크립트로 구현할 것이므로 주석처리를 해줍니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ HTML 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">&lt;section id="sliderType07"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider s1" role="group" aria-label="1/5"&gt;
+                    &lt;span&gt;이미지1&lt;/span&gt;
+                    &lt;img src="../assets/img/Mountian_bg01.jpg" alt="이미지6"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider s2" role="group" aria-label="2/5"&gt;
+                    &lt;span&gt;이미지2&lt;/span&gt;
+                    &lt;img src="../assets/img/Mountian_bg02.jpg" alt="이미지7"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider s3" role="group" aria-label="3/5"&gt;
+                       &lt;span&gt;이미지3&lt;/span&gt;
+                    &lt;img src="../assets/img/Mountian_bg03.jpg" alt="이미지8"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider s4" role="group" aria-label="4/5"&gt;
+                       &lt;span&gt;이미지4&lt;/span&gt;
+                    &lt;img src="../assets/img/Mountian_bg04.jpg" alt="이미지9"&gt;
+                &lt;/div&gt;
+                &lt;div class="slider s5" role="group" aria-label="5/5"&gt;
+                       &lt;span&gt;이미지5&lt;/span&gt;
+                    &lt;img src="../assets/img/Mountian_bg05.jpg" alt="이미지10"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="slider__btn"&gt;
+            &lt;button href="#" class="prev" role="button" aria-label="왼쪽 이미지"&gt;prev&lt;/button&gt;
+            &lt;button href="#" class="next" role="button" aria-label="오른쪽 이미지"&gt;next&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;div class="slider__dot"&gt;
+            &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt;
+            &lt;a href="#" class="play"&gt;재생&lt;/a&gt;
+            &lt;a href="#" class="stop"&gt;정지5&lt;/a&gt; --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                    </div>
+                </details>
+                <p class="t_desc2">
+                    <strong>! CSS TIP !</strong><br>
+                    1. 이미지를 가로로 연결하기 위해 포지션을 relative로 설정하고 영역에서 벗어나는 이미지를 안보이게 처리하기 위해 overflow: hidden을 설정해줍니다.<br>
+                    2. 이미지 가로 값은 이미지가 잘리지 않는 선에서 최대로 설정해주면 됩니다.
+                    3. pointer-events: none을 통해 버튼이 연속으로 눌리지않게 합니다.
+                </p>
+                <details style="margin-bottom: 10px;">
+                    <summary> ✏️ CSS 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__img {  /* 이미지가 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+    /* overflow: hidden; */
+}
+.slider__inner {/* 전체 이미지를 감싸고 있는 부모 : 움직이는 부분 속성주기 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 10000px; /* 스크립트로 처리할 것이므로 안깨지게 끔 width값 주면 됨 */
+    height: 450px;
+    position: relative;
+    left: -800px; /* 슬라이더 초기값 */
+}
+/* 마지막에서 처음으로 순간이동 */
+.slider__inner.transition {
+    transition: all 0.3s;
+}
+.slider {   /* 개별적인 이미지 (각각의 이미지 설정) */
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+.slider span {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+
+@media(max-width : 800px){
+    .slider__img {
+        width: 400px;
+        height: 250px;
+    }
+    .slider {
+        width: 400px;
+        height: 250px;
+    }
+}
+/* 슬라이드 버튼 연속으로 누를 수 없게 하기 01 */
+.slider__btn.disable {
+    pointer-events: none;   
+}
+
+.slider__btn button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+    pointer-events: auto;
+    border: 0;
+    cursor: pointer;
+}
+.slider__btn button:hover {
+    border-radius: 50px;
+    background: rgba(38, 52, 103, 0.4);
+}
+.slider__btn button.prev {
+    left: 0;
+}
+.slider__btn button.next {
+    right: 0;
+}
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 3px;
+}
+.slider__dot .dot.active {
+    background: rgba(255,255,255,0.9);
+}
+.slider__dot .play {
+    display: none;
+    /* display: inline-block; */
+    width: 23px;
+    height: 20px;
+    margin-left: 7px;
+    vertical-align: -4px;
+
+    border-left: 14px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+.slider__dot .stop {
+    display: none;
+    /* display: inline-block; */
+    width: 16px;
+    height: 20px;
+    vertical-align: -4px;
+    position: relative;
+}
+.slider__dot .stop::before {
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.slider__dot .stop::after {
+    content: '';
+    width: 5px;
+    height: 20px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.slider__dot .show {
+    display: inline-block;
+}
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc2">
+                    cloneFirst = sliderFirst.cloneNode(true) / cloneLast = sliderLast.cloneNode(true)를 통해 첫번째 이미지와 마지막 이미지를 복사해줍니다. <br>
+                    setInterval 함수를 통해 자동 슬라이드를 구현해줍니다. 또한 clearInterval를 통해 자동 플레이를 멈추게 해줍니다.
+                    그 외 세부적인 부분들은 코드와 주석을 보며 알아봅시다!
+                </p>
+                    <div class="t_code" style="margin-bottom: 30px;">
+<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");            //전체 이미지 슬라이드
+const sliderImg = document.querySelector(".slider__img");              //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");          //움직이는 영역
+const slider = document.querySelectorAll(".slider");                   //이미지
+const sliderDot = document.querySelector(".slider__dot");              //닷 메뉴
+const sliderBtn = document.querySelector(".slider__btn");              //버튼
+const sliderBtnPrev = document.querySelector(".slider__btn .prev");    //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".slider__btn .next");    //오른쪽 버튼
+// const sliderBtnPlay = document.querySelector(".slider__dot .play");    //플레이 버튼
+// const sliderBtnStop = document.querySelector(".slider__dot .stop");    //정지 버튼
+
+let currentIndex = 0,                         //현재 이미지
+    sliderLength = slider.length,             //슬라이더 총 길이
+    sliderWidth = slider[0].offsetWidth,      //슬라이더 가로 값
+    sliderFirst = slider[0],                  //첫번째 이미지
+    sliderLast = slider[sliderLength -1],     //마지막 이미지
+    cloneFirst = sliderFirst.cloneNode(true), //첫번째 이미지 복사
+    cloneLast = sliderLast.cloneNode(true);   //마지막 이미지 복사
+let dotIndex = ""; //닷 생성시킬 문자열
+let interval = 3000;
+let sliderTimer = "";
+
+
+function init(){
+    imgClone();     // 이미지 복사 바로 실행시키기
+    createDot();    // 닷 버튼 생성시키기
+    // autoPlay();     // 자동플레이
+}
+init();
+
+
+
+// 자동플레이 함수
+function autoPlay(){
+    sliderTimer = setInterval(() =&gt; {
+        let intervalNum = currentIndex + 1; //매개변수 값
+        gotoSlider(intervalNum);
+    }, interval);
+}
+
+function stopPlay(){
+    clearInterval(sliderTimer);
+}
+
+// 이미지 복사 함수
+function imgClone(){
+    sliderInner.appendChild(cloneFirst);
+    sliderInner.insertBefore(cloneLast, sliderFirst);
+}
+
+// 닷 버튼 생성 함수
+function createDot(){
+    for(let i=0; i&lt;sliderLength; i++){
+        dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;";
+    }
+    dotIndex += "&lt;a href='#' class='play show'&gt;&lt;/a&gt;";
+    dotIndex += "&lt;a href='#' class='stop'&gt;&lt;/a&gt;";
+
+    sliderDot.innerHTML = dotIndex;
+    sliderDot.firstChild.classList.add("active");
+
+    //닷 버튼 움직이기
+    // sliderDot.forEach((e, i) =&gt; {cu
+    //     if(e.classList.){}
+    // });
+    const dotActive = document.querySelectorAll(".slider__dot .dot");
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=&gt;{
+        dot.addEventListener("click", ()=&gt;{
+            dotActive.forEach(el =&gt; el.classList.remove("active"));
+            dotActive[index].classList.add("active");
+            gotoSlider(index);
+        });
+    });
+}
+
+
+
+// 슬라이드 함수
+function gotoSlider(index){
+    sliderInner.classList.add("transition");
+    let posInitial = sliderInner.offsetLeft; // -800px
+
+    // if(direction == -1){
+    //     // sliderInner.style.left = "800px"; //왼쪽으로 800만큼 움직이기
+    //     //부모박스 offsetLeft값을 구하여 더하는 이유는? sliderWidth는 슬라이더 하나만의 가로값이기 때문에 이동시 늘어나거나 줄어드는 값을 구할 수 없다 때문에 그 슬라이더를 감싸는 부모박스의 가로값을 구하여 늘어나는 값 만큼 길이를 더하여 추가시킨 것 이다.
+    //     sliderInner.style.left = (posInital + sliderWidth) + "px"; //왼쪽으로 슬라이더 가로값만큼 움직이기. 슬라이더의 부모박스의 왼쪽값을 더한 이유는?
+    //     currentIndex --;
+
+    // }else if(direction == 1){
+
+    //     // sliderInner.style.left = "-800px";                
+    //     sliderInner.style.left = (posInital - sliderWidth) + "px";               
+    //     currentIndex ++;
+    // }
+    
+    // 위 식을 간편하게 작업
+    sliderInner.style.left = -sliderWidth * (index + 1) + "px";
+
+    currentIndex = index;
+}
+
+// 순간이동 함수
+function checkIndex(){
+    //슬라이드가 끝나면 transition 클래스를 다시 지워서 transition효과가 나오지 않도록 하고 이미지 순간이동 시키기
+    sliderInner.classList.remove("transition"); 
+
+    if(currentIndex == sliderLength){
+        sliderInner.style.left = -(1 * sliderWidth) + "px";
+        currentIndex = 0;
+    }
+
+    if(currentIndex == -1){
+        sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+        currentIndex = sliderLength - 1;
+    }
+}
+
+
+
+// 실행문
+sliderBtnPrev.addEventListener("click" ,() =&gt; {
+    let prevIndex = currentIndex - 1;
+    gotoSlider(prevIndex); //매개변수로 전달
+});
+sliderBtnNext.addEventListener("click" ,() =&gt; {
+    let nextIndex = currentIndex + 1;
+    gotoSlider(nextIndex); //매개변수로 전달
+});
+document.querySelector(".slider__dot .play").addEventListener("click", () =&gt; {
+    document.querySelector(".play").classList.remove("show");
+    document.querySelector(".stop").classList.add("show");
+    autoPlay(); 
+});
+document.querySelector(".slider__dot .stop").addEventListener("click", () =&gt; {
+    document.querySelector(".stop").classList.remove("show");
+    document.querySelector(".play").classList.add("show");
+    stopPlay(); 
+});
+sliderInner.addEventListener("transitionend", checkIndex);
+</code></pre>
+                    </div>
+
+                <hr>
+                
+                <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
+                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/sliderEffect07.html" frameborder="0"></iframe>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/sliderEffect07.html">원본 소스 보기</a>
+                </div>
+
+                <div class="t_link">
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/sliderEffect07.html">원본 페이지 보기</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

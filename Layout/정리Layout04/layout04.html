@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃01 float</title>
+    <style> 
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #header {
+        height: 100px;
+        background-color: #E0F2F1;
+    }
+    #nav {
+        height: 300px;
+        background-color: #80CBC4;
+    }
+    #section {
+        height: 580px;
+        background-color: #26A69A;
+    }
+    #footer {
+        height: 100px;
+        background-color: #00897B;
+    }
+    /* .header_container {
+        width: 1200px;
+        height: 100px;
+        background-color: #B2DFDB;
+        margin: 0 auto;
+    }
+    .nav_container {
+        width: 1200px;
+        height: 300px;
+        background-color: #4DB6AC;
+        margin: 0 auto;
+    }
+    .section_container {
+        width: 1200px;
+        height: 580px;
+        background-color: #009688;
+        margin: 0 auto;
+    }
+    .footer_container {
+        width: 1200px;
+        height: 100px;
+        background-color: #00796B;
+        margin: 0 auto;
+    } 
+    
+    위의 반복적인 속성들을 하나하나 주기 보단 부모 컨테이너를 만들어서 반복되는 속성을 한 번에 주는 것이 좋다.
+    그 외 세부적인 자식 요소들은 부모 컨테이너 밑으로 오게 하는 것이 좋다. 
+    (각 섹션에 해당하는 부모 컨테이너도 좋지만 구조가 단순하다면 각 섹션의 부모 container를 따로 주지 않고
+    밑과 같이 그냥 container로 동일하게 해주는 것이 효율적.)
+
+     */
+
+    .containar {
+        width: 1200px;
+        height: inherit;
+        margin: 0 auto;
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    /* 아이디 클래스
+    # / .
+    id _ # : 한번 
+    class _ . : 두개 이상 (중복 가능)
+    전체적인 틀, 스크립트 ----> id 많이 사용 (유연성이 떨어짐 수정 불편)
+    세부적인 영역, 반복적인 것 ----> class 많이 사용 (유연성 높음 수정 편함)
+    */
+
+    @media (max-width:1220px){
+        .containar {
+            width: 96%;
+        }
+    }
+    @media (max-width:768px){
+        .containar {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id = header>
+            <div class="containar"></div>
+        </div>
+        <div id = nav>
+            <div class="containar"></div>
+        </div>
+        <div id =section>
+            <div class="containar"></div>
+        </div>
+        <div id =footer>
+            <div class="containar"></div>
+        </div>
+    </div>
+</body>
+</html>

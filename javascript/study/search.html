@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : indexOf()</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="search02.html">search02</a></li>
+                <li><a href="search03.html">search03</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">indexOf()를 통해 검색 사이트 제작하기</h2>
+            <p class="t_desc2">
+               지난 시간에는 indexOf()에 대해 알아보았습니다. 이번 시간에는 심화과정으로 문자열 메서드 중 하나인 indexOf() 메서드를 통해 검색 사이트를 제작해볼까요?!<br>
+               먼저 <strong>indexOf()</strong> 메서드에 대해 짧게 알아보고 사이트 실습에 들어가보겠습니다!
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. indexOf()</h3>
+                <p class="t_desc">
+                    <strong>indexOf()</strong> 메서드는 문자열에서 <i>특정 문자의 위치(index)</i>를 찾은 후 숫자로 반환합니다.
+                </p>
+                <h3 class="t_tit3">✏️코드 보기</h3>
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference"
+            
+const currentStr1 = str1.indexOf("javascript"); // 0
+const currentStr2 = str1.indexOf("reference");  // 11 (11번째 자리 : 위치 값 출력)
+const currentStr3 = str1.indexOf("j");          // 0
+const currentStr4 = str1.indexOf("a");          // 1 (중복일 때 가장 처음 것만 출력)
+const currentStr5 = str1.indexOf("v");          // 2
+const currentStr6 = str1.indexOf("jquery");     // -1
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample01 -->
+
+            <hr>
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. HTML : 구조 짜기 </h3>
+                <p class="t_desc2">
+                    <strong>! point !</strong> list 태그와 data-name 속성을 이용하여 데이터 이름을 정해보자!<br>
+                </p>
+                <h3 class="t_tit3">✏️코드 보기</h3>
+                <div class="t_code">
+<pre><code class="language-html">&lt;div class="search__wrap"&gt;
+    &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
+    &lt;h1&gt;HTML 태그 검색하기&lt;/h1&gt;
+    &lt;div class="search__box"&gt;
+        &lt;label for="search"&gt;검색하기&lt;/label&gt;
+        &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요!"&gt;
+    &lt;/div&gt;
+    &lt;div class="search__list"&gt;
+        &lt;div class="html"&gt;
+            &lt;ul&gt;
+            &lt;li data-name="accent-color">&lt;strong>accent-color&lt;/strong> : accent-color는 요소의 강조 색상을 지정합니다.&lt;/li>
+            &lt;li data-name="align-content">&lt;strong>align-content&lt;/strong> : align-content는 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다.&lt;/li>
+            &lt;li data-name="align-items">&lt;strong>align-items&lt;/strong> : align-item은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.&lt;/li>
+            &lt;li data-name="align-self">&lt;strong>align-self&lt;/strong> : align-self는 개별적 콘텐츠 아이템의 정렬 상태를 설정합니다.&lt;/li>
+            &lt;li data-name="allr">&lt;strong>all&lt;/strong> : all은 요소의 모든 속성을 초기화합니다. 또는 상속을 설정합니다.&lt;/li>
+            &lt;li data-name="animation">&lt;strong>animation&lt;/strong> : animation은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.&lt;/li>
+            &lt;li data-name="animation-delay">&lt;strong>animation-delay&lt;/strong> : animation-delay는 애니메이션 지연 시간을 설정합니다.&lt;/li>
+            &lt;li data-name="animation-direction">&lt;strong>animation-direction&lt;/strong> : animation-direction는 애니메이션 움직임 방향을 설정합니다.&lt;/li>
+            &lt;li data-name="animation-duration">&lt;strong>animation-duration&lt;/strong> : animation-duration는 애니메이션 움직임 시간을 설정합니다.&lt;/li>
+            &lt;li data-name="animation-fill-mode">&lt;strong>animation-fill-mode&lt;/strong> : animation-fill-mode는 애니메이션이 끝난 후의 상태를 설정합니다.&lt;/li>
+            &lt;li data-name="animation-iteration-count">&lt;strong>animation-iteration-count&lt;/strong> : animation-iteration-count는 애니메이션의 반복 횟수를 설정합니다.&lt;/li>
+            &lt;li data-name="animation-name">&lt;strong>animation-name&lt;/strong> : animation-name은 애니메이션 Keyframe 이름을 설정합니다.&lt;/li>
+            &lt;li data-name="animation-play-state">&lt;strong>animation-play-state&lt;/strong> : animation-play-state는 애니메이션의 진행 상태를 설정합니다.&lt;/li>
+            &lt;li data-name="animation-timeline">&lt;strong>animation-timeline&lt;/strong> : animation-timeline은 요소에 적용할 스크롤 애니메이션을 설명하는 하나 이상의 @scroll-timeline at-rules 이름을 지정합니다.&lt;/li>
+            &lt;li data-name="animation-timing-function">&lt;strong>animation-timing-function&lt;/strong> : animation-timing-function은 애니메이션 움직임의 속도를 설정합니다.&lt;/li>
+            &lt;li data-name="appearance">&lt;strong>appearance&lt;/strong> : appearance는 webit 계열의 브라우저의 type="search" 필드의 둥근 테두리 값이나 reset 효과를 나타내는 버튼을 삭제하는 데 사용할 수 있습니다.&lt;/li>
+            &lt;li data-name="aspect-ratio">&lt;strong>aspect-ratio&lt;/strong> : aspect-ratio는 요소의 크기를 비율대로 조정할 수 있게 합니다.&lt;/li>
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample02 -->
+
+            <hr>
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">#3. CSS : 스타일주기 </h3>
+                <p class="t_desc">
+                    마크업을 토대로 스타일 속성을 설정해보자! <br>
+                    - 스타일 속성은 정해진 것이 아니니 실습하실 분들은 직접 속성을 알아보고 스타일을 설정하는 것도 좋은 방법입니다!
+                </p>
+                <h3 class="t_tit3">✏️속성 보기</h3>
+                <div class="t_code">
+<pre><code class="language-css">/* font color */
+:root {
+    --htmlColor : #223547;
+    --cssColor : #472237;
+    --javascriptColor : #624313;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NexonLv1Gothic';
+    color: var(--htmlColor);
+}
+*, *:before, *:after {
+    box-sizing:border-box;
+}
+a {
+    color: var(--htmlColor);
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+/* header */
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    display: inline;
+    position: relative;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: 'NexonLv1Gothic';
+}
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;   
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #F1F3F6;
+    padding: 30px;
+    text-align: center;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 {
+    font-family: 'Tmon';
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+.search__box {
+    margin-bottom: 40px;
+}
+/* ir효과 */
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.hide {
+    display: none;
+}
+
+/* 모바일 */
+@media (max-width: 600px){
+    .search__wrap {
+        padding: 20px;
+    }
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+        font-size: 44px;
+    }
+    .search__box input {
+        font-size: 16px;
+        padding: 12px 30px;
+    }
+}
+
+/* footer */
+#footer {
+    text-align: center;
+}
+#footer a {
+    color: #000;
+    font-family: 'NexonLv1Gothic';
+    padding-bottom: 50px;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+</code></pre>
+                </div>
+            </div>
+            <!-- //sample03 -->
+
+            <hr>
+
+            <div id="sample04" class="sample">
+                <h3 class="t_tit2">#4. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    <i>indexOf()와 조건문</i>을 통해 스크립트를 완성해보자! <br>
+                    코드의 주석과 함께 스크립트를 이해해보도록 합니다:)
+                </p>
+                <h3 class="t_tit3">✏️스크립트 보기</h3>
+                <div class="t_code">
+<pre><code class="language-js">//선택자
+const searchBox = document.querySelector(".search__box input");           //검색 영역
+const searchList = document.querySelectorAll(".search__list ul li");     //목록 리스트
+const searchInfo = document.querySelector(".search__info .num");        //갯수
+
+//전체 갯수 구하기
+searchInfo.textContent = searchList.length;
+
+//검색 영역
+searchBox.addEventListener("keyup", () => {
+    const searcWord = searchBox.value; //사용자가 입력한 키워드
+
+    searchList.forEach(el => {
+        const cssName = el.dataset.name;
+
+
+        //0이 되었을 때 false가 된 값을 보이게 한다. keyup을 했기 때문에 한 글자만 작성해도 실행.
+        if(cssName.indexOf(searcWord)){
+            el.classList.add("hide");      //검색한 단어 외의 단어 숨김
+        } else {
+            el.classList.remove("hide");   //검색한 단어를 보이게 함 : indexOf()값이 0(=false)이 되는 값만 hide를 지워준다.
+        }
+    });
+});
+</code></pre>
+                </div>
+                <p class="t_desc2">
+                    <strong>! point !</strong> indexOf()값이 <i>0(=false)</i>이 되는 것만 hide를 지워준다.
+                </p>
+            </div>
+            <!-- //sample04 -->
+
+            <hr>
+
+            <h3 class="t_tit2">#4. 결과 </h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect01" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect01.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect01.html">원본 페이지 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

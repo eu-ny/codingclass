@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트 : 슬라이드 형식</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Danjunghae/Cafe24Danjunghae.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>객관식 확인하기 : 슬라이드 형식</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <!-- <span class="number"></span>
+                    <div class="ask"></div> -->
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">오답입니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <!-- <label for="select1"> 
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice"></span>
+                        </label> -->
+                    </div>
+
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        //문제정보
+        const quizInfo = [
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "1",
+                    answerAsk : "웹 디자인에 대한 설명으로 거리가 먼 것은?",
+                    answerChoice : [
+                        "웹 페이지를 디자인하고 제작하는 것을 의미한다.",
+                        "웹 디자인은 개인용 홈페이지 이외에 기업용 등 다양하다.",
+                        "웹 디자인은 Web과 Design이라는 두 가지 개념이 결합된 것이다.",
+                        "기업, 단체, 행사의 특징과 성격에 맞는 시각적 상징물을 말한다.",
+                    ],
+                    answerResult : "웹 디자인은 Web과 Design이라는 두 가지 개념이 결합된 것이다.",
+                    answerEx : "기업을 상징하는 것은 CI이다.",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "2",
+                    answerAsk : "디자인의 심미성에 대한 설명으로 맞는 것은?",
+                    answerChoice : [
+                        "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+                        "감성적인 부분으로 모든 사람에게 동일하게 나타난다.",
+                        "합리적이며 객관적인 미적 활동이다.",
+                        "국가, 민족, 관습, 시대와 관계없이 동일하게 나타난다.",
+                ],
+                    answerResult : "아름다움을 느끼는 미적 의식이며 주관적일 수 있다.",
+                    answerEx : "심미성 : 형태와 색채조화를 이루어 '아름다움'의성징을 만들어내는 것 대중형의 조형성이라고도 말하며, 시대적인 미의 기준, 사회적인 개성에 따라 변화된다.",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "3",
+                    answerAsk : "동시 대비에 해당하지 않는 것은?",
+                    answerChoice : [
+                        "색상 대비",
+                        "명도 대비",
+                        "보색 대비",
+                        "한란 대비",
+                    ],
+                    answerResult : "한란 대비",
+                    answerEx : "서로 가까이 놓여진 두개 이상의 색을 동시에 볼 때 일어나는 색채대비를 말한다. 동시대비는 색채의 3속성들의 차이에 따른 지각변화에 따라서 명도대비, 색상대비, 채도대비, 보색대비로 구분된다. 심리에 관한 색용어. 서로 반대되거나 대단히 틀리는 감각, 감정 등이 동시에 비교하면, 그 한쪽 또는 양쪽의 특성이 한층 명백해 지는 일. 예를들면, 똑같은 회색의 원(圓)을 흰종이와 검은 종이 위에 놓고 볼 때 검은종이 위에서는 희게 보이고, 흰종이 위에서는 검게 보이는 것 등이 동시적 대비이다.",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "4",
+                    answerAsk : "계통 생명이라고도 하며 색상, 명도, 채도를 표시하는 색명은?",
+                    answerChoice : [
+                        "특정색명",
+                        "관용색명",
+                        "일반색명",
+                        "근대색명",
+                    ],
+                    answerResult : "근대색명",
+                    answerEx : "기본색명 - 표색계에 의해 규정하는 방법 / 일반색명- 감성적으로 느껴진 느낌을 수식어로 덧붙여 사용 ex)빨강 Red, 'R'처럼 표색계를 이용하여 기호나 이름으로 표현 '어두운 파랑','연보라'명도, 채도에 대한 수식어로 표현 / 관용색명 - 관습적이거나 연상적인 느낌으로 이름을 붙이는 방법 ex)'귤색', '밤색', '무지개색','코발트 블루'와 같이 고유한 이름을 이용하여 표현",
+                },
+                {
+                    answerType : "웹디자인기능사 2015년 01회",
+                    answerNum : "5",
+                    answerAsk : "색채조화의 공통원리에 대한 설명으로 틀린 것은?",
+                    answerChoice : [
+                        "질서의 원리는 효과적인 반응을 일으키는 질서 있는 계획에 따라 선택된 색채들에서 생긴다.",
+                        "비모호성의 원리는 두 색 이상의 배색에 있어서 모호함이 없는 명료한 배색에서만 얻어진다.",
+                        "동류의 원리는 가장 가까운 색채끼리의 배색은 보는 사람에게 친근감을 주며 조화를 느끼게 한다.",
+                        "유사의 원리는 색의 3속성의 차이가 큰 색상의 배색이 더욱 조화롭게 나타난다.",
+                    ],
+                    answerResult : "유사의 원리는 색의 3속성의 차이가 큰 색상의 배색이 더욱 조화롭게 나타난다.",
+                    answerEx : "유사조화: 두 가지 이상의 색이 서로 속성이 같거나 비슷하여 잘 어울리는 것을 말한다.",
+                }
+            ];
+
+            const quizType = document.querySelector(".quiz__type");                 //퀴즈 타입
+            const quizQuestion = document.querySelector(".quiz__question");         //문제 번호와 질문을 quizQuestion 상수에 저장
+            const quizSelects = document.querySelector(".quiz__selects");           //객관식 보기
+            const quizResult = document.querySelector(".quiz__answer .result");     //해설
+        
+            let quizCount = 0;
+
+            //문제출력
+            const updateQuiz = () => {
+                const questionTag = `
+                    <span class="number">${quizInfo[0].answerNum}</span>
+                    <div class="ask">${quizInfo[0].answerAsk}</div>
+                `;
+                const choiceTag = `
+                    <label for="select1"> 
+                        <input type="radio" id="select1" class="select" name="select" value="1">
+                        <span class="choice">${quizInfo[0].answerChoice[0]}</span>
+                    </label>
+
+                    <label for="select2">
+                        <input type="radio" id="select2" class="select" name="select" value="2">
+                        <span class="choice">${quizInfo[0].answerChoice[1]}</span>
+                    </label>
+                    
+                    <label for="select3">
+                        <input type="radio" id="select3" class="select" name="select" value="3">
+                        <span class="choice">${quizInfo[0].answerChoice[2]}</span>
+                    </label>
+                    
+                    <label for="select4">
+                        <input type="radio" id="select4" class="select" name="select" value="4">
+                        <span class="choice">${quizInfo[0].answerChoice[3]}</span>
+                    </label>
+                `;
+
+
+                //문제 출력
+                quizType.innerHTML = quizInfo[0].answerType;    //퀴즈 문항
+                quizQuestion.innerHTML = questionTag;           //quizQuestion에 questionTag에 저장된 문제 번호와 질문을 innerHTML을 통해 넣어준다.
+                quizSelects.innerHTML = choiceTag;              //객관식 문항
+                quizResult.innerHTML = quizInfo[0].answerEx;    //해설
+
+                //함수 유형 : 함수와 변수를 이용한 형태로 작업. js03
+
+
+
+            }
+            updateQuiz();
+
+    </script>
+</body>
+
+</html>

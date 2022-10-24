@@ -1,0 +1,237 @@
+/* music */
+.music__wrap {
+    display: none;
+}
+.music__wrap .music_inner {
+    width: 450px;
+    background: #000;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    padding: 0 10px 10px 10px;
+}
+
+.music__wrap .music__header {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #f5f5f5;
+}
+
+.music__wrap .music__header h2 {
+    font-family: 'YdestreetB';
+    font-size: 14px;
+}
+
+.music__wrap .music__contents {
+    background: #b0b0b0;
+    width: 100%;
+}
+
+.music__view {
+    display: flex;
+    padding: 20px;
+}
+
+.music__view .img {
+    width: 30%;
+}
+
+.music__view .img img {
+    width: 100%;
+}
+
+.music__view .title {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.music__view .title h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.music__view .title p {
+    color: #323232;
+}
+
+.music__control {
+    width: 100%;
+    height: 100px;
+    background: #b0b0b0;
+    padding: 0 20px 20px 20px;
+}
+
+.music__control .progress {
+    width: 100%;
+    height: 6px;
+    background: #000;
+    border-radius: 5px;
+}
+
+.music__control .progress .bar {
+    width: 0;
+    height: inherit; /* 높이는 상속받기 */
+    background: #c405e2;
+    border-radius: 5px;
+}
+
+.music__control .progress .timer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3px;
+}
+
+.music__control .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.music__control .control .repeat {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -205px;
+
+}
+.music__control .control .repeat_one {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -240px;
+}
+.music__control .control .shuffle {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -274px;
+}
+.music__control .control .prev {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -70px;
+}
+.music__control .control .play {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 4px;
+}
+.music__control .control .stop {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -136px;
+}
+.music__control .control .next {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -35px;
+}
+.music__control .control .list {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -167px;
+}
+.music__control .control .sound {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -107px;
+}
+.music__control .control .sound #player_sound.open {
+    display: none;
+}
+
+
+.music__footer {
+    background: #b0b0b0;
+}
+.music__list {
+    padding: 0 20px 20px 20px;
+    display: none;
+}
+.music__list h3 {
+    font-family: 'YdestreetB';
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 20px;
+}
+.music__list h3 .list {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 7px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    background-position: -119px -24px;
+}
+.music__list ul {
+    max-height: 180px;
+    overflow-y: scroll;
+}
+.music__list li {
+    border-bottom: 1px dashed #888;
+    list-style: none;
+    position: relative;
+    padding: 10px 0 5px;
+}
+.music__list li.playing {
+    color: #c405e2;
+}
+.music__list strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+.music__list em {
+   font-style: normal;
+}
+.music__list li span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+.music__list .close-btn {
+    display: inline-block;
+    float: right;
+    margin-top: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-image: url(../img/game_music_close-btn.svg);
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+}
