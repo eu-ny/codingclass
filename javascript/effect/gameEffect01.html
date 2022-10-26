@@ -46,9 +46,9 @@
                 <img src="../assets/img/game_folderIcon05.png" alt="icon">
                 <span>#</span>
             </div>
-            <div class="icon icon6">
+            <div class="icon icon6 modal__btn">
                 <img src="../assets/img/game_folderIcon06.png" alt="icon">
-                <span>#</span>
+                <span>소스보기</span>
             </div>
         </div>
     </main>
@@ -325,6 +325,14 @@
     </div>
     <!-- //searchGame -->
 
+    <!-- mobal -->
+    <div class="Game__source">
+        <div class="Game__source__close">x</div>
+        <iframe src="https://github1s.com/eu-ny/codingclass/blob/main/javascript/effect/gameEffect01.html" frameborder="0"></iframe>
+    </div>
+
+    <!-- //mobal -->
+
 
    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -436,6 +444,10 @@
         $(".searchGame").draggable();
         // $(searchResultWrap).draggable();
 
+        $(".Game__source").draggable();
+
+
+        
         // 폴더 클릭
         document.querySelector(".icon1").addEventListener("click", () => {
                 document.querySelector(".music__wrap").style.display = "block";
@@ -450,6 +462,13 @@
         });
         document.querySelector(".search__wrap h1").addEventListener("click", () => {
             document.querySelector(".searchGame").style.display = "none";
+        });
+
+        document.querySelector(".icon6").addEventListener("click", () => {
+            document.querySelector(".Game__source").style.display = "block";
+        });
+        document.querySelector(".Game__source__close").addEventListener("click", () => {
+            document.querySelector(".Game__source").style.display = "none";
         });
 
 

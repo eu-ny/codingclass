@@ -123,3 +123,34 @@ body {
 /* 기기 별 푸터 스타일 */
 .mac #footer {}
 .window #footer {}
+
+/* Game__source__close */
+.Game__source {
+    display: none;
+    background: #000;
+    width: 900px;
+    height: 700px;
+    padding: 50px 20px 30px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    position: relative;
+}
+
+.Game__source iframe {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.Game__source__close {
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    z-index: 100;
+}
