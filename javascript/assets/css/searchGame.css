@@ -7,15 +7,17 @@
 }
 
 .search__wrap {
-    max-width: 1000px;
-    height: 600px;
-    overflow-y: scroll;
+    max-width: 800px;
+    height: 600px;    
     border: 3px solid var(--htmlColor);
     border-radius: 20px;
     background-color: #f1f3f6;
     position: relative;
     padding: 30px;
     text-align: center;
+    overflow-y: scroll;
+    top: 80px;
+    left: 80px;
 }
 
 .search__wrap > span {
@@ -266,16 +268,6 @@
     display: none;
 }
 
-/* .search-close {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    background: url(../img/effect_icon08.svg) no-repeat;
-    width: 24px;
-    height: 24px;
-    background-size: 24px;
-} */
-
 .search__result {
     position: fixed;
     left: 1vw;
@@ -395,29 +387,16 @@
     text-decoration: underline;
 }
 
+.searchGame__close {
+    font-size: 18px;
+    color: var(--htmlColor);
+    display: inline-block;
+}
+
 /* modal__wrap */
 .modal__wrap {
     text-align: left;
     font-family: "SCoreDream";
-}
-
-.modal__btn {
-    color: white;
-    background-color: #1f224a;
-    border-radius: 50px;
-    display: inline-block;
-    padding: 10px 20px;
-    position: fixed;
-    right: 20px;
-    bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    font-family: "SCoreDream";
-}
-
-.modal__btn:hover {
-    background-color: white;
-    color: #1f224a;
 }
 
 .modal__cont {

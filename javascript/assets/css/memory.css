@@ -1,0 +1,170 @@
+.memory__game {
+    display: none;
+}
+.memory__game.open {
+    display: block;
+}
+.memory__wrap {
+    display: none;
+}
+
+.memory__inner {
+    width: 550px;
+    height: 500px;
+    border-radius: 10px;
+    border: 3px solid rgb(244 224 255);
+    background: rgb(0, 0, 0);
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    animation: flicker 0.5s infinite alternate;
+    display: table;
+}
+.memory__header {
+    position: relative;
+}
+
+.memory__header > h2 {
+    font-family: 'YdestreetB';
+    margin-top: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.memory__close {
+    position: absolute;
+    top: -23px;
+    right: 3px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+    color: #fff;
+}
+
+.memory__card {
+    padding: 30px;
+}
+.memory__card .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.memory__card .cards li {
+    list-style: none;
+    letter-spacing: normal;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    position: relative;
+}
+
+.memory__card .cards li .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgb(151, 78, 199);
+    backface-visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    padding: 12%;
+    /* 이벤트 버블링 막기 - li만 눌려야 하는데 view까지 눌리는 현상 막기 (자식요소에게 이벤트가 가는 것을 막는 것) */
+    user-select: none;
+    pointer-events: none;
+}
+.memory__card .cards li .front {
+}
+.memory__card .cards li.flip .front {
+    transform: rotateY(180deg);
+}
+
+.memory__card .cards li .back {
+    transform: rotateY(-180deg);
+}
+.memory__card .cards li.flip .back {
+    transform: rotateY(0deg);
+}
+.cards li .view.front img {
+    width: 100%;
+}
+.cards li .view.back img {
+    width: 100%;
+}
+
+.memory__card .cards li.shakeX {
+    animation: shakeX 1s 1;
+}
+.memory__card .cards li.shakeY {
+    animation: shakeY 1s 1;
+}
+
+
+@keyframes flicker {
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        box-shadow:
+            0 0 0.5rem #fff,
+            inset 0 0 0.1rem #fff,
+            0 0 3rem 2px rgb(140 115 255),
+            inset 0 0 0rem 3px rgb(140 115 255),
+            0 0 0rem 3px rgb(140 115 255),
+            inset -4px -5px 3rem 2px rgb(140 115 255)
+    }
+}
+
+@keyframes shakeX {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+
+  @keyframes shakeY {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(0, 10px, 0);
+      transform: translate3d(0, 10px, 0);
+    }
+  }
