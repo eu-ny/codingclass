@@ -31,7 +31,10 @@ function flipCard(e){
 
         // 두개의 카드 정보 가져오기 (카드 원과 투의 정보 순서대로 들어가게 하기)
         if(!cardOne){
-            return cardOne = clickedCard; // 카드원이 아닌 경우 카드 투를 출력 이때 카드원 정보도 함께 출력시키기
+            return cardOne = clickedCard; 
+            // 카드원이 아닌 경우 카드 투를 출력 이때 카드원 정보도 함께 출력시키기
+            // cardOne = clickedCard;
+            // return;
         }
         cardTwo = clickedCard
         disableDeck = true;
@@ -41,8 +44,8 @@ function flipCard(e){
 
         matchCards(cardOneImg, cardTwoImg);
 
-        console.log(cardOneImg);
-        console.log(cardTwoImg);
+        // console.log(cardOneImg);
+        // console.log(cardTwoImg);
     }
 }
 

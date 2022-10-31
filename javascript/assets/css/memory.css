@@ -6,6 +6,7 @@
 }
 .memory__wrap {
     display: none;
+    position: absolute;
 }
 
 .memory__inner {
@@ -14,7 +15,6 @@
     border-radius: 10px;
     border: 3px solid rgb(244 224 255);
     background: rgb(0, 0, 0);
-    position: absolute;
     left: 400px;
     top: 100px;
     animation: flicker 0.5s infinite alternate;
