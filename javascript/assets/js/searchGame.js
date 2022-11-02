@@ -424,7 +424,8 @@
         // 시간 설정(1초에 한번씩 줄어듦)
         timeInterval = setInterval(reduceTime, 1000);
 
-        // 속성 리스트 없애기
+        // 뮤직플레이어 정지
+        pauseMusic()
 
         // 음악 추가
         music();
@@ -532,6 +533,31 @@
     
         //시간정지
         clearInterval(timeInterval);
+    }
+
+    // 창을 닫을 때
+    function closeQuiz(){
+        // 시작 버튼 만들기
+        searchStart.style.display = "block";
+        searchStart.style.pointerEvents = "none";
+
+        // 음악 끄기
+        searchAudio.pause();
+
+        clearInterval(timeInterval);
+        timeReamining = 121;  // 시간
+        searchTime.innerText = "";
+        reduceTime()
+
+        searchStart.style.pointerEvents = "all";
+        searchList.style.display = "none";
+        
+        //다시 시작할 때 기존 데이터 초기화
+        searchAnswers.innerHTML= "";
+        searchMissAnswers.innerHTML= "";
+
+        score = 0;
+        searchScoreNow.innerText = 0;
     }
 
     //다시 시작하기 - 리셋

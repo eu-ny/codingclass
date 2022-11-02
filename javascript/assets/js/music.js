@@ -237,7 +237,7 @@ musicNextBtn.addEventListener("click", () => {
 });
 
 //뮤직 리스트 버튼
-musicPlay.addEventListener("click", () => {
+musicList.addEventListener("click", () => {
     musicList.classList.add("show");
 });
 

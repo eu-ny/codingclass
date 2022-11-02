@@ -121,8 +121,8 @@ body {
 }
 
 /* 기기 별 푸터 스타일 */
-.mac #footer {}
-.window #footer {}
+/* .mac #footer {}
+.window #footer {} */
 
 /* Game__source__close */
 .Game__source {
