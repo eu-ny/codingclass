@@ -8,6 +8,6 @@
     if(mysqli_connect_errno()){
         echo "database connect false";
     } else {
-        // echo "database connect true";
+        echo "database connect true";
     }
 ?>
