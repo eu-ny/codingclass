@@ -103,12 +103,12 @@ body {
     text-align: center;
     display: none;
 }
-.subContents > div {
+/* .subContents > div {
     display: none;
 }
 .subContents > div.active {
     display: block;
-}
+} */
 
 .main__title h1 {
     font-family: var(--fontTitle);

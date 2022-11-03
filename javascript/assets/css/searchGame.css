@@ -4,12 +4,15 @@
 .searchGame {
     display: none;
     z-index: 20;
+    top: 100px;
+    left: 100px;
 }
 
 .search__wrap {
-    max-width: 1000px;
-    height: 600px;
     overflow-y: scroll;
+    max-width: 900px;
+    height: 600px;
+    overflow: hidden;
     border: 3px solid var(--htmlColor);
     border-radius: 20px;
     background-color: #f1f3f6;
@@ -17,6 +20,8 @@
     padding: 30px;
     text-align: center;
 }
+
+.search__inner {}
 
 .search__wrap > span {
     font-size: 20px;
@@ -277,9 +282,9 @@
 } */
 
 .search__result {
-    position: fixed;
-    left: 1vw;
-    top: 1vw;
+    position: absolute;
+    left: 17vw;
+    top: 5vw;
     width: 500px;
     height: 500px;
     border-radius: 50%;

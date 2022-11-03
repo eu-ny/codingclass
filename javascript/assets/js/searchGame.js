@@ -533,31 +533,33 @@
     
         //시간정지
         clearInterval(timeInterval);
+        
     }
 
     // 창을 닫을 때
     function closeQuiz(){
-        // 시작 버튼 만들기
         searchStart.style.display = "block";
         searchStart.style.pointerEvents = "none";
-
         // 음악 끄기
         searchAudio.pause();
-
+        //시간정지
         clearInterval(timeInterval);
-        timeReamining = 121;  // 시간
-        searchTime.innerText = "";
-        reduceTime()
 
-        searchStart.style.pointerEvents = "all";
-        searchList.style.display = "none";
-        
-        //다시 시작할 때 기존 데이터 초기화
-        searchAnswers.innerHTML= "";
-        searchMissAnswers.innerHTML= "";
+        setTimeout(() => {
+            searchResultWrap.classList.remove("show");
 
-        score = 0;
-        searchScoreNow.innerText = 0;
+            searchStart.style.pointerEvents = "all";
+            searchList.style.display = "none";
+            
+            //다시 시작할 때 기존 데이터 초기화
+            searchAnswers.innerHTML= "";
+            searchMissAnswers.innerHTML= "";
+                
+            searchStart.addEventListener("click", startQuiz);
+            timeReamining = 5;  // 시간
+            score = 0;
+            searchScoreNow.innerText = 0;
+        }, 1000)
     }
 
     //다시 시작하기 - 리셋

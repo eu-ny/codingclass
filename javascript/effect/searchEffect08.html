@@ -73,7 +73,7 @@
             <div class="search__list"></div>
             <div class="search__result">
                 <div class="svg__wrap">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="448px" height="386px" viewBox="0 0 448 386">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="400px" height="380px" viewBox="0 0 448 386">
                         <g filter="none" transform="translate(218.184,198.765) translate(-217.528,-187.235)" style="animation: 3.9s linear infinite both bee-a0_ft;">
                             <g id="bee-Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(217.528,187.235) translate(-218.184,-198.765)">
                             <g id="bee-Artboard" transform="translate(218.184,198.765) translate(-1258.18,-1122.76)">
@@ -2632,7 +2632,7 @@ searchClick.forEach(element =&gt; {
     const searchResultWrap = document.querySelector(".search__result");
     const searchRestart = document.querySelector(".search__result .restart");
 
-    let timeReamining = 120,  // 남은 시간
+    let timeReamining = 10,  // 남은 시간
         timeInterval = "",
         score = 0,      // 점수
         answers = {};   // 새로운 정답
@@ -2782,7 +2782,7 @@ searchClick.forEach(element =&gt; {
 
 
             startQuiz();
-            timeReamining = 120;  // 시간
+            timeReamining = 10;  // 시간
             score = 0;
             searchScoreNow.innerText = 0;
         }, 1000)
