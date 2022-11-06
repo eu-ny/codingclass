@@ -529,7 +529,7 @@
         // 메시지 출력
         searchResultWrap.classList.add("show");
         let point = Math.round(score / cssProperty.length * 100);
-        searchResult.innerHTML = `게임이 종료되었습니다.<br>${cssProperty.length}개 중 ${score}개를 맞혔습니다.<br>점수는 ${point}점입니다.`;
+        searchResult.innerHTML = `( ${cssProperty.length} / ${score} ) ✦ 총 ${point} 점`;
     
         //시간정지
         clearInterval(timeInterval);
@@ -556,7 +556,7 @@
             searchMissAnswers.innerHTML= "";
                 
             searchStart.addEventListener("click", startQuiz);
-            timeReamining = 5;  // 시간
+            timeReamining = 120;  // 시간
             score = 0;
             searchScoreNow.innerText = 0;
         }, 1000)

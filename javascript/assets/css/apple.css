@@ -1,0 +1,41 @@
+.heart {
+    width: 250px;
+    height: 250px;
+    margin-top: 13%;
+}
+.heart__path {
+    -webkit-animation: groove 6s 3000 alternate;
+    animation: groove 6s 3000 alternate;
+    fill: transparent;
+    stroke: #222949;
+    stroke-dasharray: 0;
+    stroke-width: 10px;
+}
+
+@-webkit-keyframes groove {
+    0%,
+    100% {
+        stroke-dasharray: 300;
+    }
+    25%,
+    75% {
+        stroke-dasharray: 100;
+    }
+    50% {
+        stroke-dasharray: 150;
+    }
+}
+
+@keyframes groove {
+    0%,
+    100% {
+        stroke-dasharray: 300;
+    }
+    25%,
+    75% {
+        stroke-dasharray: 100;
+    }
+    50% {
+        stroke-dasharray: 150;
+    }
+}

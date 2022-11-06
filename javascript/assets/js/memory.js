@@ -5,9 +5,13 @@
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = document.querySelectorAll(".memory__card li");
 
+const memory_score = document.querySelector(".memory__score > span");
+
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0;
+
+let matchScore = 100;
 
 let memorySound = [
     "../assets/audio/gameTrue01.mp3",
@@ -18,6 +22,9 @@ let soundMatch = new Audio(memorySound[0]);
 let soundUnMatch = new Audio(memorySound[1]);
 let soundSuccess = new Audio(memorySound[2]);
 console.log(soundMatch)
+
+// function MemoryStart(){}
+
 // 01 카드 뒤집기 이벤트 설정
 function flipCard(e){
     //카드 뒤집기
@@ -82,10 +89,23 @@ function matchCards(img1, img2){
         disableDeck = false;
         }, 1600);
 
+
         setTimeout(() => {
             soundUnMatch.play();
         },600)
-      }
+        
+        matchScore = matchScore - 10;
+
+
+        // if (matchScore == 0) {
+        //     memoryCard.style.pointerEvents = "none";
+        //     GameOverPopup.classList.add("show");
+        //     gameOverH3.innerText = "GAME OVER!";
+        //     gameOverScore.innerHTML = `<span>${matchScore}</span> 점입니다!`;
+        // }
+
+    }
+    memory_score.innerText = matchScore;
 }
 
 //카드 섞기
@@ -93,6 +113,8 @@ function shuffledCard(){
     cardOne = cardTwo = "";
     disableDeck = false;
     matchedCard = 0;
+
+    score.innerText = matchScore;
 
     let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
     let result = arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
@@ -111,11 +133,22 @@ function shuffledCard(){
         let imgTag = card.querySelector(".back img");
         imgTag.src = `../assets/img/memoryCard0${arr[index]}.png`;
     })
+
 }
-shuffledCard();
+// shuffledCard();
 
-
-// 01 카드 클릭 시 뒤집기 이벤트 실행
-memoryCards.forEach((card) => {
+ // 01 카드 클릭 시 뒤집기 이벤트 실행
+ memoryCards.forEach((card) => {
     card.addEventListener("click", flipCard);
-  });
+});
+
+
+const MemoryStartBtn = document.querySelector(".memory__start__btn");
+const MemoryRule = document.querySelector(".memory__rule");
+const MemoryGame = document.querySelector(".memoryGame");
+
+
+MemoryStartBtn.addEventListener("click", () => {
+    MemoryRule.style.display = "none";
+    shuffledCard();
+});

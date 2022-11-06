@@ -7,6 +7,7 @@
         <title>페럴렉스 이펙트</title>
 
         <link rel="stylesheet" href="../assets/css/fonts.css" />
+        <link rel="stylesheet" href="../assets/css/apple.css" />
         <style>
 			* {
 				margin: 0;
@@ -14,7 +15,7 @@
 				box-sizing: border-box;
 				/* font-family: 'SUIT'; */
 				font-family: 'ChosunNm';
-				color: rgb(34, 41, 73);
+				color: #222949;
 			}
 			.fixed {
 				position: fixed;
@@ -48,7 +49,7 @@
 	
 			/* sec1 */
 			.sec1_text1 {
-				font-size: 8vw;
+				font-size: 4vw;
 
 				white-space: nowrap;
 			}
@@ -56,7 +57,7 @@
 				text-align: center;
 			}
 			.sec1_text2 > img {
-				width: 35vw;
+				width: 40vw;
 				margin-top: 20px;
 			}
 			.sec1_text2_line {
@@ -77,7 +78,7 @@
 			}
 			.sec1_text4 {
 				font-weight: 600;
-				font-size: 5vw;
+				font-size: 6vw;
 				padding: 10px;
 			    /* background: rgb(249 205 179); */
 				background: rgb(248 215 179);
@@ -88,17 +89,54 @@
 				/* color: rgb(164 49 0); */
 			}
 			.sec1_text5 {
-				display: flex;
+				/* display: flex;
 				justify-content: space-between;
-				align-items: center;
+				align-items: center; */
+				font-size: 6vw;
+			}
+
+			.sec1_text6 {
 				font-size: 5vw;
 			}
-			.sec1_text5 > em {
+
+			.sec2_text1 {
+				height: 50px;
+				background: #1c1c1c;
+				font-size: 8vw;
+				color: #fff;
+				text-align: center;
+			}
+			.sec2_text2 {
+				width: 100%;
+				background: #1c1c1c;
+			}
+
+			.sec2_text3 {
+
+				font-size: 8vw;
+				color: #fff;
+			}
+			.sec2_text4 {
+				width: 50vw;
+				height: 50vw;
+				font-size: 8vw;
+				color: #fff;
+			}
+
+			.sec2_text4 > img {
+				width: 100%;
+				border-radius: 50%;
+				box-shadow: 0 0 10px #8551ff,
+				0 0 20px #8551ff,
+				0 0 30px #8551ff;
+			}
+
+			/* .sec1_text5 > em {
 				font-family: 'SUIT';
 				font-style: normal;
 				color: #fff;
-			}
-			.sec1_text6 {
+			} */
+			/* .sec1_text6 {
 				width: 45vw;
 			}
 			.sec1_text6 > img {
@@ -115,7 +153,7 @@
 			}
 			.sec1_text9 {
 				font-size: 8vw;
-			}
+			} */
 			/* .sec1_text2 {
 				font-size: 6vw;
 				line-height: 130%;
@@ -155,34 +193,62 @@
                     <div class="sec1_text1 fixed"
 						data-0=" top: 50%; opacity: 1;"
 						data-550=" top: 30%; opacity: 0;">
-						안녕하세요!
+						<svg class="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 612">
+							<path class="heart__path" d="M472.08 81.12c-26.96-27.572-63.022-42.757-101.546-42.757-37.93 0-73.593 14.773-100.421 41.602l-13.846 13.855-13.859-13.859c-26.826-26.826-62.482-41.599-100.401-41.599-37.931 0-73.593 14.773-100.417 41.599-26.82 26.819-41.59 62.478-41.59 100.409s14.77 73.59 41.59 100.409l177.482 177.481c10.253 10.251 23.717 15.377 37.184 15.377 13.464-.001 26.931-5.126 37.181-15.376l176.339-176.323c55.385-55.387 56.419-145.472 2.304-200.818zm-20.897 182.226l-176.338 176.325c-10.251 10.25-26.931 10.25-37.181-.001l-177.483-177.484c-21.854-21.853-33.889-50.909-33.889-81.817s12.035-59.964 33.889-81.818c21.858-21.859 50.918-33.897 81.826-33.897 30.896 0 59.95 12.038 81.809 33.897l13.866 13.866-21.233 21.249c-5.132 5.136-5.128 13.459.007 18.591 2.567 2.565 5.929 3.847 9.292 3.847 3.367 0 6.732-1.286 9.299-3.854l53.658-53.7c21.859-21.859 50.918-33.897 81.826-33.897 31.389 0 60.775 12.376 82.747 34.847 44.096 45.097 43.155 118.597-2.095 163.846zM466.29 174.403c-1.445-23.38-11.35-45.366-27.891-61.909-11.712-11.712-26.245-20.222-42.026-24.615-6.995-1.946-14.242 2.147-16.188 9.142-1.946 6.994 2.147 14.242 9.142 16.188 11.427 3.179 21.967 9.36 30.482 17.875 12.004 12.004 19.192 27.963 20.241 44.938.431 6.971 6.218 12.336 13.109 12.336.272 0 .547-.008.823-.026 7.246-.445 12.756-6.682 12.308-13.929z"></path>
+						</svg>
+					</div>
+                    <div class="sec1_text1 fixed"
+						data-0=" top: 67%; opacity: 1;"
+						data-550=" top: 30%; opacity: 0;">
+						H e l l o !
 					</div>
 					<div class="sec1_text2 fixed"
 						data-500="opacity: 0; top: 70%; transform: translate(-50%, -50%) scale(0);"
-						data-2500="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1);"
-						data-3800="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1);"
+						data-1500="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1);"
+						data-2800="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1);"
+						data-4300="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1);"
 						data-5000="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(0);"
 						>
 						<!-- <div class="sec1_text2_line"></div> -->
 						<img src="../assets/img/Leehaeun.jpg" alt="">
 					</div>
 					<div class="sec1_text3 fixed"
-						data-800="opacity: 0; top: 60%; left: 70%;"
-						data-2500="opacity: 1; left: 25%; transform: translate(-40%, -50%);"
-						data-3500="opacity: 1; left: 25%; transform: translate(-40%, -50%);"
-						data-5000="opacity: 0; left: 25%; transform: translate(-155%%, -40%);"
+						data-800="opacity: 0; top: 20%; left: 70%; translate(-50%, -50%) rotate(0deg);"
+						data-1500="opacity: 1; left: 25%; transform: translate(-40%, -50%) rotate(5deg);"
+						data-2000="opacity: 1; left: 25%; transform: translate(-40%, -50%) rotate(-5deg);"
+						data-2500="opacity: 1; left: 25%; transform: translate(-40%, -50%) rotate(5deg);"
+						data-3800="opacity: 0; left: 25%; transform: translate(-155%%, -40%)rotate(0deg);"
 						>
-						<em>프론트앤드</em>를 꿈꾸는
+						My Name is
 					</div>
 					<div class="sec1_text4 fixed"
-						data-1800="opacity: 0; top: 60%; left: 20%"
-						data-2500="opacity: 1; left: 50%; transform: translate(3%, 87%);"
-						data-4000="opacity: 1; left: 50%; transform: translate(3%, 87%);"
-						data-4800="opacity: 0; left: 60%; transform: translate(155%, 36%);"
+						data-1800="opacity: 0; top: 60%; left: 20%;"
+						data-2000="opacity: 1; left: 50%; transform: translate(3%, 87%) rotate(5deg);"
+						data-2500="opacity: 1; left: 50%; transform: translate(3%, 87%) rotate(-5deg);"
+						data-3000="opacity: 1; left: 50%; transform: translate(3%, 87%) rotate(5deg);"
+						data-3800="opacity: 0; left: 60%; transform: translate(155%, 36%) rotate(0deg);"
 						>
-						<em>이하은</em> 입니다.
+						LEE HA EUN
+					</div>
+					<div class="sec1_text5 fixed"
+						data-2800="opacity: 0; top: 50%; translate(-50%, -50%) rotate(0deg);"
+						data-3000="opacity: 1; transform: translate(-136%, 27%) rotate(-5deg);"
+						data-3500="opacity: 1; transform: translate(-136%, 27%) rotate(5deg);"
+						data-4000="opacity: 1; transform: translate(-136%, 27%) rotate(-5deg);"
+						data-4500="opacity: 0; transform: translate(-155%%, -40%)rotate(0deg);"
+						>
+						Twenty Five
 					</div>
 					<div class="sec1_text6 fixed"
+					data-3000="opacity: 0; "
+					data-3500="opacity: 1; transform: translate(53%, -303%) rotate(5deg);"
+					data-4000="opacity: 1; transform: translate(53%, -303%) rotate(-5deg);"
+					data-4500="opacity: 1; transform: translate(53%, -303%) rotate(5deg);"
+					data-5000="opacity: 0; transform: translate(155%, 36%) rotate(0deg);"
+					>
+						MBTI is ISFP
+					</div>
+					<!-- <div class="sec1_text6 fixed"
 						data-4800="opacity: 0; top: 50%; transform: translate(-50%, -50%) rotate(-180deg)"
 						data-6000="opacity: 1; top: 50%; transform: translate(-50%, -50%) rotate(-90deg)"
 						data-7500="opacity: 0; top: 50%; transform: translate(-50%, -50%) rotate(0deg)"
@@ -195,10 +261,10 @@
 						data-6500="opacity: 1; top: 50%; right: -25%; transform: translate(-50%, -50%) ;"
 						data-7000="opacity: 0; top: 50%; right: -25%;"
 						>
-						저는
+						I LIKE
 						<em data-5000="opacity: 1; transform: scale(0)"
 							data-7000="opacity: 1; transform: scale(1)">
-						이것을
+						This !
 					</em> 
 						좋아합니다.
 					</div>
@@ -221,8 +287,8 @@
 						data-10000="opacity: 1; top: 50%; transform: translate(-50%, -50%)"
 					>
 						Thank you!
-					</div>
-				</div>
+					</div> -->
+					<!-- </div> -->
 					<!-- <div class="sec1_text2 fixed"
 						data-500="opacity: 0; top: 70%; transform: translate(-50%, -50%) scale(1);"
 						data-1000="opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1);"
@@ -240,7 +306,39 @@
 					</div> -->
                 </div>
 				<div class="sec2">
-					<div class="sec2_text1 fixed">
+					<div class="sec2_text1 fixed"
+						data-4500="opacity: 0; width: 0%;"
+						data-5200="opacity: 1; width: 100%;"
+					>
+					</div>
+					<div class="sec2_text2 fixed"
+						data-5100="opacity: 1; height: 0%;"
+						data-6800="opacity: 1; height: 100%;"
+					>
+					</div>
+					<div class="sec2_text3 fixed"
+						data-4200="opacity: 0; transform: translate(-155%%, -50%)"
+						data-5000="opacity: 1; transform: translate(-50%%, -50%)"
+						data-6000="opacity: 1; transform: translate(-50%%, -50%)"
+						data-6800="opacity: 0; transform: translate(155%%, -50%)"
+					>
+					I Like This!
+					</div>
+					<div class="sec2_text4 fixed"
+						data-6500="opacity: 0; translate(-155%%, -40%) rotate(0deg);"
+						data-6800="opacity: 1; left: 25%; transform: translate(-40%, -50%) rotate(360deg);"
+						data-7500="opacity: 1; left: 25%; transform: translate(-40%, -50%) rotate(0deg);"
+						data-8000="opacity: 0; left: 25%; transform: translate(-155%%, -40%)rotate(-360deg);"
+					>
+					<img src="../assets/img/music01.jpg" alt="">
+					</div>
+					<div class="sec2_text4 fixed"
+						data-6800="opacity: 0; translate(155%%, -40%)"
+						data-7500="opacity: 1; transform: translate(-13%, -40%);"
+						data-8000="opacity: 1; transform: translate(-13%, -40%);"
+						data-8500="opacity: 0; transform: translate(155%%, -40%);"
+					>
+						MUSIC
 					</div>
 				</div>
             </section>
