@@ -540,6 +540,7 @@
     function closeQuiz(){
         searchStart.style.display = "block";
         searchStart.style.pointerEvents = "none";
+        searchStart.classList.add("restart")
         // 음악 끄기
         searchAudio.pause();
         //시간정지
@@ -551,16 +552,14 @@
             searchStart.style.pointerEvents = "all";
             searchList.style.display = "none";
             
-            //다시 시작할 때 기존 데이터 초기화
-            searchAnswers.innerHTML= "";
-            searchMissAnswers.innerHTML= "";
-                
-            searchStart.addEventListener("click", startQuiz);
-            timeReamining = 120;  // 시간
-            score = 0;
-            searchScoreNow.innerText = 0;
         }, 1000)
     }
+    console.log(searchStart)
+
+    document.querySelector(".restart").addEventListener("click", () => {
+        restart();
+        searchStart.classList.remove("restart");
+    });
 
     //다시 시작하기 - 리셋
     function restart(){
@@ -580,7 +579,7 @@
             timeReamining = 120;  // 시간
             score = 0;
             searchScoreNow.innerText = 0;
-        }, 1000)
+        },500)
     }
     // 버튼 이벤트
     searchStart.addEventListener("click", startQuiz); // 게임 시작

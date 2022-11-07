@@ -16,7 +16,7 @@ let matchScore = 100;
 let memorySound = [
     "../assets/audio/gameTrue01.mp3",
     "../assets/audio/gameFalse01.mp3",
-    "../assets/audio/up.mp3",
+    // "../assets/audio/up.mp3",
   ];
 let soundMatch = new Audio(memorySound[0]);
 let soundUnMatch = new Audio(memorySound[1]);
@@ -62,11 +62,12 @@ function matchCards(img1, img2){
         //카드원과 투의 이미지 정보가 같을 경우 
         matchedCard++;
         // alert("성공!");
-
-        if(matchedCard == 8){
-            alert("게임 오버ㅜㅜ");
-        }
         soundMatch.play();
+
+        // if(matchedCard == 8){
+        //     // alert("게임 오버ㅜㅜ");
+
+        // }
 
         // 이미지가 맞았을 경우 일치 메세지가 다시 뜨지 않게.
         cardOne.removeEventListener("clikc", flipCard);
@@ -83,8 +84,8 @@ function matchCards(img1, img2){
           }, 500);
 
         setTimeout(() => {
-        cardOne.classList.remove("shake", "flip");
-        cardTwo.classList.remove("shake", "flip");
+        cardOne.classList.remove("shakeX", "flip");
+        cardTwo.classList.remove("shakeX", "flip");
         cardOne = cardTwo = "";
         disableDeck = false;
         }, 1600);
@@ -97,12 +98,15 @@ function matchCards(img1, img2){
         matchScore = matchScore - 10;
 
 
-        // if (matchScore == 0) {
-        //     memoryCard.style.pointerEvents = "none";
-        //     GameOverPopup.classList.add("show");
-        //     gameOverH3.innerText = "GAME OVER!";
-        //     gameOverScore.innerHTML = `<span>${matchScore}</span> 점입니다!`;
-        // }
+        if (matchScore == 0) {
+            setTimeout(() => {
+                endGame();
+            },500)
+            // memoryCard.style.pointerEvents = "none";
+            // GameOverPopup.classList.add("show");
+            // gameOverH3.innerText = "GAME OVER!";
+            // gameOverScore.innerHTML = `<span>${matchScore}</span> 점입니다!`;
+        }
 
     }
     memory_score.innerText = matchScore;
@@ -114,7 +118,7 @@ function shuffledCard(){
     disableDeck = false;
     matchedCard = 0;
 
-    score.innerText = matchScore;
+    // score.innerText = matchScore;
 
     let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8];
     let result = arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
@@ -132,10 +136,22 @@ function shuffledCard(){
 
         let imgTag = card.querySelector(".back img");
         imgTag.src = `../assets/img/memoryCard0${arr[index]}.png`;
-    })
+    });
 
 }
 // shuffledCard();
+
+// if(matchedCard < 0){
+//     document.querySelector(".memory__over").style.display = "block";
+//     matchedCard = 0
+
+// }
+
+// function endGame(){
+//     if(matchedCard < 0){
+//         document.querySelector(".memory__over").style.display = "block";
+//     }
+// }
 
  // 01 카드 클릭 시 뒤집기 이벤트 실행
  memoryCards.forEach((card) => {
@@ -148,7 +164,33 @@ const MemoryRule = document.querySelector(".memory__rule");
 const MemoryGame = document.querySelector(".memoryGame");
 
 
+
 MemoryStartBtn.addEventListener("click", () => {
     MemoryRule.style.display = "none";
     shuffledCard();
 });
+
+const memoryOver = document.querySelector(".memory__over");
+const memoryRestart = document.querySelector(".memory__re__btn");
+function endGame(){
+    memoryOver.style.display = "block";
+
+    memoryCards.forEach((card) => {
+        card.removeEventListener("click", flipCard);
+    });
+
+    // document.querySelector(".gameOver__msg").innerHTML = "ㄱ"
+}
+memoryRestart.addEventListener("click", restart);
+
+function restart(){
+    memoryOver.style.display = "none";
+    matchedCard = 0;
+    matchScore = 100;
+    memory_score.innerText = matchScore;
+    console.log(matchScore)
+    shuffledCard();
+    memoryCards.forEach((card) => {
+        card.addEventListener("click", flipCard);
+    });
+}
