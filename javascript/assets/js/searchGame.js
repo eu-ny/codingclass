@@ -554,7 +554,7 @@
             
         }, 1000)
     }
-    console.log(searchStart)
+    // console.log(searchStart)
 
     document.querySelector(".restart").addEventListener("click", () => {
         restart();

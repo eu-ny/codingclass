@@ -345,7 +345,7 @@
                 </div>
             </div>
             <div class="memory__over">
-                <h3>GAME OVER!</h3>
+                <h3>GAME END!</h3>
                 <div class="gameOver__msg"><span>게임오버되었습니다 ㅜㅜ</span></div>
                 <div class="memory__re__btn">REPLAY</div>
             </div>
@@ -356,7 +356,7 @@
     <!-- source -->
     <div class="Game__source">
         <h2>SOURCE</h2>
-        <div class="Game__source__close">x</div>
+        <!-- <div class="Game__source__close">x</div> -->
         <div class="Game__source__inner">
             <ul>
                 <li><a href="https://github.com/eu-ny/codingclass/blob/main/javascript/effect/gameEffect01.html" target="_blank">GITHUB</a></li>
@@ -492,6 +492,7 @@
                 document.querySelector(".searchGame").style.display = "none";
                 document.querySelector(".Game__source").style.display = "none";
                 document.querySelector(".memory__wrap").style.display = "none";
+                closeQuiz();
                 icon++;
             } else {
                 document.querySelector(".music__wrap").style.display = "none";
@@ -561,14 +562,16 @@
 
 
 
-        document.querySelector(".Game__source__close").addEventListener("click", () => {
-            document.querySelector(".Game__source").style.display = "none";
-        });
+        // document.querySelector(".Game__source__close").addEventListener("click", () => {
+        //     document.querySelector(".Game__source").style.display = "none";
+        // });
         document.querySelector(".icon_box .icon6").addEventListener("click", () => {
             if(icon == 0){
                 document.querySelector(".Game__source").style.display = "block";
                 document.querySelector(".music__wrap").style.display = "none";
                 document.querySelector(".searchGame").style.display = "none";
+                pauseMusic();
+                closeQuiz();
                 icon++;
             } else {
                 document.querySelector(".Game__source").style.display = "none";
