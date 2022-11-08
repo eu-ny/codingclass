@@ -78,8 +78,7 @@
     user-select: none;
     pointer-events: none;
 }
-.memory__card .cards li .front {
-}
+/* .memory__card .cards li .front {} */
 .memory__card .cards li.flip .front {
     transform: rotateY(180deg);
 }
