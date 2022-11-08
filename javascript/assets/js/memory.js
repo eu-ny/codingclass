@@ -153,22 +153,23 @@ MemoryStartBtn.addEventListener("click", () => {
 });
 
 //게임성공
-function clear() {
-    if(matchScore > 0 ){
-        alert("성공하셨습니다. 점수는" + matchScore + "점 입니다." );
-        restart();
-    }
-}
-memoryCards.forEach(el => {
-    el.classList.contains("flip");
-});
+// function clear() {
+//     if(matchScore > 0 ){
+//         alert("성공하셨습니다. 점수는" + matchScore + "점 입니다." );
+//         restart();
+//     }
+// }
+// memoryCards.forEach(el => {
+//     el.classList.contains("flip");
+// });
 
-//게임 오버시
+//게임 끝
 const memoryOver = document.querySelector(".memory__over");
 const memoryMsg = document.querySelector(".gameOver__msg");
 const memoryRestart = document.querySelector(".memory__re__btn");
 function endGame(){
-    memoryOver.style.display = "block";
+    memoryOver.classList.remove("hide");
+    memoryOver.style.transform = "scale(1)"
     memoryMsg.innerHTML = `점수는 ${matchScore} 입니다.`;
 
     memoryCards.forEach((card) => {
@@ -187,7 +188,7 @@ function restart(){
     memory_score.innerText = matchScore;
     setTimeout(() => {
         shuffledCard();
-    }, 1000);
+    }, 2000);
     memoryCards.forEach((card) => {
         card.addEventListener("click", flipCard);
     });

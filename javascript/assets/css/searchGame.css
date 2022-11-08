@@ -303,8 +303,8 @@ body::-webkit-scrollbar-track {
     position: absolute;
     left: 16vw;
     top: 5vw;
-    width: 35vw;
-    height: 35vw;
+    width: 30vw;
+    height: 30vw;
     background: #0d0322f2;;
     border: 3px solid #fff;
     box-shadow: 0 0 10px #8551ff,
