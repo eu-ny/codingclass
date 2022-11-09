@@ -163,9 +163,11 @@
                 <div class="search__info center">
                     <div><span class="num">0</span> / <span class="now">0</span></div>
                 </div>
-                <div class="search__answers"></div>
-                <div class="search__missAnswers"></div>
-                <div class="search__list"></div>
+                <div class="searchInfo">
+                    <div class="search__answers"></div>
+                    <div class="search__missAnswers"></div>
+                    <div class="search__list"></div>
+                </div>
                 <div class="search__result">
                     <div class="svg__wrap">
                         <div class="flex-container">
@@ -568,6 +570,8 @@
         document.querySelector(".icon_box .icon6").addEventListener("click", () => {
             if(icon == 0){
                 document.querySelector(".Game__source").style.display = "block";
+
+                document.querySelector(".memory__wrap").style.display = "none";
                 document.querySelector(".music__wrap").style.display = "none";
                 document.querySelector(".searchGame").style.display = "none";
                 pauseMusic();
