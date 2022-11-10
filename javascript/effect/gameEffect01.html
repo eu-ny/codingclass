@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../assets/css/searchGame.css">
     <link rel="stylesheet" href="../assets/css/search2_ani1.css">
     <link rel="stylesheet" href="../assets/css/memory.css">
+    <link rel="stylesheet" href="../assets/css/tetris.css">
     <link rel="stylesheet" href="../assets/css/star.css">
 
 
@@ -48,7 +49,7 @@
             </div>
             <div class="icon icon4">
                 <img src="../assets/img/game_folderIcon04.png" alt="icon">
-                <span>#</span>
+                <span>Tetris</span>
             </div>
             <div class="icon icon5">
                 <img src="../assets/img/game_folderIcon05.png" alt="icon">
@@ -355,6 +356,33 @@
     </div>
     <!-- //memoryGame -->
 
+    <!-- tetris Game -->
+    <div class="tetris__wrap">
+        <div class="tetris__inner">
+            <div class="tetris__play">
+                <audio id="tetrisAudio" src="../assets/audio/tetrisAudio.mp3" loop="loop"></audio>
+                <div class="tetris___ruls">
+                    <h3>게임 규칙</h3>
+                    <p>
+                        시간은 무제한으로 점수를 많이 획득하면 됩니다.<br>
+                        테트리스의 한 줄이 비워질 때 마다 1점씩 추가 됩니다.<br>
+                    </p>
+                    <div class="tetris___start">START</div>
+                </div>
+                <div class="playground">
+                    <ul></ul>
+                    <div class="tetris__score"><span>0</span>점</div>
+                </div>
+                <div class="tetris___result hide">
+                    <h3>GANE END</h3>
+                    <p class="tetris___result__desc"></p>
+                    <div class="tetris___restart">RESTART</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //tetris Game -->
+
     <!-- source -->
     <div class="Game__source">
         <h2>SOURCE</h2>
@@ -375,13 +403,14 @@
     <script src="../assets/js/music.js"></script>
     <script src="../assets/js/searchGame.js"></script>
     <script src="../assets/js/memory.js"></script>
+    <script src="../assets/js/tetris.js"></script>
     <script>
         // 0. 마우스 커서
-        const cursor = document.querySelector(".mouse__cursor");
-        window.addEventListener("mousemove", (e) => {
-            cursor.style.left = e.clientX + "px";
-            cursor.style.top = e.clientY + "px";
-        });
+        // const cursor = document.querySelector(".mouse__cursor");
+        // window.addEventListener("mousemove", (e) => {
+        //     cursor.style.left = e.clientX + "px";
+        //     cursor.style.top = e.clientY + "px";
+        // });
 
 
         // 1. 시간 출력
@@ -484,6 +513,8 @@
 
         $(".Game__source").draggable();
 
+        $(".tetris__wrap").draggable();
+
 
         
         // 폴더 클릭
@@ -494,6 +525,7 @@
                 document.querySelector(".searchGame").style.display = "none";
                 document.querySelector(".Game__source").style.display = "none";
                 document.querySelector(".memory__wrap").style.display = "none";
+                document.querySelector(".tetris__wrap").style.display = "none";
                 closeQuiz();
                 icon++;
             } else {
@@ -524,8 +556,10 @@
                 document.querySelector(".music__wrap").style.display = "none";
                 document.querySelector(".Game__source").style.display = "none";
                 document.querySelector(".memory__wrap").style.display = "none";
+                document.querySelector(".tetris__wrap").style.display = "none";
                 searchStart.addEventListener("click", startQuiz);
                 pauseMusic()
+                endTetrisGame();
                 icon++;
             } else {
                 document.querySelector(".searchGame").style.display = "none";
@@ -543,16 +577,38 @@
                 document.querySelector(".searchGame").style.display = "none";
                 document.querySelector(".music__wrap").style.display = "none";
                 document.querySelector(".Game__source").style.display = "none";
+                document.querySelector(".tetris__wrap").style.display = "none";
                 pauseMusic()
+                closeQuiz();
+                endTetrisGame();
                 icon++;
             } else {
                 document.querySelector(".memory__wrap").style.display = "none";
-                closeQuiz();
                 icon--;
             }
             stop();
         });
-        //icon2
+        //icon3
+
+        document.querySelector(".icon_box .icon4").addEventListener("click", () => {
+            if(icon == 0){
+                document.querySelector(".tetris__wrap").style.display = "block";
+
+                document.querySelector(".memory__wrap").style.display = "none";
+                document.querySelector(".searchGame").style.display = "none";
+                document.querySelector(".music__wrap").style.display = "none";
+                document.querySelector(".Game__source").style.display = "none";
+                pauseMusic()
+                closeQuiz();
+                icon++;
+            } else {
+                document.querySelector(".tetris__wrap").style.display = "none";
+                endTetrisGame();
+                icon--;
+            }
+            stop();
+        });
+        //icon4
 
 
         // document.querySelector(".icon3").addEventListener("click", () => {
@@ -574,6 +630,7 @@
                 document.querySelector(".memory__wrap").style.display = "none";
                 document.querySelector(".music__wrap").style.display = "none";
                 document.querySelector(".searchGame").style.display = "none";
+                document.querySelector(".tetris__wrap").style.display = "none";
                 pauseMusic();
                 closeQuiz();
                 icon++;
