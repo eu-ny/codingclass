@@ -527,6 +527,7 @@
                 document.querySelector(".memory__wrap").style.display = "none";
                 document.querySelector(".tetris__wrap").style.display = "none";
                 closeQuiz();
+                stopTetrisGame();
                 icon++;
             } else {
                 document.querySelector(".music__wrap").style.display = "none";
@@ -559,7 +560,7 @@
                 document.querySelector(".tetris__wrap").style.display = "none";
                 searchStart.addEventListener("click", startQuiz);
                 pauseMusic()
-                endTetrisGame();
+                stopTetrisGame();
                 icon++;
             } else {
                 document.querySelector(".searchGame").style.display = "none";
@@ -580,7 +581,7 @@
                 document.querySelector(".tetris__wrap").style.display = "none";
                 pauseMusic()
                 closeQuiz();
-                endTetrisGame();
+                stopTetrisGame();
                 icon++;
             } else {
                 document.querySelector(".memory__wrap").style.display = "none";
@@ -603,7 +604,7 @@
                 icon++;
             } else {
                 document.querySelector(".tetris__wrap").style.display = "none";
-                endTetrisGame();
+                stopTetrisGame();
                 icon--;
             }
             stop();

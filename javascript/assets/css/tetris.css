@@ -2,6 +2,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
+    display: none;
 }
 
 .tetris__inner {
@@ -34,8 +35,8 @@
 
 .playground > ul > li > ul > li {
     list-style: none;
-    width: 35px;
-    height: 34px;
+    width: 26px;
+    height: 27px;
     border: 1px solid #6a579a5c;
 }
 

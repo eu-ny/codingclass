@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header" class="container">
+        <div class="menu">
+            <div class="header__logo">
+                <img src="img/logo01.png" alt="logo">
+            </div>
+            <ul class="header__right">
+                <li>탑</li>
+                <li>아우터</li>
+                <li>팬츠</li>
+                <li>악세사리</li>
+            </ul>
+            <!-- <ul class="header__sub">
+                <li>탑</li>
+                <li>아우터</li>
+                <li>팬츠</li>
+                <li>악세사리</li>
+            </ul> -->
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="sliderSection" class="container">
+            <h2 class="blind">slider</h2>
+            <div class="slider__wrap">
+                <div class="slider__inner">
+                    <div class="sliderImg">
+                        <div class="slider s1">
+                            <img src="img/slider01.jpg" alt="sliderImg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="bottomCont" class="container">
+            <div class="bottomCont__inner">
+                <section id="tabContent" class="tabMenu__wrap">
+                    <h2 class="blind">tab</h2>
+                    <div class="tabMenu">
+                        <ul>
+                            <li class="active">공지사항</li>
+                            <li>갤러리</li>
+                        </ul>
+                    </div>
+                    <div class="contents">
+                        <div class="cont1Box">
+                            <div class="tabCont cont1">
+                                <ul class="cont__left1">
+                                    <li>공지사항내용공지사항내용공지사항내용공지사항내용</li>
+                                    <li>공지사항내용공지사항내용공지사항내용공지사항내용</li>
+                                    <li>공지사항내용공지사항내용공지사항내용공지사항내용</li>
+                                    <li>공지사항내용공지사항내용공지사항내용공지사항내용</li>
+                                </ul>
+                                <ul class="cont__right1">
+                                    <li>공지사항 날짜</li>
+                                    <li>공지사항 날짜</li>
+                                    <li>공지사항 날짜</li>
+                                    <li>공지사항 날짜</li>
+                                </ul>
+                            </div>
+                            <div class="tabCont cont2 hide">
+                                <ul class="cont__left2">
+                                    <li>갤러리내용갤러리내용갤러리내용갤러리내용</li>
+                                    <li>갤러리내용갤러리내용갤러리내용갤러리내용</li>
+                                    <li>갤러리내용갤러리내용갤러리내용갤러리내용</li>
+                                    <li>갤러리내용갤러리내용갤러리내용갤러리내용</li>
+                                </ul>
+                                <ul class="cont__right2">
+                                    <li>갤러리 날짜</li>
+                                    <li>갤러리 날짜</li>
+                                    <li>갤러리 날짜</li>
+                                    <li>갤러리 날짜</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+            <!-- <div class="banner__wrap"> -->
+                <div class="banner">
+                    <img src="img/banner01.jpg" alt="banner01">
+                </div>
+                <div class="link__wrap">
+                    <a href="#">
+                        <img src="img/banner02.jpg" alt="banner02">
+                    </a>
+                </div>
+            <!-- </div> -->
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer" class="footerWrap container">
+        <div class="footer__inner">
+            <div class="footer__logo">
+                <img src="img/logo02.png" alt="">
+            </div>
+            <p class="copy">Copylight All rights reserved JUST 쇼핑몰</p>
+            <div class="footer__sns">
+                <div class="sns">
+                    <img src="img/sns_icon01.png" alt="">
+                </div>
+            </div> 
+        </div>
+    </footer>
+</body>
+
+<script>
+    const tabMenu = document.querySelectorAll(".tabMenu li");
+    const tabCont = document.querySelectorAll(".tabCont");
+
+    tabMenu.forEach((el, index) => {
+        el.addEventListener("click", (e)=>{
+            event.preventDefault();
+
+            tabMenu.forEach(li => {
+                li.classList.remove("active");
+            });
+
+            el.classList.add("active");
+
+            tabCont.forEach(cont => {
+                cont.style.display = "none";
+            });
+
+            tabCont[index].style.display = "flex";
+        });
+    });
+
+</script>
+</html>
