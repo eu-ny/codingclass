@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+            <!-- //sample01 -->
+             <div class="document">
+                <h2 class="t_tit">🖱 프로그래머스 1단계 : 콜라츠 추측 🖱</h2>
+    
+                <hr>
+    
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">#1. 주어진 수가 6이라면 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야 하는지 반환하는 함수, solution을 완성해 주세요. 단, 주어진 수가 1인 경우에는 0을, 작업을 500번 반복할 때까지 1이 되지 않는다면 -1을 반환해 주세요.</h3>
+                    <p class="t_desc2">
+                        <strong>콜라츠 추측</strong> <br>
+                        1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될 때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다.<br>
+                        1-1. 입력된 수가 짝수라면 2로 나눕니다. <br>
+                        1-2. 입력된 수가 홀수라면 3을 곱하고 1을 더합니다. <br>
+                        2. 결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다. 
+                    </p>
+                    <p class="t_desc2">
+                        제한 사항 : 입력된 수, num은 1 이상 8,000,000 미만인 정수입니다.
+                    </p>
+                        <div class="t_code">
+    <pre><code class="language-js">function solution(num) {
+        var answer = 0;
+        while(num!=1){
+              if(num%2==0){
+                num /= 2
+              }else if(num%2==1){
+                num = num*3+1
+              }
+            answer+=1
+        }
+        if(answer>=500){
+            return -1
+        }else{
+              return answer;
+        }
+    
+    }
+    </code></pre>
+                </div>
+                <p class="t_desc2">
+                    1. while문을 사용하여 num이 1이 될 때 까지 반복시킵니다. (조건은 num값이 1이 아니라면 계속 반복)<br>
+                    2. if문으로 짝수일 때와 홀수일 때 조건문을 달아준 뒤 반복횃수를 answer 값으로 넣어줍니다.<br>
+                    3. 반복문 밖으로 벗어나 if문을 통해 만약 반복횟수가 500이상일 경우 리턴 -1을 반환하고 아닐 경우 answer 값을 리턴으로 반환합니다.<br>
+                </p>
+                </div>
+                <!-- //sample01 -->
+    
+                <hr>
+    
+                <div id="sample02" class="sample">
+                    <h3 class="t_tit2">#2. 다른사람의 풀이 </h3>
+                        <div class="t_code" style="margin-bottom: 30px;">
+    <pre><code class="language-js">function collatz(num) {
+        var answer = 0;
+        while(num !=1 && answer !=500){
+            num%2==0 ? num = num/2 : num = num*3 +1;
+        answer++;
+      }
+        return num == 1 ? answer : -1;
+    }
+    </code></pre>
+    <p class="t_desc2">
+        while문과 조건삼항자로 한번에 작성해주었습니다. 아주 깔끔합니다!
+    </p>
+                        </div>
+                </div>
+                <!-- //sample02 -->
+            </div>
+    
+
+            <hr>
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

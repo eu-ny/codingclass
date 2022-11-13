@@ -198,6 +198,7 @@
     <!-- memoryGame -->
     <div class="memory__wrap">
         <div class="memory__inner">
+            <!-- <div class="memory__close">✕</div> -->
             <div class="memory__rule show">
                 <h2>GAME RULE</h2>
                 <ul class="memory__rule__desc">
@@ -359,13 +360,14 @@
     <!-- tetris Game -->
     <div class="tetris__wrap">
         <div class="tetris__inner">
+            <!-- <div class="tetris__close">✕</div> -->
             <div class="tetris__play">
                 <audio id="tetrisAudio" src="../assets/audio/tetrisAudio.mp3" loop="loop"></audio>
                 <div class="tetris___ruls">
                     <h3>게임 규칙</h3>
                     <p>
-                        시간은 무제한으로 점수를 많이 획득하면 됩니다.<br>
-                        테트리스의 한 줄이 비워질 때 마다 1점씩 추가 됩니다.<br>
+                        01. 시간은 무제한으로 점수를 많이 획득하면 됩니다.<br>
+                        02. 테트리스 한 줄 제거 시 1점씩 추가 됩니다.<br>
                     </p>
                     <div class="tetris___start">START</div>
                 </div>
@@ -386,7 +388,7 @@
     <!-- source -->
     <div class="Game__source">
         <h2>SOURCE</h2>
-        <!-- <div class="Game__source__close">x</div> -->
+        <div class="Game__source__close">x</div>
         <div class="Game__source__inner">
             <ul>
                 <li><a href="https://github.com/eu-ny/codingclass/blob/main/javascript/effect/gameEffect01.html" target="_blank">GITHUB</a></li>
@@ -521,133 +523,105 @@
         let icon = 0;
         document.querySelector(".icon_box .icon1").addEventListener("click", () => {
             if(icon == 0){
-                document.querySelector(".music__wrap").style.display = "block";
-                document.querySelector(".searchGame").style.display = "none";
-                document.querySelector(".Game__source").style.display = "none";
-                document.querySelector(".memory__wrap").style.display = "none";
-                document.querySelector(".tetris__wrap").style.display = "none";
+                document.querySelector(".music__wrap").classList.add("show");
+
+                document.querySelector(".searchGame").classList.remove("show");
+                document.querySelector(".memory__wrap").classList.remove("show");
+                document.querySelector(".tetris__wrap").classList.remove("show");
+                document.querySelector(".Game__source").classList.remove("show");
                 closeQuiz();
-                stopTetrisGame();
+                endTetrisGame();
+                // stopTetrisGame();
                 icon++;
             } else {
-                document.querySelector(".music__wrap").style.display = "none";
+                document.querySelector(".music__wrap").classList.remove("show");
                 pauseMusic()
                 icon--;
             }
         });
-        //icon1
-        // document.querySelector(".icon1").addEventListener("click", () => {
-        //         document.querySelector(".music__wrap").style.display = "block";
-        // });
-        // document.querySelector(".icon1").addEventListener("click", () => {
-        //     document.querySelector(".music__wrap").style.display = "none";
-        // });
-          // document.querySelector(".icon2").addEventListener("click", () => {
-        //     document.querySelector(".searchGame").style.display = "block";
-        // });
-        // document.querySelector(".search__wrap h1").addEventListener("click", () => {
-        //     document.querySelector(".searchGame").style.display = "none";
-        // });
+        // music
+
         
         document.querySelector(".icon_box .icon2").addEventListener("click", () => {
             if(icon == 0){
-                document.querySelector(".searchGame").style.display = "block";
-                // document.querySelector(".searchGame").classList.add("none");
+                document.querySelector(".searchGame").classList.add("show");
                 
-                document.querySelector(".music__wrap").style.display = "none";
-                document.querySelector(".Game__source").style.display = "none";
-                document.querySelector(".memory__wrap").style.display = "none";
-                document.querySelector(".tetris__wrap").style.display = "none";
+                document.querySelector(".music__wrap").classList.remove("show");
+                document.querySelector(".memory__wrap").classList.remove("show");
+                document.querySelector(".tetris__wrap").classList.remove("show");
+                document.querySelector(".Game__source").classList.remove("show");
                 searchStart.addEventListener("click", startQuiz);
                 pauseMusic()
-                stopTetrisGame();
+                endTetrisGame();
                 icon++;
-            } else {
-                document.querySelector(".searchGame").style.display = "none";
+            }else {
+                document.querySelector(".searchGame").classList.remove("show");
                 closeQuiz();
                 icon--;
             }
             stop();
         });
-        //icon2
+        // searchGame
 
-        document.querySelector(".icon_box .icon3").addEventListener("click", () => {
+
+        let icon3Num = 0;
+        document.querySelector(".icon3").addEventListener("click", () => {
             if(icon == 0){
-                document.querySelector(".memory__wrap").style.display = "block";
-                
-                document.querySelector(".searchGame").style.display = "none";
-                document.querySelector(".music__wrap").style.display = "none";
-                document.querySelector(".Game__source").style.display = "none";
-                document.querySelector(".tetris__wrap").style.display = "none";
-                pauseMusic()
+                document.querySelector(".memory__wrap").classList.add("show");
+    
+                document.querySelector(".music__wrap").classList.remove("show");
+                document.querySelector(".searchGame").classList.remove("show");
+                document.querySelector(".tetris__wrap").classList.remove("show");
+                document.querySelector(".Game__source").classList.remove("show");
                 closeQuiz();
                 stopTetrisGame();
                 icon++;
-            } else {
-                document.querySelector(".memory__wrap").style.display = "none";
+            }else{
+                document.querySelector(".memory__wrap").classList.remove("show");
+                pauseMusic();
                 icon--;
             }
-            stop();
+
         });
-        //icon3
 
-        document.querySelector(".icon_box .icon4").addEventListener("click", () => {
+
+
+        document.querySelector(".icon4").addEventListener("click", () => {
             if(icon == 0){
-                document.querySelector(".tetris__wrap").style.display = "block";
-
-                document.querySelector(".memory__wrap").style.display = "none";
-                document.querySelector(".searchGame").style.display = "none";
-                document.querySelector(".music__wrap").style.display = "none";
-                document.querySelector(".Game__source").style.display = "none";
-                pauseMusic()
-                closeQuiz();
-                icon++;
-            } else {
-                document.querySelector(".tetris__wrap").style.display = "none";
-                stopTetrisGame();
-                icon--;
-            }
-            stop();
-        });
-        //icon4
-
-
-        // document.querySelector(".icon3").addEventListener("click", () => {
-        //     document.querySelector(".memory__wrap").style.display = "block";
-        // });
-        // document.querySelector(".memory__close").addEventListener("click", () => {
-        //     document.querySelector(".memory__wrap").style.display = "none";
-        // });
-
-
-
-        // document.querySelector(".Game__source__close").addEventListener("click", () => {
-        //     document.querySelector(".Game__source").style.display = "none";
-        // });
-        document.querySelector(".icon_box .icon6").addEventListener("click", () => {
-            if(icon == 0){
-                document.querySelector(".Game__source").style.display = "block";
-
-                document.querySelector(".memory__wrap").style.display = "none";
-                document.querySelector(".music__wrap").style.display = "none";
-                document.querySelector(".searchGame").style.display = "none";
-                document.querySelector(".tetris__wrap").style.display = "none";
+                document.querySelector(".tetris__wrap").classList.add("show");
+    
+                document.querySelector(".music__wrap").classList.remove("show");
+                document.querySelector(".searchGame").classList.remove("show");
+                document.querySelector(".memory__wrap").classList.remove("show");
+                document.querySelector(".Game__source").classList.remove("show");
                 pauseMusic();
                 closeQuiz();
                 icon++;
-            } else {
-                document.querySelector(".Game__source").style.display = "none";
+            }else{
+                document.querySelector(".tetris__wrap").classList.remove("show");
+                stopTetrisGame();
                 icon--;
             }
         });
-        //icon6
 
-        // document.querySelectorAll(".icon_box .icon").forEach((el, i) => {
-        //     el.addEventListener("click", () => {
-                
-        //     });
-        // })
 
+        document.querySelector(".icon_box .icon6").addEventListener("click", () => {
+            if(icon == 0){
+                document.querySelector(".Game__source").classList.add("show");
+
+                document.querySelector(".music__wrap").classList.remove("show");
+                document.querySelector(".searchGame").classList.remove("show");
+                document.querySelector(".memory__wrap").classList.remove("show");
+                document.querySelector(".tetris__wrap").classList.remove("show");
+                pauseMusic();
+                closeQuiz();
+                endTetrisGame();
+                icon++;
+            } else{
+                document.querySelector(".Game__source").classList.remove("show");
+                icon--;
+            }
+        });
 
 
 

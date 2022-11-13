@@ -1,6 +1,12 @@
 /* music */
 .music__wrap {
-    display: none;
+    /* display: none; */
+    transform: scale(0);
+}
+.music__wrap.show{
+    transform: scale(1);
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+
 }
 .music__wrap .music_inner {
     width: 370px;
@@ -8,9 +14,11 @@
     position: absolute;
     right: 100px;
     top: 100px;
-    padding: 10px 20px 10px 20px;
+    padding: 15px 20px 20px 20px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
+    overflow: hidden;
+
 }
 
 .music__wrap .music__header {
@@ -24,7 +32,8 @@
 }
 
 .music__wrap .music__header h2 {
-    font-family: 'YdestreetB';
+    /* font-family: 'YdestreetB'; */
+    font-family: 'SUIT';
     font-size: 14px;
 }
 
@@ -40,7 +49,6 @@
 }
 .music__view {
     display: flex;
-    /* padding: 20px; */
     text-align: center;
     flex-direction: column;
     align-items: center;
@@ -50,12 +58,23 @@
     width: 40%;
     margin-bottom: 20px;
 }
+/* .imgWrap {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    height: 200%;
+    object-fit: cover;
+    filter: blur(14px);
+    z-index: -2;
+    opacity: 0.3;
+} */
 
 .music__view .img img {
     width: 100%;
 }
 
 .music__view .title {
+    font-family: 'SUIT';
     /* width: 70%; */
     color: #f5f5f5;
     text-align: center;
@@ -108,80 +127,87 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .music__control .control .repeat {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -205px;
+    background-position: -146px;
+
 
 }
 .music__control .control .repeat_one {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -240px;
+    background-position: -171px;
 }
 .music__control .control .shuffle {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -274px;
+    background-position: -195px;
 }
 .music__control .control .prev {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -70px;
+    background-position: -50px;
 }
 .music__control .control .play {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 4px;
+    background-position: 2px;
 }
 .music__control .control .stop {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -136px;
+    background-position: -96px;
 }
 .music__control .control .next {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -35px;
+    background-position: -24px;
 }
 .music__control .control .list {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -167px;
+    background-position: -121px;
 }
 .music__control .control .sound {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -107px;
+    background-position: -75px;
+    position: relative;
+}
+.music__control .control .sound #player_sound {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .music__control .control .sound #player_sound.open {
     display: none;

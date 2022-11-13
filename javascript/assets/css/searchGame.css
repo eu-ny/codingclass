@@ -18,10 +18,15 @@ body::-webkit-scrollbar-track {
 }
 
 .searchGame {
-    display: none;
+    /* display: none; */
     z-index: 20;
     top: 100px;
     left: 210px;
+    transform: scale(0);
+}
+.searchGame.show {
+    transform: scale(1);
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .search__wrap {
@@ -250,6 +255,7 @@ body::-webkit-scrollbar-track {
     0 0 82px #8551ff, 0 0 92px #8551ff, 0 0 102px #8551ff, 0 0 151px #8551ff;
     border-radius: 30px;
     margin: 3px;
+    cursor: default;
 }
 .search__missAnswers {
     padding: 40px 0;
@@ -260,6 +266,7 @@ body::-webkit-scrollbar-track {
     color: #fff;
     padding: 10px 20px;
     margin: 3px;
+    cursor: default;
 }
 
 /* .search__desc {
@@ -304,17 +311,23 @@ body::-webkit-scrollbar-track {
 }
 
 .search__result {
-    position: absolute;
+    /* position: absolute;
     left: 23%;
     top: 23%;
     width: 30vw;
-    height: 30vw;
+    height: 30vw; */
+    position: fixed;
+    top: 10%;
+    left: 220px;
+    transform: translate(-50%, -50%);
+    width: 28vw;
+    height: 28vw;
     background: #0d0322f2;;
     border: 3px solid #fff;
     box-shadow: 0 0 10px #8551ff,
 				0 0 20px #8551ff,
 				0 0 30px #8551ff;
-    transform: scale3d(0, 0, 0);
+    /* transform: scale3d(0, 0, 0); */
     z-index: 1;
     align-items: center;
     color: #fff;

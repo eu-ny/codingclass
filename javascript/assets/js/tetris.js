@@ -7,14 +7,16 @@ const tetrisRuls = document.querySelector(".tetris___ruls");
 const tetrisStrat = document.querySelector(".tetris___start");
 const tetrisEnd = document.querySelector(".tetris___result");
 const tetrisRestart = document.querySelector(".tetris___restart");
+const tetrisAudio = document.querySelector("#tetrisAudio");
 
 let endTetrisAudio = new Audio("../assets/audio/gameFalse01.mp3");
+let trueTetrisAudio = new Audio("../assets/audio/gameTrue01.mp3");
 
 // 변수 설정
 let rows = 21;
 let cols = 15;
 let tscore = 0;
-let duration = 500;
+let duration = 300;
 let downInterval;
 let tempMovingItem;
 let stopTetris = false;
@@ -93,11 +95,15 @@ const blocks = {
     ]
 };
 
+// 게임시작
 function startTetris(){
     tetrisRuls.classList.add("hide");
     tetrisEnd.classList.add("hide");
     tetrisMusic();
-    generateNewBlock(); //블럭 만들기
+    // generateNewBlock(); //블럭 만들기
+    if(stopTetris == false){
+        generateNewBlock(); //블럭 만들기
+    }
 }
 
 // 시작하기
@@ -239,20 +245,31 @@ function checkMatch(){
     // playground의 자식요소를 선택
     const childNodes = playGround.childNodes;
 
+    childNodes[0].children[0].childNodes.forEach((li) => {
+        if (li.classList.contains("seized")) {
+          stopTetris = true;
+          endTetrisAudio.play();
+          endTetrisGame();
+        }
+      });
+
     // 게임이 끝났을 때
     childNodes.forEach(child => {
         let matched = true;
+        // child(li)의 0번째 자식(ul)의 모든 li를 대상으로 반복문을 실행합니다.
         child.children[0].childNodes.forEach(li => {
+            // 모든 li에 sezied가 있는 경우 match는 true, 아닌 경우엔 해당 if문이 실행되어 match는 false가 됩니다.
             if(!li.classList.contains("seized")){
                 matched = false;
-                stopTetris = true;
             }
         });
 
+         // match가 true인 경우, 꽉 채운 해당 줄을 삭제하고, 새로 한 줄을 추가합니다.
         if(matched){
             child.remove();
             prependNewLine();
             tscore++;
+            trueTetrisAudio.play();
         }
     });
 
@@ -262,55 +279,73 @@ function checkMatch(){
 }
 
 // 새로운 블럭 만들기
+
 function generateNewBlock() {
+    if(stopTetris == false){
+        // 계속해서 빨라지지 않도록 setInterval()을 없애줍니다.
+        clearInterval(downInterval);
     
-    clearInterval(downInterval);
+        // duration마다 1칸씩 내려가도록 합니다.
+        downInterval = setInterval(() => {
+            moveBlock("top", 1)
+        }, duration);
+    
 
-    downInterval = setInterval(() => {
-        moveBlock("top", 1)
-    }, duration);
+         // 랜덤한 index를 만들어 블록의 모양을 랜덤하게 뿌리도록 해줍니다.
+        const blockArray = Object.entries(blocks);
+        const randomIndex = Math.floor(Math.random() * blockArray.length);
+    
+        movingItem.type = blockArray[randomIndex][0];
+    
 
-    const blockArray = Object.entries(blocks);
-    const randomIndex = Math.floor(Math.random() * blockArray.length);
-
-    movingItem.type = blockArray[randomIndex][0];
-
-    movingItem.top = 0;
-    movingItem.left = 6;
-    movingItem.direction = 0;
-    tempMovingItem = { ...movingItem };
-
-    renderBlocks();
+          // 새로운 블록이 만들어지면 초기 위치에 생성되도록 값을 초기 설정값으로 초기화 시켜줍니다.
+        movingItem.top = 0;
+        movingItem.left = 6;
+        movingItem.direction = 0;
+        tempMovingItem = { ...movingItem };
+    
+        renderBlocks();
+    }
+    
 }
+
 
 // 빈칸 값 확인하기
 function checkEmpty(target){
+    // 타겟이 빈경우 false를 반환, 아닌 경우 true를 반환
     if(!target || target.classList.contains("seized")){
         return false;
     }
     return true;
 }
 
+// 블록 움직이기
+function moveBlock(moveType, amount) {
+    // 해당하는 방향으로 값을 추가하여줍니다.
+    tempMovingItem[moveType] += amount;
+     // 바뀐 값을 토대로 블록을 출력하면 이동이 됩니다.
+    renderBlocks(moveType);
+}
+
 // 블록 모양 바꾸기
 function changeDiretion(){
+    // direction에 현재 블록의 모양을 저장합니다.
     const direction = tempMovingItem.direction;
 
+    // 마지막 모양으로 바뀐 경우 처음의 모양으로 돌려주기
     direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction += 1;
+    // 마찬가지로 renderBlocks()함수를 실행해 주어야 모양이 바로바로 바뀝니다.
     renderBlocks();
 }
 
 // 블록 빨리 내리기
 function dropBlock(){
+     // 한번만 빨리 내리고 끝나기 때문에 clearInterval()을 해줍니다.
     clearInterval(downInterval);
+
     downInterval = setInterval(()=> {
         moveBlock("top", 1)
-    }, 50)
-}
-
-// 블록 움직이기
-function moveBlock(moveType, amount) {
-    tempMovingItem[moveType] += amount;
-    renderBlocks(moveType);
+    }, 20)
 }
 
 // 이벤트
@@ -339,38 +374,39 @@ document.addEventListener("keydown", (e) => {
 
 // 음악재생
 function tetrisMusic(){
-    const tetrisAudio = document.querySelector("#tetrisAudio");
+    // const tetrisAudio = document.querySelector("#tetrisAudio");
+    tetrisAudio.currentTime = 0;
     tetrisAudio.play();
 }
 
 
 // 게임 종료
 function endTetrisGame(){
-    generateNewBlock();
+    stopTetris = true;
     tetrisEnd.classList.remove("hide");
-    stopTetris = false;
     const endTetris = playGround.querySelectorAll("li > ul > li");
     endTetris.forEach((el) => {
         el.className = "";
     });
     tetrisAudio.pause();
-    endTetrisAudio.play();
     document.querySelector(".tetris___result__desc").innerHTML = `게임이 종료되었습니다.`+ "<br>" + ` 점수는 ${tscore}점 입니다 :)`;
 }
 
 // 게임 재시작
 function reStartTetrisGame(){
+    stopTetris = true;
     tetrisEnd.classList.add("hide");
-    let tscore = 0;
+    tscore = 0;
     tetriScore.innerHTML = tscore;
     tetrisMusic();
 }
 
 // 게임 일시정지
 function stopTetrisGame(){
-    tetrisAudio.pause();
+    stopTetris = true;
+    tetrisEnd.classList.add("hide");
     tetrisRuls.classList.remove("hide");
-    stopTetris = false;
+    tetrisAudio.pause();
 }
 
 
@@ -378,7 +414,21 @@ init();
 
 
 // 게임 버튼
-tetrisStrat.addEventListener("click", startTetris);
+tetrisStrat.addEventListener("click", () => {
+    stopTetris = false;
+    const endTetris = playGround.querySelectorAll("li > ul > li");
+    endTetris.forEach((el) => {
+        el.className = "";
+    });
+    tscore = 0;
+    tetriScore.innerHTML = tscore;
+    startTetris();
+});
 tetrisRestart.addEventListener("click", () => {
     reStartTetrisGame();
+    stopTetris = false;
+    const endTetris = playGround.querySelectorAll("li > ul > li");
+    endTetris.forEach((el) => {
+        el.className = "";
+    });
 });

@@ -399,6 +399,8 @@
     const searchResultWrap = document.querySelector(".search__result");
     const searchRestart = document.querySelector(".search__result .restart");
 
+    let searchTrueAudio = new Audio("../assets/audio/gameTrue01.mp3");
+
     let timeReamining = 120,  // 남은 시간
         timeInterval = "",
         score = 0,      // 점수
@@ -450,6 +452,7 @@
             musicStop.style.display = "block";
             searchAudio.play();
         });
+        searchAudio.volume = 0.3;
         searchAudio.play();
     }
 
@@ -465,6 +468,7 @@
             // 점수 반영
             score++;
             searchScoreNow.innerText = score;
+            searchTrueAudio.play();
             // 정답 초기화
             searchInput.value = "";
         }
