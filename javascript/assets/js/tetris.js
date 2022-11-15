@@ -16,7 +16,7 @@ let trueTetrisAudio = new Audio("../assets/audio/gameTrue01.mp3");
 let rows = 21;
 let cols = 15;
 let tscore = 0;
-let duration = 300;
+let duration = 400;
 let downInterval;
 let tempMovingItem;
 let stopTetris = false;
@@ -270,6 +270,7 @@ function checkMatch(){
             prependNewLine();
             tscore++;
             trueTetrisAudio.play();
+            duration > 200 ? duration = duration - 50 : duration;
         }
     });
 

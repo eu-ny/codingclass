@@ -1,3 +1,4 @@
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 :root {
     --htmlColor: #223547;
 }
@@ -34,11 +35,12 @@ body::-webkit-scrollbar-track {
     height: 580px;
     overflow: hidden;
     overflow-y: scroll;
-    background-color: #0f0114de;
+    background-color: #0f0114f6;
     position: relative;
     padding: 30px;
     text-align: center;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    position: relative;
 }
 
 .search__wrap > span {
@@ -54,12 +56,13 @@ body::-webkit-scrollbar-track {
     font-size: 48px;
     margin-bottom: 30px;
     margin-top: 60px;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #8551ff,
-    0 0 82px #8551ff, 0 0 92px #8551ff, 0 0 102px #8551ff, 0 0 151px #8551ff;
+    /* text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #8551ff,
+    0 0 82px #8551ff, 0 0 92px #8551ff, 0 0 102px #8551ff, 0 0 151px #8551ff; */
+    text-shadow: 0 0 5px #fff, 0 0 8px #ffffff78, 0 0 42px #c951ff, 0 0 82px #515aff, 0 0 92px #9751ff;
 }
 
 .search__wrap > .search_desc {
-    font-family: 'JejuMyeongjo';
+    font-family: 'galmuri11';
     color: #fff;
 }
 
@@ -72,6 +75,7 @@ body::-webkit-scrollbar-track {
     border-radius: 20px;
 }
 .search__wrap .time span {
+    font-family: 'galmuri11';
     color: #fff;
     font-size: 34px;
 }
@@ -99,6 +103,7 @@ body::-webkit-scrollbar-track {
     margin-top: 20px;
   }
 .search__box .start {
+    font-family: 'galmuri11';
     position: absolute;
     left: 50%; bottom: 0;
     transform: translateX(-50%);
@@ -174,7 +179,7 @@ body::-webkit-scrollbar-track {
 }
 
 .search__info {
-    font-family: 'SUIT';
+    font-family: 'galmuri11';
     text-align: right;
     margin-bottom: 20px;
     padding-bottom: 10px;

@@ -52,7 +52,70 @@ body {
     user-select: none;
     pointer-events: none;
 }
+
+.icon_box {
+    text-align: center;
+}
+
+.icon {
+    position: absolute;
+    left: 70px;
+    width: 54px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon img {
+    width: 54px;
+}
+
+.icon span {
+    font-family: 'galmuri11';
+    display: block;
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px;
+    white-space: nowrap;
+}
+
+.icon.active span {
+    background: #000;
+}
+
 .icon1 {
+    top: 100px;
+}
+
+.icon2 {
+    top: 200px;
+}
+
+.icon3 {
+    top: 300px;
+}
+
+.icon4 {
+    top: 400px;
+}
+
+.icon5 {
+    top: 500px;
+}
+
+.icon6 {
+    top: 600px;
+}
+
+.icon6 img {
+    scale: 0.9;
+}
+
+
+/* .icon1 {
     position: absolute;
     left: 100px;
     top: 100px;
@@ -62,10 +125,11 @@ body {
     width: 100%;
 }
 .icon span {
+    font-family: 'galmuri11';
     display: block;
     background: #000;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     padding: 2px;
     white-space: nowrap;
     text-align: center;
@@ -99,7 +163,7 @@ body {
     left: 100px;
     top: 600px;
     width: 54px;
-}
+} */
 
 /* footer */
 #footer {
@@ -155,7 +219,7 @@ body {
     height: 100%;
 }
 
-/* .Game__source__close {
+.Game__source__close {
     font-size: 25px;
     color: rgba(255, 255, 255, 0.527);
     position: absolute;
@@ -164,7 +228,7 @@ body {
     padding: 5px 5px;
     box-sizing: border-box;
     z-index: 100;
-} */
+}
 
 .Game__source__inner li {
     padding-top: 40px;

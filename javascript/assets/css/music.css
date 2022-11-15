@@ -9,16 +9,20 @@
 
 }
 .music__wrap .music_inner {
-    width: 370px;
-    background: #000000d1;
+    width: 350px;
+    background: #09080ec4;
     position: absolute;
     right: 100px;
     top: 100px;
-    padding: 15px 20px 20px 20px;
+    padding: 18px 20px 20px 20px;
     border-radius: 10px;
     backdrop-filter: blur(5px);
     overflow: hidden;
+}
 
+.musicClose {
+    color: #f5f5f5;
+    cursor: pointer;
 }
 
 .music__wrap .music__header {
@@ -32,7 +36,6 @@
 }
 
 .music__wrap .music__header h2 {
-    /* font-family: 'YdestreetB'; */
     font-family: 'SUIT';
     font-size: 14px;
 }
@@ -74,7 +77,8 @@
 }
 
 .music__view .title {
-    font-family: 'SUIT';
+    /* font-family: 'SUIT'; */
+    font-family: 'galmuri11';
     /* width: 70%; */
     color: #f5f5f5;
     text-align: center;
@@ -87,11 +91,13 @@
 
 .music__view .title h3 {
     margin-bottom: 5px;
-    font-size: 20px;
+    word-break: keep-all;
+    font-size: 18px;
     line-height: 1.2;
 }
 
 .music__view .title p {
+    font-size: 15px;
     color: #555;
 }
 
@@ -225,8 +231,7 @@
     font-size: 14px;
 }
 .music__list h3 {
-    /* font-family: 'YdestreetB'; */
-    border-top: 2px solid #000;
+    /* border-top: 2px solid #000; */
     padding-top: 10px;
     font-size: 18px;
 }
@@ -267,17 +272,18 @@
 }
 .music__list li span {
     position: absolute;
-    right: 0;
-    top: 10px;
+    top: -71px;
+    left: -52px;
+    transform: rotate(270deg);
 }
 .music__list .close-btn {
     display: inline-block;
     float: right;
-    margin-top: 3px;
-    margin-right: 5px;
+    margin-top: 6px;
+    margin-right: 2px;
     vertical-align: middle;
     background-image: url(../img/game_music_close-btn.svg);
     background-size: cover;
-    width: 18px;
-    height: 18px;
+    width: 12px;
+    height: 12px;
 }

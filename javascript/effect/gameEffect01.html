@@ -1,524 +1,840 @@
 <!DOCTYPE html>
 <html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>게임 효과</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게임 효과</title>
-
-    <link rel="stylesheet" href="../assets/css/bg.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/game.css">
-    <link rel="stylesheet" href="../assets/css/music.css">
-    <link rel="stylesheet" href="../assets/css/searchGame.css">
-    <link rel="stylesheet" href="../assets/css/search2_ani1.css">
-    <link rel="stylesheet" href="../assets/css/memory.css">
-    <link rel="stylesheet" href="../assets/css/tetris.css">
-    <link rel="stylesheet" href="../assets/css/star.css">
-
-
-</head>
-<body>
-    <header id="header">
-        <h1>GAME EFFECT</h1>
-        <div class="time"></div>
-    </header>
-    <!-- //header -->
-    <main id="main">
-        <div id='stars'></div>
+        <link rel="stylesheet" href="../assets/css/bg.css" />
+        <link rel="stylesheet" href="../assets/css/fonts.css" />
+        <link rel="stylesheet" href="../assets/css/game.css" />
+        <link rel="stylesheet" href="../assets/css/music.css" />
+        <link rel="stylesheet" href="../assets/css/searchGame.css" />
+        <link rel="stylesheet" href="../assets/css/search2_ani1.css" />
+        <link rel="stylesheet" href="../assets/css/memory.css" />
+        <link rel="stylesheet" href="../assets/css/tetris.css" />
+        <link rel="stylesheet" href="../assets/css/star.css" />
+    </head>
+    <body>
+        <header id="header">
+            <h1>GAME EFFECT</h1>
+            <div class="time"></div>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <!-- <div id='stars'></div>
         <div id='stars2'></div>
-        <div id='stars3'></div>
+        <div id='stars3'></div> -->
 
-        <!-- <div class="mouse__cursor">
+            <!-- <div class="mouse__cursor">
             <img src="../assets/img/game_cursor01.png" alt="마우스 커서" />
         </div> -->
 
-        <div class="icon_box">
-            <div class="icon icon1">
-                <img src="../assets/img/game_folderIcon01.png" alt="icon">
-                <span>Music</span>
-            </div>
-            <div class="icon icon2">
-                <img src="../assets/img/game_folderIcon02.png" alt="icon">
-                <span>Search</span>
-            </div>
-            <div class="icon icon3">
-                <img src="../assets/img/game_folderIcon03.png" alt="icon">
-                <span>Memory</span>
-            </div>
-            <div class="icon icon4">
-                <img src="../assets/img/game_folderIcon04.png" alt="icon">
-                <span>Tetris</span>
-            </div>
-            <div class="icon icon5">
-                <img src="../assets/img/game_folderIcon05.png" alt="icon">
-                <span>#</span>
-            </div>
-            <div class="icon icon6 modal__btn">
-                <img src="../assets/img/game_folderIcon06.png" alt="icon">
-                <span>Source</span>
-            </div>
-        </div>
-    </main>
-    <!-- //main -->
-
-    <footer id="footer">
-        <div class="agent"></div>
-    </footer>
-    <!-- //footer -->
-    
-    <!-- 뮤직 플레이어 -->
-    <div class="music__wrap">
-        <div class="music_inner">
-            <div class="music__header">
-                <div>✱</div>
-                <h2>MUSIC PlAYER</h2>
-                <div class="musicClose">✱</div>
-            </div>
-            <div class="music__contents">
-                <div class="music__view">
-                    <div class="img">
-                        <img src="../assets/img/game_musicPlayer_img01.png" alt="game_musicPlayer_img01">
-                    </div>
-                    <div class="title">
-                        <h3>BACK ON TOP (feat.Griff) - HONNE</h3>
-                        <p>YOUTUBE MUSIC</p>
-                    </div>
+            <div class="icon_box">
+                <div class="icon icon1">
+                    <img src="../assets/img/game_folderIcon01.png" alt="icon" />
+                    <span>Music</span>
                 </div>
-                <div class="music__control">
-                    <div class="progress">
-                        <div class="bar">
-                            <audio id="main-audio" src="../assets/audio/music-1.mp3"></audio>
+                <div class="icon icon2">
+                    <img src="../assets/img/game_folderIcon02.png" alt="icon" />
+                    <span>Search</span>
+                </div>
+                <div class="icon icon3">
+                    <img src="../assets/img/game_folderIcon03.png" alt="icon" />
+                    <span>Memory</span>
+                </div>
+                <div class="icon icon4">
+                    <img src="../assets/img/game_folderIcon04.png" alt="icon" />
+                    <span>Tetris</span>
+                </div>
+                <div class="icon icon5">
+                    <img src="../assets/img/game_folderIcon05.png" alt="icon" />
+                    <span>#</span>
+                </div>
+                <div class="icon icon6 modal__btn">
+                    <img src="../assets/img/game_folderIcon06.png" alt="icon" />
+                    <span>Source</span>
+                </div>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="agent"></div>
+        </footer>
+        <!-- //footer -->
+
+        <div class="game__wrap">
+            <!-- 뮤직 플레이어 -->
+            <div class="music__wrap game">
+                <div class="music_inner">
+                    <div class="music__header">
+                        <div></div>
+                        <h2>MUSIC PlAYER</h2>
+                        <!-- <div>✱</div> -->
+                        <div class="musicClose">✕</div>
+                    </div>
+                    <div class="music__contents">
+                        <div class="music__view">
+                            <div class="img">
+                                <img
+                                    src="../assets/img/game_musicPlayer_img01.png"
+                                    alt="game_musicPlayer_img01"
+                                />
+                            </div>
+                            <div class="title">
+                                <h3>BACK ON TOP (feat.Griff) - HONNE</h3>
+                                <p>YOUTUBE MUSIC</p>
+                            </div>
                         </div>
-                        <div class="timer">
-                            <span class="current">0:00</span>
-                            <span class="duration">4:00</span>
-                        </div>
-                    </div>
-                    <div class="control">
-                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
-                        <!-- <i title="한곡 반복" class="repeat_one"></i> -->
-                        <i title="이전곡" class="prev" id="control-prev"></i>
-                        <i title="재생" class="play" id="control-play"></i>
-                        <i title="디음곡" class="next" id="control-next"></i>
-                        <i title="재생목록" class="list" id="control-list"></i>
-                        <i title="볼륨" class="sound" id="control-sound"> <input type="range" min="1" max="15" id="player_sound" class="open"></i>
-
-
-                        <!-- <i title="한곡 반복" class="repeat_one"></i>
-                        <i title="랜덤 반복" class="shuffle"></i> -->
-                        <!-- <i title="정지" class="pause"></i>  -->
-                    </div>
-                </div>
-            </div>
-            <div class="music__footer">
-                <div class="music__list">
-                    <h3><span class="list"></span>MUSIC LIST<span class="close-btn"></span></h3>
-                    <ul>
-                        <!-- <li>
-                            <strong>제목</strong>
-                            <em>아티스트</em>
-                            <span>재생시간</span>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- // 뮤직 플레이어 -->
-
-    <!-- searchGame -->
-    <div class="searchGame">
-        <div class="search__wrap">
-            <!-- <div class="search__inner"> -->
-                <div class="search__audio">
-                    <span class="play">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 6.3706C15 4.65827 12.9884 3.73774 11.6926 4.85712L8.36317 7.73321C7.99989 8.04704 7.53583 8.21972 7.05576 8.21973L5.49998 8.21974C4.11928 8.21975 3 9.33903 3 10.7197V14.0127C3 15.3934 4.11929 16.5127 5.5 16.5127H7.0558C7.53587 16.5127 7.99993 16.6854 8.36322 16.9992L11.6926 19.8753C12.9884 20.9947 15 20.0741 15 18.3618V12.3662V6.3706Z" fill="#fff" stroke="#fff" stroke-width="1.5"/>
-                            <path d="M18 15.3667C18.6279 14.531 19 13.4923 19 12.3667C19 11.2411 18.6279 10.2024 18 9.3667" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M20 18.3667C21.2558 16.6954 22 14.6179 22 12.3667C22 10.1155 21.2558 8.03802 20 6.3667" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </span>
-                    <span class="stop">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 6.3706C14 4.65827 11.9884 3.73774 10.6926 4.85712L7.36317 7.73321C6.99989 8.04704 6.53583 8.21972 6.05576 8.21973L4.49998 8.21974C3.11928 8.21975 2 9.33903 2 10.7197V14.0127C2 15.3934 3.11929 16.5127 4.5 16.5127H6.0558C6.53587 16.5127 6.99993 16.6854 7.36322 16.9992L10.6926 19.8753C11.9884 20.9947 14 20.0741 14 18.3618V12.3662V6.3706Z" fill="#fff" stroke="#fff" stroke-width="1.5"/>
-                            <path d="M18 14.1215L22.2427 9.87891" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M18 9.87894L22.2427 14.1216" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                    <audio id="audio" src="../assets/audio/searchAudio04.mp3" loop="loop"></audio>
-                </div>
-                <h1>SPEED SEARCH GAME</h1>
-                <p class="search_desc">
-                    2분 동안 CSS 속성을 빠르게 입력하세요!<br>
-                </p>
-                <div class="time">
-                    <span>2:00</span>
-                </div>
-                <div class="search__box">
-                    <label for="search">검색하기</label>
-                    <input type="text" id="search" placeholder="CSS 속성을 입력해 주세요" />
-                    <div class="start">버튼을 누르면 게임이 시작됩니다.</div>
-                </div>
-                <div class="search__info center">
-                    <div><span class="num">0</span> / <span class="now">0</span></div>
-                </div>
-                <div class="searchInfo">
-                    <div class="search__answers"></div>
-                    <div class="search__missAnswers"></div>
-                    <div class="search__list"></div>
-                </div>
-                <div class="search__result">
-                    <div class="svg__wrap">
-                        <div class="flex-container">
-                            <div class="unit">
-                                <div class="heart">
-                                    <div class="heart-piece-0"></div>
-                                    <div class="heart-piece-1"></div>
-                                    <div class="heart-piece-2"></div>
-                                    <div class="heart-piece-3"></div>
-                                    <div class="heart-piece-4"></div>
-                                    <div class="heart-piece-5"></div>
-                                    <div class="heart-piece-6"></div>
-                                    <div class="heart-piece-7"></div>
-                                    <div class="heart-piece-8"></div>
+                        <div class="music__control">
+                            <div class="progress">
+                                <div class="bar">
+                                    <audio
+                                        id="main-audio"
+                                        src="../assets/audio/music-1.mp3"
+                                    ></audio>
+                                </div>
+                                <div class="timer">
+                                    <span class="current">0:00</span>
+                                    <span class="duration">4:00</span>
                                 </div>
                             </div>
+                            <div class="control">
+                                <i
+                                    title="전체 반복"
+                                    class="repeat"
+                                    id="control-repeat"
+                                ></i>
+                                <i
+                                    title="이전곡"
+                                    class="prev"
+                                    id="control-prev"
+                                ></i>
+                                <i
+                                    title="재생"
+                                    class="play"
+                                    id="control-play"
+                                ></i>
+                                <i
+                                    title="디음곡"
+                                    class="next"
+                                    id="control-next"
+                                ></i>
+                                <i
+                                    title="재생목록"
+                                    class="list"
+                                    id="control-list"
+                                ></i>
+                                <i
+                                    title="볼륨"
+                                    class="sound"
+                                    id="control-sound"
+                                >
+                                    <input
+                                        type="range"
+                                        min="1"
+                                        max="15"
+                                        id="player_sound"
+                                        class="open"
+                                /></i>
+
+                                <!-- <i title="한곡 반복" class="repeat_one"></i>
+                            <i title="랜덤 반복" class="shuffle"></i> -->
+                                <!-- <i title="정지" class="pause"></i>  -->
+                            </div>
                         </div>
-                        <div class="result"></div>
-                        <button class="restart">다시 도전하기</button>
+                    </div>
+                    <div class="music__footer">
+                        <div class="music__list">
+                            <h3>
+                                <span class="list"></span>MUSIC LIST<span
+                                    class="close-btn"
+                                ></span>
+                            </h3>
+                            <ul>
+                                <!-- <li>
+                                <strong>제목</strong>
+                                <em>아티스트</em>
+                                <span>재생시간</span>
+                            </li> -->
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            <!-- </div> -->
-        </div>
-    </div>
-    <!-- //searchGame -->
-
-    <!-- memoryGame -->
-    <div class="memory__wrap">
-        <div class="memory__inner">
-            <!-- <div class="memory__close">✕</div> -->
-            <div class="memory__rule show">
-                <h2>GAME RULE</h2>
-                <ul class="memory__rule__desc">
-                    <p>
-                        5초 동안 카드의 위치를 외운 후 맞춰보세요!<br>
-                        틀릴 시 10점 씩 감점입니다.
-                    </p>
-                </ul>
-                <div class="memory__start__btn">START !</div>
             </div>
-            <div class="memoryGame">
-                <div class="memory__header">
-                    <h2>MEMORY GAME</h2>
-                    <div class="memory__score"><span>100</span>점</div>
-                    <!-- <div class="memory__close">X</div> -->
+            <!-- // 뮤직 플레이어 -->
+
+            <!-- searchGame -->
+            <div class="searchGame game">
+                <div class="search__wrap">
+                    <div class="search__close">✕</div>
+                    <!-- <div class="search__inner"> -->
+                    <div class="search__audio">
+                        <span class="play">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M15 6.3706C15 4.65827 12.9884 3.73774 11.6926 4.85712L8.36317 7.73321C7.99989 8.04704 7.53583 8.21972 7.05576 8.21973L5.49998 8.21974C4.11928 8.21975 3 9.33903 3 10.7197V14.0127C3 15.3934 4.11929 16.5127 5.5 16.5127H7.0558C7.53587 16.5127 7.99993 16.6854 8.36322 16.9992L11.6926 19.8753C12.9884 20.9947 15 20.0741 15 18.3618V12.3662V6.3706Z"
+                                    fill="#fff"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                />
+                                <path
+                                    d="M18 15.3667C18.6279 14.531 19 13.4923 19 12.3667C19 11.2411 18.6279 10.2024 18 9.3667"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                />
+                                <path
+                                    d="M20 18.3667C21.2558 16.6954 22 14.6179 22 12.3667C22 10.1155 21.2558 8.03802 20 6.3667"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </span>
+                        <span class="stop">
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M14 6.3706C14 4.65827 11.9884 3.73774 10.6926 4.85712L7.36317 7.73321C6.99989 8.04704 6.53583 8.21972 6.05576 8.21973L4.49998 8.21974C3.11928 8.21975 2 9.33903 2 10.7197V14.0127C2 15.3934 3.11929 16.5127 4.5 16.5127H6.0558C6.53587 16.5127 6.99993 16.6854 7.36322 16.9992L10.6926 19.8753C11.9884 20.9947 14 20.0741 14 18.3618V12.3662V6.3706Z"
+                                    fill="#fff"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                />
+                                <path
+                                    d="M18 14.1215L22.2427 9.87891"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M18 9.87894L22.2427 14.1216"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </span>
+                        <audio
+                            id="audio"
+                            src="../assets/audio/searchAudio04.mp3"
+                            loop="loop"
+                        ></audio>
+                    </div>
+                    <h1>SPEED SEARCH GAME</h1>
+                    <p class="search_desc">
+                        2분 동안 CSS 속성을 빠르게 입력하세요!<br />
+                    </p>
+                    <div class="time">
+                        <span>2:00</span>
+                    </div>
+                    <div class="search__box">
+                        <label for="search">검색하기</label>
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="CSS 속성을 입력해 주세요"
+                        />
+                        <div class="start">
+                            버튼을 누르면 게임이 시작됩니다.
+                        </div>
+                    </div>
+                    <div class="search__info center">
+                        <div>
+                            <span class="num">0</span> /
+                            <span class="now">0</span>
+                        </div>
+                    </div>
+                    <div class="searchInfo">
+                        <div class="search__answers"></div>
+                        <div class="search__missAnswers"></div>
+                        <div class="search__list"></div>
+                    </div>
+                    <div class="search__result">
+                        <div class="svg__wrap">
+                            <div class="flex-container">
+                                <div class="unit">
+                                    <div class="heart">
+                                        <div class="heart-piece-0"></div>
+                                        <div class="heart-piece-1"></div>
+                                        <div class="heart-piece-2"></div>
+                                        <div class="heart-piece-3"></div>
+                                        <div class="heart-piece-4"></div>
+                                        <div class="heart-piece-5"></div>
+                                        <div class="heart-piece-6"></div>
+                                        <div class="heart-piece-7"></div>
+                                        <div class="heart-piece-8"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="result"></div>
+                            <button class="restart">다시 도전하기</button>
+                        </div>
+                    </div>
+                    <!-- </div> -->
                 </div>
-                <div class="memory__card">
-                    <ul class="cards">
+            </div>
+            <!-- //searchGame -->
+
+            <!-- memoryGame -->
+            <div class="memory__wrap game">
+                <div class="memory__inner">
+                    <div class="memory__close">✕</div>
+                    <div class="memory__rule show">
+                        <h2>GAME RULE</h2>
+                        <ul class="memory__rule__desc">
+                            <p>
+                                5초 동안 카드의 위치를 외운 후 맞춰보세요!<br />
+                                틀릴 시 10점 씩 감점입니다.
+                            </p>
+                        </ul>
+                        <div class="memory__start__btn">START !</div>
+                    </div>
+                    <div class="memoryGame">
+                        <div class="memory__header">
+                            <h2>MEMORY GAME</h2>
+                            <div class="memory__score"><span>100</span>점</div>
+                            <!-- <div class="memory__close">X</div> -->
+                        </div>
+                        <div class="memory__card">
+                            <ul class="cards">
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-1"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard01.png"
+                                            alt="img-1"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-2"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard01.png"
+                                            alt="img-2"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-3"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard02.png"
+                                            alt="img-3"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-4"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard03.png"
+                                            alt="img-4"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-5"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard04.png"
+                                            alt="img-5"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-6"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard05.png"
+                                            alt="img-6"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-7"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard02.png"
+                                            alt="img-7"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-8"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard03.png"
+                                            alt="img-8"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-9"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard05.png"
+                                            alt="img-9"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-10"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard04.png"
+                                            alt="img-10"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-11"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard06.png"
+                                            alt="img-11"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-12"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard07.png"
+                                            alt="img-12"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-13"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard08.png"
+                                            alt="img-13"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-14"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard06.png"
+                                            alt="img-14"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-15"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard08.png"
+                                            alt="img-15"
+                                        />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="view front">
+                                        <img
+                                            src="../assets/img/memoryCard.png"
+                                            alt="img-16"
+                                        />
+                                    </div>
+                                    <div class="view back">
+                                        <img
+                                            src="../assets/img/memoryCard07.png"
+                                            alt="img-16"
+                                        />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="memory__over hide">
+                        <h3>GAME END!</h3>
+                        <div class="gameOver__msg">
+                            <span>게임오버되었습니다 ㅜㅜ</span>
+                        </div>
+                        <div class="memory__re__btn">REPLAY</div>
+                    </div>
+                </div>
+            </div>
+            <!-- //memoryGame -->
+
+            <!-- tetris Game -->
+            <div class="tetris__wrap game">
+                <div class="tetris__inner">
+                    <div class="tetris__close">✕</div>
+                    <div class="tetris__play">
+                        <audio
+                            id="tetrisAudio"
+                            src="../assets/audio/tetrisAudio.mp3"
+                            loop="loop"
+                        ></audio>
+                        <div class="tetris___ruls">
+                            <h3>GAME RULE</h3>
+                            <p>
+                                01. 시간은 무제한으로 점수를 많이 획득하면
+                                됩니다.<br />
+                                02. 테트리스 한 줄 제거 시 1점씩 추가 됩니다.<br />
+                            </p>
+                            <div class="tetris___start">START</div>
+                        </div>
+                        <div class="playground">
+                            <ul></ul>
+                            <div class="tetris__score"><span>0</span>점</div>
+                        </div>
+                        <div class="tetris___result hide">
+                            <h3>GANE END</h3>
+                            <p class="tetris___result__desc"></p>
+                            <div class="tetris___restart">RESTART</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //tetris Game -->
+
+            <!-- source -->
+            <div class="Game__source game">
+                <h2>SOURCE</h2>
+                <div class="Game__source__close">x</div>
+                <div class="Game__source__inner">
+                    <ul>
                         <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-1">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard01.png" alt="img-1">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-2">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard01.png" alt="img-2">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-3">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard02.png" alt="img-3">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-4">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard03.png" alt="img-4">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-5">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard04.png" alt="img-5">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-6">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard05.png" alt="img-6">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-7">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard02.png" alt="img-7">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-8">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard03.png" alt="img-8">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-9">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard05.png" alt="img-9">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-10">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard04.png" alt="img-10">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-11">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard06.png" alt="img-11">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-12">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard07.png" alt="img-12">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-13">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard08.png" alt="img-13">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-14">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard06.png" alt="img-14">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-15">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard08.png" alt="img-15">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="view front">
-                                <img src="../assets/img/memoryCard.png" alt="img-16">
-                            </div>
-                            <div class="view back">
-                                <img src="../assets/img/memoryCard07.png" alt="img-16">
-                            </div>
+                            <a
+                                href="https://github.com/eu-ny/codingclass/blob/main/javascript/effect/gameEffect01.html"
+                                target="_blank"
+                                >GITHUB</a
+                            >
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="memory__over hide">
-                <h3>GAME END!</h3>
-                <div class="gameOver__msg"><span>게임오버되었습니다 ㅜㅜ</span></div>
-                <div class="memory__re__btn">REPLAY</div>
-            </div>
+            <!-- //source -->
         </div>
-    </div>
-    <!-- //memoryGame -->
 
-    <!-- tetris Game -->
-    <div class="tetris__wrap">
-        <div class="tetris__inner">
-            <!-- <div class="tetris__close">✕</div> -->
-            <div class="tetris__play">
-                <audio id="tetrisAudio" src="../assets/audio/tetrisAudio.mp3" loop="loop"></audio>
-                <div class="tetris___ruls">
-                    <h3>게임 규칙</h3>
-                    <p>
-                        01. 시간은 무제한으로 점수를 많이 획득하면 됩니다.<br>
-                        02. 테트리스 한 줄 제거 시 1점씩 추가 됩니다.<br>
-                    </p>
-                    <div class="tetris___start">START</div>
-                </div>
-                <div class="playground">
-                    <ul></ul>
-                    <div class="tetris__score"><span>0</span>점</div>
-                </div>
-                <div class="tetris___result hide">
-                    <h3>GANE END</h3>
-                    <p class="tetris___result__desc"></p>
-                    <div class="tetris___restart">RESTART</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //tetris Game -->
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="../assets/js/music.js"></script>
+        <script src="../assets/js/searchGame.js"></script>
+        <script src="../assets/js/memory.js"></script>
+        <script src="../assets/js/tetris.js"></script>
+        <script>
+            $(".icon1").draggable({});
+            $(".icon2").draggable({});
+            $(".icon3").draggable({});
+            $(".icon4").draggable({});
+            $(".icon5").draggable({});
+            $(".icon6").draggable({});
+            $(".music__wrap").draggable();
 
-    <!-- source -->
-    <div class="Game__source">
-        <h2>SOURCE</h2>
-        <div class="Game__source__close">x</div>
-        <div class="Game__source__inner">
-            <ul>
-                <li><a href="https://github.com/eu-ny/codingclass/blob/main/javascript/effect/gameEffect01.html" target="_blank">GITHUB</a></li>
-            </ul>
-        </div>
-        
-    </div>
+            $(".searchGame").draggable();
 
-    <!-- //source -->
+            $(".memory__wrap").draggable();
 
+            $(".Game__source").draggable();
 
-   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script src="../assets/js/music.js"></script>
-    <script src="../assets/js/searchGame.js"></script>
-    <script src="../assets/js/memory.js"></script>
-    <script src="../assets/js/tetris.js"></script>
-    <script>
-        // 0. 마우스 커서
-        // const cursor = document.querySelector(".mouse__cursor");
-        // window.addEventListener("mousemove", (e) => {
-        //     cursor.style.left = e.clientX + "px";
-        //     cursor.style.top = e.clientY + "px";
-        // });
+            $(".tetris__wrap").draggable();
 
+            const iconBox = document.querySelectorAll(".icon_box .icon");
+            const icon1 = document.querySelector(".icon1");
+            const icon2 = document.querySelector(".icon2");
+            const icon3 = document.querySelector(".icon3");
+            const icon4 = document.querySelector(".icon4");
+            const icon5 = document.querySelector(".icon5");
+            const icon6 = document.querySelector(".icon6");
 
-        // 1. 시간 출력
-        // function printTime() {
-        //     const clock = document.querySelector(".time");
-        //     const now = new Date();
-        //     const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
-        //         // getMonth()의 반환값은 0-11 사이임. 그래서 1을 더해줘야 함;; 왠지 아무도 모름...
-        //         // 이유: 매개변수를 사용하여 해당하는 달의 이름을 가져올 때 편리하다고 함
-        //     clock.innerText = nowTime;
-        //     setTimeout("printTime()", 1000);
-        //     // 1초마다 시간이 바뀌도록 하려면 setTimeout 사용해야 함
-        // }
-        // 1. 시간 출력
-        function printTime() {
-            const clock = document.querySelector(".time");
-            const now = new Date();
-            let hour = now.getHours();
-            let minute = now.getMinutes();
-            let second = now.getSeconds();
-            if (hour > 12) hour = hour - 12;
-            if (hour < 10) hour = `0${hour}`;
-            if (minute < 10) minute = `0${minute}`;
-            if (second < 10) second = `0${second}`;
-            const nowTime =
-                now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " +
-                now.getDate() +
-                "일 " +
-                hour +
-                ":" +
-                minute +
-                ":" +
-                second;
-            clock.innerText = nowTime;
-            setTimeout("printTime()", 1000);
-        }
+            const musicPlayer = document.querySelector(".music__wrap");
+            const searchGame = document.querySelector(".searchGame");
+            const memoryGame = document.querySelector(".memory__wrap");
+            const tetrisGame = document.querySelector(".tetris__wrap");
+            const GameSource = document.querySelector(".Game__source");
 
-
-        // 2. 현재 사용하고 있는 환경
-        function printAgent() {
-            const agent = document.querySelector(".agent");
-            const os = navigator.userAgent.toLocaleLowerCase();
-            // agent.innerText = os;
-            // 윈도우 기준 출력물
-            // mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/105.0.0.0 safari/537.36
-            if (os.indexOf("window") >= 0) {
-                // 기종 출력
-                // 기종별로 CSS를 달리 설정할 수 있음
-                agent.innerText = "현재 windows를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("window");
-            } else if (os.indexOf("macintosh") >= 0) {
-                agent.innerText = "현재 mac을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("mac");
-            } else if (os.indexOf("iphone") >= 0) {
-                agent.innerText = "현재 IPhone을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("iphone");
-            } else if (os.indexOf("android") >= 0) {
-                agent.innerText = "현재 Android를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
-                document.querySelector("body").classList.add("android");
+            function remove(){
+                icon1.classList.remove("active");
+                icon2.classList.remove("active");
+                icon3.classList.remove("active");
+                icon4.classList.remove("active");
+                icon5.classList.remove("active");
+                icon6.classList.remove("active");
+                musicPlayer.classList.remove("show");
+                searchGame.classList.remove("show");
+                memoryGame.classList.remove("show");
+                tetrisGame.classList.remove("show");
+                GameSource.classList.remove("show");
             }
-        }
 
 
-        // 3. 각각의 폴더 드래그 효과, 드래그하면 마우스의 색상이 변화하도록
-        $(".icon1").draggable({
-            drag: function () {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor01.png");
-            },
-        });
-        $(".icon2").draggable({
-            drag: function () {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor02.png");
-            },
-        });
-        $(".icon3").draggable({
-            drag: function () {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor03.png");
-            },
-        });
-        $(".icon4").draggable({
-            drag: function () {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor04.png");
-            },
-        });
-        $(".icon5").draggable({
-            drag: function () {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor05.png");
-            },
-        });
-        $(".icon6").draggable({
-            drag: function () {
-                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor06.png");
-            },
-        });
-        $(".music__wrap").draggable();
+            // musicPlayer
+            icon1.addEventListener("click", () => {
+                if (icon1.classList.contains("active")) {
 
-        $(".searchGame").draggable();
+                    icon1.classList.remove("active");
+                    musicPlayer.classList.remove("show");
+                    pauseMusic();
+                } else {
+                    icon1.classList.add("active");
+                    remove()
+                    musicPlayer.classList.add("show");
+                    closeQuiz();
+                    stopTetrisGame();
+                }
+            });
 
-        $(".memory__wrap").draggable();
+            document.querySelector(".musicClose").addEventListener("click", () => {
+                icon1.classList.remove("active");
+                musicPlayer.classList.remove("show");
+                pauseMusic();
+            });
 
-        $(".Game__source").draggable();
+            // searchGame
+            icon2.addEventListener("click", () => {
+                if (icon2.classList.contains("active")) {
 
-        $(".tetris__wrap").draggable();
+                    icon2.classList.remove("active");
+                    searchGame.classList.remove("show");
+                    closeQuiz();
+                } else {
+                    icon2.classList.add("active");
+                    remove()
+                    searchGame.classList.add("show");
+                    pauseMusic();
+                    stopTetrisGame();
+                }
+            });
+            document.querySelector(".search__close").addEventListener("click", () => {
+                icon2.classList.remove("active");
+                searchGame.classList.remove("show");
+                closeQuiz();
+            });
 
+            // memoryGame
+            icon3.addEventListener("click", () => {
+                if (icon3.classList.contains("active")) {
+                    icon3.classList.remove("active");
+                    memoryGame.classList.remove("show");
+                    endGame()
+                } else {
+                    icon3.classList.add("active");
+                    remove()
+                    memoryGame.classList.add("show");
+                    pauseMusic();
+                    stopTetrisGame();
+                    closeQuiz();;
+                }
+            });
+            document.querySelector(".memory__close").addEventListener("click", () => {
+                icon3.classList.remove("active");
+                memoryGame.classList.remove("show");
+                endGame()
+            });
 
-        
+            // tetrisGame
+            icon4.addEventListener("click", () => {
+                if (icon4.classList.contains("active")) {
+                    icon4.classList.remove("active");
+                    tetrisGame.classList.remove("show");
+                    stopTetrisGame();
+                } else {
+                    icon4.classList.add("active");
+                    remove()
+                    tetrisGame.classList.add("show");
+                    pauseMusic();
+                    closeQuiz();
+                }
+            });
+            document.querySelector(".tetris__close").addEventListener("click", () => {
+                icon4.classList.remove("active");
+                tetrisGame.classList.remove("show");
+                stopTetrisGame();
+            });
+
+            // 0. 마우스 커서
+            // const cursor = document.querySelector(".mouse__cursor");
+            // window.addEventListener("mousemove", (e) => {
+            //     cursor.style.left = e.clientX + "px";
+            //     cursor.style.top = e.clientY + "px";
+            // });
+
+            // 1. 시간 출력
+            // function printTime() {
+            //     const clock = document.querySelector(".time");
+            //     const now = new Date();
+            //     const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
+            //         // getMonth()의 반환값은 0-11 사이임. 그래서 1을 더해줘야 함;; 왠지 아무도 모름...
+            //         // 이유: 매개변수를 사용하여 해당하는 달의 이름을 가져올 때 편리하다고 함
+            //     clock.innerText = nowTime;
+            //     setTimeout("printTime()", 1000);
+            //     // 1초마다 시간이 바뀌도록 하려면 setTimeout 사용해야 함
+            // }
+            // 1. 시간 출력
+            function printTime() {
+                const clock = document.querySelector(".time");
+                const now = new Date();
+                let hour = now.getHours();
+                let minute = now.getMinutes();
+                let second = now.getSeconds();
+                if (hour > 12) hour = hour - 12;
+                if (hour < 10) hour = `0${hour}`;
+                if (minute < 10) minute = `0${minute}`;
+                if (second < 10) second = `0${second}`;
+                const nowTime =
+                    now.getFullYear() +
+                    "년 " +
+                    (now.getMonth() + 1) +
+                    "월 " +
+                    now.getDate() +
+                    "일 " +
+                    hour +
+                    ":" +
+                    minute +
+                    ":" +
+                    second;
+                clock.innerText = nowTime;
+                setTimeout("printTime()", 1000);
+            }
+
+            // 2. 현재 사용하고 있는 환경
+            function printAgent() {
+                const agent = document.querySelector(".agent");
+                const os = navigator.userAgent.toLocaleLowerCase();
+                // agent.innerText = os;
+                // 윈도우 기준 출력물
+                // mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/105.0.0.0 safari/537.36
+                if (os.indexOf("window") >= 0) {
+                    // 기종 출력
+                    // 기종별로 CSS를 달리 설정할 수 있음
+                    agent.innerText =
+                        "현재 windows를 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("window");
+                } else if (os.indexOf("macintosh") >= 0) {
+                    agent.innerText =
+                        "현재 mac을 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("mac");
+                } else if (os.indexOf("iphone") >= 0) {
+                    agent.innerText =
+                        "현재 IPhone을 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("iphone");
+                } else if (os.indexOf("android") >= 0) {
+                    agent.innerText =
+                        "현재 Android를 사용하고 있으며, 화면 크기는 " +
+                        screen.width +
+                        " * " +
+                        screen.height +
+                        "입니다.";
+                    document.querySelector("body").classList.add("android");
+                }
+            }
+
+            window.onload = function () {
+                printTime();
+                printAgent();
+            };
+        </script>
+
+        <!-- <script>
         // 폴더 클릭
         let icon = 0;
         document.querySelector(".icon_box .icon1").addEventListener("click", () => {
@@ -625,11 +941,6 @@
 
 
 
-        window.onload = function () {
-            printTime();
-            printAgent();
-        };
-    </script>
-</body>
-
+    </script> -->
+    </body>
 </html>

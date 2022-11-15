@@ -21,7 +21,7 @@
     position: relative;
 }
 
-/* .tetris__close {
+.tetris__close {
     position: absolute;
     top: 2%;
     right: 3%;
@@ -30,7 +30,7 @@
     color: #fff;
     z-index: 1;
     cursor: pointer;
-} */
+}
 
 .tetris__play {
     position: relative;
@@ -195,8 +195,7 @@
     font-size: 48px;
     padding: 50% 0% 15%;
     color: #fff;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #8551ff,
-    0 0 82px #8551ff, 0 0 92px #8551ff, 0 0 102px #8551ff, 0 0 151px #8551ff;
+    text-shadow: 0 0 5px #fff, 0 0 8px #ffffff78, 0 0 42px #c951ff, 0 0 82px #515aff, 0 0 92px #9751ff;
 }
 
 .tetris___result__desc {

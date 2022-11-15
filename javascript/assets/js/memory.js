@@ -152,16 +152,6 @@ MemoryStartBtn.addEventListener("click", () => {
     shuffledCard();
 });
 
-//게임성공
-// function clear() {
-//     if(matchScore > 0 ){
-//         alert("성공하셨습니다. 점수는" + matchScore + "점 입니다." );
-//         restart();
-//     }
-// }
-// memoryCards.forEach(el => {
-//     el.classList.contains("flip");
-// });
 
 //게임 끝
 const memoryOver = document.querySelector(".memory__over");
