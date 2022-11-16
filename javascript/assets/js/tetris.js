@@ -245,14 +245,6 @@ function checkMatch(){
     // playground의 자식요소를 선택
     const childNodes = playGround.childNodes;
 
-    childNodes[0].children[0].childNodes.forEach((li) => {
-        if (li.classList.contains("seized")) {
-          stopTetris = true;
-          endTetrisAudio.play();
-          endTetrisGame();
-        }
-      });
-
     // 게임이 끝났을 때
     childNodes.forEach(child => {
         let matched = true;
@@ -272,11 +264,18 @@ function checkMatch(){
             trueTetrisAudio.play();
             duration > 200 ? duration = duration - 50 : duration;
         }
+        tetriScore.innerHTML = tscore;
+    
+        generateNewBlock();
     });
 
-    tetriScore.innerHTML = tscore;
-
-    generateNewBlock();
+    childNodes[0].children[0].childNodes.forEach((li) => {
+        if (li.classList.contains("seized")) {
+            endTetrisAudio.play();
+            endTetrisGame();
+            stopTetris = true;
+        }
+    });
 }
 
 // 새로운 블럭 만들기
@@ -306,6 +305,8 @@ function generateNewBlock() {
         tempMovingItem = { ...movingItem };
     
         renderBlocks();
+    }else{
+
     }
     
 }
@@ -383,14 +384,13 @@ function tetrisMusic(){
 
 // 게임 종료
 function endTetrisGame(){
-    stopTetris = true;
-    tetrisEnd.classList.remove("hide");
     const endTetris = playGround.querySelectorAll("li > ul > li");
+    tetrisEnd.classList.remove("hide");
+    tetrisAudio.pause();
+    document.querySelector(".tetris___result__desc").innerHTML = `게임이 종료되었습니다.`+ "<br>" + ` 점수는 ${tscore}점 입니다 :)`;
     endTetris.forEach((el) => {
         el.className = "";
     });
-    tetrisAudio.pause();
-    document.querySelector(".tetris___result__desc").innerHTML = `게임이 종료되었습니다.`+ "<br>" + ` 점수는 ${tscore}점 입니다 :)`;
 }
 
 // 게임 재시작

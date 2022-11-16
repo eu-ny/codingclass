@@ -21,8 +21,9 @@
 }
 
 .musicClose {
-    color: #f5f5f5;
+    color: #f5f5f5b0;
     cursor: pointer;
+    margin-bottom: 3px;
 }
 
 .music__wrap .music__header {
