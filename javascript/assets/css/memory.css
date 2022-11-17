@@ -9,6 +9,8 @@
     top: 15%;
     left: 30%;
     transform: scaleY(0);
+    border: 1px solid rgba(255, 255, 255, 0.613);
+    box-shadow: 0 0 5px #8551ff;
 }
 
 .memory__game {
@@ -22,8 +24,7 @@
     width: 550px;
     height: 500px;
     border-radius: 10px;
-    /* border: 3px solid rgb(244 224 255); */
-    background: rgba(0, 0, 0, 0.795);
+    background: rgb(16 7 31 / 76%);
     left: 400px;
     top: 100px;
     animation: flicker 0.5s infinite alternate;
@@ -80,7 +81,9 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    background: rgb(125 117 132 / 91%);
+    border: 1px solid rgba(255, 255, 255, 0.613);
+    box-shadow: 0 0 5px #8551ff;
+    /* background: rgb(125 117 132 / 91%); */
     backface-visibility: hidden;
     transition: all 0.5s ease-in-out;
     padding: 12%;

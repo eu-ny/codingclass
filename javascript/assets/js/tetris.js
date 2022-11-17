@@ -266,8 +266,8 @@ function checkMatch(){
         }
         tetriScore.innerHTML = tscore;
     
-        generateNewBlock();
     });
+    generateNewBlock();
 
     childNodes[0].children[0].childNodes.forEach((li) => {
         if (li.classList.contains("seized")) {

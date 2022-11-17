@@ -24,7 +24,7 @@ body {
     position: fixed;
     width: 100%;
     /* background: rgb(14, 8, 52); */
-    background: #000;
+    background: #2c2735;
     /* height: 30px; */
     display: flex;
     align-items: center;
@@ -172,7 +172,7 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background: rgb(14, 8, 52);
+    background: #05131b;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>게임 효과</title>
 
-        <link rel="stylesheet" href="../assets/css/bg.css" />
+        <!-- <link rel="stylesheet" href="../assets/css/bg.css" /> -->
         <link rel="stylesheet" href="../assets/css/fonts.css" />
         <link rel="stylesheet" href="../assets/css/game.css" />
         <link rel="stylesheet" href="../assets/css/music.css" />
@@ -16,6 +16,14 @@
         <link rel="stylesheet" href="../assets/css/tetris.css" />
         <link rel="stylesheet" href="../assets/css/star.css" />
     </head>
+    <style>
+        body {
+            background-image: url(../assets/img/pixel-art04.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
     <body>
         <header id="header">
             <h1>GAME EFFECT</h1>
@@ -23,9 +31,9 @@
         </header>
         <!-- //header -->
         <main id="main">
-            <!-- <div id='stars'></div>
-        <div id='stars2'></div>
-        <div id='stars3'></div> -->
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
 
             <!-- <div class="mouse__cursor">
             <img src="../assets/img/game_cursor01.png" alt="마우스 커서" />
@@ -615,8 +623,8 @@
                     musicPlayer.classList.remove("show");
                     pauseMusic();
                 } else {
-                    icon1.classList.add("active");
                     remove()
+                    icon1.classList.add("active");
                     musicPlayer.classList.add("show");
                     closeQuiz();
                     stopTetrisGame();
