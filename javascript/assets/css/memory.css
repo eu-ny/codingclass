@@ -9,8 +9,9 @@
     top: 15%;
     left: 30%;
     transform: scaleY(0);
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.613);
-    box-shadow: 0 0 5px #8551ff;
+    box-shadow: 0 0 5px #8551ff,0 0 10px #ff31c275;
 }
 
 .memory__game {
@@ -48,8 +49,8 @@
 
 .memory__close {
     position: absolute;
-    top: 2%;
-    right: 3%;
+    top: 0%;
+    right: -4%;
     font-size: 20px;
     font-weight: 600;
     color: #fff;
@@ -190,20 +191,27 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    display: flex;
     position: absolute;
-    flex-direction: column;
-    justify-content: center;
-    background: #000;
+    border-radius: 10px;
+    background: #110920f0;
     color: #fff;
     z-index: 1;
 }
+
+.memory__rule__desc {
+    font-family: 'galmuri11';
+}
+
 .memory__rule > h2 {
     font-family: 'TwaySky';
-    font-size: 48px;
+    margin-top: 120px;
+    font-size: 60px;
+    letter-spacing: 3px;
     margin-bottom: 50px;
+    line-height: 140%;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #8551ff,
     0 0 82px #8551ff, 0 0 92px #8551ff, 0 0 102px #8551ff, 0 0 151px #8551ff;
+    animation: hvr-pulse 3s infinite linear;
 }
 
 @keyframes fadeIn {
@@ -237,18 +245,27 @@
   }
 
 .memory__start__btn {
+    display: inline-block;
     margin-top: 50px;
     font-family: 'TwaySky';
     font-size: 18px;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #8551ff,
     0 0 82px #8551ff, 0 0 102px #8551ff, 0 0 151px #8551ff;
     cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 2px solid transparent;
 }
 
 .memory__start__btn:hover {
-    animation: hvr-pulse 1s linear infinite;
+    border: 2px solid #fff;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px #8551ff,
+    0 0 20px #8551ff;
+    /* animation: hvr-pulse 1s linear infinite;
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0); */
+
 }
 
 @keyframes hvr-pulse {
@@ -260,7 +277,7 @@
       -webkit-transform: scale(0.9);
       transform: scale(0.9);
     }
-  }
+}
 
 .memory__over {
     position: absolute;

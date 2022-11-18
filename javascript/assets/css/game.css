@@ -20,7 +20,7 @@ body {
 
 /* game header */
 #header {
-    font-family: 'YdestreetB';
+    font-family: 'Galmuri11';
     position: fixed;
     width: 100%;
     /* background: rgb(14, 8, 52); */
@@ -167,7 +167,7 @@ body {
 
 /* footer */
 #footer {
-    font-family: 'YdestreetB';
+    font-family: 'Galmuri11';
     position: fixed;
     left: 0;
     bottom: 0;
