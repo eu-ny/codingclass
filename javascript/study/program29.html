@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+            <!-- //sample01 -->
+             <div class="document">
+                <h2 class="t_tit">🖱 프로그래머스 1단계 : 행렬의 덧셈 🖱</h2>
+    
+                <hr>
+    
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2"> 📖 문제 설명 📖</h2>
+                    <p class="t_desc">
+                        행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.
+                    </p>
+
+                    <h2 class="t_tit2"> 🧸 제한 사항 🧸</h2>
+                    <p class="t_desc2" style="font-size: 14px;">
+                        행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.
+                    </p>
+                        <div class="t_code">
+<pre><code class="language-js" style="font-size: 14px;">function solution(arr1, arr2) {
+    let answer = [];
+    
+    for(i=0; i&lt;arr1.length; i++){
+        let num = [];
+        for(j=0; j&lt;arr1[i].length; j++){
+            num.push(arr1[i][j] + arr2[i][j])
+        }
+        answer.push(num)
+    }
+    return answer;
+}
+// push()는 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환합니다.
+// arr1 == [[1,2],[2,3]] arr2 == [[3,4],[5,6]]일 때 [[4,6],[7,9]]를 반환합니다.
+// arr1 == [[1],[2]] arr2 == [[3],[4]]일 때 [[4],[6]]를 반환합니다.
+</code></pre>
+                </div>
+            </div>
+            <h2 class="t_tit2"> 🧸 문제 풀이 🧸</h2>
+            <p class="t_box">
+               1. 먼저 변수에 빈 배열을 만들어 줍니다.<br>
+               2. 반복문을 통해 arr1의 길이 만큼 반복해줍니다. 그 뒤 배열안에 또 배열을 만들어주기 위해 빈 배열을 저장한 변수를 하나 만들어줍니다.<br>
+               3. num안에 push()를 사용하여 arr1의 i번째 배열안의 j번째 배열의 값 + arr2의 i번째 배열안의 j번째 배열의 값을 넣어 줍니다.<br>
+               4. 그 뒤 num에 저장된 2개의 배열을 처음에 만들어 둔 빈 배열에 push하여 두개의 배열을 저장합니다.
+            </p>
+                <!-- //sample01 -->
+    
+                <hr>
+    
+                <div id="sample02" class="sample">
+                    <h2 class="t_tit2"> 🧸 다른 사람의 풀이 🧸</h2>
+                        <div class="t_code" style="margin-bottom: 20px;">
+<pre><code class="language-js">function sumMatrix(A,B){
+    return A.map((a,i) => a.map((b, j) => b + B[i][j]));
+}
+</code></pre>
+</div>
+<p class="t_box">
+   map 반복문을 활용하였네요... map을 잘 활용하지 않아서 조금 이해하기 어렵기도 하네용..ㅜ
+</p>
+                </div>
+                <!-- //sample02 -->
+            </div>
+    
+
+            <hr>
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
