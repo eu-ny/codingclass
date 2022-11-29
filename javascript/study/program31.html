@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+            <!-- //sample01 -->
+             <div class="document">
+                <h2 class="t_tit">🖱 프로그래머스 1단계 : 부족한 금액 계산하기 🖱</h2>
+    
+                <hr>
+    
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2"> 📖 문제 설명 📖</h2>
+                    <p class="t_desc">
+                        놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록 solution 함수를 완성하세요.
+                        단, 금액이 부족하지 않으면 0을 return 하세요.
+                    </p>
+
+                    <h2 class="t_tit2"> 🧸 제한 사항 🧸</h2>
+                    <p class="t_desc2" style="font-size: 14px;">
+                        처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다.<br>
+                        놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수<br>
+                        처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수<br>
+                        놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수
+                    </p>
+                        <div class="t_code">
+<pre><code class="language-js" style="font-size: 14px;">function solution(price, money, count) {
+    let total = 0;
+    for(let i=1;i&lt;=count;i++){
+        total += price * i;
+    }
+    return money > total ? 0 : total-money
+}
+</code></pre>
+                </div>
+            </div>
+            <h2 class="t_tit2"> 🧸 문제 풀이 🧸</h2>
+            <p class="t_box">
+               1.  count만큼 반복하여 total에 price * i 값을 더합니다.<br>
+               2.  조건삼항자를 사용하여 money가 total 클 경우 0을 아니라면 total - money를 반환하도록 합니다.<br>
+            </p>
+                <!-- //sample01 -->
+    
+                <hr>
+    
+                <div id="sample02" class="sample">
+                    <h2 class="t_tit2"> 🧸 다른 사람의 풀이 🧸</h2>
+                        <div class="t_code" style="margin-bottom: 20px;">
+<pre><code class="language-js">function solution(price, money, count) {
+    const tmp = price * count * (count + 1) / 2 - money;
+    return tmp > 0 ? tmp : 0;
+}
+
+</code></pre>
+</div>
+<p class="t_box">
+    1과 최대값을 더해서 총 개수의 절반을 곱해주는 식입니다.. 굿굿!
+</p>
+                </div>
+                <!-- //sample02 -->
+            </div>
+    
+
+            <hr>
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
