@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 마우스 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="mouse01.html">마우스 효과</a></li>
+            </ul>                  
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+            <!-- //sample01 -->
+             <div class="document">
+                <h2 class="t_tit">🖱 프로그래머스 1단계 : 3진법 뒤집기 🖱</h2>
+
+                <hr>
+    
+                <div id="sample01" class="sample">
+                    <h2 class="t_tit2"> 📖 문제 설명 📖</h2>
+                    <p class="t_desc">
+                        자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후, 이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.
+                    </p>
+
+                    <h2 class="t_tit2"> 🧸 제한 사항 🧸</h2>
+                    <p class="t_desc2" style="font-size: 14px;">
+                        n은 1 이상 100,000,000 이하인 자연수입니다.
+                        <!-- 답을 도출하는 과정은 다음과 같습니다.
+                        n (10진법)	n (3진법)	앞뒤 반전(3진법)	10진법으로 표현
+                        45	1200	0021	7 -->
+                    </p>
+                        <div class="t_code">
+<pre><code class="language-js" style="font-size: 14px;">function solution(n) {
+    var answer = n.toString(3).split('').reverse().join('');
+    return parseInt(answer, 3);
+}
+// n이 45일 때 7이 return 됩니다.
+</code></pre>
+                </div>
+            </div>
+            <h2 class="t_tit2"> 🧸 문제 풀이 🧸</h2>
+            <p class="t_box">
+                <!-- 1. join("").split("")를 통해 배열 내 정수를 하나씩 쪼개준다.<br>
+                2. filter()를 사용하여 만약 그 값이 문자열 7일 경우 그 갯수를 반환하도록 한다. -->
+                1. toString으로 수를 문자열로 변환시킨 뒤 split('').reverse().join('')으로 하나씩 쪼갠 후 리버스해주었습니다.
+                2. 그 후 parseInt를 사용하여 문자열을 다시 숫자로 변환시켜 주었습니다.
+            </p>
+                <!-- //sample01 -->
+    
+                <hr>
+    
+                <div id="sample02" class="sample">
+                    <h2 class="t_tit2"> 🧸 다른 사람의 풀이 🧸</h2>
+                        <div class="t_code" style="margin-bottom: 20px;">
+<pre><code class="language-js">function solution(n) {
+    return Number.parseInt(n.toString(3).split("").reverse().join(""),3)
+}
+</code></pre>
+</div>
+<p class="t_box">
+    Number와 parseInt()으로 식을 묶어서 바로 리턴되도록 했네요!
+</p>
+                </div>
+                <!-- //sample02 -->
+            </div>
+    
+
+            <hr>
+        </div>
+        <!-- //T_document -->
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
