@@ -1,0 +1,107 @@
+.card_section {
+    padding: 120px 0;
+}
+.card_section > h2 {
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card_section > p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.gray {
+    background-color: #f5f5f5;
+}
+
+/* ir 효과 (이미지 대체 효과 == alt) */ 
+/* 가상요소를 두어서 alt 속성을 선언하여 웹 표준을 준수시켜야 한다. 
+더보기는 읽히지만 페이지 화면에서 시각적으로는 보이지 않는다. */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* cardType02 */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card__inner .card {
+    width: 24%;
+    position: relative;
+}
+.card__inner .card:first-child {
+    margin-bottom: 50px;
+}
+.card__inner .card img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.card__inner .card .tit {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    margin-bottom: 10px;
+    /* 한줄 효과 - 텍스트가 한줄을 넘어가면 자동으로 ...처리 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+.card__inner .card .desc {
+    font-size: 18px;
+    font-weight: 300;
+    color: #666;
+    line-height: 1.4;
+    /* 세줄 효과 - 텍스트가 세줄을 넘어가면 자동으로 ...처리 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.card__inner .card .more {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/arrow.svg);
+    border-radius: 5px;
+    background-color: #884A4A;
+}
+@media(max-width: 900px) {
+    .card__inner .card .tit {
+        font-size: 24px;
+    }
+    .card__inner .card .desc {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 800px) {
+    .card__inner {
+        flex-direction: column;
+    }
+    .card__inner .card {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+
+@media(max-width: 600px) {
+    .card_section > h2 {
+        font-size: 40px;
+    }
+    .card_section > p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+}
