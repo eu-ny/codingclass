@@ -362,6 +362,12 @@ li {
   }
 }
 
+@media (max-width: 767px) {
+  #header {
+    width: 90%;
+  }
+}
+
 /* 요소를 안보이게 하는 방법 
     1. display : none;   애니메이션이 되지 않고 영역이 남지 않는다.
     2. opacity: 0;       애니메이션이 작동 되고 영역이 남는다.
