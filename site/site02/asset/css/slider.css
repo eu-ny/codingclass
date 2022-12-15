@@ -199,11 +199,12 @@
   top: 86%;
 }
 .swiper-button-prev {
-  width: 20px !important;
-  height: 40px !important;
-  left: 20px !important;
-  background: url(../img/_@2x.png) no-repeat;
-  background-size: contain;
+    width: 20px !important;
+    height: 40px !important;
+    left: 20px !important;
+    background: url(../img/right@2x.png) no-repeat;
+    background-size: contain;
+    transform: rotate(180deg);
 }
 .swiper-button-next {
   width: 20px !important;
